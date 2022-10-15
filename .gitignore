@@ -32,3 +32,6 @@
 *.app
 *.sh
 
+# Other files
+*.bak
+main.cpp
