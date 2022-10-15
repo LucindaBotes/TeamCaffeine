@@ -1,6 +1,7 @@
 CXX      := g++
-CXXFLAGS := -std=c++17 -pedantic-errors -Wall -Wextra -Werror
-LDFLAGS  := -L/usr/lib -lstdc++ -lm
+CXXFLAGS := -std=c++11 -pedantic-errors -Wall -Wextra -Werror
+LDFLAGS  := -L/usr/lib -lstdc++ -lm -pthread
+GTEST    := -lgtest -lgtest_main
 BUILD    := ./build
 OBJ_DIR  := $(BUILD)/objects
 APP_DIR  := $(BUILD)/apps
@@ -20,7 +21,7 @@ $(OBJ_DIR)/%.o: %.cpp
 
 $(APP_DIR)/$(TARGET): $(OBJECTS)
 	@mkdir -p $(@D)
-	$(CXX) $(CXXFLAGS) -o $(APP_DIR)/$(TARGET) $^ $(LDFLAGS)
+	$(CXX) $(CXXFLAGS) -o $(APP_DIR)/$(TARGET) $^ $(LDFLAGS) $(GTEST)
 
 -include $(DEPENDENCIES)
 
@@ -29,6 +30,7 @@ $(APP_DIR)/$(TARGET): $(OBJECTS)
 build:
 	@mkdir -p $(APP_DIR)
 	@mkdir -p $(OBJ_DIR)
+	$(CXX) $(CXXFLAGS) my_tests.cpp -o my_tests.exe
 
 debug: CXXFLAGS += -DDEBUG -g
 debug: all
@@ -49,3 +51,4 @@ info:
 
 run:
 	./$(APP_DIR)/$(TARGET)
+	
