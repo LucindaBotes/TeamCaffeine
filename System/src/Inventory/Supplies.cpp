@@ -20,5 +20,12 @@ using namespace std;
 Supplies::Supplies() {
 }
 
+Supplies::Supplies(const Supplies& soldiers)
+{
+  this->_type = EntityType::SUPPLIES;
+
+  this->_health = soldiers._health;
+}
+
 Supplies::~Supplies() {
 }
