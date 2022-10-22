@@ -1,15 +1,18 @@
 #ifndef SUPPLIES_H
 #define SUPPLIES_H
 
-class Supplies {
+#include <Inventory/Entity.h>
+
+class Supplies : public Entity {
   private:
-    int member;
+    double _health;
 
   public:
     Supplies();
-    ~Supplies();
-    int getMember();
-    void setMember(int);
+    Supplies(const Supplies& soldiers);
+    ~Supplies() override;
+    double getHealth() const;
+    void setHealth(double);
 };
 
 #endif
