@@ -12,7 +12,7 @@ enum EntityDecoratorType{
 };
 
 class EntityDecorator : public Entity{
-  private:
+  protected:
     EntityDecoratorType _decoratorType;
     Entity* _wrappedEntity;
 
