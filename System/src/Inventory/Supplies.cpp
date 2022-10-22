@@ -29,3 +29,11 @@ Supplies::Supplies(const Supplies& soldiers)
 
 Supplies::~Supplies() {
 }
+
+double Supplies::getHealth() const {
+  return this->_health;
+}
+
+void Supplies::setHealth(double health) {
+  this->_health = health;
+}
