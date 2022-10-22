@@ -1,15 +1,23 @@
 #ifndef ENTITY_H
 #define ENTITY_H
 
+enum EntityType{
+  WEAPONS,
+  SUPPLIES,
+  MEDIC,
+  SOLDIER,
+  EQUIPMENT,
+};
+
 class Entity {
-  private:
-    int member;
+  protected:
+    EntityType _type;
 
   public:
     Entity();
-    ~Entity();
-    int getMember();
-    void setMember(int);
+    virtual ~Entity()=0;
+    virtual Entity* clone()=0;
+    EntityType getType() const;
 };
 
 #endif
