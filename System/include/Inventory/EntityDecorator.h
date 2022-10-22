@@ -14,12 +14,14 @@ enum EntityDecoratorType{
 class EntityDecorator : public Entity{
   private:
     EntityDecoratorType _decoratorType;
+    Entity* _wrappedEntity;
 
   public:
     EntityDecorator();
     ~EntityDecorator();
     virtual Entity* clone()=0;
     EntityDecoratorType getType() const;
+    // TODO: Add decorating functions below:
 };
 
 #endif

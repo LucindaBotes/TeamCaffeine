@@ -1,0 +1,4 @@
+#ifndef WEAPONSDECORATOR_H
+#define WEAPONSDECORATOR_H
+
+#endif

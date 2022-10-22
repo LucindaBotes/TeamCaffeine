@@ -1,0 +1,4 @@
+#ifndef SUPPLIESDECORATOR_H
+#define SUPPLIESDECORATOR_H
+
+#endif

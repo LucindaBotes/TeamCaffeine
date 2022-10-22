@@ -1,0 +1,4 @@
+#ifndef EQUIPMENTDECORATOR_H
+#define EQUIPMENTDECORATOR_H
+
+#endif
