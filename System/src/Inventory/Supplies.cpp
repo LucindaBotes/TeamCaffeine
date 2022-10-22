@@ -30,6 +30,10 @@ Supplies::Supplies(const Supplies& soldiers)
 Supplies::~Supplies() {
 }
 
+Entity* Supplies::clone() {
+  return new Supplies(*this);
+}
+
 double Supplies::getHealth() const {
   return this->_health;
 }

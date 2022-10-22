@@ -11,6 +11,9 @@ class Supplies : public Entity {
     Supplies();
     Supplies(const Supplies& soldiers);
     ~Supplies() override;
+
+    Entity* clone() override;
+
     double getHealth() const;
     void setHealth(double);
 };
