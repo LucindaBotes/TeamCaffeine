@@ -2,12 +2,13 @@
 #define DEFEND_H
 
 #include <TakeActions/Action.h>
+#include <ObserverPattern/Battle.h>
 class Defend : public Action{
   private:
     int member;
 
   public:
-    Defend();
+    Defend(Battle * battle);
     ~Defend();
     int getMember();
     void setMember(int);
