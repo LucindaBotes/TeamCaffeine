@@ -6,7 +6,7 @@ enum EntityType {
   SUPPLIES,
   MEDIC,
   SOLDIER,
-  EQUIPMENT,
+  DECORATOR,
   ARMOUR
 };
 
@@ -14,6 +14,7 @@ class Entity {
   protected:
     EntityType _type;
     double _price;
+    Entity* _head;
 
   public:
     Entity();
@@ -24,6 +25,8 @@ class Entity {
 
     double getPrice() const;
     void setPrice(double price);
+
+    virtual void addEntity(Entity* e) = 0;
 };
 
 #endif
