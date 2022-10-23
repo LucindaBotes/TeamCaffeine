@@ -3,19 +3,18 @@
 
 #include <Inventory/Entity.h>
 
-class Supplies : public Entity {
+class Supplies : public Entity{
   private:
     double _health;
 
   public:
     Supplies();
-    Supplies(const Supplies& soldiers);
-    ~Supplies() override;
+    Supplies(const Supplies &s);
+    virtual ~Supplies() override;
 
-    Entity* clone() override;
-
+    virtual Entity* clone() override;
     double getHealth() const;
-    void setHealth(double);
+    void setHealth(double health);
 };
 
 #endif

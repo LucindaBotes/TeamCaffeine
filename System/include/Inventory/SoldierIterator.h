@@ -1,15 +1,17 @@
 #ifndef SOLDIERITERATOR_H
 #define SOLDIERITERATOR_H
 
-class SoldierIterator {
+template <typename T> class SoldierIterator : public Iterator {
+  friend class Soldier;
   private:
     int member;
 
   public:
     SoldierIterator();
-    ~SoldierIterator();
-    int getMember();
-    void setMember(int);
+    T& operator*() override;
+    SoldierIterator<T> operator++() override;
+    bool operator==(const SoldierIterator<T> &rhs) override;
+    ~SoldierIterator() override;
 };
 
 #endif

@@ -17,9 +17,6 @@ using namespace std;
 *TODO:  @todo Override base class decorator extra method
 */
 
-Medics::Medics() {
-}
-
 Medics::Medics(const Medics& m)
 {
     this->_type = EntityType::MEDIC;
@@ -39,4 +36,11 @@ double Medics::getHeal() const {
 
 void Medics::setHeal(double heal) {
     this->_heal = heal;
+
+Medics::Medics()
+{
+  // this->head = 0;
+  this->_type = EntityType::MEDICS;
+}
+
 }

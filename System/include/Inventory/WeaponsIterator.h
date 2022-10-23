@@ -1,15 +1,17 @@
 #ifndef WEAPONSITERATOR_H
 #define WEAPONSITERATOR_H
 
-class WeaponsIterator {
+template <typename T> class WeaponsIterator : public Iterator {
+  friend class Weapons;
   private:
     int member;
 
   public:
     WeaponsIterator();
-    ~WeaponsIterator();
-    int getMember();
-    void setMember(int);
+    T& operator*() override;
+    WeaponsIterator<T> operator++() override;
+    bool operator==(const WeaponsIterator<T> &rhs) override;
+    ~WeaponsIterator() override;
 };
 
 #endif

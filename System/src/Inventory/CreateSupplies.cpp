@@ -2,16 +2,30 @@
 
 using namespace std;
 
+/**
+ * @brief Create Supplies:: Create Supplies object
+ */
 CreateSupplies::CreateSupplies() {
 }
 
+/**
+ * @brief Destroy Supplies:: Destroy Supplies object
+ */
 CreateSupplies::~CreateSupplies() {
 }
 
-int CreateSupplies::getMember() {
-  return this->member;
+/**
+ * @brief Create Supplies:: Create Supplies Entity
+ * @return Supplies*
+ */
+SupplyNode * CreateSupplies::createSuppliesEntity() {
+  return new SupplyNode();
 }
 
-void CreateSupplies::setMember(int member) {
-  this->member = member;
+/**
+ * @brief Create Supplies:: Create Supplies Iterator
+ * @return SuppliesIterator*
+ */
+SuppliesIterator<Supplies> * CreateSupplies::createSuppliesIterator() {
+  return new SuppliesIterator<Supplies>();
 }

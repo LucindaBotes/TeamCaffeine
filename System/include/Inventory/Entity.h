@@ -1,12 +1,12 @@
 #ifndef ENTITY_H
 #define ENTITY_H
 
-enum EntityType{
-  WEAPONS,
+enum EntityType {
+  WEAPON,
   SUPPLIES,
   MEDIC,
   SOLDIER,
-  EQUIPMENT,
+  EQUIPMENT
 };
 
 class Entity {
@@ -15,9 +15,10 @@ class Entity {
 
   public:
     Entity();
-    virtual ~Entity()=0;
-    virtual Entity* clone()=0;
+    Entity(const Entity &e);
+    virtual ~Entity() = 0;
     EntityType getType() const;
+    virtual Entity* clone() = 0;
 };
 
 #endif

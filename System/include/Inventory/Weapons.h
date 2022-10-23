@@ -4,6 +4,7 @@
 #include <Inventory/Entity.h>
 
 class Weapons : public Entity{
+
   private:
     double _damage;
     double _armour;
@@ -11,15 +12,13 @@ class Weapons : public Entity{
 
   public:
     Weapons();
-    Weapons(const Weapons& w);
-    ~Weapons();
+    Weapons(const Weapons &w);
+    virtual ~Weapons() override;
 
-    Entity* clone() override;
-
+    virtual Entity* clone() override;
     double getDamage() const;
     double getArmour() const;
     int getVehicles() const;
-
     void setDamage(double damage);
     void setArmour(double armour);
     void setVehicles(int vehicles);

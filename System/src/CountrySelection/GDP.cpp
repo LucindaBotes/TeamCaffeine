@@ -2,16 +2,20 @@
 
 using namespace std;
 
-GDP::GDP() {
+GDP::GDP()
+{
 }
 
-GDP::~GDP() {
+GDP::~GDP()
+{
 }
 
-int GDP::getMember() {
+int GDP::getMember()
+{
   return this->member;
 }
 
-void GDP::setMember(int member) {
+void GDP::setMember(int member)
+{
   this->member = member;
 }

@@ -9,14 +9,9 @@ class Medics : public Entity {
 
   public:
     Medics();
-    Medics(const Medics& m);
-    ~Medics();
-
-    Entity* clone() override;
-
-    double getHeal() const;
-    void setHeal(double heal);
-   
+    Medics(const Medics &m);
+    virtual ~Medics() override;
+    virtual Entity* clone() = 0;
 };
 
 #endif
