@@ -1,15 +1,22 @@
 #ifndef ARMOUR_H
 #define ARMOUR_H
 
-class Armour {
-  private:
-    int member;
+#include <Inventory/Entity.h>
+
+class Armour : public Entity{
+  protected:
+    double _armour;
 
   public:
     Armour();
+    Armour(double);
+    Armour(const Armour &a);
     ~Armour();
-    int getMember();
-    void setMember(int);
+
+    Entity* clone() override;
+
+    double getArmour() const;
+    void setArmour(double armour);
 };
 
 #endif

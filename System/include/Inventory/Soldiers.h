@@ -11,6 +11,7 @@ class Soldiers : public Entity {
 
   public:
     Soldiers();
+    Soldiers(double);
     Soldiers(const Soldiers& soldiers);
     ~Soldiers() override;
     

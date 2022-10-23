@@ -9,10 +9,11 @@ class Supplies : public Entity{
 
   public:
     Supplies();
+    Supplies(double);
     Supplies(const Supplies &s);
     virtual ~Supplies() override;
 
-    virtual Entity* clone() override;
+    Entity* clone() override;
     double getHealth() const;
     void setHealth(double health);
 };

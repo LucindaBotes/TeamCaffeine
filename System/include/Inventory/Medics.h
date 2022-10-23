@@ -9,9 +9,10 @@ class Medics : public Entity {
 
   public:
     Medics();
+    Medics(double);
     Medics(const Medics &m);
     virtual ~Medics() override;
-    virtual Entity* clone() = 0;
+    Entity* clone() override;
 
     double getHeal() const;
     void setHeal(double heal);
