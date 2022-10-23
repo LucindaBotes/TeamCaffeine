@@ -4,7 +4,7 @@ using namespace std;
 
 /** 
 *  @file Supplies.h
-*  @brief Weapons class implementation,
+*  @brief Supplies class implementation,
 *  Design Patterns:
 *  @li Template Method: Concrete class participant
 *  @li Prototype: Concrete Prototype participant
@@ -26,6 +26,13 @@ Supplies::Supplies(const Supplies &s){
 
 }
 
+Supplies::Supplies(const Supplies& soldiers)
+{
+  this->_type = EntityType::SUPPLIES;
+
+  this->_health = soldiers._health;
+}
+
 Supplies::~Supplies() {
 }
 
@@ -38,7 +45,6 @@ double Supplies::getHealth() const
   return this->_health;
 }
 
-void Supplies::setHealth(double health)
-{
+void Supplies::setHealth(double health) {
   this->_health = health;
 }

@@ -2,7 +2,8 @@
 #define MEDICS_H
 
 #include <Inventory/Entity.h>
-class Medics : public Entity{
+
+class Medics : public Entity {
   private:
     double _heal;
 

@@ -9,6 +9,48 @@ using namespace std;
 *  @li Template Method: Concrete class participant
 *  @li Prototype: Concrete Prototype participant
 *  @li Decorator: Concrete Component participant
+*TODO:  @todo Override base class decorator extra method
+*/
+
+Weapons::Weapons(const Weapons& w)
+{
+  this->_type = EntityType::WEAPONS;
+
+  this->_damage = w._damage;
+  this->_armour = w._armour;
+  this->_vehicles = w._vehicles;
+}
+
+Weapons::~Weapons() {
+}
+
+Entity* Weapons::clone() {
+  return new Weapons(*this);
+}
+
+double Weapons::getDamage() const {
+  return this->_damage;
+}
+
+double Weapons::getArmour() const {
+  return this->_armour;
+}
+
+int Weapons::getVehicles() const {
+  return this->_vehicles;
+}
+
+void Weapons::setDamage(double damage) {
+  this->_damage = damage;
+}
+
+void Weapons::setArmour(double armour) {
+  this->_armour = armour;
+}
+
+void Weapons::setVehicles(int vehicles) {
+  this->_vehicles = vehicles;
+=======
 *  @li Factory: Product participant
 *
 *  @details Weapons implements the base @file Entity.h class.
@@ -21,43 +63,4 @@ using namespace std;
 Weapons::Weapons()
 { 
   this->_type = EntityType::WEAPON;
-}
-
-Weapons::~Weapons() 
-{ }
-
-Weapons::Weapons(const Weapons &w) {
-  this->_type = w._type;
-
-  this->_damage = w._damage;
-  this->_armour = w._armour;
-  this->_vehicles = w._vehicles;
-}
-
-Entity* Weapons::clone(){
-  return new Weapons(*this);
-}
-
-double Weapons::getDamage() const {
-  return _damage;
-}
-
-double Weapons::getArmour() const {
-  return _armour;
-}
-
-int Weapons::getVehicles() const {
-  return _vehicles;
-}
-
-void Weapons::setDamage(double damage) {
-  _damage = damage;
-}
-
-void Weapons::setArmour(double armour) {
-  _armour = armour;
-}
-
-void Weapons::setVehicles(int vehicles) {
-  _vehicles = vehicles;
 }

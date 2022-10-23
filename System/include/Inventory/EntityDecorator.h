@@ -1,15 +1,27 @@
 #ifndef ENTITYDECORATOR_H
 #define ENTITYDECORATOR_H
 
-class EntityDecorator {
-  private:
-    int member;
+#include <Inventory/Entity.h>
+
+enum EntityDecoratorType{
+  WEAPON,
+  SUPPLY,
+  MEDIC,
+  SOLDIER,
+  EQUIPMENT,
+};
+
+class EntityDecorator : public Entity{
+  protected:
+    EntityDecoratorType _decoratorType;
+    Entity* _wrappedEntity;
 
   public:
     EntityDecorator();
     ~EntityDecorator();
-    int getMember();
-    void setMember(int);
+    virtual Entity* clone()=0;
+    EntityDecoratorType getType() const;
+    // TODO: Add decorating functions below:
 };
 
 #endif

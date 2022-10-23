@@ -3,7 +3,8 @@
 
 #include <Inventory/Entity.h>
 
-class Weapons : public Entity {
+class Weapons : public Entity{
+
   private:
     double _damage;
     double _armour;
