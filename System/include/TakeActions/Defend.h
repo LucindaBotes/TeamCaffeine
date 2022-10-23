@@ -1,7 +1,8 @@
 #ifndef DEFEND_H
 #define DEFEND_H
 
-class Defend {
+#include <TakeActions/Action.h>
+class Defend : public Action{
   private:
     int member;
 
@@ -10,6 +11,9 @@ class Defend {
     ~Defend();
     int getMember();
     void setMember(int);
+
+    virtual void executeAction();
+    virtual void unexecuteAction();
 };
 
 #endif

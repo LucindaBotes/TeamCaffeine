@@ -1,7 +1,8 @@
 #ifndef SURRENDER_H
 #define SURRENDER_H
 
-class Surrender {
+#include <TakeActions/Action.h>
+class Surrender : public Action{
   private:
     int member;
 
@@ -10,6 +11,9 @@ class Surrender {
     ~Surrender();
     int getMember();
     void setMember(int);
+
+    virtual void executeAction();
+    virtual void unexecuteAction();
 };
 
 #endif

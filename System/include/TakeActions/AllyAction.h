@@ -1,7 +1,8 @@
 #ifndef ALLYACTION_H
 #define ALLYACTION_H
 
-class AllyAction {
+#include <TakeActions/Action.h>
+class AllyAction : public Action{
   private:
     int member;
 
@@ -10,6 +11,9 @@ class AllyAction {
     ~AllyAction();
     int getMember();
     void setMember(int);
+
+    virtual void executeAction();
+    virtual void unexecuteAction();
 };
 
 #endif

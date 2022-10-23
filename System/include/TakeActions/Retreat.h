@@ -1,7 +1,8 @@
 #ifndef RETREAT_H
 #define RETREAT_H
 
-class Retreat {
+#include <TakeActions/Action.h>
+class Retreat : public Action{
   private:
     int member;
 
@@ -10,6 +11,9 @@ class Retreat {
     ~Retreat();
     int getMember();
     void setMember(int);
+
+    virtual void executeAction();
+    virtual void unexecuteAction();
 };
 
 #endif

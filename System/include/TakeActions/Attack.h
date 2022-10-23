@@ -1,7 +1,8 @@
 #ifndef ATTACK_H
 #define ATTACK_H
 
-class Attack {
+#include <TakeActions/Action.h>
+class Attack : public Action{
   private:
     int member;
 
@@ -10,6 +11,9 @@ class Attack {
     ~Attack();
     int getMember();
     void setMember(int);
+
+    virtual void executeAction();
+    virtual void unexecuteAction();
 };
 
 #endif

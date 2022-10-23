@@ -1,7 +1,8 @@
 #ifndef HOLD_H
 #define HOLD_H
 
-class Hold {
+#include <TakeActions/Action.h>
+class Hold : public Action{
   private:
     int member;
 
@@ -10,6 +11,9 @@ class Hold {
     ~Hold();
     int getMember();
     void setMember(int);
+
+    virtual void executeAction();
+    virtual void unexecuteAction();
 };
 
 #endif

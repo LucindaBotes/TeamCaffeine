@@ -1,11 +1,13 @@
 #ifndef INVOKER_H
 #define INVOKER_H
 
+#include <TakeActions/Action.h>
+#include <vector>
+
 class Invoker {
-  #include <TakeActions/Action.h>
   private:
     int member;
-    Action * actions = new Action[6];
+    std::vector<Action*> actions;
 
   public:
     Invoker();
