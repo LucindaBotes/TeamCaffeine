@@ -23,15 +23,7 @@ CreateMedics::~CreateMedics() {
  * 
  * @return Medics* 
  */
-MedicNode * CreateMedics::createMedicsEntity() {
-  return new MedicNode();
+Medics * CreateMedics::createMedicsEntity() {
+  return new Medics();
 }
 
-/**
- * @brief Create a Medics:: Create Medics Iterator
- * 
- * @return MedicsIterator* 
- */
-MedicsIterator<Medics> * CreateMedics::createMedicsIterator() {
-  return new MedicsIterator<Medics>();
-}

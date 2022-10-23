@@ -1,15 +1,19 @@
 #ifndef ARMOUR_H
 #define ARMOUR_H
 
-class Armour {
-  private:
-    int member;
+  #include <Inventory/ArmourNode.h>
+#include <Inventory/ArmourIterator.h>
 
-  public:
-    Armour();
-    ~Armour();
-    int getMember();
-    void setMember(int);
+class Armour {
+  friend class ArmourIterator;
+  private:
+
+ArmourNode *head;
+  void enqueue (ArmourNode);
+  bool isEmpty();
+  ArmourNode dequeue();
+  ArmourIterator<ArmourNode> begin();
+  ArmourIterator<ArmourNode> end();
 };
 
 #endif

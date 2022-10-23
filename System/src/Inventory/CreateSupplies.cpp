@@ -18,14 +18,8 @@ CreateSupplies::~CreateSupplies() {
  * @brief Create Supplies:: Create Supplies Entity
  * @return Supplies*
  */
-SupplyNode * CreateSupplies::createSuppliesEntity() {
-  return new SupplyNode();
+Supplies * CreateSupplies::createSuppliesEntity() {
+  return new Supplies();
 }
 
-/**
- * @brief Create Supplies:: Create Supplies Iterator
- * @return SuppliesIterator*
- */
-SuppliesIterator<Supplies> * CreateSupplies::createSuppliesIterator() {
-  return new SuppliesIterator<Supplies>();
-}
+

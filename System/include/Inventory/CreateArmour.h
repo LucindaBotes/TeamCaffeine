@@ -2,8 +2,7 @@
 #define CREATEARMOUR_H
 
 #include "EntityCreator.h"
-#include "ArmourNode.h"
-#include "ArmourIterator.h"
+#include "Armour.h"
 
 class CreateArmour : public EntityCreator {
   private:
@@ -12,8 +11,7 @@ class CreateArmour : public EntityCreator {
   public:
     CreateArmour();
     ~CreateArmour();
-    ArmourNode * createArmourEntity();
-    ArmourIterator<Armour> * createArmourIterator();
+    Armour* createArmourEntity();
 };
 
 #endif

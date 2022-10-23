@@ -1,8 +1,7 @@
 #ifndef CREATESOLDIERS_H
 #define CREATESOLDIERS_H
 
-#include <Inventory/SoldierNode.h>
-#include <Inventory/SoldierIterator.h>
+#include <Inventory/Soldiers.h>
 #include <Inventory/EntityCreator.h>
 
 class CreateSoldiers : public EntityCreator {
@@ -12,8 +11,7 @@ class CreateSoldiers : public EntityCreator {
   public:
     CreateSoldiers();
     ~CreateSoldiers();
-    SoldierNode * createSoldiersEntity();
-    SoldierIterator<Soldiers> * createSoldiersIterator();
+    Soldiers * createSoldiersEntity();
 };
 
 #endif

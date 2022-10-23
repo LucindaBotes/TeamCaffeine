@@ -1,8 +1,7 @@
 #ifndef CREATEWEAPONS_H
 #define CREATEWEAPONS_H
 
-#include <Inventory/WeaponsIterator.h>
-#include <Inventory/WeaponNode.h>
+#include <Inventory/Weapons.h>
 #include <Inventory/EntityCreator.h>
 
 class CreateWeapons : public EntityCreator {
@@ -12,8 +11,7 @@ class CreateWeapons : public EntityCreator {
   public:
     CreateWeapons();
     ~CreateWeapons();
-    WeaponNode * createWeaponsEntity();
-    WeaponsIterator<Weapons> * createWeaponsIterator();
+    Weapons * createWeaponsEntity();
 };
 
 #endif

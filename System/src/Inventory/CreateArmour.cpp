@@ -26,14 +26,6 @@ CreateArmour::~CreateArmour() {
  * @brief Create Armour:: Create Armour Entity
  * @return Armour*
  */
-ArmourNode * CreateArmour::createArmourEntity() {
-  return new ArmourNode();
-}
-
-/**
- * @brief Create Armour:: Create Armour Iterator
- * @return ArmourIterator*
- */
-ArmourIterator<Armour> * CreateArmour::createArmourIterator() {
-  return new ArmourIterator<Armour>();
+Armour * CreateArmour::createArmourEntity() {
+  return new Armour();
 }

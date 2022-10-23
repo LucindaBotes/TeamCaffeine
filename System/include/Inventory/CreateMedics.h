@@ -1,8 +1,7 @@
 #ifndef CREATEMEDICS_H
 #define CREATEMEDICS_H
 
-#include <Inventory/MedicNode.h>
-#include <Inventory/MedicsIterator.h>
+#include <Inventory/Medics.h>
 #include <Inventory/EntityCreator.h>
 
 class CreateMedics : public EntityCreator {
@@ -12,8 +11,7 @@ class CreateMedics : public EntityCreator {
   public:
     CreateMedics();
     ~CreateMedics();
-    MedicNode * createMedicsEntity();
-    MedicsIterator<Medics> * createMedicsIterator();
+    Medics * createMedicsEntity();
 };
 
 #endif

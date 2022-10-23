@@ -18,14 +18,8 @@ CreateWeapons::~CreateWeapons() {
  * @brief Create Weapons:: Create Weapons Entity
  * @return Weapons*
  */
-WeaponNode * CreateWeapons::createWeaponsEntity() {
-  return new WeaponNode();
+Weapons * CreateWeapons::createWeaponsEntity() {
+  return new Weapons();
 }
 
-/**
- * @brief Create Weapons:: Create Weapons Iterator
- * @return WeaponsIterator*
- */
-WeaponsIterator<Weapons> * CreateWeapons::createWeaponsIterator() {
-  return new WeaponsIterator<Weapons>();
-}
+

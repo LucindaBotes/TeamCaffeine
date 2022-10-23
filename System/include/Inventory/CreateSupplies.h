@@ -1,8 +1,7 @@
 #ifndef CREATESUPPLIES_H
 #define CREATESUPPLIES_H
 
-#include <Inventory/SuppliesIterator.h>
-#include <Inventory/SupplyNode.h>
+#include <Inventory/Supplies.h>
 #include <Inventory/EntityCreator.h>
 class CreateSupplies : public EntityCreator {
   private:
@@ -11,8 +10,7 @@ class CreateSupplies : public EntityCreator {
   public:
     CreateSupplies();
     ~CreateSupplies();
-    SupplyNode * createSuppliesEntity();
-    SuppliesIterator<Supplies> * createSuppliesIterator();
+    Supplies * createSuppliesEntity();
 };
 
 #endif

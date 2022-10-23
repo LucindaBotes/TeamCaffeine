@@ -35,11 +35,3 @@ EntityCreator::~EntityCreator() {
 Entity* EntityCreator::createEntity() {
 }
 
-/**
- * @brief 
- * @param none
- * @return Iterator *
- */
-Iterator * EntityCreator::createIterator() {
-  
-}

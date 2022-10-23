@@ -18,14 +18,6 @@ CreateSoldiers::~CreateSoldiers() {
  * @brief Create a Soldiers:: Create Soldiers Entity
  * @return Soldiers*
  */
-SoldierNode * CreateSoldiers::createSoldiersEntity() {
-  return new SoldierNode();
-}
-
-/**
- * @brief Create a Soldiers:: Create Soldiers Iterator
- * @return SoldiersIterator*
- */
-SoldierIterator<Soldiers> * CreateSoldiers::createSoldiersIterator() {
-  return new SoldierIterator<Soldiers>();
+Soldiers * CreateSoldiers::createSoldiersEntity() {
+  return new Soldiers();
 }
