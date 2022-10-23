@@ -9,7 +9,9 @@ class Equipment : public Entity {
   private:
     std::vector<Entity*> _weapons;
     std::vector<Entity*> _medicine;
-    std::vector<Entity*> vehicles;
+    std::vector<Entity*> _soldiers;
+    std::vector<Entity*> _supplies;
+    std::vector<Entity*> _armour;
 
   public:
     Equipment();
@@ -20,7 +22,9 @@ class Equipment : public Entity {
 
     std::vector<Entity*> getWeapons() const;
     std::vector<Entity*> getMedicine() const;
-    std::vector<Entity*> getVehicles() const;
+    std::vector<Entity*> getSoldiers() const;
+    std::vector<Entity*> getSupplies() const;
+    std::vector<Entity*> getArmour() const;
 };
 
 #endif

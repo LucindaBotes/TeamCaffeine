@@ -19,6 +19,11 @@ using namespace std;
 */
 
 Entity::Entity() {
+
+}
+
+Entity::Entity(double price) {
+  this->_price = price;
 }
 
 Entity::~Entity() {
@@ -30,4 +35,14 @@ Entity::Entity(const Entity &e) {
 
 EntityType Entity::getType() const{
   return _type;
+}
+
+double Entity::getPrice() const
+{
+  return _price;
+}
+
+void Entity::setPrice(double price)
+{
+  _price = price;
 }

@@ -31,8 +31,16 @@ Equipment::Equipment(const Equipment& e) {
         _medicine.push_back(medicine->clone());
     }
 
-    for(Entity* vehicle : e.vehicles) {
-        vehicles.push_back(vehicle->clone());
+    for(Entity* soldier : e._soldiers) {
+        _soldiers.push_back(soldier->clone());
+    }
+
+    for(Entity* supply : e._supplies) {
+        _supplies.push_back(supply->clone());
+    }
+
+    for(Entity* armour : e._armour) {
+        _armour.push_back(armour->clone());
     }
 }
 
@@ -51,6 +59,14 @@ std::vector<Entity*> Equipment::getMedicine() const {
     return this->_medicine;
 }   
 
-std::vector<Entity*> Equipment::getVehicles() const {
-    return this->vehicles;
+std::vector<Entity*> Equipment::getSoldiers() const {
+    return this->_soldiers;
+}
+
+std::vector<Entity*> Equipment::getSupplies() const {
+    return this->_supplies;
+}
+
+std::vector<Entity*> Equipment::getArmour() const {
+    return this->_armour;
 }

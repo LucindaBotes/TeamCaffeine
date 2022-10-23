@@ -43,4 +43,3 @@ Medics::Medics()
   this->_type = EntityType::MEDICS;
 }
 
-}
