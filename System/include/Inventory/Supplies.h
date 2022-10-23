@@ -14,6 +14,8 @@ class Supplies : public Entity{
     virtual ~Supplies() override;
 
     Entity* clone() override;
+    void addEntity(Entity* e) override;
+
     double getHealth() const;
     void setHealth(double health);
 };

@@ -36,6 +36,10 @@ Entity* Medics::clone() {
     return new Medics(*this);
 }
 
+void Medics::addEntity(Entity* e) {
+    //TODO: implement
+}
+
 double Medics::getHeal() const {
     return this->_heal;
 }

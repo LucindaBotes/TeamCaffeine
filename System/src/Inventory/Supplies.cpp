@@ -40,6 +40,10 @@ Entity* Supplies::clone(){
   return new Supplies(*this);
 }
 
+void Supplies::addEntity(Entity* e) {
+  // TODO: implement
+}
+
 double Supplies::getHealth() const
 {
   return this->_health;

@@ -36,6 +36,10 @@ Entity* Soldiers::clone() {
   return new Soldiers(*this);
 }
 
+void Soldiers::addEntity(Entity* e) {
+  //TODO: implement
+}
+
 double Soldiers::getDamage() const {
   return this->_damage;
 }

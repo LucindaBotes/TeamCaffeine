@@ -17,6 +17,8 @@ class Weapons : public Entity{
     virtual ~Weapons() override;
 
     Entity* clone() override;
+    void addEntity(Entity* e) override;
+
     double getDamage() const;
     double getArmour() const;
     int getVehicles() const;

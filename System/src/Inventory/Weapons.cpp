@@ -26,7 +26,7 @@ Weapons::Weapons()
 
 Weapons::Weapons(const Weapons& w)
 {
-  this->_type = EntityType::WEAPONS;
+  this->_type = EntityType::WEAPON;
 
   this->_damage = w._damage;
   this->_armour = w._armour;
@@ -38,6 +38,10 @@ Weapons::~Weapons() {
 
 Entity* Weapons::clone() {
   return new Weapons(*this);
+}
+
+void Weapons::addEntity(Entity* e) {
+  //TODO: implement
 }
 
 double Weapons::getDamage() const {

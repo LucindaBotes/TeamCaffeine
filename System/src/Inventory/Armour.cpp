@@ -21,6 +21,10 @@ Entity* Armour::clone() {
   return new Armour(*this);
 }
 
+void Armour::addEntity(Entity* e) {
+  // TODO: implement
+}
+
 double Armour::getArmour() const {
   return _armour;
 }
