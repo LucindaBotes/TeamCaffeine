@@ -11,6 +11,7 @@ class EntityDecorator : public Entity{
     EntityDecorator();
     ~EntityDecorator();
     virtual Entity* clone()=0;
+    virtual void addEntity(Entity* e)=0;
     // TODO: Add decorating functions below:
 };
 

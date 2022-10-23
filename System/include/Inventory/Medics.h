@@ -1,9 +1,9 @@
 #ifndef MEDICS_H
 #define MEDICS_H
 
-#include <Inventory/Entity.h>
+#include <Inventory/EntityDecorator.h>
 
-class Medics : public Entity {
+class Medics : public EntityDecorator {
   private:
     double _heal;
 

@@ -1,9 +1,9 @@
 #ifndef WEAPONS_H
 #define WEAPONS_H
 
-#include <Inventory/Entity.h>
+#include <Inventory/EntityDecorator.h>
 
-class Weapons : public Entity{
+class Weapons : public EntityDecorator{
 
   private:
     double _damage;

@@ -1,9 +1,9 @@
 #ifndef ARMOUR_H
 #define ARMOUR_H
 
-#include <Inventory/Entity.h>
+#include <Inventory/EntityDecorator.h>
 
-class Armour : public Entity{
+class Armour : public EntityDecorator{
   protected:
     double _armour;
 

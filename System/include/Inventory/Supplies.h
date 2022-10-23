@@ -1,9 +1,9 @@
 #ifndef SUPPLIES_H
 #define SUPPLIES_H
 
-#include <Inventory/Entity.h>
+#include <Inventory/EntityDecorator.h>
 
-class Supplies : public Entity{
+class Supplies : public EntityDecorator{
   private:
     double _health;
 
