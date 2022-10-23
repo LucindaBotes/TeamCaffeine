@@ -8,7 +8,6 @@ class EntityCreator {
     EntityCreator();
     virtual ~EntityCreator();
     virtual Entity * createEntity();
-    virtual Iterator * createIterator();
 };
 
 #endif

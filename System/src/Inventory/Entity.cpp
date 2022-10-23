@@ -19,7 +19,7 @@ using namespace std;
 */
 
 Entity::Entity() {
-
+  _head = NULL;
 }
 
 Entity::~Entity() {
@@ -41,4 +41,19 @@ double Entity::getPrice() const
 void Entity::setPrice(double price)
 {
   _price = price;
+}
+
+Iterator<Entity> Entity::begin()
+{
+  return Iterator<Entity>(this->_head);
+}
+
+Iterator<Entity> Entity::end()
+{
+  return Iterator<Entity>(this->_head);
+}
+
+bool Entity::isEmpty()
+{
+  
 }
