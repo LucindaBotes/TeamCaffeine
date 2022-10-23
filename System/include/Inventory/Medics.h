@@ -1,15 +1,16 @@
 #ifndef MEDICS_H
 #define MEDICS_H
 
-class Medics {
+#include <Inventory/Entity.h>
+class Medics : public Entity{
   private:
-    int member;
+    double _heal;
 
   public:
     Medics();
-    ~Medics();
-    int getMember();
-    void setMember(int);
+    Medics(const Medics &m);
+    virtual ~Medics() override;
+    virtual Entity* clone() = 0;
 };
 
 #endif

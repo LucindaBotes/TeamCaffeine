@@ -2,16 +2,25 @@
 
 using namespace std;
 
-Medics::Medics() {
+Medics::Medics()
+{
+  // this->head = 0;
+  this->_type = EntityType::MEDICS;
 }
 
-Medics::~Medics() {
+Medics::Medics(const Medics &m)
+{
+  this->_type = m._type;
+
+  this->_heal = m._heal;
 }
 
-int Medics::getMember() {
-  return this->member;
+Medics::~Medics()
+{
+  
 }
 
-void Medics::setMember(int member) {
-  this->member = member;
+Entity* Medics::clone()
+{
+  
 }

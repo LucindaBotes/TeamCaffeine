@@ -1,15 +1,19 @@
 #ifndef CREATEWEAPONS_H
 #define CREATEWEAPONS_H
 
-class CreateWeapons {
+#include <Inventory/WeaponsIterator.h>
+#include <Inventory/WeaponNode.h>
+#include <Inventory/EntityCreator.h>
+
+class CreateWeapons : public EntityCreator {
   private:
     int member;
 
   public:
     CreateWeapons();
     ~CreateWeapons();
-    int getMember();
-    void setMember(int);
+    WeaponNode * createWeaponsEntity();
+    WeaponsIterator<Weapons> * createWeaponsIterator();
 };
 
 #endif

@@ -1,15 +1,20 @@
 #ifndef ARMOURITERATOR_H
 #define ARMOURITERATOR_H
 
-class ArmourIterator {
+#include <Inventory/Armour.h>
+#include <Inventory/Iterator.h>
+
+template<typename T> class ArmourIterator : public Iterator {
+  friend class Armour;
   private:
     int member;
 
   public:
     ArmourIterator();
-    ~ArmourIterator();
-    int getMember();
-    void setMember(int);
+    T& operator*() override;
+    ArmourIterator<T> operator++() override;
+    bool operator==(const ArmourIterator<T> &rhs) override;
+    ~ArmourIterator() override;
 };
 
 #endif

@@ -1,25 +1,36 @@
-#include <Inventory/WeaponsIterator.h>
+#include <Inventory/SuppliesIterator.h>
 
 using namespace std;
 
-// MedicsIterator<MedicNode>::MedicsIterator() : head(0), current(0) {};
+template <typename T>
+SuppliesIterator<T>::SuppliesIterator() {
+  this->member = 0;
+}
 
-// MedicsIterator<MedicNode>::MedicsIterator(const Medics &source, MedicNode *mn) : head(source.head), current(mn) {}
+template <typename T>
+SuppliesIterator<T>::SuppliesIterator(const SuppliesIterator<T> &si) {
+  this->member = si.member;
+}
 
-// MedicNode& MedicsIterator<MedicNode>::operator*(){
-//   return this->current->medic;
-// }
+template <typename T>
+T& SuppliesIterator<T>::operator*() {
+  return this->member;
+}
 
-// MedicsIterator<MedicNode>::MedicsIterator<MedicNode>::operator++(){
-//   if(this != null){
-//     this->current = this->current->next;
-//   }
-//   return *this;
-// }
+template <typename T>
+SuppliesIterator<T> SuppliesIterator<T>::operator++() {
+  this->member++;
+  return *this;
+}
 
-// bool MedicsIterator<MedicNode>::operator==(const MedicsIterator<MedicNode>& rhs) const{
-//   return this->current == rhs.current;
-// }
+template <typename T>
+bool SuppliesIterator<T>::operator==(const SuppliesIterator<T> &rhs) const {
+  return this->member == rhs.member;
+}
+
+template <typename T>
+SuppliesIterator<T>::~SuppliesIterator() {
+}
 
 // ========================================= Medics.h ==================================================//
 // #include <Inventory/MedicNode.h>
