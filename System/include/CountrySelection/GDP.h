@@ -3,13 +3,15 @@
 
 class GDP {
   private:
-    int member;
+    double _value;
 
   public:
     GDP();
+    GDP(double);
     ~GDP();
-    int getMember();
-    void setMember(int);
+
+    double getValue() const;
+    void setValue(double);
 };
 
 #endif

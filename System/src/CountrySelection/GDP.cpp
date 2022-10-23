@@ -4,18 +4,24 @@ using namespace std;
 
 GDP::GDP()
 {
+  _value = 0.0;
+}
+
+GDP::GDP(double gdpValue)
+{
+  this->_value = gdpValue;
 }
 
 GDP::~GDP()
 {
 }
 
-int GDP::getMember()
+double GDP::getValue() const
 {
-  return this->member;
+  return _value;
 }
 
-void GDP::setMember(int member)
+void GDP::setValue(double gdpValue)
 {
-  this->member = member;
+  _value = gdpValue;
 }
