@@ -12,13 +12,13 @@ class Invoker {
     ~Invoker();
     int getMember();
     void setMember(int);
-    
+
     void defendAlliance();
-    void attackEnemyAlliance();
     void hold();
     void retreat();
     void surrender();
     void requestAlly();
+    void attackEnemyAlliance();
 };
 
 #endif
