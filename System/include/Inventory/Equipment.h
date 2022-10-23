@@ -15,6 +15,7 @@ class Equipment : public Entity {
 
   public:
     Equipment();
+    Equipment(double);
     Equipment(const Equipment& e);
     ~Equipment() override;
 

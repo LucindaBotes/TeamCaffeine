@@ -12,10 +12,11 @@ class Weapons : public Entity{
 
   public:
     Weapons();
+    Weapons(double);
     Weapons(const Weapons &w);
     virtual ~Weapons() override;
 
-    virtual Entity* clone() override;
+    Entity* clone() override;
     double getDamage() const;
     double getArmour() const;
     int getVehicles() const;

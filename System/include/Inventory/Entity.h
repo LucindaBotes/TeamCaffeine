@@ -6,7 +6,8 @@ enum EntityType {
   SUPPLIES,
   MEDIC,
   SOLDIER,
-  EQUIPMENT
+  EQUIPMENT,
+  ARMOUR
 };
 
 class Entity {
@@ -16,7 +17,6 @@ class Entity {
 
   public:
     Entity();
-    Entity(double);
     Entity(const Entity &e);
     virtual ~Entity() = 0;
     EntityType getType() const;

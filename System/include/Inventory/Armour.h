@@ -1,19 +1,22 @@
 #ifndef ARMOUR_H
 #define ARMOUR_H
 
-  #include <Inventory/ArmourNode.h>
-#include <Inventory/ArmourIterator.h>
+#include <Inventory/Entity.h>
 
-class Armour {
-  friend class ArmourIterator;
-  private:
+class Armour : public Entity{
+  protected:
+    double _armour;
 
-ArmourNode *head;
-  void enqueue (ArmourNode);
-  bool isEmpty();
-  ArmourNode dequeue();
-  ArmourIterator<ArmourNode> begin();
-  ArmourIterator<ArmourNode> end();
+  public:
+    Armour();
+    Armour(double);
+    Armour(const Armour &a);
+    ~Armour();
+
+    Entity* clone() override;
+
+    double getArmour() const;
+    void setArmour(double armour);
 };
 
 #endif

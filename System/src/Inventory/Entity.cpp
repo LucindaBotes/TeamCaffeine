@@ -22,10 +22,6 @@ Entity::Entity() {
 
 }
 
-Entity::Entity(double price) {
-  this->_price = price;
-}
-
 Entity::~Entity() {
 }
 
