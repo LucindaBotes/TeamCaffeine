@@ -4,9 +4,7 @@
             "name": "Win32",
             "includePath": [
                 "${workspaceFolder}/**",
-                "${workspaceFolder}",
-                "${workspaceFolder}/.vscode",
-                "${workspaceFolder}"
+                "C:/Users/unari/OneDrive/Desktop/COS 214/PROJECT/TeamCaffeine/System/include/WarPhases"
             ],
             "defines": [
                 "_DEBUG",
