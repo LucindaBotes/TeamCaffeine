@@ -1,7 +1,5 @@
 #include <WarPhases/WarPhaseContext.h>
 
-using namespace std;
-
 WarPhaseContext::WarPhaseContext() 
 {
     _state = new PeacefulState();

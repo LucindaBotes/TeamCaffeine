@@ -1,7 +1,5 @@
 #include <WarPhases/ColdState.h>
 
-using namespace std;
-
 ColdState::ColdState() {
 }
 

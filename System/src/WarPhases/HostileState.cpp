@@ -1,7 +1,5 @@
 #include <WarPhases/HostileState.h>
 
-using namespace std;
-
 HostileState::HostileState() {
 }
 
