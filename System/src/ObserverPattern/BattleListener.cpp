@@ -6,6 +6,7 @@ BattleListener::BattleListener() {
 }
 
 BattleListener::~BattleListener() {
+   this->actionListeners.clear();
 }
 
 int BattleListener::getMember() {
@@ -35,5 +36,5 @@ void BattleListener::removeListener(ActionListener * listener){
 }
 
 void BattleListener::notifyListeners(){
-  
+
 }
