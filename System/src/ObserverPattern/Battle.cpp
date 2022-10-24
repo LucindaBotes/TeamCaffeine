@@ -15,3 +15,27 @@ int Battle::getMember() {
 void Battle::setMember(int member) {
   this->member = member;
 }
+
+void Battle::defend(){
+
+}
+
+void Battle::hold(){
+
+}
+
+void Battle::retreat(){
+
+}
+
+void Battle::surrender(){
+
+}
+
+void Battle::allyAction(){
+
+}
+
+void Battle::attack(){
+
+}
