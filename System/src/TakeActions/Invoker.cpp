@@ -23,6 +23,11 @@ Invoker::~Invoker() {
     delete this->actions[i];
   }
   this->actions.clear();
+  for (int i =0; i < this->actionTracker.size(); i++)
+  {
+    delete this->actionTracker[i];
+  }
+  this->actionTracker.clear();
 }
 
 int Invoker::getMember() {
