@@ -1,5 +1,7 @@
 #include <WarPhases/PeacefulState.h>
 
+using namespace std;
+
 PeacefulState::PeacefulState() {
 }
 

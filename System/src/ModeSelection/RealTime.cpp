@@ -1,7 +1,5 @@
 #include <ModeSelection/RealTime.h>
 
-using namespace std;
-
 RealTime::RealTime() {
 }
 
