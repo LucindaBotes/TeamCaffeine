@@ -2,7 +2,8 @@
 
 using namespace std;
 
-Hold::Hold() {
+Hold::Hold(Battle * battle) {
+  this->battle = battle;
 }
 
 Hold::~Hold() {
@@ -15,3 +16,15 @@ int Hold::getMember() {
 void Hold::setMember(int member) {
   this->member = member;
 }
+
+void Hold::executeAction()
+{
+
+}
+
+void Hold::unexecuteAction()
+{
+  
+}
+
+

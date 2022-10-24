@@ -2,7 +2,8 @@
 
 using namespace std;
 
-AllyAction::AllyAction() {
+AllyAction::AllyAction(Battle * battle) {
+  this->battle = battle;
 }
 
 AllyAction::~AllyAction() {
@@ -14,4 +15,14 @@ int AllyAction::getMember() {
 
 void AllyAction::setMember(int member) {
   this->member = member;
+}
+
+void AllyAction::executeAction()
+{
+
+}
+
+void AllyAction::unexecuteAction()
+{
+  
 }

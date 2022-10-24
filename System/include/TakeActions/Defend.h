@@ -3,9 +3,11 @@
 
 #include <TakeActions/Action.h>
 #include <ObserverPattern/Battle.h>
+
 class Defend : public Action{
   private:
     int member;
+    Battle * battle;
 
   public:
     Defend(Battle * battle);

@@ -2,7 +2,8 @@
 
 using namespace std;
 
-Defend::Defend() {
+Defend::Defend(Battle * battle) {
+  this->battle = battle;
 }
 
 Defend::~Defend() {
@@ -14,4 +15,14 @@ int Defend::getMember() {
 
 void Defend::setMember(int member) {
   this->member = member;
+}
+
+void Defend::executeAction()
+{
+
+}
+
+void Defend::unexecuteAction()
+{
+  
 }

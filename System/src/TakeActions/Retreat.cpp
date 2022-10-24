@@ -2,7 +2,8 @@
 
 using namespace std;
 
-Retreat::Retreat() {
+Retreat::Retreat(Battle * battle) {
+  this->battle = battle;
 }
 
 Retreat::~Retreat() {
@@ -14,4 +15,14 @@ int Retreat::getMember() {
 
 void Retreat::setMember(int member) {
   this->member = member;
+}
+
+void Retreat::executeAction()
+{
+
+}
+
+void Retreat::unexecuteAction()
+{
+  
 }
