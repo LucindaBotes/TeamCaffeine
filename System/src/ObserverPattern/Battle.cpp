@@ -15,3 +15,7 @@ int Battle::getMember() {
 void Battle::setMember(int member) {
   this->member = member;
 }
+
+void Battle::startBattle(){
+  
+}
