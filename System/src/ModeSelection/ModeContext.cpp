@@ -1,5 +1,7 @@
 #include <ModeSelection/ModeContext.h>
 
+using namespace std;
+
 ModeContext::ModeContext(Strategy *s)
 {
     _strategy = s;
