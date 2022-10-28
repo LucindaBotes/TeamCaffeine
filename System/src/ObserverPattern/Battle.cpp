@@ -16,8 +16,12 @@ void Battle::setMember(int member) {
   this->member = member;
 }
 
-void Battle::defend(){
+void Battle::start(){
 
+}
+
+void Battle::defend(){
+  
 }
 
 void Battle::hold(){
