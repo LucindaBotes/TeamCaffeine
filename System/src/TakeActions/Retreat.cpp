@@ -19,5 +19,5 @@ void Retreat::setMember(int member) {
 
 void Retreat::executeAction()
 {
-
+  this->battle->retreat();
 }

@@ -19,7 +19,7 @@ void Hold::setMember(int member) {
 
 void Hold::executeAction()
 {
-
+  this->battle->hold();
 }
 
 

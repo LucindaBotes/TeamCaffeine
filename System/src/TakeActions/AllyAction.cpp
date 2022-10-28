@@ -19,5 +19,5 @@ void AllyAction::setMember(int member) {
 
 void AllyAction::executeAction()
 {
-
+  this->battle->allyAction();
 }

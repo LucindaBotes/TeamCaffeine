@@ -19,5 +19,5 @@ void Attack::setMember(int member) {
 
 void Attack::executeAction()
 {
-
+  this->battle->attack();
 }

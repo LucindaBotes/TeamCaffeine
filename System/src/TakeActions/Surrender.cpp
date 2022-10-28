@@ -19,5 +19,5 @@ void Surrender::setMember(int member) {
 
 void Surrender::executeAction()
 {
-
+  this->battle->surrender();
 }
