@@ -67,16 +67,3 @@ void Invoker::attackEnemyAlliance(){
   this->actions[5]->executeAction();
   this->actionTracker.push_back(this->actions[5]);
 }
-
-void Invoker::undoAction()
-{
-  if (this->actionTracker.size() == 0)
-  {
-    return;
-  }
-  else
-  {
-    this->actionTracker[actions.size() - 1]->unexecuteAction();
-    this->actionTracker.pop_back();
-  }
-}

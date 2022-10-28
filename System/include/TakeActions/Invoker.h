@@ -24,7 +24,6 @@ class Invoker {
     void surrender();
     void requestAlly();
     void attackEnemyAlliance();
-    void undoAction();
 };
 
 #endif
