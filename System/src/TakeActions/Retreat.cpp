@@ -21,8 +21,3 @@ void Retreat::executeAction()
 {
 
 }
-
-void Retreat::unexecuteAction()
-{
-  
-}

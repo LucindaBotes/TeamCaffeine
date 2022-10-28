@@ -21,8 +21,3 @@ void Surrender::executeAction()
 {
 
 }
-
-void Surrender::unexecuteAction()
-{
-  
-}

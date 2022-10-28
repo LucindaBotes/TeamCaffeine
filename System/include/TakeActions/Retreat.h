@@ -15,7 +15,6 @@ class Retreat : public Action{
     void setMember(int);
 
     virtual void executeAction();
-    virtual void unexecuteAction();
 };
 
 #endif

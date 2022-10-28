@@ -21,8 +21,3 @@ void AllyAction::executeAction()
 {
 
 }
-
-void AllyAction::unexecuteAction()
-{
-  
-}

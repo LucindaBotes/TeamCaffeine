@@ -21,8 +21,3 @@ void Defend::executeAction()
 {
 
 }
-
-void Defend::unexecuteAction()
-{
-  
-}

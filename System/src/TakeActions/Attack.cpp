@@ -21,8 +21,3 @@ void Attack::executeAction()
 {
 
 }
-
-void Attack::unexecuteAction()
-{
-  
-}
