@@ -5,15 +5,17 @@
 #include <ObserverPattern/Battle.h>
 #include <vector>
 #include <stack>
+#include <string>
 
 class Invoker {
   private:
     int member;
+    int playerNumber;
     std::vector<Action*> actions;
     std::vector<Action*> actionTracker;
 
   public:
-    Invoker(Battle * battle);
+    Invoker(Battle * battle, int playerNumber);
     ~Invoker();
     int getMember();
     void setMember(int);

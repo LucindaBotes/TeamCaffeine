@@ -6,10 +6,11 @@
 class AllyAction : public Action{
   private:
     int member;
+    int playerNumber;
     Battle *battle;
   
   public:
-    AllyAction(Battle * battle);
+    AllyAction(Battle * battle, int playerNumber);
     ~AllyAction();
     int getMember();
     void setMember(int);

@@ -20,26 +20,68 @@ void Battle::start(){
 
 }
 
-void Battle::defend(){
-  
+void Battle::defend(int playerNumber){
+  if (playerNumber == 1)
+  {
+
+  }
+  else if (playerNumber == 2)
+  {
+
+  }
 }
 
-void Battle::hold(){
+void Battle::hold(int playerNumber){
+  if (playerNumber == 1)
+  {
 
+  }
+  else if (playerNumber == 2)
+  {
+
+  }
 }
 
-void Battle::retreat(){
+void Battle::retreat(int playerNumber){
+  if (playerNumber == 1)
+  {
 
+  }
+  else if (playerNumber == 2)
+  {
+
+  }
 }
 
-void Battle::surrender(){
+void Battle::surrender(int playerNumber){
+  if (playerNumber == 1)
+  {
 
+  }
+  else if (playerNumber == 2)
+  {
+
+  }
 }
 
-void Battle::allyAction(){
+void Battle::allyAction(int playerNumber){
+  if (playerNumber == 1)
+  {
 
+  }
+  else if (playerNumber == 2)
+  {
+
+  }
 }
 
-void Battle::attack(){
+void Battle::attack(int playerNumber){
+  if (playerNumber == 1)
+  {
 
+  }
+  else if (playerNumber == 2)
+  {
+
+  }
 }

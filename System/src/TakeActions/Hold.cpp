@@ -2,8 +2,9 @@
 
 using namespace std;
 
-Hold::Hold(Battle * battle) {
+Hold::Hold(Battle * battle, int playerNumber) {
   this->battle = battle;
+  this->playerNumber = playerNumber;
 }
 
 Hold::~Hold() {
@@ -19,7 +20,7 @@ void Hold::setMember(int member) {
 
 void Hold::executeAction()
 {
-  this->battle->hold();
+  this->battle->hold(this->playerNumber);
 }
 
 

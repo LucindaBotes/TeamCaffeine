@@ -6,10 +6,11 @@
 class Retreat : public Action{
   private:
     int member;
+    int playerNumber;
     Battle *battle;
 
   public:
-    Retreat(Battle * battle);
+    Retreat(Battle * battle, int playerNumber);
     ~Retreat();
     int getMember();
     void setMember(int);

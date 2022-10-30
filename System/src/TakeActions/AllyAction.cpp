@@ -2,8 +2,9 @@
 
 using namespace std;
 
-AllyAction::AllyAction(Battle * battle) {
+AllyAction::AllyAction(Battle * battle, int playerNumber) {
   this->battle = battle;
+  this->playerNumber = playerNumber;
 }
 
 AllyAction::~AllyAction() {
@@ -19,5 +20,5 @@ void AllyAction::setMember(int member) {
 
 void AllyAction::executeAction()
 {
-  this->battle->allyAction();
+  this->battle->allyAction(this->playerNumber);
 }

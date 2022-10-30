@@ -6,10 +6,11 @@
 class Hold : public Action{
   private:
     int member;
+    int playerNumber;
     Battle *battle;
 
   public:
-    Hold(Battle * battle);
+    Hold(Battle * battle, int playerNumber);
     ~Hold();
     int getMember();
     void setMember(int);

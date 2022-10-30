@@ -8,13 +8,14 @@
 
 using namespace std;
 
-Invoker::Invoker(Battle * battle) {
-  this->actions.push_back(new Defend(battle)); // Index 0 = Defend Action
-  this->actions.push_back(new Hold(battle)); // Index 1 = Hold Action
-  this->actions.push_back(new Retreat(battle)); // Index 2 = Retreat Action
-  this->actions.push_back(new Surrender(battle)); // Index 3 = Surrender Action
-  this->actions.push_back(new AllyAction(battle)); // Index 4 = AllyAction Action
-  this->actions.push_back(new Attack(battle)); // Index 5 = Attack Action
+Invoker::Invoker(Battle * battle, int playerNumber) {
+  this->actions.push_back(new Defend(battle, playerNumber)); // Index 0 = Defend Action
+  this->actions.push_back(new Hold(battle, playerNumber)); // Index 1 = Hold Action
+  this->actions.push_back(new Retreat(battle, playerNumber)); // Index 2 = Retreat Action
+  this->actions.push_back(new Surrender(battle, playerNumber)); // Index 3 = Surrender Action
+  this->actions.push_back(new AllyAction(battle, playerNumber)); // Index 4 = AllyAction Action
+  this->actions.push_back(new Attack(battle, playerNumber)); // Index 5 = Attack Action
+  this->playerNumber = playerNumber;
 }
 
 Invoker::~Invoker() {

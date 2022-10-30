@@ -2,8 +2,9 @@
 
 using namespace std;
 
-Attack::Attack(Battle * battle) {
+Attack::Attack(Battle * battle, int playerNumber) {
   this->battle = battle;
+  this->playerNumber = playerNumber;
 }
 
 Attack::~Attack() {
@@ -19,5 +20,5 @@ void Attack::setMember(int member) {
 
 void Attack::executeAction()
 {
-  this->battle->attack();
+  this->battle->attack(this->playerNumber);
 }

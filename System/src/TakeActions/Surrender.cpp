@@ -2,8 +2,9 @@
 
 using namespace std;
 
-Surrender::Surrender(Battle * battle) {
+Surrender::Surrender(Battle * battle, int playerNumber) {
   this->battle = battle;
+  this->playerNumber = playerNumber;
 }
 
 Surrender::~Surrender() {
@@ -19,5 +20,5 @@ void Surrender::setMember(int member) {
 
 void Surrender::executeAction()
 {
-  this->battle->surrender();
+  this->battle->surrender(this->playerNumber);
 }
