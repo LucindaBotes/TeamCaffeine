@@ -15,7 +15,7 @@ class Battle {
   public:
     Battle();
     ~Battle();
-    void start();//Might not need this function, War object will start the battle.
+    void start(Invoker * player1, Invoker * player2);
     int getMember();
     void setMember(int);
     

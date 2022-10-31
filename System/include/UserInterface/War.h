@@ -22,6 +22,7 @@ class War {
     void setPlayer2();
     Invoker * getPlayer1();
     Invoker * getPlayer2();
+    void addBattle (Battle * battle);
 
 };
 

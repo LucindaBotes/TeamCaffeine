@@ -36,3 +36,9 @@ Invoker * War::getPlayer1()
   return this->Player_2;
 }
 
+void War::addBattle(Battle * battle)
+{
+  this->battles.push_back(battle);
+}
+
+

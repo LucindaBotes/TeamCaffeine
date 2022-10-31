@@ -11,6 +11,7 @@ class Invoker {
   private:
     int member;
     int playerNumber;
+    int nextaction;
     std::vector<Action*> actions;
     std::vector<Action*> actionTracker;
 
@@ -26,6 +27,8 @@ class Invoker {
     void surrender();
     void requestAlly();
     void attackEnemyAlliance();
+    void nextAction(int action);
+    int getNextAction();
 };
 
 #endif

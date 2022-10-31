@@ -68,3 +68,13 @@ void Invoker::attackEnemyAlliance(){
   this->actions[5]->executeAction();
   this->actionTracker.push_back(this->actions[5]);
 }
+
+void Invoker::nextAction(int action)
+{
+  this->nextaction = action;
+}
+
+int Invoker::getNextAction()
+{
+  return this->nextaction;
+}
