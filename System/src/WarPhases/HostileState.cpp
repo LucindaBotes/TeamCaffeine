@@ -15,5 +15,5 @@ string HostileState::getState()
 
 void HostileState::setState(WarPhaseContext* s)
 {
-    s->setState(new ColdState());
+    s->setState(new PeacefulState());
 }

@@ -4,8 +4,8 @@ using namespace std;
 
 WarPhaseContext::WarPhaseContext() 
 {
-    _state = new PeacefulState();
-    cout << "The War is still at a peaceful state." << endl;
+    _state = new ColdState();
+    cout << "The War is still at a ColdState." << endl;
 }
 
 WarPhaseContext::~WarPhaseContext() 
