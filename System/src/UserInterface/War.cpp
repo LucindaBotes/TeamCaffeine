@@ -6,6 +6,13 @@ War::War() {
 }
 
 War::~War() {
+  delete this->Player_1;
+  delete this->Player_2;
+  for (int i =0; i < this->battles.size(); i++)
+  {
+    delete this->battles[i];
+  }
+  this->battles.clear();
 }
 
 int War::getMember() {
