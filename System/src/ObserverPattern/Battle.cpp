@@ -17,54 +17,161 @@ void Battle::setMember(int member) {
 }
 
 void Battle::start(Invoker * player1, Invoker * player2){
-  if (player1->getNextAction() == 0)
+  if (player1->getNextAction() == 0)//If player1 Defends
   {
-    player1->defendAlliance();
-  }
-  else if (player1->getNextAction() == 1)
-  {
-    player1->hold();
-  }
-  else if (player1->getNextAction() == 2)
-  {
-    player1->retreat();
-  }
-  else if (player1->getNextAction() == 3)
-  {
-    player1->surrender();
-  }
-  else if (player1->getNextAction() == 4)
-  {
-    player1->requestAlly();
-  }
-  else if (player1->getNextAction() == 5)
-  {
-    player1->attackEnemyAlliance();
-  }
+    if (player2->getNextAction() == 0){
 
-  if (player2->getNextAction() == 0)
-  {
-    player2->defendAlliance();
+    }
+    else if (player2->getNextAction() == 1)
+    {
+
+    }
+    else if (player2->getNextAction() == 2)
+    {
+
+    }
+    else if (player2->getNextAction() == 3)
+    {
+
+    }
+    else if (player2->getNextAction() == 4)
+    {
+
+    }
+    else if (player2->getNextAction() == 5)
+    {
+
+    }
   }
-  else if (player2->getNextAction() == 1)
+  else if (player1->getNextAction() == 1)//If player 1 Holds
   {
-    player2->hold();
+    if (player2->getNextAction() == 0){
+
+    }
+    else if (player2->getNextAction() == 1)
+    {
+
+    }
+    else if (player2->getNextAction() == 2)
+    {
+
+    }
+    else if (player2->getNextAction() == 3)
+    {
+
+    }
+    else if (player2->getNextAction() == 4)
+    {
+
+    }
+    else if (player2->getNextAction() == 5)
+    {
+
+    }
   }
-  else if (player2->getNextAction() == 2)
+  else if (player1->getNextAction() == 2)//If player 1 retreats
   {
-    player2->retreat();
+    if (player2->getNextAction() == 0){
+
+    }
+    else if (player2->getNextAction() == 1)
+    {
+
+    }
+    else if (player2->getNextAction() == 2)
+    {
+
+    }
+    else if (player2->getNextAction() == 3)
+    {
+
+    }
+    else if (player2->getNextAction() == 4)
+    {
+
+    }
+    else if (player2->getNextAction() == 5)
+    {
+
+    }
   }
-  else if (player2->getNextAction() == 3)
+  else if (player1->getNextAction() == 3)//If player 1 surrenders
   {
-    player2->surrender();
+    if (player2->getNextAction() == 0){
+
+    }
+    else if (player2->getNextAction() == 1)
+    {
+
+    }
+    else if (player2->getNextAction() == 2)
+    {
+
+    }
+    else if (player2->getNextAction() == 3)
+    {
+
+    }
+    else if (player2->getNextAction() == 4)
+    {
+
+    }
+    else if (player2->getNextAction() == 5)
+    {
+
+    }
   }
-  else if (player2->getNextAction() == 4)
+  else if (player1->getNextAction() == 4)//If player 1 requestsAlly
   {
-    player2->requestAlly();
+    if (player2->getNextAction() == 0){
+
+    }
+    else if (player2->getNextAction() == 1)
+    {
+
+    }
+    else if (player2->getNextAction() == 2)
+    {
+
+    }
+    else if (player2->getNextAction() == 3)
+    {
+
+    }
+    else if (player2->getNextAction() == 4)
+    {
+
+    }
+    else if (player2->getNextAction() == 5)
+    {
+
+    }
   }
-  else if (player2->getNextAction() == 5)
+  else if (player1->getNextAction() == 5)//If player 1 attacks
   {
-    player2->attackEnemyAlliance();
+    if (player2->getNextAction() == 0){
+
+    }
+    else if (player2->getNextAction() == 1)
+    {
+
+    }
+    else if (player2->getNextAction() == 2)
+    {
+
+    }
+    else if (player2->getNextAction() == 3)
+    {
+
+    }
+    else if (player2->getNextAction() == 4)
+    {
+
+    }
+    else if (player2->getNextAction() == 5)
+    {
+
+    }
   }
 
 }
