@@ -24,18 +24,17 @@ Interface::Interface()
     cout << "Please Enter The Details Of Both Countries Involved In This War: " << endl;
     for(int i = 0; i < 2; i++)
     {
+        cout << "We have the following countries, please choose the country you want? " << endl;
+        for(int i = 0; i < warObject->getCountriesAtWar(); i++)
+        {
+          //print countries
+        }
+
         //changes highly possible
         cout << "Details For Country " << i << " : " << endl;
         cout << "The Country's Name: ";
         cin >> cName;
-        cout << "The Country's Soldiers: ";
-        cin >> cSoldiers;
-        cout << "The Country's Allies: ";
-        cin >> cAllies;
-        cout << "The Country's Equipment: ";
-        cin >> cEquipment;
 
-        //warObject->setCountriesAtWar(Country(cName, cSoldiers, cEquipment));
     }
 
     warObject->setActive(true);
