@@ -8,6 +8,7 @@ Design::Design() {
 Design::~Design() {
 }
 
+/// @brief it shows that user that they selected the design mode
 void Design::startSimulation()
 {
     cout << "\tYou've choosen the Design Mode, here" << endl;
