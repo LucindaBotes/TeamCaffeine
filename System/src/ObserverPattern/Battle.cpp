@@ -1,8 +1,10 @@
 #include <ObserverPattern/Battle.h>
+#include <string>
 
 using namespace std;
 
-Battle::Battle() {
+Battle::Battle(std::string name) {
+  this->name = name;
 }
 
 Battle::~Battle() {
