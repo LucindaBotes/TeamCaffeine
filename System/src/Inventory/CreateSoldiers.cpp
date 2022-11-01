@@ -2,22 +2,35 @@
 
 using namespace std;
 
-/**
- * @brief Create a Soldiers:: Create Soldiers object
+/** @file CreateSoldiers.h
+ *  @brief CreateSoldiers class implementation,
+ *  Design Patterns:
+ *  @li Design Pattern: Abstract Factory
+ *  @li Participant: ConcreteFactory
+ *
+ *  @details CreateSoldiers is responsible for creating the soldiers entities and the iterator for the Soldiers class.
+ *  @authors: Lucinda Botes, u19048263
  */
-CreateSoldiers::CreateSoldiers() {
+
+/**
+ * @brief CreateSoldiers:: Constructor for Soldiers object
+ */
+CreateSoldiers::CreateSoldiers()
+{
 }
 
 /**
- * @brief Destroy a Soldiers:: Destroy Soldiers object
+ * @brief ~CreateSoldiers:: Destructor for Soldiers object
  */
-CreateSoldiers::~CreateSoldiers() {
+CreateSoldiers::~CreateSoldiers()
+{
 }
 
 /**
- * @brief Create a Soldiers:: Create Soldiers Entity
+ * @brief CreateSoldiersEntity:: Create a Soldiers Entity
  * @return Soldiers*
  */
-Soldiers * CreateSoldiers::createSoldiersEntity() {
+Soldiers *CreateSoldiers::createSoldiersEntity()
+{
   return new Soldiers();
 }
