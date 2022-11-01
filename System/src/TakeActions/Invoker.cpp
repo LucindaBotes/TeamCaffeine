@@ -1,7 +1,6 @@
 #include <TakeActions/Invoker.h>
 #include <TakeActions/Defend.h>
 #include <TakeActions/Hold.h>
-#include <TakeActions/Retreat.h>
 #include <TakeActions/Surrender.h>
 #include <TakeActions/AllyAction.h>
 #include <TakeActions/Attack.h>
@@ -11,10 +10,9 @@ using namespace std;
 Invoker::Invoker(Battle * battle, int playerNumber) {
   this->actions.push_back(new Defend(battle, playerNumber)); // Index 0 = Defend Action
   this->actions.push_back(new Hold(battle, playerNumber)); // Index 1 = Hold Action
-  this->actions.push_back(new Retreat(battle, playerNumber)); // Index 2 = Retreat Action
-  this->actions.push_back(new Surrender(battle, playerNumber)); // Index 3 = Surrender Action
-  this->actions.push_back(new AllyAction(battle, playerNumber)); // Index 4 = AllyAction Action
-  this->actions.push_back(new Attack(battle, playerNumber)); // Index 5 = Attack Action
+  this->actions.push_back(new Surrender(battle, playerNumber)); // Index 2 = Surrender Action
+  this->actions.push_back(new AllyAction(battle, playerNumber)); // Index 3 = AllyAction Action
+  this->actions.push_back(new Attack(battle, playerNumber)); // Index 4 = Attack Action
   this->playerNumber = playerNumber;
 }
 
@@ -49,24 +47,19 @@ void Invoker::hold(){
   this->actionTracker.push_back(this->actions[1]);
 }
 
-void Invoker::retreat(){
+void Invoker::surrender(){
   this->actions[2]->executeAction();
   this->actionTracker.push_back(this->actions[2]);
 }
 
-void Invoker::surrender(){
+void Invoker::requestAlly(){
   this->actions[3]->executeAction();
   this->actionTracker.push_back(this->actions[3]);
 }
 
-void Invoker::requestAlly(){
+void Invoker::attackEnemyAlliance(){
   this->actions[4]->executeAction();
   this->actionTracker.push_back(this->actions[4]);
-}
-
-void Invoker::attackEnemyAlliance(){
-  this->actions[5]->executeAction();
-  this->actionTracker.push_back(this->actions[5]);
 }
 
 void Invoker::nextAction(int action)

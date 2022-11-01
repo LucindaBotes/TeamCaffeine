@@ -23,7 +23,6 @@ class Invoker {
 
     void defendAlliance();
     void hold();
-    void retreat();
     void surrender();
     void requestAlly();
     void attackEnemyAlliance();

@@ -21,26 +21,22 @@ void Battle::setMember(int member) {
 void Battle::start(Invoker * player1, Invoker * player2){
   if (player1->getNextAction() == 0)//If player1 Defends
   {
-    if (player2->getNextAction() == 0){
+    if (player2->getNextAction() == 0){//Defends
 
     }
-    else if (player2->getNextAction() == 1)
+    else if (player2->getNextAction() == 1)//Holds
     {
 
     }
-    else if (player2->getNextAction() == 2)
+    else if (player2->getNextAction() == 2)//surrenders
     {
 
     }
-    else if (player2->getNextAction() == 3)
+    else if (player2->getNextAction() == 3)//requestAlly
     {
 
     }
-    else if (player2->getNextAction() == 4)
-    {
-
-    }
-    else if (player2->getNextAction() == 5)
+    else if (player2->getNextAction() == 4)//attacks
     {
 
     }
@@ -66,12 +62,8 @@ void Battle::start(Invoker * player1, Invoker * player2){
     {
 
     }
-    else if (player2->getNextAction() == 5)
-    {
-
-    }
   }
-  else if (player1->getNextAction() == 2)//If player 1 retreats
+  else if (player1->getNextAction() == 2)//If player 1 surrenders
   {
     if (player2->getNextAction() == 0){
 
@@ -92,12 +84,8 @@ void Battle::start(Invoker * player1, Invoker * player2){
     {
 
     }
-    else if (player2->getNextAction() == 5)
-    {
-
-    }
   }
-  else if (player1->getNextAction() == 3)//If player 1 surrenders
+  else if (player1->getNextAction() == 3)//If player 1 requestsAlly
   {
     if (player2->getNextAction() == 0){
 
@@ -118,12 +106,8 @@ void Battle::start(Invoker * player1, Invoker * player2){
     {
 
     }
-    else if (player2->getNextAction() == 5)
-    {
-
-    }
   }
-  else if (player1->getNextAction() == 4)//If player 1 requestsAlly
+  else if (player1->getNextAction() == 4)//If player 1 attacks
   {
     if (player2->getNextAction() == 0){
 
@@ -144,41 +128,21 @@ void Battle::start(Invoker * player1, Invoker * player2){
     {
 
     }
-    else if (player2->getNextAction() == 5)
-    {
-
-    }
   }
-  else if (player1->getNextAction() == 5)//If player 1 attacks
-  {
-    if (player2->getNextAction() == 0){
-
-    }
-    else if (player2->getNextAction() == 1)
-    {
-
-    }
-    else if (player2->getNextAction() == 2)
-    {
-
-    }
-    else if (player2->getNextAction() == 3)
-    {
-
-    }
-    else if (player2->getNextAction() == 4)
-    {
-
-    }
-    else if (player2->getNextAction() == 5)
-    {
-
-    }
-  }
-
 }
 
-void Battle::defend(int playerNumber){
+void Battle::defend(int playerNumber){//Uses Defense statistic
+  if (playerNumber == 1)
+  {
+    
+  }
+  else if (playerNumber == 2)
+  {
+
+  }
+}
+
+void Battle::hold(int playerNumber){//Hold does nothing
   if (playerNumber == 1)
   {
 
@@ -189,7 +153,7 @@ void Battle::defend(int playerNumber){
   }
 }
 
-void Battle::hold(int playerNumber){
+void Battle::surrender(int playerNumber){//Terminate war give up
   if (playerNumber == 1)
   {
 
@@ -200,7 +164,7 @@ void Battle::hold(int playerNumber){
   }
 }
 
-void Battle::retreat(int playerNumber){
+void Battle::allyAction(int playerNumber){//request ally
   if (playerNumber == 1)
   {
 
@@ -211,29 +175,7 @@ void Battle::retreat(int playerNumber){
   }
 }
 
-void Battle::surrender(int playerNumber){
-  if (playerNumber == 1)
-  {
-
-  }
-  else if (playerNumber == 2)
-  {
-
-  }
-}
-
-void Battle::allyAction(int playerNumber){
-  if (playerNumber == 1)
-  {
-
-  }
-  else if (playerNumber == 2)
-  {
-
-  }
-}
-
-void Battle::attack(int playerNumber){
+void Battle::attack(int playerNumber){//Normal attack
   if (playerNumber == 1)
   {
 

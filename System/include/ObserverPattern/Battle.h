@@ -24,7 +24,6 @@ class Battle {
     
     void defend(int playerNumber);
     void hold(int playerNumber);
-    void retreat(int playerNumber);
     void surrender(int playerNumber);
     void allyAction(int playerNumber);
     void attack(int playerNumber);
