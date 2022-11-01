@@ -16,7 +16,7 @@ string PeacefulState::getState()
     return "Peaceful";
 }
 
-/// @brief Changes the state from PeacefulState to ColdState using the context
+/// @brief Changes the state from PeacefulState to ColdState using the context Participant
 /// @param s 
 void PeacefulState::setState(WarPhaseContext* s)
 {
