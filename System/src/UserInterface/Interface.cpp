@@ -41,6 +41,7 @@ Interface::Interface()
     
 }
 
+/// @brief deallocate the dynamically allocated War pointer
 Interface::~Interface() 
 {
   if(warObject != NULL)
