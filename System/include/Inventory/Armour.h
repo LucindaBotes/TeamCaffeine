@@ -3,20 +3,21 @@
 
 #include <Inventory/Entity.h>
 
-class Armour : public Entity{
-  protected:
-    double _armour;
+class Armour : public Entity
+{
+protected:
+  double _armour;
 
-  public:
-    Armour();
-    Armour(double);
-    Armour(const Armour &a);
-    ~Armour();
+public:
+  Armour();
+  Armour(double);
+  Armour(const Armour &a);
+  ~Armour();
 
-    Entity* clone() override;
+  Entity *clone() override;
 
-    double getArmour() const;
-    void setArmour(double armour);
+  double getArmour() const;
+  void setArmour(double armour);
 };
 
 #endif
