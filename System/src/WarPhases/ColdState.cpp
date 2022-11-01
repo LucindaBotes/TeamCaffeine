@@ -15,7 +15,7 @@ string ColdState::getState()
     return "ColdState";
 }
 
-/// @brief Changes the state from ColdState to HostileState using the context
+/// @brief Changes the state from ColdState to HostileState using the context Participant
 /// @param s 
 void ColdState::setState(WarPhaseContext* s)
 {
