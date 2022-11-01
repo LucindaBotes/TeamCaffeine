@@ -10,7 +10,7 @@ PeacefulState::~PeacefulState() {
 
 
 /// @brief returns the current state name, PeacefulState
-/// @return String 
+/// @return name of state, which is Peaceful 
 string PeacefulState::getState()
 {
     return "Peaceful";

@@ -2,14 +2,7 @@
 using namespace std;
 
 WarPhaseState::WarPhaseState() 
-{
-
-}
+{}
 
 WarPhaseState::~WarPhaseState() 
-{
-  
-}
-
-string WarPhaseState::getState()
 {}

@@ -9,7 +9,7 @@ HostileState::~HostileState() {
 }
 
 /// @brief returns the current state name, HostileState
-/// @return String 
+/// @return name of state, which is Hostile
 string HostileState::getState()
 {
     return "Hostile";

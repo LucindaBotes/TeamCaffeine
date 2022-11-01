@@ -30,8 +30,6 @@ class War
     void setPhase(WarPhaseState* p);
 
     void setName(string name);
-    void setCountriesAtWar(Country country);
-    void setBattle(Battle battle);
     void setActive(bool activeness);
 
     string getName();

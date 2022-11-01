@@ -9,7 +9,7 @@ ColdState::~ColdState() {
 }
 
 /// @brief returns the current state name, ColdState
-/// @return String
+/// @return name of state, which is ColdState
 string ColdState::getState()
 {
     return "ColdState";
