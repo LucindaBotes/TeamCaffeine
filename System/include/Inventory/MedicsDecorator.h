@@ -10,8 +10,6 @@ class MedicsDecorator : public EntityDecorator
         MedicsDecorator(const MedicsDecorator& md);
         ~MedicsDecorator();
         virtual Entity* clone() override;
-        //TODO: Implement decorator specific functions below:
-
 };
 
 #endif

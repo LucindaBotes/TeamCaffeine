@@ -4,12 +4,8 @@ using namespace std;
 
 // TODO: Add doxygen comments here
 
-EntityDecorator::EntityDecorator() {
+EntityDecorator::EntityDecorator(EntityType t) : Entity(t){
 }
 
 EntityDecorator::~EntityDecorator() {
-}
-
-EntityDecoratorType EntityDecorator::getType() const {
-  return this->_decoratorType;
 }

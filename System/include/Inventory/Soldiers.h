@@ -11,12 +11,11 @@ class Soldiers : public Entity {
 
   public:
     Soldiers();
-    Soldiers(double);
+    Soldiers(double, double, int);
     Soldiers(const Soldiers& soldiers);
     ~Soldiers() override;
     
     Entity* clone() override;
-    void addEntity(Entity* e) override;
     
     double getDamage() const;
     double getArmour() const;

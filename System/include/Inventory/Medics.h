@@ -14,7 +14,6 @@ class Medics : public EntityDecorator {
     virtual ~Medics() override;
 
     Entity* clone() override;
-    void addEntity(Entity* e) override;
 
     double getHeal() const;
     void setHeal(double heal);

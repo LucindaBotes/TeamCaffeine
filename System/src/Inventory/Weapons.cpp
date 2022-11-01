@@ -19,18 +19,17 @@ using namespace std;
 */
 
 
-Weapons::Weapons()
-{ 
-  this->_type = EntityType::WEAPON;
+Weapons::Weapons() : EntityDecorator(EntityType::WEAPON) {
+  this->_damage = 0;
 }
 
-Weapons::Weapons(const Weapons& w)
-{
-  this->_type = EntityType::WEAPON;
+Weapons::Weapons(double damage) : EntityDecorator(EntityType::WEAPON) {
+  this->_damage = damage;
+}
 
+Weapons::Weapons(const Weapons& w) : EntityDecorator(EntityType::WEAPON)
+{
   this->_damage = w._damage;
-  this->_armour = w._armour;
-  this->_vehicles = w._vehicles;
 }
 
 Weapons::~Weapons() {
@@ -40,32 +39,10 @@ Entity* Weapons::clone() {
   return new Weapons(*this);
 }
 
-void Weapons::addEntity(Entity* e) {
-  //TODO: implement
-}
-
 double Weapons::getDamage() const {
   return this->_damage;
-}
-
-double Weapons::getArmour() const {
-  return this->_armour;
-}
-
-int Weapons::getVehicles() const {
-  return this->_vehicles;
 }
 
 void Weapons::setDamage(double damage) {
   this->_damage = damage;
 }
-
-void Weapons::setArmour(double armour) {
-  this->_armour = armour;
-}
-
-void Weapons::setVehicles(int vehicles) {
-  this->_vehicles = vehicles;
-
-
-

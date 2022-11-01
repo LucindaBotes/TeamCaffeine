@@ -18,19 +18,16 @@ using namespace std;
 *TODO:  @todo Override base class decorator extra method
 */
 
-Supplies::Supplies() {
+Supplies::Supplies() : EntityDecorator(EntityType::SUPPLIES) {
   this->_health = 0;
 }
 
-Supplies::Supplies(const Supplies &s){
-
+Supplies::Supplies(double health) : EntityDecorator(EntityType::SUPPLIES) {
+  this->_health = health;
 }
 
-Supplies::Supplies(const Supplies& soldiers)
-{
-  this->_type = EntityType::SUPPLIES;
-
-  this->_health = soldiers._health;
+Supplies::Supplies(const Supplies &s ) : EntityDecorator(EntityType::SUPPLIES) {
+  this->_health = s._health;
 }
 
 Supplies::~Supplies() {
@@ -38,10 +35,6 @@ Supplies::~Supplies() {
 
 Entity* Supplies::clone(){
   return new Supplies(*this);
-}
-
-void Supplies::addEntity(Entity* e) {
-  // TODO: implement
 }
 
 double Supplies::getHealth() const

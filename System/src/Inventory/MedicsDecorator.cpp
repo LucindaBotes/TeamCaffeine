@@ -2,11 +2,11 @@
 
 using namespace std;
 
-MedicsDecorator::MedicsDecorator() {
+MedicsDecorator::MedicsDecorator() : EntityDecorator(EntityType::MEDIC) {
+
 }
 
-MedicsDecorator::MedicsDecorator(const MedicsDecorator& md) {
-    this->_decoratorType = EntityDecoratorType::MEDIC;
+MedicsDecorator::MedicsDecorator(const MedicsDecorator& md) : EntityDecorator(EntityType::MEDIC) {
     this->_wrappedEntity = md._wrappedEntity->clone();
 }
 

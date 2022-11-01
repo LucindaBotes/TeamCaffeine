@@ -17,16 +17,23 @@ using namespace std;
 *TODO:  @todo Override base class decorator extra method
 */
 
-Soldiers::Soldiers() {
+Soldiers::Soldiers() :  Entity(EntityType::SOLDIER) {
+  this->_damage = 0;
+  this->_armour = 0;
+  this->_count = 0;
 }
 
-Soldiers::Soldiers(const Soldiers& soldiers)
+Soldiers::Soldiers(const Soldiers& soldiers) : Entity(EntityType::SOLDIER)
 {
-  this->_type = EntityType::SOLDIER;
-
   this->_damage = soldiers._damage;
   this->_armour = soldiers._armour;
   this->_count = soldiers._count;
+}
+
+Soldiers::Soldiers(double damage, double armour, int count) : Entity(EntityType::SOLDIER) {
+  this->_damage = damage;
+  this->_armour = armour;
+  this->_count = count;
 }
 
 Soldiers::~Soldiers() {
@@ -34,10 +41,6 @@ Soldiers::~Soldiers() {
 
 Entity* Soldiers::clone() {
   return new Soldiers(*this);
-}
-
-void Soldiers::addEntity(Entity* e) {
-  //TODO: implement
 }
 
 double Soldiers::getDamage() const {

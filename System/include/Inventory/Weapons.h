@@ -7,8 +7,6 @@ class Weapons : public EntityDecorator{
 
   private:
     double _damage;
-    double _armour;
-    int _vehicles;
 
   public:
     Weapons();
@@ -17,14 +15,9 @@ class Weapons : public EntityDecorator{
     virtual ~Weapons() override;
 
     Entity* clone() override;
-    void addEntity(Entity* e) override;
 
     double getDamage() const;
-    double getArmour() const;
-    int getVehicles() const;
     void setDamage(double damage);
-    void setArmour(double armour);
-    void setVehicles(int vehicles);
 };
 
 #endif

@@ -14,7 +14,6 @@ class Armour : public EntityDecorator{
     ~Armour();
 
     Entity* clone() override;
-    void addEntity(Entity* e) override;
 
     double getArmour() const;
     void setArmour(double armour);

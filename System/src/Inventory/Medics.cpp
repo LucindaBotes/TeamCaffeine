@@ -17,15 +17,18 @@ using namespace std;
 *TODO:  @todo Override base class decorator extra method
 */
 
-Medics::Medics()
+Medics::Medics() : EntityDecorator(EntityType::MEDIC)
 {
-  // this->head = 0;
-  this->_type = EntityType::MEDIC;
+    this->_heal = 0;
 }
 
-Medics::Medics(const Medics& m)
+Medics::Medics(double heal) : EntityDecorator(EntityType::MEDIC)
 {
-    this->_type = EntityType::MEDIC;
+    this->_heal = heal;
+}
+
+Medics::Medics(const Medics& m) : EntityDecorator(EntityType::MEDIC)
+{
     this->_heal = m._heal;
 }
 
@@ -34,10 +37,6 @@ Medics::~Medics() {
 
 Entity* Medics::clone() {
     return new Medics(*this);
-}
-
-void Medics::addEntity(Entity* e) {
-    //TODO: implement
 }
 
 double Medics::getHeal() const {

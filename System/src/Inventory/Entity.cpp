@@ -18,8 +18,8 @@ using namespace std;
 *TODO:  @todo Define decorator extra method
 */
 
-Entity::Entity() {
-
+Entity::Entity(EntityType t) {
+  this->_type = t;
 }
 
 Entity::~Entity() {
@@ -41,4 +41,10 @@ double Entity::getPrice() const
 void Entity::setPrice(double price)
 {
   _price = price;
+}
+
+void Entity::addEntity(Entity* e)
+{
+  e->_next = this->_head;
+  this->_head = e;
 }
