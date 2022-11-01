@@ -8,11 +8,15 @@ HostileState::HostileState() {
 HostileState::~HostileState() {
 }
 
+/// @brief returns the current state name, HostileState
+/// @return String 
 string HostileState::getState()
 {
     return "Hostile";
 }
 
+/// @brief Changes the state from HostileState to PeacefulState using the context
+/// @param s 
 void HostileState::setState(WarPhaseContext* s)
 {
     s->setState(new PeacefulState());
