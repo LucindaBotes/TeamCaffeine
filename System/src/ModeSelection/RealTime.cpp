@@ -7,6 +7,7 @@ RealTime::RealTime() {
 RealTime::~RealTime() {
 }
 
+/// @brief Shows the user that they selected the Real time mode
 void RealTime::startSimulation()
 {
   cout << "\tYou've choosen the Real-Time Mode, here" << endl;
