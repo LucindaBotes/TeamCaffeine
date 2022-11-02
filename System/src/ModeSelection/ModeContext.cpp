@@ -2,11 +2,14 @@
 
 using namespace std;
 
+/// @brief initializes the strategy pointer 
+/// @param s 
 ModeContext::ModeContext(Strategy *s)
 {
     _strategy = s;
 }
 
+/// @brief deallocate the strategy pointer
 ModeContext::~ModeContext()
 {
     delete _strategy;
