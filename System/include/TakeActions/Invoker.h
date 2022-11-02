@@ -16,11 +16,11 @@ class Invoker {
     std::vector<Action*> actionTracker;
 
   public:
-    Invoker(Battle * battle, int playerNumber);
+    Invoker(int playerNumber);
     ~Invoker();
     int getMember();
     void setMember(int);
-
+    void setBattleActions(Battle * battle);
     void defendAlliance();
     void hold();
     void surrender();
