@@ -1,4 +1,5 @@
 #include <CountrySelection/Country.h>
+#include <vector>
 
 using namespace std;
 
@@ -14,4 +15,9 @@ int Country::getMember() {
 
 void Country::setMember(int member) {
   this->member = member;
+}
+
+std::vector<Country*> Country::getAllies()
+{
+  return this->_allies;
 }

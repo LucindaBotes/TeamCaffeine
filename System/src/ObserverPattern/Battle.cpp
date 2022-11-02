@@ -18,6 +18,20 @@ void Battle::setMember(int member) {
   this->member = member;
 }
 
+void Battle::setPlayerCountries(Country * player1, Country * player2)
+{
+  this->Alliance_A.push_back(player1);
+  this->Alliance_A.push_back(player2);
+  for (int i=0; i < player1->getAllies().size(); i++)
+  {
+    this->Alliance_A.push_back(player1->getAllies()[i]);
+  }
+  for (int i=0; i < player2->getAllies().size(); i++)
+  {
+    this->Alliance_B.push_back(player2->getAllies()[i]);
+  }
+}
+
 void Battle::start(Invoker * player1, Invoker * player2){
   if (player1->getNextAction() == 0)//If player1 Defends
   {

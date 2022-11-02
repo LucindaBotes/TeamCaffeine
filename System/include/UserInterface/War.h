@@ -3,16 +3,18 @@
 
 #include <TakeActions/Invoker.h>
 #include <ObserverPattern/Battle.h>
+#include <CountrySelection/Country.h>
 #include <vector>
 
 class War {
   private:
     int member;
+    Country * country_1;
+    Country * country_2;
     Invoker * Player_1;
     Invoker * Player_2;
     std::vector<Battle*> battles;
-
-
+  
   public:
     War();
     ~War();
