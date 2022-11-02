@@ -16,3 +16,8 @@ void ModeContext::start()
 {
     _strategy->startSimulation();
 }
+
+void ModeContext::Undo()
+{
+    _strategy->undo();
+}

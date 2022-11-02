@@ -12,5 +12,6 @@ class ModeContext
     ModeContext(Strategy *s);
     ~ModeContext();
     void start();
+    void Undo();
 };
 #endif
