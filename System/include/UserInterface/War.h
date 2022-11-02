@@ -20,6 +20,10 @@ class War {
     ~War();
     int getMember();
     void setMember(int);
+    void setPlayer1_Country(Country * player1Country);
+    void setPlayer2_Country(Country * player2Country);
+    Country * getPlayer1_Country();
+    Country * getPlayer2_Country();
     void setPlayer1();
     void setPlayer2();
     Invoker * getPlayer1();

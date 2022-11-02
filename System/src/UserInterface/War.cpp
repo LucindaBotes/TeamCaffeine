@@ -48,4 +48,22 @@ void War::addBattle(Battle * battle)
   this->battles.push_back(battle);
 }
 
+void War::setPlayer1_Country(Country * player1Country)
+{
+  this->country_1 = player1Country;
+}
+
+void War::setPlayer2_Country(Country * player2Country)
+{
+  this->country_2 = player2Country;
+}
+
+Country * War::getPlayer1_Country()
+{
+  return this->country_1;
+}
+Country * War::getPlayer2_Country()
+{
+  return this->country_2;
+}
 
