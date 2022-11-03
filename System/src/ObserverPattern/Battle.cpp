@@ -1,4 +1,5 @@
 #include <ObserverPattern/Battle.h>
+#include <iostream>
 #include <string>
 
 using namespace std;
@@ -155,6 +156,7 @@ void Battle::defend(int playerNumber){//Uses Defense statistic
         this->Alliance_A[i]->getStats().setHealth(this->Alliance_A[i]->getStats().getHealth() + 20);
       }
     }
+    cout<<"Player 1 defends..."<<endl;
   }
   else if (playerNumber == 2)
   {
@@ -165,28 +167,29 @@ void Battle::defend(int playerNumber){//Uses Defense statistic
         this->Alliance_B[i]->getStats().setHealth(this->Alliance_B[i]->getStats().getHealth() + 20);
       }
     }
+    cout<<"Player 1 defends..."<<endl;
   }
 }
 
 void Battle::hold(int playerNumber){//Hold does nothing
   if (playerNumber == 1)
   {
-
+    cout<<"Player 1 Holds..."<<endl;
   }
   else if (playerNumber == 2)
   {
-
+    cout<<"Player 1 Holds..."<<endl;
   }
 }
 
 void Battle::surrender(int playerNumber){//Terminate war give up
   if (playerNumber == 1)
   {
-
+    cout<<"Player 1 has Surrendered!"<<endl;
   }
   else if (playerNumber == 2)
   {
-
+    cout<<"Player 2 has Surrendered!"<<endl;
   }
 }
 
@@ -204,7 +207,7 @@ void Battle::allyAction(int playerNumber){//request ally
 void Battle::attack(int playerNumber){//Normal attack
   if (playerNumber == 1)
   {
-
+    
   }
   else if (playerNumber == 2)
   {
