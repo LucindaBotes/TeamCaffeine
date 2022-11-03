@@ -28,6 +28,7 @@ class Battle {
     void surrender(int playerNumber);
     void allyAction(int playerNumber);
     void attack(int playerNumber);
+    double calculateDamage(int playerNumber);
 };
 
 #endif

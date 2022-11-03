@@ -207,10 +207,44 @@ void Battle::allyAction(int playerNumber){//request ally
 void Battle::attack(int playerNumber){//Normal attack
   if (playerNumber == 1)
   {
+    double Atotal = this->calculateDamage(1);
+    double dividentDamage = Atotal/this->Alliance_B.size();
     
+    for (int i =0; i < this->Alliance_B.size(); i++)
+    {
+      this->Alliance_B[i]->getStats().setHealth(this->Alliance_B[i]->getStats().getHealth() - dividentDamage);
+    }
+    cout<<"Player 1 attacked Player 2"<<endl;
   }
   else if (playerNumber == 2)
   {
-
+    double Atotal = this->calculateDamage(2);
+    double dividentDamage = Atotal/this->Alliance_A.size();
+    
+    for (int i =0; i < this->Alliance_A.size(); i++)
+    {
+      this->Alliance_A[i]->getStats().setHealth(this->Alliance_A[i]->getStats().getHealth() - dividentDamage);
+    }
+    cout<<"Player 2 attacked Player 1"<<endl;
   }
+}
+
+double Battle::calculateDamage(int playerNumber)
+{
+  double totalDamage = 0;
+  if (playerNumber == 1)
+  {
+    for (int i=0; i < this->Alliance_A.size(); i++)
+    {
+      totalDamage += this->Alliance_A[i]->getStats().getDamage();
+    }
+  }
+  else
+  {
+    for (int i=0; i < this->Alliance_B.size(); i++)
+    {
+      totalDamage += this->Alliance_B[i]->getStats().getDamage();
+    }
+  }
+  return totalDamage;
 }
