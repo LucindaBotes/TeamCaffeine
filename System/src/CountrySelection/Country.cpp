@@ -6,7 +6,7 @@ using namespace std;
 Country::Country() {
 }
 
-Country::Country(string name, vector<Country>* allies, Statistics* stats, InventoryShop* inventoryShop) {
+Country::Country(string name, vector<Country*> allies, Statistics* stats, InventoryShop* inventoryShop) {
   _name = name;
   _allies = allies;
   _stats = stats;
@@ -14,17 +14,25 @@ Country::Country(string name, vector<Country>* allies, Statistics* stats, Invent
 }
 
 Country::~Country() {
-  delete _allies;
+  this->_allies.clear();
   delete _stats;
   delete _inventoryShop;
+}
+
+int Country::getMember() {
+  return this->member;
+}
+
+void Country::setMember(int member) {
+  this->member = member;
 }
 
 string Country::getName() const {
   return _name;
 }
 
-vector<Country> Country::getAllies() const {
-  return *_allies;
+vector<Country*> Country::getAllies() {
+  return _allies;
 }
 
 Statistics Country::getStats() const {
@@ -35,35 +43,19 @@ InventoryShop Country::getInventoryShop() const {
   return *_inventoryShop;
 }
 
-void Country::addAllies(vector<Country> allies) {
-  for (int i = 0; i < allies.size(); i++) {
-    _allies->push_back(allies[i]);
-  }
+void Country::addAlly(Country * ally) {
+  this->_allies.push_back(ally);
 }
 
-void Country::addAlly(Country ally) {
-  _allies->push_back(ally);
-}
-
-void Country::removeAlly(Country ally) {
-  for (int i = 0; i < _allies->size(); i++) {
-    if (_allies->at(i).getName() == ally.getName()) {
-      _allies->erase(_allies->begin() + i);
+void Country::removeAlly(Country* ally) {
+  for (int i = 0; i < _allies.size(); i++) {
+    if (this->_allies[i]->getName() == ally->getName()) {
+      this->_allies.erase(this->_allies.begin() + i);
     }
   }
 }
 
-void Country::removeAllies(vector<Country> toRemove) {
-  for (int i = 0; i < toRemove.size(); i++) {
-    for (int j = 0; j < _allies->size(); j++) {
-      if (_allies->at(j).getName() == toRemove[i].getName()) {
-        _allies->erase(_allies->begin() + j);
-      }
-    }
-  }
-}
-
-std::vector<Country*> Country::getAllies()
+void Country::setName(std::string name)
 {
-  return this->_allies;
+  this->_name = name;
 }

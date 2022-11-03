@@ -148,11 +148,23 @@ void Battle::start(Invoker * player1, Invoker * player2){
 void Battle::defend(int playerNumber){//Uses Defense statistic
   if (playerNumber == 1)
   {
-    
+    for (int i =0; i < this->Alliance_A.size(); i++)
+    {
+      if (this->Alliance_A[i]->getStats().getDefence() >= 20)
+      {
+        this->Alliance_A[i]->getStats().setHealth(this->Alliance_A[i]->getStats().getHealth() + 20);
+      }
+    }
   }
   else if (playerNumber == 2)
   {
-
+    for (int i =0; i < this->Alliance_B.size(); i++)
+    {
+      if (this->Alliance_B[i]->getStats().getDefence() >= 20)
+      {
+        this->Alliance_B[i]->getStats().setHealth(this->Alliance_B[i]->getStats().getHealth() + 20);
+      }
+    }
   }
 }
 

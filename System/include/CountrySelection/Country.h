@@ -11,24 +11,25 @@
 
 class Country : ActionListener{
   private:
+    int member;    
+    std::string _name;
+    std::vector<Country*> _allies;
+    Statistics* _stats;
+    InventoryShop* _inventoryShop;
 
   public:
     Country();
-    Country(std::string, std::vector<Country>*, Statistics*, InventoryShop*);
+    Country(std::string, std::vector<Country*>, Statistics*, InventoryShop*);
     ~Country();
     int getMember();
     void setMember(int);
+    void setName(std::string name);
     std::vector<Country*> getAllies();
     std::string getName() const;
-    std::vector<Country> getAllies() const;
     Statistics getStats() const;
     InventoryShop getInventoryShop() const;
-
-    void addAllies(std::vector<Country>);
-    void addAlly(Country);
-
-    void removeAlly(Country);
-    void removeAllies(std::vector<Country>);
+    void addAlly(Country*);
+    void removeAlly(Country*);
 };
 
 #endif

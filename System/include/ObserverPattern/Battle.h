@@ -8,6 +8,7 @@
 
 class Battle {
   private:
+
     int member;
     std::string name;
     std::vector<Country*> Alliance_A;
@@ -17,7 +18,7 @@ class Battle {
   public:
     //copy constructor for Battle
     Battle(std::string name);
-    ~Battle();
+    ~Battle();  
     void start(Invoker * player1, Invoker * player2);
     int getMember();
     void setMember(int);
