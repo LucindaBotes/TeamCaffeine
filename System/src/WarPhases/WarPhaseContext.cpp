@@ -5,7 +5,8 @@
  * @li Design Pattern: State
  * @li Participant: Context
  * 
- * @details WarPhaseContext class   
+ * @details WarPhaseContext class 
+ * @author UnarineLeo  
 */
 
 using namespace std;
