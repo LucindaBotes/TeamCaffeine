@@ -7,7 +7,6 @@
 class RealTime : public Strategy
 {
   private:
-    
 
   public:
     RealTime();
