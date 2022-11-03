@@ -15,34 +15,65 @@ using namespace std;
 *  
 *  @author Marthinus Ettienne van Zyl ; u19012366,
 *  @author Lucinda Botes ; u19012366
-*TODO:  @todo Define decorator extra method
 */
 
+/**
+ * @brief Create Entity:: Create Entity object
+ * @details Create Entity object with passed in EntityType enum value
+ * @param t EntityType
+ */
 Entity::Entity(EntityType t) {
   this->_type = t;
 }
 
+/**
+ * @brief Destroy Entity:: Destroy Entity object
+ */
 Entity::~Entity() {
 }
 
+/**
+ * @brief Create Entity:: Create Entity object
+ * @details Create Entity object with passed in @code Entity object
+ * @return EntityType
+ */
 Entity::Entity(const Entity &e) {
   _type = e._type;
 }
 
+/**
+ * @brief Get Entity Type:: Get Entity Type
+ * @details Gets the Entity's @code _type member value.
+ * @return EntityType
+ */
 EntityType Entity::getType() const{
   return _type;
 }
 
+/**
+ * @brief Get Enity Price:: Get Entity Price
+ * @details Gets the Entity's @code _price member value.
+ * @return double 
+ */
 double Entity::getPrice() const
 {
   return _price;
 }
 
+/**
+ * @brief Set Entity:: Set Entity price value
+ * @details Sets the Entity's @code _price member value to passed in @code price parameter.
+ * @param price double
+ */
 void Entity::setPrice(double price)
 {
   _price = price;
 }
 
+/**
+ * @brief Add Entity Decorator:: Add decorator to Entity
+ * @details Adds an entity as a decorator to the current entity by making the passed in @code Entity parameter the head and the previous head becomes the passed in parameters next value.
+ */
 void Entity::addEntity(Entity* e)
 {
   e->_next = this->_head;

@@ -4,7 +4,6 @@
 #include <Inventory/EntityDecorator.h>
 
 class Weapons : public EntityDecorator{
-
   private:
     double _damage;
 

@@ -2,9 +2,27 @@
 
 using namespace std;
 
+/** 
+*  @file InventoryShop.h
+*  @brief InventoryShop class implementation,
+*
+*  @details Provides the necessary methods to create and manage the inventory and shop for countries.
+*  
+*  @author Marthinus Ettienne van Zyl ; u19012366,
+*/
+
+/**
+ * @brief Create InventoryShop:: Create InventoryShop object
+ * @details Create InventoryShop object.
+ * @returns InventoryShop
+ */
 InventoryShop::InventoryShop() {
+  
 }
 
+/**
+ * @brief Destroy InventoryShop:: Destroy InventoryShop object
+ */
 InventoryShop::~InventoryShop() {
 }
 

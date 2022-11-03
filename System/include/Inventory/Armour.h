@@ -4,7 +4,7 @@
 #include <Inventory/EntityDecorator.h>
 
 class Armour : public EntityDecorator{
-  protected:
+  private:
     double _armour;
 
   public:
