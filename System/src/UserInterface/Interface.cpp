@@ -11,11 +11,8 @@ Interface::Interface()
 
     warObject = new War();
     string Wname;
-    string cName;
-    int cSoldiers; 
-    int cEquipment;
-    int cAllies;
-
+    
+  
     cout << "Please input the name of this War: ";
     cin >> Wname;
 
