@@ -12,6 +12,6 @@ class ModeContext
     ModeContext(Strategy *s);
     ~ModeContext();
     void start();
-    void Undo();
+    vector<Battle> Undo();
 };
 #endif

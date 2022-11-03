@@ -21,8 +21,8 @@ void ModeContext::start()
     _strategy->startSimulation();
 }
 
-/// @brief undo the recent action
-void ModeContext::Undo()
+/// @brief undo the recent action done by the 
+vector<Battle> ModeContext::Undo()
 {
-    _strategy->undo();
+    return _strategy->undo();
 }

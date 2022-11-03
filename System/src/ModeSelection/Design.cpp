@@ -16,7 +16,7 @@ void Design::startSimulation()
 }
 
 /// @brief This function will undo the action done now and retrieve information before the retrival
-void Design::undo()
+vector<Battle> Design::undo()
 {
-  
+    return getBattle().back();
 }

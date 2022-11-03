@@ -48,6 +48,7 @@ void War::addCountry(Country& c)
 void War::addBattle(Battle& b)
 {
   battles.push_back(b);
+  
 }
 
 /// @brief sets the phase of the war

@@ -7,3 +7,6 @@ Strategy::Strategy()
 
 Strategy::~Strategy() 
 {}
+
+vector<Battle> Strategy::undo()
+{}
