@@ -8,10 +8,16 @@ PeacefulState::PeacefulState() {
 PeacefulState::~PeacefulState() {
 }
 
-int PeacefulState::getMember() {
-  return this->member;
+/// @brief returns the current state name, PeacefulState
+/// @return name of state, which is Peaceful 
+string PeacefulState::getState()
+{
+    return "Peaceful";
 }
 
-void PeacefulState::setMember(int member) {
-  this->member = member;
+/// @brief Changes the state from PeacefulState to ColdState using the context Participant
+/// @param s 
+void PeacefulState::setState(WarPhaseContext* s)
+{
+    s->setState(new ColdState());
 }

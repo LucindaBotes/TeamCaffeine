@@ -1,15 +1,20 @@
 #ifndef STRATEGY_H
 #define STRATEGY_H
 
-class Strategy {
-  private:
-    int member;
+class ModeContext;
+#include <iostream>
+#include <string>
 
+using namespace std;
+
+class Strategy 
+{
+  private:
+  
   public:
     Strategy();
     ~Strategy();
-    int getMember();
-    void setMember(int);
+    virtual void startSimulation() = 0;
+    virtual void undo() = 0;
 };
-
 #endif

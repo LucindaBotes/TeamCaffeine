@@ -1,20 +1,40 @@
 #ifndef WAR_H
 #define WAR_H
 
-#include <ObserverPattern/BattleListener.h>
+#include <string>
+#include <iostream>
+#include <vector>
+#include <Country.h>
+#include <WarPhaseContext.h>
+#include <Battle.h>
+#include <Strategy.h>
 
-class War : public BattleListener{
+using namespace std;
+
+class War 
+{
   private:
-    int member;
-    BattleListener * listener;
+    string _warName;
+    bool _active;
+    vector<Country> _countriesAtWar;
+    WarPhaseContext* warPhaseC;
+    vector<Battle> battles;
 
   public:
     War();
-    War(BattleListener * listener);
+    War(string wName,bool Active);
     ~War();
-    int getMember();
-    void setMember(int);
-    void update();
-};
+    bool isActive();
+    void addCountry(Country& c);
+    void addBattle(Battle& b);
+    void setPhase(WarPhaseState* p);
 
+    void setName(string name);
+    void setActive(bool activeness);
+
+    string getName();
+    vector<Country> getCountriesAtWar();
+    vector<Battle> getBattle();
+    
+};
 #endif

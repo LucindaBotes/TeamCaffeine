@@ -8,10 +8,16 @@ HostileState::HostileState() {
 HostileState::~HostileState() {
 }
 
-int HostileState::getMember() {
-  return this->member;
+/// @brief returns the current state name, HostileState
+/// @return name of state, which is Hostile
+string HostileState::getState()
+{
+    return "Hostile";
 }
 
-void HostileState::setMember(int member) {
-  this->member = member;
+/// @brief Changes the state from HostileState to PeacefulState using the context
+/// @param s 
+void HostileState::setState(WarPhaseContext* s)
+{
+    s->setState(new PeacefulState());
 }

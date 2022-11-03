@@ -1,15 +1,18 @@
 #ifndef COLDSTATE_H
 #define COLDSTATE_H
 
-class ColdState {
-  private:
-    int member;
+#include <WarPhaseState.h>
+#include <PeacefulState.h>
+#include <WarPhaseContext.h>
 
+class ColdState : public WarPhaseState
+{
+  private:
+    
   public:
     ColdState();
     ~ColdState();
-    int getMember();
-    void setMember(int);
+    virtual string getState();
+    virtual void setState(WarPhaseContext* s);
 };
-
 #endif
