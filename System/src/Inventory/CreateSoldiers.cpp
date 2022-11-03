@@ -2,16 +2,22 @@
 
 using namespace std;
 
+/**
+ * @brief Create a Soldiers:: Create Soldiers object
+ */
 CreateSoldiers::CreateSoldiers() {
 }
 
+/**
+ * @brief Destroy a Soldiers:: Destroy Soldiers object
+ */
 CreateSoldiers::~CreateSoldiers() {
 }
 
-int CreateSoldiers::getMember() {
-  return this->member;
-}
-
-void CreateSoldiers::setMember(int member) {
-  this->member = member;
+/**
+ * @brief Create a Soldiers:: Create Soldiers Entity
+ * @return Soldiers*
+ */
+Soldiers * CreateSoldiers::createSoldiersEntity() {
+  return new Soldiers();
 }

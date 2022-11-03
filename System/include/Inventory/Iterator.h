@@ -1,15 +1,13 @@
 #ifndef ITERATOR_H
 #define ITERATOR_H
 
-class Iterator {
-  private:
-    int member;
-
+template<typename T> class Iterator {
   public:
     Iterator();
-    ~Iterator();
-    int getMember();
-    void setMember(int);
+    virtual T& operator*() = 0;
+    virtual Iterator<T> operator++() = 0;
+    virtual bool operator==(const Iterator<T> &rhs) = 0;
+    virtual ~Iterator() = 0;
 };
 
 #endif

@@ -1,15 +1,22 @@
 #ifndef MEDICS_H
 #define MEDICS_H
 
-class Medics {
+#include <Inventory/EntityDecorator.h>
+
+class Medics : public EntityDecorator {
   private:
-    int member;
+    double _heal;
 
   public:
     Medics();
-    ~Medics();
-    int getMember();
-    void setMember(int);
+    Medics(double);
+    Medics(const Medics &m);
+    virtual ~Medics() override;
+
+    Entity* clone() override;
+
+    double getHeal() const;
+    void setHeal(double heal);
 };
 
 #endif

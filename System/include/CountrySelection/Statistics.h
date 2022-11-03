@@ -1,15 +1,29 @@
 #ifndef STATISTICS_H
 #define STATISTICS_H
 
+#include<CountrySelection/GDP.h>
+
 class Statistics {
   private:
-    int member;
+    double _health;
+    double _damage;
+    double _defence;
+    GDP* _gdp;
 
   public:
     Statistics();
+    Statistics(double, double, double, GDP*);
     ~Statistics();
-    int getMember();
-    void setMember(int);
+
+    double getHealth() const;
+    double getDamage() const;
+    double getDefence() const;
+    GDP getGDP() const;
+
+    void setHealth(double);
+    void setDamage(double);
+    void setDefence(double);
+    
 };
 
 #endif

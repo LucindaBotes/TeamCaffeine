@@ -1,15 +1,16 @@
 #ifndef CREATESUPPLIES_H
 #define CREATESUPPLIES_H
 
-class CreateSupplies {
+#include <Inventory/Supplies.h>
+#include <Inventory/EntityCreator.h>
+class CreateSupplies : public EntityCreator {
   private:
     int member;
 
   public:
     CreateSupplies();
     ~CreateSupplies();
-    int getMember();
-    void setMember(int);
+    Supplies * createSuppliesEntity();
 };
 
 #endif
