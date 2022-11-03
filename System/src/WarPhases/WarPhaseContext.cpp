@@ -1,5 +1,13 @@
 #include <WarPhases/WarPhaseContext.h>
 
+/**
+ * @brief WarPhaseContext class implementation,
+ * @li Design Pattern: State
+ * @li Participant: Context
+ * 
+ * @details WarPhaseContext class   
+*/
+
 using namespace std;
 
 /// @brief initialize the first state as a ColdState

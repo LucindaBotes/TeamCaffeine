@@ -2,6 +2,15 @@
 
 using namespace std;
 
+/**
+ * @brief Design class implementation,
+ * @li Design Pattern: Strategy
+ * @li Participant: ConcreteStrategy
+ * 
+ * @details Design is responsible for allowing the user to interrupt, tweak and continue the war
+ * @author UnarineLeo
+*/
+
 Design::Design() {
 }
 
@@ -15,8 +24,8 @@ void Design::startSimulation()
     cout << "there will be an ability to undo, nor stop the simulation." << endl;
 }
 
-/// @brief This function will undo the action done now and retrieve information before the retrival
-vector<Battle> Design::undo()
+/// @brief This function will undo the recent action done and retrieve the Battle values before the action
+Battle Design::undo()
 {
     return getBattle().back();
 }

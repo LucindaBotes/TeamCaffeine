@@ -1,6 +1,15 @@
 #include <UserInterface/War.h>
 // #include "War.h"
 
+/**
+ * @brief War class implementation,
+ * @li Design Pattern: Strategy
+ * @li Participant: ConcreteStrategy
+ * 
+ * @details 
+ * @author UnarineLeo
+*/
+
 using namespace std;
 
 War::War() 

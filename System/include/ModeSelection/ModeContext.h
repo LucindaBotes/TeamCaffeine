@@ -2,6 +2,7 @@
 #define MODECONTEXT_H
 
 #include <Strategy.h>
+#include <War.h>
 
 class ModeContext 
 {

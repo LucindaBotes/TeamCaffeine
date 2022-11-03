@@ -1,5 +1,14 @@
 #include <WarPhases/ColdState.h>
 
+/**
+ * @brief ColdState class implementation,
+ * @li Design Pattern: State
+ * @li Participant: ConcreteState
+ * 
+ * @details ColdState class implements a state which is for when countries haven't declared war unto the another
+ * @author UnarineLeo
+*/
+
 using namespace std;
 
 ColdState::ColdState() {

@@ -15,6 +15,6 @@ class Strategy
     Strategy();
     ~Strategy();
     virtual void startSimulation() = 0;
-    virtual vector<Battle> undo();
+    virtual vector<Battle> undo() = 0;
 };
 #endif

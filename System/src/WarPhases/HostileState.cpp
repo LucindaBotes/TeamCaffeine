@@ -2,6 +2,15 @@
 
 using namespace std;
 
+/**
+ * @brief HostileState class implementation,
+ * @li Design Pattern: State
+ * @li Participant: ConcreteState
+ * 
+ * @details HostileState class implements a state which is for when a country invades another country
+ * @author UnarineLeo
+*/
+
 HostileState::HostileState() {
 }
 

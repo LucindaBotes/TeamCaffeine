@@ -14,6 +14,6 @@ class RealTime : public Strategy
     RealTime();
     ~RealTime();
     virtual void startSimulation();
-    
+    virtual vector<Battle> undo();
 };
 #endif

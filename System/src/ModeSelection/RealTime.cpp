@@ -2,6 +2,16 @@
 
 using namespace std;
 
+/**
+ * @brief RealTime class implementation,
+ * @li Design Pattern: Strategy
+ * @li Participant: ConcreteStrategy
+ * 
+ * @details RealTime is responsible for not allowing the user to interrupt the war
+ * @author UnarineLeo
+ * 
+*/
+
 RealTime::RealTime() {
 }
 
@@ -15,8 +25,9 @@ void RealTime::startSimulation()
   cout << "there will be no ability to undo, nor stop the simulation." << endl;
 }
 
-/// @brief this function will do nothing, since an undo is not allowed in Real-Time Mode
-void RealTime::undo()
+/// @brief Real-Time Mode doesn't undo an activity so it's not implemented
+/// @return null
+Battle RealTime::undo()
 {
-
+    return NULL;
 }
