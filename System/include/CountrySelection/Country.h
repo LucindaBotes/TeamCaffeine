@@ -1,5 +1,6 @@
 #ifndef COUNTRY_H
 #define COUNTRY_H
+#include <CountrySelection/Statistics.h>
 
 #include <string>
 #include <vector>
@@ -10,16 +11,14 @@
 
 class Country : ActionListener{
   private:
-    std::string _name;
-    std::vector<Country>* _allies;
-    Statistics* _stats;
-    InventoryShop* _inventoryShop;
 
   public:
     Country();
     Country(std::string, std::vector<Country>*, Statistics*, InventoryShop*);
     ~Country();
-    
+    int getMember();
+    void setMember(int);
+    std::vector<Country*> getAllies();
     std::string getName() const;
     std::vector<Country> getAllies() const;
     Statistics getStats() const;

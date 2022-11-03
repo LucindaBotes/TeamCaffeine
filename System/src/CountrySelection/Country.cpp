@@ -1,4 +1,5 @@
 #include <CountrySelection/Country.h>
+#include <vector>
 
 using namespace std;
 
@@ -60,4 +61,9 @@ void Country::removeAllies(vector<Country> toRemove) {
       }
     }
   }
+}
+
+std::vector<Country*> Country::getAllies()
+{
+  return this->_allies;
 }
