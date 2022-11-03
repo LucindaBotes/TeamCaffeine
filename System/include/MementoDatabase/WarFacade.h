@@ -1,15 +1,18 @@
 #ifndef WARFACADE_H
 #define WARFACADE_H
+#include <MementoDatabase/MementoFacade.h>
+#include <../src/MementoDatabase/MementoFacade.cpp>
 
-class WarFacade {
+template <class T>
+class WarFacade: public MementoFacade {
   private:
-    int member;
+    T memento;
 
   public:
     WarFacade();
     ~WarFacade();
-    int getMember();
-    void setMember(int);
+    T getMemento();
+    void setMemento(T);
 };
 
 #endif

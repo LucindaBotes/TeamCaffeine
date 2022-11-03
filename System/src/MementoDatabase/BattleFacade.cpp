@@ -2,16 +2,20 @@
 
 using namespace std;
 
-BattleFacade::BattleFacade() {
+template <class T>
+BattleFacade<T>::BattleFacade() {
 }
 
-BattleFacade::~BattleFacade() {
+template <class T>
+BattleFacade<T>::~BattleFacade() {
 }
 
-int BattleFacade::getMember() {
-  return this->member;
+template <class T>
+Battle BattleFacade<T>::getMemento() {
+  return this->memento.pop_back();
 }
 
-void BattleFacade::setMember(int member) {
-  this->member = member;
+template <class T>
+void BattleFacade<T>::setMemento(Battle* m) {
+  this->memento.pop_back(m);
 }

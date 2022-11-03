@@ -1,15 +1,16 @@
 #ifndef MEMENTOFACADE_H
 #define MEMENTOFACADE_H
 
+template <class T>
 class MementoFacade {
   private:
-    int member;
+    T memento;
 
   public:
     MementoFacade();
     ~MementoFacade();
-    int getMember();
-    void setMember(int);
+    T getMemento();
+    void setMemento(T);
 };
 
 #endif

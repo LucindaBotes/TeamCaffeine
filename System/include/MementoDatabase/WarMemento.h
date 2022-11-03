@@ -1,15 +1,18 @@
 #ifndef WARMEMENTO_H
 #define WARMEMENTO_H
+#include <MementoDatabase/Memento.h>
+#include <../src/MementoDatabase/Memento.cpp>
 
-class WarMemento {
+template <class T>
+class WarMemento: public Memento {
   private:
-    int member;
+    T memento;
 
   public:
     WarMemento();
     ~WarMemento();
-    int getMember();
-    void setMember(int);
+    T getMemento();
+    void setMemento(T);
 };
 
 #endif

@@ -1,15 +1,21 @@
 #ifndef BATTLEMEMENTO_H
 #define BATTLEMEMENTO_H
+#include <MementoDatabase/Memento.h>
+#include <../src/MementoDatabase/Memento.cpp>
+#include <ObserverPattern/Battle.h>
+#include <../src/ObserverPattern/Battle.cpp>
+#include <vector>
 
-class BattleMemento {
+template <class T>
+class BattleMemento: public Memento {
   private:
-    int member;
+    vector<Battle> memento;
 
   public:
     BattleMemento();
     ~BattleMemento();
-    int getMember();
-    void setMember(int);
+    Battle getMemento();
+    void setMemento(Battle* b);
 };
 
 #endif

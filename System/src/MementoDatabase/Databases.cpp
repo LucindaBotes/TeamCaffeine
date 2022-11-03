@@ -2,16 +2,20 @@
 
 using namespace std;
 
-Databases::Databases() {
+template <class T>
+Databases<T>::Databases() {
 }
 
-Databases::~Databases() {
+template <class T>
+Databases<T>::~Databases() {
 }
 
-int Databases::getMember() {
-  return this->member;
+template <class T>
+T Databases<T>::getMemento() {
+  return this->memento;
 }
 
-void Databases::setMember(int member) {
-  this->member = member;
+template <class T>
+void Databases<T>::setMemento(T memento) {
+  this->memento = memento
 }

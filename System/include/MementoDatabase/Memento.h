@@ -1,15 +1,16 @@
 #ifndef MEMENTO_H
 #define MEMENTO_H
 
+template <class T>
 class Memento {
   private:
-    int member;
-
+    T memento;
+    
   public:
     Memento();
     ~Memento();
-    int getMember();
-    void setMember(int);
+    T getMemento();
+    void setMemento(T);
 };
 
 #endif

@@ -2,16 +2,20 @@
 
 using namespace std;
 
-MementoFacade::MementoFacade() {
+template <class T>
+MementoFacade<T>::MementoFacade() {
 }
 
-MementoFacade::~MementoFacade() {
+template <class T>
+MementoFacade<T>::~MementoFacade() {
 }
 
-int MementoFacade::getMember() {
-  return this->member;
+template <class T>
+T MementoFacade<T>::getMemento() {
+  return this->memento;
 }
 
-void MementoFacade::setMember(int member) {
-  this->member = member;
+template <class T>
+void MementoFacade<T>::setMemento(T memento) {
+  this->memento = memento;
 }

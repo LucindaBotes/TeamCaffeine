@@ -1,15 +1,21 @@
 #ifndef BATTLEFACADE_H
 #define BATTLEFACADE_H
+#include <MementoDatabase/MementoFacade.h>
+#include <../src/MementoDatabase/MementoFacade.cpp>
+#include <ObserverPattern/Battle.h>
+#include <../src/ObserverPattern/Battle.cpp>
+#include <vector>
 
-class BattleFacade {
+template <class T>
+class BattleFacade: public MementoFacade {
   private:
-    int member;
+    vector<Battle> memento;
 
   public:
     BattleFacade();
     ~BattleFacade();
-    int getMember();
-    void setMember(int);
+    Battle getMemento();
+    void setMemento(Battle* b);
 };
 
 #endif

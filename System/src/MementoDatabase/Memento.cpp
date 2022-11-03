@@ -2,16 +2,20 @@
 
 using namespace std;
 
-Memento::Memento() {
+template <class T>
+Memento<T>::Memento() {
 }
 
-Memento::~Memento() {
+template <class T>
+Memento<T>::~Memento() {
 }
 
-int Memento::getMember() {
-  return this->member;
+template <class T>
+T Memento<T>::getMemento() {
+  return this->memento;
 }
 
-void Memento::setMember(int member) {
-  this->member = member;
+template <class T>
+void Memento<T>::setMemento(T memento) {
+  this->memento = memento;
 }

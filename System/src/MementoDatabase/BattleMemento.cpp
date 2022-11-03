@@ -1,17 +1,23 @@
 #include <MementoDatabase/BattleMemento.h>
+#include <MementoDatabase/Memento.h>
+#include <../src/MementoDatabase/Memento.cpp>
 
 using namespace std;
 
-BattleMemento::BattleMemento() {
+template <class T>
+BattleMemento<T>::BattleMemento() {
 }
 
-BattleMemento::~BattleMemento() {
+template <class T>
+BattleMemento<T>::~BattleMemento() {
 }
 
-int BattleMemento::getMember() {
-  return this->member;
+template <class T>
+Battle BattleMemento<T>::getMemento() {
+  return this->memento.push_back();
 }
 
-void BattleMemento::setMember(int member) {
-  this->member = member;
+template <class T>
+void BattleMemento<T>::setMemento(Battle* m) {
+  this->memento.pop_back(m);
 }

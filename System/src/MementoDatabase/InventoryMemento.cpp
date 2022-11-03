@@ -1,17 +1,23 @@
 #include <MementoDatabase/InventoryMemento.h>
+#include <MementoDatabase/Memento.h>
+#include <../src/MementoDatabase/Memento.cpp>
 
 using namespace std;
 
-InventoryMemento::InventoryMemento() {
+template <class T>
+InventoryMemento<T>::InventoryMemento() {
 }
 
-InventoryMemento::~InventoryMemento() {
+template <class T>
+InventoryMemento<T>::~InventoryMemento() {
 }
 
-int InventoryMemento::getMember() {
-  return this->member;
+template <class T>
+T InventoryMemento<T>::getMemento() {
+  return this->memento;
 }
 
-void InventoryMemento::setMember(int member) {
-  this->member = member;
+template <class T>
+void InventoryMemento<T>::setMemento(T memento) {
+  this->memento = memento;
 }
