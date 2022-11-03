@@ -12,10 +12,10 @@ BattleDatabase<T>::~BattleDatabase() {
 
 template <class T>
 Battle BattleDatabase<T>::getMemento() {
-  return this->memento.pop_back();
+  return this->battle_memento.pop_back();
 }
 
 template <class T>
-void BattleDatabase<T>::setMemento(Battle* m) {
-  this->memento.push_back(m);
+void BattleDatabase<T>::setMemento(Battle* b) {
+  this->battle_memento.push_back(b);
 }

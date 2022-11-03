@@ -13,11 +13,11 @@ InventoryMemento<T>::~InventoryMemento() {
 }
 
 template <class T>
-T InventoryMemento<T>::getMemento() {
-  return this->memento;
+InventoryShop InventoryMemento<T>::getMemento() {
+  return this->inventory_memento.pop_back();
 }
 
 template <class T>
-void InventoryMemento<T>::setMemento(T memento) {
-  this->memento = memento;
+void InventoryMemento<T>::setMemento(InventoryShop* m) {
+  this->inventory_memento.push_back(m);
 }

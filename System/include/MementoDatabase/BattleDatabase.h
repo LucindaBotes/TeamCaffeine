@@ -1,16 +1,13 @@
 #ifndef BATTLEDATABASE_H
 #define BATTLEDATABASE_H
-#include <MementoDatabase/Databases.h>
-#include <../src/MementoDatabase/Databases.cpp>
 #include <ObserverPattern/Battle.h>
 #include <../src/ObserverPattern/Battle.cpp>
 #include <vector>
-
-
+//Caretaker class
 template <class T>
-class BattleDatabase: public Databases {
+class BattleDatabase {
   private:
-    vector<Battle> memento;
+    vector<Battle> battle_memento;
 
   public:
     BattleDatabase();

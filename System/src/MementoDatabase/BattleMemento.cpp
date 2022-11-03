@@ -1,6 +1,4 @@
 #include <MementoDatabase/BattleMemento.h>
-#include <MementoDatabase/Memento.h>
-#include <../src/MementoDatabase/Memento.cpp>
 
 using namespace std;
 

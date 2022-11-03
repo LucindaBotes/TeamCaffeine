@@ -2,19 +2,21 @@
 #define INVENTORYMEMENTO_H
 #include <MementoDatabase/Memento.h>
 #include <../src/MementoDatabase/Memento.cpp>
+#include <Inventory/InventoryShop.h>
+#include <../src/Inventory/InventoryShop.cpp>
 #include <vector>
 
 
 template <class T>
 class InventoryMemento: public Memento {
   private:
-    T memento;
+    vector<InventoryShop> inventory_memento;
 
   public:
     InventoryMemento();
     ~InventoryMemento();
-    T getMemento();
-    void setMemento(T);
+    InventoryShop getMemento();
+    void setMemento(InventoryShop* m);
 };
 
 #endif

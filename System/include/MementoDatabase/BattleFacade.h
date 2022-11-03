@@ -1,13 +1,11 @@
 #ifndef BATTLEFACADE_H
 #define BATTLEFACADE_H
-#include <MementoDatabase/MementoFacade.h>
-#include <../src/MementoDatabase/MementoFacade.cpp>
 #include <ObserverPattern/Battle.h>
 #include <../src/ObserverPattern/Battle.cpp>
 #include <vector>
-
+//Originator
 template <class T>
-class BattleFacade: public MementoFacade {
+class BattleFacade {
   private:
     vector<Battle> memento;
 
