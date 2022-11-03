@@ -10,8 +10,7 @@ class BattleMemento {
     vector<Battle> battle_memento;
 
   public:
-    BattleMemento();
-    ~BattleMemento();
+    BattleMemento(/*all the stuff needed for the memento (stats, battles, gdp, etc.)*/);
     Battle getMemento();
     void setMemento(Battle* b);
 };

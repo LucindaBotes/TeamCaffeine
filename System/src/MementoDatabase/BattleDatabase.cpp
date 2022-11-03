@@ -4,10 +4,7 @@ using namespace std;
 
 template <class T>
 BattleDatabase<T>::BattleDatabase() {
-}
-
-template <class T>
-BattleDatabase<T>::~BattleDatabase() {
+  //wat gebeur hier? lol
 }
 
 template <class T>

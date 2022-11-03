@@ -2,6 +2,7 @@
 #define BATTLEDATABASE_H
 #include <ObserverPattern/Battle.h>
 #include <../src/ObserverPattern/Battle.cpp>
+#include <BattleMemento.h>
 #include <vector>
 //Caretaker class
 template <class T>
@@ -11,7 +12,6 @@ class BattleDatabase {
 
   public:
     BattleDatabase();
-    ~BattleDatabase();
     Battle getMemento();
     void setMemento(Battle* b);
 };

@@ -1,13 +1,14 @@
 #ifndef BATTLEFACADE_H
 #define BATTLEFACADE_H
 #include <ObserverPattern/Battle.h>
-#include <../src/ObserverPattern/Battle.cpp>
+#include <BattleMemento.h>
 #include <vector>
-//Originator
+//Battle class is Originator
+//This is the Proxy
 template <class T>
 class BattleFacade {
   private:
-    vector<Battle> memento;
+    vector<BattleMemento> battle_state;
 
   public:
     BattleFacade();
