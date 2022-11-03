@@ -1,3 +1,4 @@
+
 #ifndef REALTIME_H
 #define REALTIME_H
 
@@ -7,6 +8,7 @@
 class RealTime : public Strategy
 {
   private:
+    
 
   public:
     RealTime();
