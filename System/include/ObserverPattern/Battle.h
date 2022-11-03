@@ -2,13 +2,14 @@
 #define BATTLE_H
 
 #include <CountrySelection/Country.h>
+#include <UserInterface/War.h>
 #include <TakeActions/Invoker.h>
 #include <vector>
 #include <string>
 
 class Battle {
   private:
-
+    War * war;
     int member;
     std::string name;
     std::vector<Country*> Alliance_A;
@@ -29,6 +30,7 @@ class Battle {
     void allyAction(int playerNumber);
     void attack(int playerNumber);
     double calculateDamage(int playerNumber);
+    void displayEligibleCountries();
 };
 
 #endif

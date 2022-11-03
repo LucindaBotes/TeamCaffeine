@@ -19,6 +19,7 @@ class Country : ActionListener{
 
   public:
     Country();
+    Country(std::string);
     Country(std::string, std::vector<Country*>, Statistics*, InventoryShop*);
     ~Country();
     int getMember();

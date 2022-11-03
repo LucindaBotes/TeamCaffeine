@@ -50,14 +50,30 @@ void War::addBattle(Battle * battle)
   this->battles.push_back(battle);
 }
 
-void War::setPlayer1_Country(Country * player1Country)
+void War::setPlayer1_Country(std::string countryname1)
 {
-  this->country_1 = player1Country;
+  for (int i=0; i < this->Countries_Eligible_for_War.size(); i++)
+  {
+    if (this->Countries_Eligible_for_War[i]->getName() == countryname1)
+    {
+      this->country_1 = this->Countries_Eligible_for_War[i];
+      this->Countries_Eligible_for_War.erase(this->Countries_Eligible_for_War.begin() + i);
+      break;
+    }
+  }
 }
 
-void War::setPlayer2_Country(Country * player2Country)
+void War::setPlayer2_Country(std::string countryname2)
 {
-  this->country_2 = player2Country;
+  for (int i=0; i < this->Countries_Eligible_for_War.size(); i++)
+  {
+    if (this->Countries_Eligible_for_War[i]->getName() == countryname2)
+    {
+      this->country_2 = this->Countries_Eligible_for_War[i];
+      this->Countries_Eligible_for_War.erase(this->Countries_Eligible_for_War.begin() + i);
+      break;
+    }
+  }
 }
 
 Country * War::getPlayer1_Country()
@@ -67,5 +83,14 @@ Country * War::getPlayer1_Country()
 Country * War::getPlayer2_Country()
 {
   return this->country_2;
+}
+
+void War::initializeCountries()
+{
+  std::string country_names[10] = {"France", "USA", "Turkey", "Canada", "England", "Russia", "Poland", "South Africa", "Egypt", "Germany"};
+  for (int i =0; i < 10; i ++)
+  {
+    this->Countries_Eligible_for_War.push_back(new Country(country_names[i]));
+  }
 }
 

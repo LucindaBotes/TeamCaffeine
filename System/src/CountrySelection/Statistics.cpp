@@ -3,6 +3,7 @@
 using namespace std;
 
 Statistics::Statistics() {
+  this->random = Randomizer();
 }
 
 Statistics::Statistics(double health, double damage, double defence, GDP* gdp) {
@@ -10,6 +11,7 @@ Statistics::Statistics(double health, double damage, double defence, GDP* gdp) {
   this->_damage = damage;
   this->_defence = defence;
   this->_gdp = gdp;
+  this->random = Randomizer();
 }
 
 Statistics::~Statistics() {
@@ -42,4 +44,17 @@ void Statistics::setDamage(double damage) {
 
 void Statistics::setDefence(double defence) {
   _defence = defence;
+}
+
+void Statistics::setGDP(double gdp)
+{
+  this->_gdp->setValue(gdp);
+}
+
+void Statistics::generateStats()
+{
+  this->_damage = random.getRandomInt(10);
+  this->_gdp->setValue(random.getRandomInt(100));
+  this->_health = random.getRandomInt(100);
+  this->_defence = random.getRandomInt(20);
 }

@@ -1,4 +1,5 @@
 #include <ObserverPattern/Battle.h>
+#include <ObserverPattern/Randomizer.h>
 #include <iostream>
 #include <string>
 
@@ -194,13 +195,44 @@ void Battle::surrender(int playerNumber){//Terminate war give up
 }
 
 void Battle::allyAction(int playerNumber){//request ally
+
+  cout<<"Select the number for the country you wish to be your Ally!"<<endl;
+  cout<<"**********************************************"<<endl;
+  this->displayEligibleCountries();
+  int countryNUmber = 0;
   if (playerNumber == 1)
   {
-
+    cin>>countryNUmber;
+    countryNUmber = countryNUmber-1;
+    Randomizer random = Randomizer();
+    bool accept = random.getRandomBoolean();
+    if (accept == true)
+    {
+      cout<<this->war->Countries_Eligible_for_War[countryNUmber]->getName()<<" has ACCEPTED your request and is now your Ally!"<<endl;
+      this->war->getPlayer1_Country()->addAlly(this->war->Countries_Eligible_for_War[countryNUmber]);
+      this->war->Countries_Eligible_for_War.erase(this->war->Countries_Eligible_for_War.begin() + countryNUmber);
+    }
+    else
+    {
+      cout<<this->war->Countries_Eligible_for_War[countryNUmber]->getName()<<" has REJECTED your request!"<<endl;
+    }
   }
   else if (playerNumber == 2)
   {
-
+    cin>>countryNUmber;
+    countryNUmber = countryNUmber-1;
+    Randomizer random = Randomizer();
+    bool accept = random.getRandomBoolean();
+    if (accept == true)
+    {
+      cout<<this->war->Countries_Eligible_for_War[countryNUmber]->getName()<<" has ACCEPTED your request and is now your Ally!"<<endl;
+      this->war->getPlayer2_Country()->addAlly(this->war->Countries_Eligible_for_War[countryNUmber]);
+      this->war->Countries_Eligible_for_War.erase(this->war->Countries_Eligible_for_War.begin() + countryNUmber);
+    }
+    else
+    {
+      cout<<this->war->Countries_Eligible_for_War[countryNUmber]->getName()<<" has REJECTED your request!"<<endl;
+    }
   }
 }
 
@@ -247,4 +279,12 @@ double Battle::calculateDamage(int playerNumber)
     }
   }
   return totalDamage;
+}
+
+void Battle::displayEligibleCountries()
+{
+  for (int i=0; i < this->war->Countries_Eligible_for_War.size(); i++)
+  {
+    cout<<"Country "<<i+1<<": "<<this->war->Countries_Eligible_for_War[i]->getName()<<"."<<endl;
+  }
 }

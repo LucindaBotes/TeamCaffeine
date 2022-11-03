@@ -6,6 +6,12 @@ using namespace std;
 Country::Country() {
 }
 
+Country::Country(std::string name)
+{
+  this->_name = name;
+  this->_stats->generateStats();
+}
+
 Country::Country(string name, vector<Country*> allies, Statistics* stats, InventoryShop* inventoryShop) {
   _name = name;
   _allies = allies;

@@ -14,14 +14,17 @@ class War {
     Invoker * Player_1;
     Invoker * Player_2;
     std::vector<Battle*> battles;
+    
   
   public:
+    std::vector<Country*> Countries_Eligible_for_War;
+    //std::vector<Country*> Countries_at_War;
     War();
     ~War();
     int getMember();
     void setMember(int);
-    void setPlayer1_Country(Country * player1Country);
-    void setPlayer2_Country(Country * player2Country);
+    void setPlayer1_Country(std::string);
+    void setPlayer2_Country(std::string);
     Country * getPlayer1_Country();
     Country * getPlayer2_Country();
     void setPlayer1();
@@ -29,6 +32,8 @@ class War {
     Invoker * getPlayer1();
     Invoker * getPlayer2();
     void addBattle (Battle * battle);
+    void initializeCountries();
+
 
 };
 
