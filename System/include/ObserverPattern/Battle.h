@@ -23,7 +23,7 @@ class Battle {
     void start(Invoker * player1, Invoker * player2);
     int getMember();
     void setMember(int);
-    void setPlayerCountries(Country * player1, Country * player2);
+    void setPlayerAllies(Country * player1, Country * player2);
     void defend(int playerNumber);
     void hold(int playerNumber);
     void surrender(int playerNumber);

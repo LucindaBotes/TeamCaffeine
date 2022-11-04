@@ -20,10 +20,10 @@ void Battle::setMember(int member) {
   this->member = member;
 }
 
-void Battle::setPlayerCountries(Country * player1, Country * player2)
+void Battle::setPlayerAllies(Country * player1, Country * player2)
 {
   this->Alliance_A.push_back(player1);
-  this->Alliance_A.push_back(player2);
+  this->Alliance_B.push_back(player2);
   for (int i=0; i < player1->getAllies().size(); i++)
   {
     this->Alliance_A.push_back(player1->getAllies()[i]);
@@ -195,7 +195,10 @@ void Battle::surrender(int playerNumber){//Terminate war give up
 }
 
 void Battle::allyAction(int playerNumber){//request ally
-
+  if (this->war->Countries_Eligible_for_War.empty() == true)
+  {
+    cout<<"Sorry, no allies available."<<endl;
+  }
   cout<<"Select the number for the country you wish to be your Ally!"<<endl;
   cout<<"**********************************************"<<endl;
   this->displayEligibleCountries();
