@@ -38,3 +38,4 @@ main.cpp
 
 System/CMakeFiles
 System/_deps
+System/*.cmake
