@@ -167,6 +167,10 @@ void Battle::start(Invoker * player1, Invoker * player2){
       player2->attackEnemyAlliance();
     }
   }
+  //Use the health of the player Countries to determine if war should continue in main WHILE LOOP.
+  //If Player Country dies then that player loses.
+  this->checkifAllyDied(1);
+  this->checkifAllyDied(2);
   cout<<"Battle #"<<this->getMember()<<" has ended."<<endl;
 }
 
@@ -334,12 +338,36 @@ double Battle::calculateHealth(int playerNumber)
   return totalHealth;
 }
 
-
-
 void Battle::displayEligibleCountries()
 {
   for (int i=0; i < this->war->Countries_Eligible_for_War.size(); i++)
   {
     cout<<"Country "<<i+1<<": "<<this->war->Countries_Eligible_for_War[i]->getName()<<"."<<endl;
+  }
+}
+
+void Battle::checkifAllyDied(int playerNumber)
+{
+  if (playerNumber == 1)
+  {
+    for (int i=1; i < this->Alliance_A.size(); i++)
+    {
+      if (this->Alliance_A[i]->getStats().getHealth() <= 0)
+      {
+        cout<<this->Alliance_A[i]->getName()<<" has died!"<<endl;
+        this->Alliance_A.erase(this->Alliance_A.begin() + i);
+      }
+    }
+  }
+  else if (playerNumber == 2)
+  {
+    for (int i=1; i < this->Alliance_B.size(); i++)
+    {
+      if (this->Alliance_B[i]->getStats().getHealth() <= 0)
+      {
+        cout<<this->Alliance_B[i]->getName()<<" has died!"<<endl;
+        this->Alliance_B.erase(this->Alliance_B.begin() + i);
+      }
+    }
   }
 }

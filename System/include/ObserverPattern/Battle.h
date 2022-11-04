@@ -32,6 +32,7 @@ class Battle {
     double calculateDamage(int playerNumber);
     void displayEligibleCountries();
     double calculateHealth(int);
+    void checkifAllyDied(int playerNumber);
 };
 
 #endif
