@@ -1,4 +1,4 @@
-#include <Inventory/Armour.h>
+#include "Armour.h"
 
 /** 
 *  @file Armour.h

@@ -1,9 +1,9 @@
 #ifndef WAR_H
 #define WAR_H
 
-#include <TakeActions/Invoker.h>
-#include <ObserverPattern/Battle.h>
-#include <CountrySelection/Country.h>
+#include "Invoker.h"
+#include "Battle.h"
+#include "Country.h"
 #include <vector>
 
 class War {

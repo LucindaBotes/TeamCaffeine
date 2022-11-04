@@ -1,7 +1,7 @@
 #ifndef SOLDIERS_H
 #define SOLDIERS_H
 
-#include <Inventory/Entity.h>
+#include "Entity.h"
 
 class Soldiers : public Entity {
   private:

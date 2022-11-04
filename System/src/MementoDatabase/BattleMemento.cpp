@@ -1,4 +1,4 @@
-#include <MementoDatabase/BattleMemento.h>
+#include "BattleMemento.h"
 
 using namespace std;
 

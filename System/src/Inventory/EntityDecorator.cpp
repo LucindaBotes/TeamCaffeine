@@ -1,4 +1,4 @@
-#include <Inventory/EntityDecorator.h>
+#include "EntityDecorator.h"
 
 using namespace std;
 

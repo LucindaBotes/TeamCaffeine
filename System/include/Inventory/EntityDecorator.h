@@ -1,7 +1,7 @@
 #ifndef ENTITYDECORATOR_H
 #define ENTITYDECORATOR_H
 
-#include <Inventory/Entity.h>
+#include "Entity.h"
 
 class EntityDecorator : public Entity{
   protected:

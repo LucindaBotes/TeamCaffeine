@@ -1,4 +1,4 @@
-#include <Inventory/Soldiers.h>
+#include "Soldiers.h"
 
 using namespace std;
 

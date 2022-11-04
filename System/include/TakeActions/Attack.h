@@ -1,8 +1,8 @@
 #ifndef ATTACK_H
 #define ATTACK_H
 
-#include <TakeActions/Action.h>
-#include <ObserverPattern/Battle.h>
+#include "Action.h"
+#include "Battle.h"
 class Attack : public Action{
   private:
     int member;

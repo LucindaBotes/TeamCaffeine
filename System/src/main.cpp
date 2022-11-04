@@ -1,5 +1,5 @@
 #include <iostream>
-#include "Entity.h"
+#include "Soldiers.h"
 
 #include <gtest/gtest.h> // ! Google Test Framework which cmake gets... ignore error
 
@@ -13,9 +13,10 @@ int runTests(int argc, char** argv)
 
 int runApplication()
 {
-	Entity entity;
-	entity.setPrice(10);
-  std::cout << "Entity price: " << entity.getPrice() << std::endl;
+	Entity* soldiers = new Soldiers();
+	soldiers->setPrice(10);
+  std::cout << "Soldier price: " << soldiers->getPrice() << std::endl;
+  return 0;
 }
 
 int main(int argc, char** argv)

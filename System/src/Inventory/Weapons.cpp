@@ -1,4 +1,4 @@
-#include <Inventory/Weapons.h>
+#include "Weapons.h"
 
 using namespace std;
 

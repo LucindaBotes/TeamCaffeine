@@ -1,7 +1,7 @@
 #ifndef ARMOUR_H
 #define ARMOUR_H
 
-#include <Inventory/EntityDecorator.h>
+#include "EntityDecorator.h"
 
 class Armour : public EntityDecorator{
   private:

@@ -1,4 +1,4 @@
-#include <ModeSelection/Strategy.h>
+#include "Strategy.h"
 
 using namespace std;
 

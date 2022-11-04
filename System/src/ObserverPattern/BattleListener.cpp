@@ -1,4 +1,4 @@
-#include <ObserverPattern/BattleListener.h>
+#include "BattleListener.h"
 
 using namespace std;
 

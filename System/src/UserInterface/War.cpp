@@ -1,4 +1,4 @@
-#include <UserInterface/War.h>
+#include "War.h"
 
 using namespace std;
 
@@ -23,27 +23,27 @@ void War::setMember(int member) {
   this->member = member;
 }
 
-void War::setPlayer1()
-{
-  this->Player_1 = new Invoker(1);
-  this->Player_1->setBattleActions(this->battles[this->battles.size()]);
-}
+// void War::setPlayer1()
+// {
+//   this->Player_1 = new Invoker(1);
+//   this->Player_1->setBattleActions(this->battles[this->battles.size()]);
+// }
 
-void War::setPlayer2()
-{
-  this->Player_2 = new Invoker(2);
-  this->Player_2->setBattleActions(this->battles[this->battles.size()]);
-}
+// void War::setPlayer2()
+// {
+//   this->Player_2 = new Invoker(2);
+//   this->Player_2->setBattleActions(this->battles[this->battles.size()]);
+// }
 
-Invoker * War::getPlayer1()
-{
-  return this->Player_1;
-}
+// Invoker * War::getPlayer1()
+// {
+//   return this->Player_1;
+// }
 
-Invoker * War::getPlayer1()
-{
-  return this->Player_2;
-}
+// Invoker * War::getPlayer1()
+// {
+//   return this->Player_2;
+// }
 
 void War::addBattle(Battle * battle)
 {

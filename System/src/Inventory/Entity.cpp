@@ -1,4 +1,4 @@
-#include <Inventory/Entity.h>
+#include "Entity.h"
 
 using namespace std;
 

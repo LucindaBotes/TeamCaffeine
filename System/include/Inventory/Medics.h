@@ -1,7 +1,7 @@
 #ifndef MEDICS_H
 #define MEDICS_H
 
-#include <Inventory/EntityDecorator.h>
+#include "EntityDecorator.h"
 
 class Medics : public EntityDecorator {
   private:

@@ -1,7 +1,7 @@
-#include <Inventory/Iterator.h>
+#include "Iterator.h"
 
 using namespace std;
 
-template <typename T>
-Iterator<T>::Iterator() {
-}
+// template <typename T>
+// Iterator<T>::Iterator() {
+// }
