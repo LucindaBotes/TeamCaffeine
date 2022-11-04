@@ -31,6 +31,7 @@ class Battle {
     void attack(int playerNumber);
     double calculateDamage(int playerNumber);
     void displayEligibleCountries();
+    double calculateHealth(int);
 };
 
 #endif

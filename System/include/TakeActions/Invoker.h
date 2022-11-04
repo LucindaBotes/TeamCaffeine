@@ -11,7 +11,7 @@ class Invoker {
   private:
     int member;
     int playerNumber;
-    int nextaction;
+    int nextaction = -1;
     std::vector<Action*> actions;
     std::vector<Action*> actionTracker;
 

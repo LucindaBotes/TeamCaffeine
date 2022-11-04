@@ -314,6 +314,28 @@ double Battle::calculateDamage(int playerNumber)
   return totalDamage;
 }
 
+double Battle::calculateHealth(int playerNumber)
+{
+  double totalHealth = 0;
+  if (playerNumber == 1)
+  {
+    for (int i=0; i < this->Alliance_A.size(); i++)
+    {
+      totalHealth += this->Alliance_A[i]->getStats().getHealth();
+    }
+  }
+  else
+  {
+    for (int i=0; i < this->Alliance_B.size(); i++)
+    {
+      totalHealth += this->Alliance_B[i]->getStats().getHealth();
+    }
+  }
+  return totalHealth;
+}
+
+
+
 void Battle::displayEligibleCountries()
 {
   for (int i=0; i < this->war->Countries_Eligible_for_War.size(); i++)
