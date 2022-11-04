@@ -5,8 +5,9 @@
 
 using namespace std;
 
-Battle::Battle(std::string name) {
-  this->name = name;
+Battle::Battle() {
+  this->name = "Battle #" + to_string(this->member);
+  cout<<this->name<<" has begun!"<<endl;
 }
 
 Battle::~Battle() {
@@ -34,117 +35,139 @@ void Battle::setPlayerAllies(Country * player1, Country * player2)
   }
 }
 
+//start should have IF in main to check if a player will surrender. If so call start then BREAK loop.
 void Battle::start(Invoker * player1, Invoker * player2){
   if (player1->getNextAction() == 0)//If player1 Defends
   {
     if (player2->getNextAction() == 0){//Defends
-
+      player1->defendAlliance();
+      player2->defendAlliance();
     }
     else if (player2->getNextAction() == 1)//Holds
     {
-
+      player1->defendAlliance();
+      player2->hold();
     }
     else if (player2->getNextAction() == 2)//surrenders
     {
-
+      player1->defendAlliance();
+      player2->surrender();
     }
     else if (player2->getNextAction() == 3)//requestAlly
     {
-
+      player1->defendAlliance();
+      player2->requestAlly();
     }
     else if (player2->getNextAction() == 4)//attacks
     {
-
+      player1->defendAlliance();
+      player2->attackEnemyAlliance();
     }
   }
   else if (player1->getNextAction() == 1)//If player 1 Holds
   {
     if (player2->getNextAction() == 0){
-
+      player1->hold();
+      player2->defendAlliance();
     }
     else if (player2->getNextAction() == 1)
     {
-
+      player1->hold();
+      player2->hold();
     }
     else if (player2->getNextAction() == 2)
     {
-
+      player1->hold();
+      player2->surrender();
     }
     else if (player2->getNextAction() == 3)
     {
-
+      player1->hold();
+      player2->requestAlly();
     }
     else if (player2->getNextAction() == 4)
     {
-
+      player1->hold();
+      player2->attackEnemyAlliance();
     }
   }
   else if (player1->getNextAction() == 2)//If player 1 surrenders
   {
     if (player2->getNextAction() == 0){
-
+      player1->surrender();
     }
     else if (player2->getNextAction() == 1)
     {
-
+      player1->surrender();
     }
     else if (player2->getNextAction() == 2)
     {
-
+      player1->surrender();
     }
     else if (player2->getNextAction() == 3)
     {
-
+      player1->surrender();
     }
     else if (player2->getNextAction() == 4)
     {
-
+      player1->surrender();
     }
   }
   else if (player1->getNextAction() == 3)//If player 1 requestsAlly
   {
     if (player2->getNextAction() == 0){
-
+      player1->requestAlly();
+      player2->defendAlliance();
     }
     else if (player2->getNextAction() == 1)
     {
-
+      player1->requestAlly();
+      player2->hold();
     }
     else if (player2->getNextAction() == 2)
     {
-
+      player1->requestAlly();
+      player2->surrender();
     }
     else if (player2->getNextAction() == 3)
     {
-
+      player1->requestAlly();
+      player2->requestAlly();
     }
     else if (player2->getNextAction() == 4)
     {
-
+      player1->requestAlly();
+      player2->attackEnemyAlliance();
     }
   }
   else if (player1->getNextAction() == 4)//If player 1 attacks
   {
     if (player2->getNextAction() == 0){
-
+      player1->attackEnemyAlliance();
+      player2->defendAlliance();
     }
     else if (player2->getNextAction() == 1)
     {
-
+      player1->attackEnemyAlliance();
+      player2->hold();
     }
     else if (player2->getNextAction() == 2)
     {
-
+      player1->attackEnemyAlliance();
+      player2->surrender();
     }
     else if (player2->getNextAction() == 3)
     {
-
+      player2->requestAlly();
+      player1->attackEnemyAlliance();
     }
     else if (player2->getNextAction() == 4)
     {
-
+      player1->attackEnemyAlliance();
+      player2->attackEnemyAlliance();
     }
   }
+  cout<<"Battle #"<<this->getMember()<<" has ended."<<endl;
 }
 
 void Battle::defend(int playerNumber){//Uses Defense statistic
@@ -168,7 +191,7 @@ void Battle::defend(int playerNumber){//Uses Defense statistic
         this->Alliance_B[i]->getStats().setHealth(this->Alliance_B[i]->getStats().getHealth() + 20);
       }
     }
-    cout<<"Player 1 defends..."<<endl;
+    cout<<"Player 2 defends..."<<endl;
   }
 }
 
@@ -179,18 +202,24 @@ void Battle::hold(int playerNumber){//Hold does nothing
   }
   else if (playerNumber == 2)
   {
-    cout<<"Player 1 Holds..."<<endl;
+    cout<<"Player 2 Holds..."<<endl;
   }
 }
 
-void Battle::surrender(int playerNumber){//Terminate war give up
+void Battle::surrender(int playerNumber){//Terminate war give up WILL BE HANDLE IN MAIN IF STATEMENT.
   if (playerNumber == 1)
   {
     cout<<"Player 1 has Surrendered!"<<endl;
+    cout<<this->Alliance_B[0]->getName()<<" has won the war!"<<endl;
+    cout<<"*****************************************"<<endl;
+    cout<<"Player 2 WINS."<<endl;
   }
   else if (playerNumber == 2)
   {
     cout<<"Player 2 has Surrendered!"<<endl;
+    cout<<this->Alliance_A[0]->getName()<<" has won the war!"<<endl;
+    cout<<"*****************************************"<<endl;
+    cout<<"Player 1 WINS."<<endl;
   }
 }
 
@@ -198,6 +227,7 @@ void Battle::allyAction(int playerNumber){//request ally
   if (this->war->Countries_Eligible_for_War.empty() == true)
   {
     cout<<"Sorry, no allies available."<<endl;
+    return;
   }
   cout<<"Select the number for the country you wish to be your Ally!"<<endl;
   cout<<"**********************************************"<<endl;
