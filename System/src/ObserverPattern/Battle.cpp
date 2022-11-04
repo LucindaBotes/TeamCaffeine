@@ -354,7 +354,7 @@ void Battle::checkifAllyDied(int playerNumber)
     {
       if (this->Alliance_A[i]->getStats().getHealth() <= 0)
       {
-        cout<<this->Alliance_A[i]->getName()<<" has died!"<<endl;
+        cout<<"Player 1's ally "<<this->Alliance_A[i]->getName()<<" has died!"<<endl;
         this->Alliance_A.erase(this->Alliance_A.begin() + i);
       }
     }
@@ -365,7 +365,7 @@ void Battle::checkifAllyDied(int playerNumber)
     {
       if (this->Alliance_B[i]->getStats().getHealth() <= 0)
       {
-        cout<<this->Alliance_B[i]->getName()<<" has died!"<<endl;
+        cout<<"Player 2's ally "<<this->Alliance_B[i]->getName()<<" has died!"<<endl;
         this->Alliance_B.erase(this->Alliance_B.begin() + i);
       }
     }
