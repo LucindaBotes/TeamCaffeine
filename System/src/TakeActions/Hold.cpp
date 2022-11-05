@@ -53,7 +53,7 @@ void Hold::setMember(int member) {
 
 /**
  * @brief method to execute the Hold command
- * @details Executes the Hold command by calling the Hold method of the battle object for the 
+ * @details Executes the Hold command by calling the hold method of the battle object for the 
  * appropriate player.
  */
 void Hold::executeAction()

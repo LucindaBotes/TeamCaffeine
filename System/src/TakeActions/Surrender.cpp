@@ -55,7 +55,7 @@ void Surrender::setMember(int member) {
 
 /**
  * @brief method to execute the Surrender command
- * @details Executes the Surrender command by calling the Surrender method of the battle object for the 
+ * @details Executes the Surrender command by calling the surrender method of the battle object for the 
  * appropriate player.
  */
 void Surrender::executeAction()
