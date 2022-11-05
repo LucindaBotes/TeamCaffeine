@@ -2,6 +2,7 @@
 #define MEDICS_H
 
 #include "EntityDecorator.h"
+#include "Randomizer.h"
 
 class Medics : public EntityDecorator {
   private:
