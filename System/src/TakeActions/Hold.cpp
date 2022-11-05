@@ -33,7 +33,7 @@ Hold::~Hold() {
 }
 
 /**
- * @brief method to get the member private member of the invoker
+ * @brief method to get the member private member of the Hold command object
  * 
  * @return int 
  */
@@ -43,7 +43,7 @@ int Hold::getMember() {
 }
 
 /**
- * @brief method to set the member private member of the invoker
+ * @brief method to set the member private member of the Hold command object
  * 
  * @param member int
  */

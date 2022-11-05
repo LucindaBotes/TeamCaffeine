@@ -9,7 +9,7 @@ using namespace std;
  * @li Command Pattern: Command Pattern Concrete Command Participant
  * 
  * @details AllyAction is a command that allows the user to request for an ally to join his alliance
- * by executing requestAlly on the relevant battle.
+ * by executing allyAction on the relevant battle. 
  * 
  * @author Ruan Tristan Carlinsky ; u20416823
  */
@@ -34,7 +34,7 @@ AllyAction::~AllyAction() {
 }
 
 /**
- * @brief method to get the member private member of the invoker
+ * @brief method to get the member private member of the AllyAction command object
  * 
  * @return int 
  */
@@ -44,7 +44,7 @@ int AllyAction::getMember() {
 }
 
 /**
- * @brief method to set the member private member of the invoker
+ * @brief method to set the member private member of the AllyAction command object
  * 
  * @param member int
  */

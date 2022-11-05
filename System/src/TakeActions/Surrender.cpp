@@ -34,7 +34,7 @@ Surrender::~Surrender() {
 }
 
 /**
- * @brief method to get the member private member of the invoker
+ * @brief method to get the member private member of the Surrender command object
  * 
  * @return int 
  */
@@ -44,7 +44,7 @@ int Surrender::getMember() {
 }
 
 /**
- * @brief method to set the member private member of the invoker
+ * @brief method to set the member private member of the Surrender command object
  * 
  * @param member int
  */
