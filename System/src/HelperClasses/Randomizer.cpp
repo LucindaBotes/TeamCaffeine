@@ -5,6 +5,8 @@ using namespace std;
 Randomizer* Randomizer::onlyInstanece_ = nullptr;
 
 Randomizer::Randomizer() {
+  srand(time(NULL));
+  seedGenerator = default_random_engine(rand());
 }
 
 Randomizer* Randomizer::getInstance() {
@@ -15,8 +17,11 @@ Randomizer* Randomizer::getInstance() {
 }
 
 double Randomizer::getUniformRandomNumber(double min, double max) {
-  srand(time(NULL));
-  std::default_random_engine seedGenerator(rand());
   std::uniform_real_distribution<double> toReturnDistrib (min, max);
+  return toReturnDistrib(seedGenerator);
+}
+
+int Randomizer::getUniformRandomNumber(int min, int max) {
+  std::uniform_int_distribution<int> toReturnDistrib (min, max);
   return toReturnDistrib(seedGenerator);
 }

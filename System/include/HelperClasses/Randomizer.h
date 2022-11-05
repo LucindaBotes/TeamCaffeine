@@ -7,6 +7,7 @@ class Randomizer {
   public:
     static Randomizer* getInstance();
     double getUniformRandomNumber(double min, double max);
+    int getUniformRandomNumber(int min, int max);
   
   protected:
     Randomizer();
@@ -16,6 +17,7 @@ class Randomizer {
 
   private:
     static Randomizer* onlyInstanece_;
+    std::default_random_engine seedGenerator;
 };
 
 #endif
