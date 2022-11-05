@@ -4,12 +4,10 @@
 /**
  * @file War.h
  * @brief War class implementation,
- * @li Design Pattern: Strategy
- * @li Participant: ConcreteStrategy
- * 
+ 
  * @details War simulates the war between two players by creating a war with the desired type of war with a
  * series of battles until a player wins.
- * @author UnarineLeo ; XXXXXXXXX. Ruan Tristan Carlinsky ; u20416823
+ * @author Netshifhefhe Unarine Leo ; u20505656, Ruan Tristan Carlinsky ; u20416823
 */
 
 using namespace std;
