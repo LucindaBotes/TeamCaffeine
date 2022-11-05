@@ -3,12 +3,13 @@
 using namespace std;
 
 /**
+ * @file PeacefulState.cpp
  * @brief PeacefulState class implementation,
  * @li Design Pattern: State
  * @li Participant: ConcreteState
  * 
  * @details PeacefulState class implements a state which is for when a war is over, and there's a truce or one country is defeated
- * @author UnarineLeo
+ * @author Netshifhefhe Unarine Leo : u20505656
 */
 
 PeacefulState::PeacefulState() {
