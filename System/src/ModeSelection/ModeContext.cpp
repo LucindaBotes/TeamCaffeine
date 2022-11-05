@@ -3,12 +3,13 @@
 using namespace std;
 
 /**
+ * @file ModeContext.cpp
  * @brief ModeContext class implementation,
  * @li Design Pattern: Strategy
  * @li Participant: Context
  * 
  * @details ModeContext is responsible for allowing client to choose the mode of the game 
- * @author: UnarineLeo
+ * @author Netshifhefhe Unarine Leo : u20505656
  * 
 */
 
