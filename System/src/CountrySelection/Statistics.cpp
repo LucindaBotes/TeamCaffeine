@@ -3,6 +3,10 @@
 using namespace std;
 
 Statistics::Statistics() {
+  _health = Randomizer::getInstance()->getUniformRandomNumber(1000, 1500);
+  _damage = Randomizer::getInstance()->getUniformRandomNumber(50, 70);
+  _defence = Randomizer::getInstance()->getUniformRandomNumber(50, 70);
+  _gdp = new GDP();
 }
 
 Statistics::Statistics(double health, double damage, double defence, GDP* gdp) {
