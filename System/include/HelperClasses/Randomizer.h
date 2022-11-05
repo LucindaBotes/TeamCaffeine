@@ -17,7 +17,7 @@ class Randomizer {
 
   private:
     static Randomizer* onlyInstanece_;
-    std::default_random_engine seedGenerator;
+    std::default_random_engine _seedGenerator;
 };
 
 #endif
