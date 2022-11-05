@@ -2,22 +2,36 @@
 #define BATTLE_H
 
 #include <CountrySelection/Country.h>
-#include <string>
+#include <UserInterface/War.h>
+#include <TakeActions/Invoker.h>
 #include <vector>
+#include <string>
 
 class Battle {
   private:
+    War * war;
     int member;
-    string name;
-    std::vector<Country> Alliance_A;
-    std::vector<Country> Alliance_B;
+    std::string name;
+    std::vector<Country*> Alliance_A;
+    std::vector<Country*> Alliance_B;
 
   public:
+    //copy constructor for Battle
     Battle();
-    ~Battle();
+    ~Battle();  
+    void start(Invoker * player1, Invoker * player2);
     int getMember();
     void setMember(int);
-    void startBattle();
+    void setPlayerAllies(Country * player1, Country * player2);
+    void defend(int playerNumber);
+    void hold(int playerNumber);
+    void surrender(int playerNumber);
+    void allyAction(int playerNumber);
+    void attack(int playerNumber);
+    double calculateDamage(int playerNumber);
+    void displayEligibleCountries();
+    double calculateHealth(int);
+    void checkifAllyDied(int playerNumber);
 };
 
 #endif

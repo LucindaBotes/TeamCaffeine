@@ -2,33 +2,170 @@
 // #include "War.h"
 
 /**
+ * @file War.h
  * @brief War class implementation,
  * @li Design Pattern: Strategy
  * @li Participant: ConcreteStrategy
  * 
- * @details 
- * @author UnarineLeo
+ * @details War simulates the war between two players by creating a war with the desired type of war with a
+ * series of battles until a player wins.
+ * @author UnarineLeo ; XXXXXXXXX. Ruan Tristan Carlinsky ; u20416823
 */
 
 using namespace std;
 
-War::War() 
-{
-
+/**
+ * @brief Construct a new War object
+ * 
+ */
+War::War() {
 }
 
-/// @brief it initializes warname and activeness of the war
-/// @param wName 
-/// @param Active 
-War::War(string wName,bool Active)
-{
-  _warName = wName;
-  _active = Active;
+/**
+ * @brief Destroy the War object then delete the players and all the battles.
+ * 
+ */
+War::~War() {
+  delete this->Player_1;
+  delete this->Player_2;
+  for (int i =0; i < this->battles.size(); i++)
+  {
+    delete this->battles[i];
+  }
+  this->battles.clear();
 }
 
-War::~War() 
+/**
+ * @brief Method to create player 1's Invoker to serve as controller to invoke command actions.
+ * Then sets the player's battle private member which the commands will be invoked on.
+ * 
+ * @return Player* 
+ */
+
+void War::setPlayer1()
 {
-  
+  this->Player_1 = new Invoker(1);
+  this->Player_1->setBattleActions(this->battles[this->battles.size()]);
+}
+
+/**
+ * @brief <ethod to create player 2's Invoker to serve as controller to invoke command actions.
+ * Then sets the player's battle private member which the commands will be invoked on.
+ * 
+ * @return Player* 
+ */
+
+void War::setPlayer2()
+{
+  this->Player_2 = new Invoker(2);
+  this->Player_2->setBattleActions(this->battles[this->battles.size()]);
+}
+
+/**
+ * @brief Method to get player1's Invoker
+ * 
+ * @return Invoker* 
+ */
+Invoker * War::getPlayer1()
+{
+  return this->Player_1;
+}
+
+/**
+ * @brief method to get player1's Invoker
+ * 
+ * @return Invoker* 
+ */
+
+Invoker * War::getPlayer1()
+{
+  return this->Player_2;
+}
+
+/**
+ * @brief Method to create a new battle and add it to the battles vector private member.
+ * 
+ * @param battle battle*
+ */
+
+void War::addBattle(Battle * battle)
+{
+  this->battles.push_back(battle);
+}
+
+/**
+ * @brief Method to select the player1's chosen country as an argument and set it as the player1's main country during the war.
+ * @details Takes in the country name that the first user chose to be player1's main country.
+ * The country is then selected from the list of eligible countries and set as the player1's main country and removed from the list.
+ * @param countryname1 
+ */
+
+void War::setPlayer1_Country(std::string countryname1)
+{
+  for (int i=0; i < this->Countries_Eligible_for_War.size(); i++)
+  {
+    if (this->Countries_Eligible_for_War[i]->getName() == countryname1)
+    {
+      this->country_1 = this->Countries_Eligible_for_War[i];
+      this->Countries_Eligible_for_War.erase(this->Countries_Eligible_for_War.begin() + i);
+      break;
+    }
+  }
+}
+
+/**
+ * @brief Method to select the player2's chosen country as an argument and set it as the player2's main country during the war.
+ * @details Takes in the country name that the first user chose to be player2's main country.
+ * The country is then selected from the list of eligible countries and set as the player2's main country and removed from the list.
+ * @param countryname1 
+ */
+
+void War::setPlayer2_Country(std::string countryname2)
+{
+  for (int i=0; i < this->Countries_Eligible_for_War.size(); i++)
+  {
+    if (this->Countries_Eligible_for_War[i]->getName() == countryname2)
+    {
+      this->country_2 = this->Countries_Eligible_for_War[i];
+      this->Countries_Eligible_for_War.erase(this->Countries_Eligible_for_War.begin() + i);
+      break;
+    }
+  }
+}
+
+/**
+ * @brief Method to get the player1's main country
+ * 
+ * @return Country* 
+ */
+
+Country * War::getPlayer1_Country()
+{
+  return this->country_1;
+}
+
+/**
+ * @brief Method to get the player2's main country
+ * 
+ * @return Country* 
+ */
+
+Country * War::getPlayer2_Country()
+{
+  return this->country_2;
+}
+
+/**
+ * @brief Method to initialize all the eligible countries for war.
+ * 
+ */
+void War::initializeCountries()
+{
+  std::string country_names[10] = {"France", "USA", "Turkey", "Canada", "England", "Russia", "Poland", "South Africa", "Egypt", "Germany"};
+  for (int i =0; i < 10; i ++)
+  {
+    this->Countries_Eligible_for_War.push_back(new Country(country_names[i]));
+  }
 }
 
 /// @brief check if the war is still active or not
@@ -43,21 +180,6 @@ bool War::isActive()
     {
       return false;
     }
-}
-
-/// @brief adds a country in a _countriesAtWar vector
-/// @param c 
-void War::addCountry(Country& c)
-{
-  _countriesAtWar.push_back(c);
-}
-
-/// @brief adds a battle in a battles vector
-/// @param b 
-void War::addBattle(Battle& b)
-{
-  battles.push_back(b);
-  
 }
 
 /// @brief sets the phase of the war
@@ -86,13 +208,6 @@ void setActive(bool activeness)
 string War::getName()
 {
   return _warName;
-}
-
-/// @brief gets the countries at war
-/// @return vector which contains the countries at war
-vector<Country> War::getCountriesAtWar()
-{
-  return _countriesAtWar;
 }
 
 /// @brief gets the battles at war

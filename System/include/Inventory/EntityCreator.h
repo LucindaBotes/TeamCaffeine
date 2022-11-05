@@ -1,15 +1,14 @@
 #ifndef ENTITYCREATOR_H
 #define ENTITYCREATOR_H
 
+#include "Entity.h"
+#include "Iterator.h"
 class EntityCreator {
-  private:
-    int member;
-
   public:
     EntityCreator();
-    ~EntityCreator();
-    int getMember();
-    void setMember(int);
+    virtual ~EntityCreator();
+    virtual Entity * createEntity();
+    virtual Iterator * createIterator();
 };
 
 #endif

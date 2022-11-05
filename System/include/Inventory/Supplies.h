@@ -1,15 +1,22 @@
 #ifndef SUPPLIES_H
 #define SUPPLIES_H
 
-class Supplies {
+#include <Inventory/EntityDecorator.h>
+
+class Supplies : public EntityDecorator{
   private:
-    int member;
+    double _health;
 
   public:
     Supplies();
-    ~Supplies();
-    int getMember();
-    void setMember(int);
+    Supplies(double);
+    Supplies(const Supplies &s);
+    virtual ~Supplies() override;
+
+    Entity* clone() override;
+
+    double getHealth() const;
+    void setHealth(double health);
 };
 
 #endif

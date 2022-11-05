@@ -2,16 +2,26 @@
 
 using namespace std;
 
-GDP::GDP() {
+GDP::GDP()
+{
+  _value = 0.0;
 }
 
-GDP::~GDP() {
+GDP::GDP(double gdpValue)
+{
+  this->_value = gdpValue;
 }
 
-int GDP::getMember() {
-  return this->member;
+GDP::~GDP()
+{
 }
 
-void GDP::setMember(int member) {
-  this->member = member;
+double GDP::getValue() const
+{
+  return _value;
+}
+
+void GDP::setValue(double gdpValue)
+{
+  _value = gdpValue;
 }
