@@ -10,6 +10,6 @@ class ActionListener {
     ~ActionListener();
     int getMember();
     void setMember(int);
+    virtual void update() = 0;
 };
-
 #endif

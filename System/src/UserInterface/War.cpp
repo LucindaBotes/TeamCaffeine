@@ -1,18 +1,18 @@
 #include <UserInterface/War.h>
-
-using namespace std;
+// #include "War.h"
 
 /**
  * @file War.h
- * @brief Invoker class implementation for simulation of war.
- * Design Pattern:
- * @li 
+ * @brief War class implementation,
+ * @li Design Pattern: Strategy
+ * @li Participant: ConcreteStrategy
  * 
  * @details War simulates the war between two players by creating a war with the desired type of war with a
  * series of battles until a player wins.
- * 
- * @author Ruan Tristan Carlinsky ; u20416823
- */
+ * @author UnarineLeo ; XXXXXXXXX. Ruan Tristan Carlinsky ; u20416823
+*/
+
+using namespace std;
 
 /**
  * @brief Construct a new War object
@@ -33,26 +33,6 @@ War::~War() {
     delete this->battles[i];
   }
   this->battles.clear();
-}
-
-/**
- * @brief Method to get the member private member of the war
- * 
- * @return int 
- */
-
-int War::getMember() {
-  return this->member;
-}
-
-/**
- * @brief Method to set the member private member of the war
- * 
- * @param member int
- */
-
-void War::setMember(int member) {
-  this->member = member;
 }
 
 /**
@@ -188,3 +168,51 @@ void War::initializeCountries()
   }
 }
 
+/// @brief check if the war is still active or not
+/// @return activeness of war, true if active and false if not active
+bool War::isActive()
+{
+    if(_active == true)
+    {
+      return true;
+    }
+    else
+    {
+      return false;
+    }
+}
+
+/// @brief sets the phase of the war
+/// @param p 
+void War::setPhase(WarPhaseState* p)
+{
+  //warPhaseC->setState(new p);
+}
+
+/// @brief sets the name of the war
+/// @param name 
+void War::setName(string name)
+{
+    _warName = name;
+}
+
+/// @brief sets the activeness of the war
+/// @param activeness 
+void setActive(bool activeness)
+{
+  _active = activeness;
+}
+
+/// @brief returns name of war
+/// @return name of the war
+string War::getName()
+{
+  return _warName;
+}
+
+/// @brief gets the battles at war
+/// @return vector which contains the battles at war
+vector<Battle> War::getBattle()
+{
+  return battles;
+}

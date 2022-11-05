@@ -14,7 +14,6 @@ class Battle {
     std::string name;
     std::vector<Country*> Alliance_A;
     std::vector<Country*> Alliance_B;
-    
 
   public:
     //copy constructor for Battle
