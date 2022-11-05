@@ -12,12 +12,12 @@ template <class T>
 BattleFacade<T>::~BattleFacade() {
 }
 
-/*template <class T>
-Battle BattleFacade<T>::getMemento() {
+template <class T>
+void BattleFacade<T>::receiveMementoData() {
   
 }
 
 template <class T>
-void BattleFacade<T>::setMemento(Battle* m) {
-
-}*/
+Battle BattleFacade<T>::sendMementoData() {
+  return b;
+}

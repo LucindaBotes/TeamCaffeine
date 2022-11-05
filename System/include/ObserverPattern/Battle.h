@@ -32,6 +32,10 @@ class Battle {
     void displayEligibleCountries();
     double calculateHealth(int);
     void checkifAllyDied(int playerNumber);
+
+    //Added by Erik
+    //Required for memento: member, name, Alliance_A, Alliance_B
+    Battle mementoData(int m, std::string n, std::vector<Country*> A_A, std::vector<Country*> A_B);
 };
 
 #endif
