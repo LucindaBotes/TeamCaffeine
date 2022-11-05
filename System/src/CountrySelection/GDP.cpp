@@ -4,7 +4,7 @@ using namespace std;
 
 GDP::GDP()
 {
-  _value = 0.0;
+  _value = Randomizer::getInstance()->getUniformRandomNumber(1000, 3000);
 }
 
 GDP::GDP(double gdpValue)
