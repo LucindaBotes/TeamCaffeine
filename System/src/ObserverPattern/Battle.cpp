@@ -5,21 +5,59 @@
 
 using namespace std;
 
+/**
+ * @file Battle.h
+ * @brief Battle class implementation where the battle is simulated between the players.
+ * @details Battle is where both players will execute various commands on each other's alliances aiming to win the battle by either
+ * defeating the other player's alliance or by either one surrendering.
+ * 
+ * @author Ruan Tristan Carlinsky ; u20416823
+ */
+
+/**
+ * @brief Constructor to create a new Battle object and initialize the name Battle
+ */
+
 Battle::Battle() {
   this->name = "Battle #" + to_string(this->member);
   cout<<this->name<<" has begun!"<<endl;
 }
 
+/**
+ * @brief Destructor to destroy the Battle object and clearing the Alliance vectors.
+ */
 Battle::~Battle() {
+  this->Alliance_A.clear();
+  this->Alliance_B.clear();
 }
+
+/**
+ * @brief method to get the name private member of the Battle object
+ * 
+ * @return string 
+ */
 
 int Battle::getMember() {
   return this->member;
 }
 
+/**
+ * @brief method to set the member private member of the Battle object
+ * 
+ * @param member int
+ */
+
 void Battle::setMember(int member) {
   this->member = member;
 }
+
+/**
+ * @brief Method to initialize the vectors for player 1 and 2's alliance by taking the two player's countries
+ * as arguments.
+ * 
+ * @param player1 Country*
+ * @param player2 Country*
+ */
 
 void Battle::setPlayerAllies(Country * player1, Country * player2)
 {
@@ -35,8 +73,15 @@ void Battle::setPlayerAllies(Country * player1, Country * player2)
   }
 }
 
-//start should have IF in main to check if a player will surrender. If so call start then BREAK loop.
-void Battle::start(Invoker * player1, Invoker * player2){
+/**
+ * @brief Commences the war by executing the actions that both player's chose upon each other's alliances. 
+ * Checks are the performed to determine if one of the alliances have lost an ally. If so, the ally is removed from the
+ * Alliance.
+ * 
+ * @param player1 Invoker*
+ * @param player2 INvoker*
+ */
+void Battle::start(Invoker * player1, Invoker * player2){//start should have IF in main to check if a player will surrender. If so call start then BREAK loop.
   if (player1->getNextAction() == 0)//If player1 Defends
   {
     if (player2->getNextAction() == 0){//Defends
@@ -174,6 +219,13 @@ void Battle::start(Invoker * player1, Invoker * player2){
   cout<<"Battle #"<<this->getMember()<<" has ended."<<endl;
 }
 
+/**
+ * @brief Executes the defend method for the relevant player.
+ * @details Takes in the player number to execute the defend method for the player that invoked the defend action.
+ * The player's alliance is then reinforced with defense using the defense statistics for each country in the alliance.
+ * The player will then have defense for the round of battle.
+ * @param playerNumber int
+ */
 void Battle::defend(int playerNumber){//Uses Defense statistic
   if (playerNumber == 1)
   {
@@ -199,6 +251,12 @@ void Battle::defend(int playerNumber){//Uses Defense statistic
   }
 }
 
+/**
+ * @brief Executes the hold method for the relevant player.
+ * @details Takes in the player number to execute the hold method for the player that invoked the hold action.
+ * The player will then hold for the round of battle.
+ * @param playerNumber int
+ */
 void Battle::hold(int playerNumber){//Hold does nothing
   if (playerNumber == 1)
   {
@@ -209,6 +267,13 @@ void Battle::hold(int playerNumber){//Hold does nothing
     cout<<"Player 2 Holds..."<<endl;
   }
 }
+
+/**
+ * @brief Executes the surrender method for the relevant player.
+ * @details Takes in the player number to execute the surrender method for the player that invoked the surrender action.
+ * The player will then surrender for the round of battle.
+ * @param playerNumber int
+ */
 
 void Battle::surrender(int playerNumber){//Terminate war give up WILL BE HANDLE IN MAIN IF STATEMENT.
   if (playerNumber == 1)
@@ -227,6 +292,15 @@ void Battle::surrender(int playerNumber){//Terminate war give up WILL BE HANDLE 
   }
 }
 
+/**
+ * @brief Executes the allyAction method for the relevant player.
+ * @details Takes in the player number to execute the requestAlly method for the player that invoked the requestAlly action.
+ * The player will then request an ally for the round of battle.
+ * The player will first be presented with a list of the possible candidate countries of which the player will have to choose one.
+ * The request will then be considered by getting a random boolean and can either be rejected(false) or accepted(true). 
+ * If accepted then the ally will become a part of the alliance, otherwise it won't.
+ * @param playerNumber int
+ */
 void Battle::allyAction(int playerNumber){//request ally
   if (this->war->Countries_Eligible_for_War.empty() == true)
   {
@@ -273,6 +347,13 @@ void Battle::allyAction(int playerNumber){//request ally
   }
 }
 
+/**
+ * @brief Executes the attack action to inflict damage on enemy alliance.
+ * @details Takes in the player number to execute the attack method for the player that invoked the action.
+ * The player's total damage is then calculated from its alliance members and the total damage is then distributed
+ * equally on the enemy alliance members by subtracting the damage from their Health statistic.
+ * @param playerNumber int
+ */
 void Battle::attack(int playerNumber){//Normal attack
   if (playerNumber == 1)
   {
@@ -298,6 +379,12 @@ void Battle::attack(int playerNumber){//Normal attack
   }
 }
 
+/**
+ * @brief Calculates the total Damage an alliance can inflict on the enemy alliance and returns the total.
+ * 
+ * @param playerNumber 
+ * @return double 
+ */
 double Battle::calculateDamage(int playerNumber)
 {
   double totalDamage = 0;
@@ -308,7 +395,7 @@ double Battle::calculateDamage(int playerNumber)
       totalDamage += this->Alliance_A[i]->getStats().getDamage();
     }
   }
-  else
+  else if (playerNumber == 2)
   {
     for (int i=0; i < this->Alliance_B.size(); i++)
     {
@@ -318,6 +405,12 @@ double Battle::calculateDamage(int playerNumber)
   return totalDamage;
 }
 
+/**
+ * @brief Calculates the total Health of an alliance and returns the total.
+ * 
+ * @param playerNumber 
+ * @return double 
+ */
 double Battle::calculateHealth(int playerNumber)
 {
   double totalHealth = 0;
@@ -338,6 +431,10 @@ double Battle::calculateHealth(int playerNumber)
   return totalHealth;
 }
 
+/**
+ * @brief Displays the list of countries that are eligible for war.
+ * 
+ */
 void Battle::displayEligibleCountries()
 {
   for (int i=0; i < this->war->Countries_Eligible_for_War.size(); i++)
@@ -346,6 +443,11 @@ void Battle::displayEligibleCountries()
   }
 }
 
+/**
+ * @brief Checks if an ally member has died and removes it from the player's alliance.
+ * 
+ * @param playerNumber 
+ */
 void Battle::checkifAllyDied(int playerNumber)
 {
   if (playerNumber == 1)
@@ -355,6 +457,7 @@ void Battle::checkifAllyDied(int playerNumber)
       if (this->Alliance_A[i]->getStats().getHealth() <= 0)
       {
         cout<<"Player 1's ally "<<this->Alliance_A[i]->getName()<<" has died!"<<endl;
+        delete this->Alliance_A[i];
         this->Alliance_A.erase(this->Alliance_A.begin() + i);
       }
     }
@@ -366,6 +469,7 @@ void Battle::checkifAllyDied(int playerNumber)
       if (this->Alliance_B[i]->getStats().getHealth() <= 0)
       {
         cout<<"Player 2's ally "<<this->Alliance_B[i]->getName()<<" has died!"<<endl;
+        delete this->Alliance_B[i];
         this->Alliance_B.erase(this->Alliance_B.begin() + i);
       }
     }
