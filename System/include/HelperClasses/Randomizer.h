@@ -4,12 +4,16 @@
 #include <random>
 
 class Randomizer {
-  private:
-    int member;
+  protected:
+    Randomizer();
+    static Randomizer* _instance;
 
   public:
-    Randomizer();
+    Randomizer(Randomizer &r) = delete;
     ~Randomizer();
+
+    static Randomizer* getInstance();
+
     double getUniformRandomNumber(double min, double max);
 };
 

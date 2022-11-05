@@ -18,7 +18,7 @@
 *  @return Armour
 */
 Armour::Armour() : EntityDecorator(EntityType::ARMOUR){
-  this->_armour = 0;
+  this->_armour = Randomizer::getInstance()->getUniformRandomNumber(15.0, 30.0);
 }
 
 /**

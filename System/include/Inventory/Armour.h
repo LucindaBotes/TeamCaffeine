@@ -2,6 +2,7 @@
 #define ARMOUR_H
 
 #include "EntityDecorator.h"
+#include "Randomizer.h"
 
 class Armour : public EntityDecorator{
   private:
