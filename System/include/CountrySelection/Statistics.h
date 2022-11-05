@@ -13,11 +13,15 @@ class Statistics {
     GDP* _gdp;
     Randomizer random;
 
+    double _gdp_int;
+
   public:
     Statistics();
     Statistics(double, double, double, GDP*);
     ~Statistics();
 
+    void copy(double, double, double, GDP*);
+    Statistics copy(double, double, double, double);
     double getHealth() const;
     double getDamage() const;
     double getDefence() const;

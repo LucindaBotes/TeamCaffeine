@@ -18,6 +18,16 @@ Statistics::~Statistics() {
   delete _gdp;
 }
 
+void Statistics::copy(double health, double damage, double defence, GDP* gdp) {
+  double newGDP = gdp->getValue();
+  copy(health, damage, defence, newGDP);
+}
+
+Statistics Statistics::copy(double health, double damage, double defence, double gdp) {
+  Statistics newStats = Statistics(health, damage, defence, new GDP(gdp));
+  return newStats;
+}
+
 double Statistics::getHealth() const {
   return _health;
 }
