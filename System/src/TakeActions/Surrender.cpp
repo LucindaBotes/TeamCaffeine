@@ -1,8 +1,10 @@
-#include <TakeActions/Surrender.h>
+#include "Surrender.h"
 
 using namespace std;
 
-Surrender::Surrender() {
+Surrender::Surrender(Battle * battle, int playerNumber) {
+  this->battle = battle;
+  this->playerNumber = playerNumber;
 }
 
 Surrender::~Surrender() {
@@ -14,4 +16,9 @@ int Surrender::getMember() {
 
 void Surrender::setMember(int member) {
   this->member = member;
+}
+
+void Surrender::executeAction()
+{
+  this->battle->surrender(this->playerNumber);
 }

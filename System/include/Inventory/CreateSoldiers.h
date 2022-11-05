@@ -1,8 +1,8 @@
 #ifndef CREATESOLDIERS_H
 #define CREATESOLDIERS_H
 
-#include <Inventory/Soldiers.h>
-#include <Inventory/EntityCreator.h>
+#include "Soldiers.h"
+#include "EntityCreator.h"
 
 class CreateSoldiers : public EntityCreator {
   private:

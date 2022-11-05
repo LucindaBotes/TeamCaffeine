@@ -1,17 +1,27 @@
-#include <HelperClasses/Randomizer.h>
+#include "Randomizer.h"
 
 using namespace std;
 
+Randomizer* Randomizer::onlyInstanece_ = nullptr;
+
 Randomizer::Randomizer() {
+  srand(time(NULL));
+  seedGenerator = default_random_engine(rand());
 }
 
-Randomizer::~Randomizer() {
+Randomizer* Randomizer::getInstance() {
+  if(onlyInstanece_ == nullptr) {
+    onlyInstanece_ = new Randomizer();
+  }
+  return onlyInstanece_;
 }
 
-int Randomizer::getMember() {
-  return this->member;
+double Randomizer::getUniformRandomNumber(double min, double max) {
+  std::uniform_real_distribution<double> toReturnDistrib (min, max);
+  return toReturnDistrib(seedGenerator);
 }
 
-void Randomizer::setMember(int member) {
-  this->member = member;
+int Randomizer::getUniformRandomNumber(int min, int max) {
+  std::uniform_int_distribution<int> toReturnDistrib (min, max);
+  return toReturnDistrib(seedGenerator);
 }

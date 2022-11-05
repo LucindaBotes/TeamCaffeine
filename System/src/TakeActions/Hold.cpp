@@ -1,8 +1,10 @@
-#include <TakeActions/Hold.h>
+#include "Hold.h"
 
 using namespace std;
 
-Hold::Hold() {
+Hold::Hold(Battle * battle, int playerNumber) {
+  this->battle = battle;
+  this->playerNumber = playerNumber;
 }
 
 Hold::~Hold() {
@@ -15,3 +17,10 @@ int Hold::getMember() {
 void Hold::setMember(int member) {
   this->member = member;
 }
+
+void Hold::executeAction()
+{
+  this->battle->hold(this->playerNumber);
+}
+
+

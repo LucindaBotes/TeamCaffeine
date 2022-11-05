@@ -1,4 +1,4 @@
-#include <WarPhases/HostileState.h>
+#include "HostileState.h"
 
 using namespace std;
 

@@ -1,9 +1,10 @@
 #ifndef MEDICS_H
 #define MEDICS_H
 
-#include <Inventory/Entity.h>
+#include "EntityDecorator.h"
+#include "Randomizer.h"
 
-class Medics : public Entity {
+class Medics : public EntityDecorator {
   private:
     double _heal;
 
@@ -12,6 +13,7 @@ class Medics : public Entity {
     Medics(double);
     Medics(const Medics &m);
     virtual ~Medics() override;
+
     Entity* clone() override;
 
     double getHeal() const;

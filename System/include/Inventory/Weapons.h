@@ -1,14 +1,12 @@
 #ifndef WEAPONS_H
 #define WEAPONS_H
 
-#include <Inventory/Entity.h>
+#include "EntityDecorator.h"
+#include "Randomizer.h"
 
-class Weapons : public Entity{
-
+class Weapons : public EntityDecorator{
   private:
     double _damage;
-    double _armour;
-    int _vehicles;
 
   public:
     Weapons();
@@ -17,12 +15,9 @@ class Weapons : public Entity{
     virtual ~Weapons() override;
 
     Entity* clone() override;
+
     double getDamage() const;
-    double getArmour() const;
-    int getVehicles() const;
     void setDamage(double damage);
-    void setArmour(double armour);
-    void setVehicles(int vehicles);
 };
 
 #endif

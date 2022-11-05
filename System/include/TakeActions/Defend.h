@@ -1,15 +1,22 @@
 #ifndef DEFEND_H
 #define DEFEND_H
 
-class Defend {
+#include "Action.h"
+#include "Battle.h"
+
+class Defend : public Action{
   private:
     int member;
+    int playerNumber;
+    Battle * battle;
 
   public:
-    Defend();
+    Defend(Battle * battle, int playerNumber);
     ~Defend();
     int getMember();
     void setMember(int);
+
+    virtual void executeAction();
 };
 
 #endif

@@ -1,4 +1,4 @@
-#include <Inventory/Entity.h>
+#include "Entity.h"
 
 using namespace std;
 
@@ -17,30 +17,54 @@ using namespace std;
  *  @author Lucinda Botes ; u19012366
  */
 
-Entity::Entity()
-{
-  _head = NULL;
+/**
+ * @brief Create Entity:: Create Entity object
+ * @details Create Entity object with passed in EntityType enum value
+ * @param t EntityType
+ */
+Entity::Entity(EntityType t) {
+  this->_type = t;
 }
 
-Entity::~Entity()
-{
+/**
+ * @brief Destroy Entity:: Destroy Entity object
+ */
+Entity::~Entity() {
 }
 
-Entity::Entity(const Entity &e)
-{
+/**
+ * @brief Create Entity:: Create Entity object
+ * @details Create Entity object with passed in @code Entity @endcode 
+ * @return EntityType
+ */
+Entity::Entity(const Entity &e) {
   _type = e._type;
 }
 
-EntityType Entity::getType() const
-{
+/**
+ * @brief Get Entity Type:: Get Entity Type
+ * @details Gets the Entity's @code _type @endcode member value.
+ * @return EntityType
+ */
+EntityType Entity::getType() const{
   return _type;
 }
 
+/**
+ * @brief Get Enity Price:: Get Entity Price
+ * @details Gets the Entity's @code _price @endcode member value.
+ * @return double 
+ */
 double Entity::getPrice() const
 {
   return _price;
 }
 
+/**
+ * @brief Set Entity:: Set Entity price value
+ * @details Sets the Entity's @code _price @endcode member value to passed in @code price @endcode parameter.
+ * @param price double
+ */
 void Entity::setPrice(double price)
 {
   _price = price;
@@ -67,28 +91,28 @@ Iterator<Entity> Entity::end()
 }
 
 /**
- * @brief Entity::add - Adds an entity to the list
+ * @brief Add Entity Decorator:: Add decorator to Entity
+ * @details Adds an entity as a decorator to the current entity by making the passed in @code Entity @endcode parameter the head and the previous head becomes the passed in parameters next value.
  *
  * @param e - The entity to be added
  */
 
-// TODO:  @todo Implement add method
-// void Entity::add(Entity *e)
-// {
-//   if (this->_head == NULL)
-//   {
-//     this->_head = e;
-//   }
-//   else
-//   {
-//     Entity *current = this->_head;
-//     while (current->next != NULL)
-//     {
-//       current = current->next;
-//     }
-//     current->next = e;
-//   }
-// }
+void Entity::addEntity(Entity *e)
+{
+  if (this->_head == NULL)
+  {
+    this->_head = e;
+  }
+  else
+  {
+    Entity *current = this->_head;
+   while (current->next != NULL)
+    {
+      current = current->next;
+    }
+    current->next = e;
+  }
+}
 
 /**
  * @brief Entity::isEmpty - Checks if the list is empty
@@ -98,4 +122,6 @@ Iterator<Entity> Entity::end()
  */
 bool Entity::isEmpty()
 {
+  return this->_head == NULL;
 }
+

@@ -1,4 +1,4 @@
-#include <WarPhases/ColdState.h>
+#include "ColdState.h"
 
 using namespace std;
 

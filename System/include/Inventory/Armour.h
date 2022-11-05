@@ -1,12 +1,12 @@
 #ifndef ARMOUR_H
 #define ARMOUR_H
 
-#include <Inventory/Entity.h>
+#include "EntityDecorator.h"
+#include "Randomizer.h"
 
-class Armour : public Entity
-{
-protected:
-  double _armour;
+class Armour : public EntityDecorator{
+  private:
+    double _armour;
 
 public:
   Armour();
@@ -15,7 +15,6 @@ public:
   ~Armour();
 
   Entity *clone() override;
-
   double getArmour() const;
   void setArmour(double armour);
 };
