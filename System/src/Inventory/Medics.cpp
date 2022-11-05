@@ -6,7 +6,7 @@ using namespace std;
 *  @file Medics.h
 *  @brief Medics class implementation,
 *  Design Patterns:
-*  @li Template Method: Concrete class participant
+*  @li Prototype: Concrete Prototype participant
 *  @li Decorator: Concrete Component participant
 *  @li Factory: Concrete Product participant
 *
