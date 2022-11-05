@@ -15,7 +15,7 @@
 
 /**
 *  @brief Create Armour:: Create Armour Decorator object and initialize @code _armour @endcode to a uniform random number between 15 and 30
-*  @details Create Armour Decorator object and instansiate it's base class with the @code EntityType::ARMOUR @endcode enum and set the @code _armour @endcode member to a uniform random number between 18 and 19.
+*  @details Create Armour Decorator object and instansiate it's base class with the @code EntityType::ARMOUR @endcode enum and set the @code _armour @endcode member to a uniform random number between 15 and 30.
 *  @return Armour
 */
 Armour::Armour() : EntityDecorator(EntityType::ARMOUR){
