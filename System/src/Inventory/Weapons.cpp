@@ -6,7 +6,6 @@ using namespace std;
 *  @file Weapons.h
 *  @brief Weapons class implementation,
 *  Design Patterns:
-*  @li Template Method: Concrete class participant
 *  @li Prototype: Concrete Prototype participant
 *  @li Decorator: Concrete Component participant
 *  @li Factory: Product participant
@@ -15,12 +14,10 @@ using namespace std;
 *  
 *  @author Marthinus Ettienne van Zyl ; u19012366,
 *  @author Lucinda Botes ; u19012366
-*TODO:  @todo Override base class decorator extra method
 */
 
-
 Weapons::Weapons() : EntityDecorator(EntityType::WEAPON) {
-  this->_damage = 0;
+  this->_damage = Randomizer::getInstance()->getUniformRandomNumber(15.0, 20.0);
 }
 
 Weapons::Weapons(double damage) : EntityDecorator(EntityType::WEAPON) {

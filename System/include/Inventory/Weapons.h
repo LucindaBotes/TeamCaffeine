@@ -2,6 +2,7 @@
 #define WEAPONS_H
 
 #include "EntityDecorator.h"
+#include "Randomizer.h"
 
 class Weapons : public EntityDecorator{
   private:
