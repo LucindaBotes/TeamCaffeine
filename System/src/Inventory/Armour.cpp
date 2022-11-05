@@ -13,8 +13,8 @@
 
 
 /**
-*  @brief Create Armour:: Create Armour Decorator object
-*  @details Create Armour Decorator object and instansiate it's base class with the @code EntityType::ARMOUR enum and set the @code _armour member to 0.
+*  @brief Create Armour:: Create Armour Decorator object and initialize @code _armour @endcode to a uniform random number between 15 and 30
+*  @details Create Armour Decorator object and instansiate it's base class with the @code EntityType::ARMOUR @endcode enum and set the @code _armour @endcode member to 0.
 *  @return Armour
 */
 Armour::Armour() : EntityDecorator(EntityType::ARMOUR){
@@ -23,7 +23,7 @@ Armour::Armour() : EntityDecorator(EntityType::ARMOUR){
 
 /**
 *  @brief Create Armour:: Create Armour Decorator object
-*  @details Create Armour Decorator object and instansiate it's base class with the @code EntityType::ARMOUR enum and set the @code _armour member to passed in parameter @code armour.
+*  @details Create Armour Decorator object and instansiate it's base class with the @code EntityType::ARMOUR @endcode enum and set the @code _armour @endcode member to passed in parameter @code armour @endcode.
 *  @param armour double
 *  @return Armour
 */
@@ -33,7 +33,7 @@ Armour::Armour(double armour) : EntityDecorator(EntityType::ARMOUR) {
 
 /**
 *  @brief Create Armour:: Create Armour Decorator object from another Armour object
-*  @details Create Armour Decorator object from another Armour object and instansiate it's base class with the @code EntityType::ARMOUR enum and set the @code _armour member to passed in Armour object's @code a parameter.
+*  @details Create Armour Decorator object from another Armour object and instansiate it's base class with the @code EntityType::ARMOUR @endcode enum and set the @code _armour @endcode member to passed in Armour object's @code a @endcode parameter.
 *  @param Armour const Armour&
 *  @return Armour
 */
@@ -58,7 +58,7 @@ Entity* Armour::clone() {
 
 /**
  * @brief Get Armour:: Get Armour object's armour
- * @details Gets the Armour object's @code _armour member value.
+ * @details Gets the Armour object's @code _armour @endcode member value.
  * @return double const
  */
 double Armour::getArmour() const {
@@ -67,7 +67,7 @@ double Armour::getArmour() const {
 
 /**
  * @brief Set Armour:: Set Armour object's armour
- * @details Sets Armour object's @code _armour member to passed in parameter @code armour 
+ * @details Sets Armour object's @code _armour @endcode member to passed in parameter @code armour @endcode
  * @param armour double
  */
 void Armour::setArmour(double armour) {
