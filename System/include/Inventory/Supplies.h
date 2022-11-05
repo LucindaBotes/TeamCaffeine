@@ -2,6 +2,7 @@
 #define SUPPLIES_H
 
 #include "EntityDecorator.h"
+#include "Randomizer.h"
 
 class Supplies : public EntityDecorator{
   private:

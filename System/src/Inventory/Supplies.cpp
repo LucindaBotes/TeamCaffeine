@@ -6,7 +6,6 @@ using namespace std;
 *  @file Supplies.h
 *  @brief Supplies class implementation,
 *  Design Patterns:
-*  @li Template Method: Concrete class participant
 *  @li Prototype: Concrete Prototype participant
 *  @li Decorator: Concrete Component participant
 *  @li Factory: Product participant
@@ -15,11 +14,10 @@ using namespace std;
 *  
 *  @author Marthinus Ettienne van Zyl ; u19012366,
 *  @author Lucinda Botes ; u19012366
-*TODO:  @todo Override base class decorator extra method
 */
 
 Supplies::Supplies() : EntityDecorator(EntityType::SUPPLIES) {
-  this->_health = 0;
+  this->_health = Randomizer::getInstance()->getUniformRandomNumber(10.0, 20.0);
 }
 
 Supplies::Supplies(double health) : EntityDecorator(EntityType::SUPPLIES) {
