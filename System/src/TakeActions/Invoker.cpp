@@ -137,7 +137,8 @@ int Invoker::getNextAction()
 
 /**
  * @brief Method to set all the commands for the Invoker.
- * @details This method takes in a Battle object that the Invoker will execute the invoked commands on. It then creates a new Defend, Hold, Surrender, AllyAction and Attack object and stores them in the actions array.
+ * @details This method takes in a Battle object that the Invoker will execute the invoked commands on. It then creates a new 
+ * Defend, Hold, Surrender, AllyAction and Attack object and stores them in the actions vector.
  * @param battle Battle*
  */
 void Invoker::setBattleActions(Battle * battle)
