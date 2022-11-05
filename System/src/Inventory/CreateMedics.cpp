@@ -33,7 +33,7 @@ CreateMedics::~CreateMedics()
  *
  * @return Medics*
  */
-Medics *CreateMedics::createMedicsEntity()
+Medics *CreateMedics::createEntity()
 {
   return new Medics();
 }

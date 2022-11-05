@@ -11,7 +11,7 @@ class CreateMedics : public EntityCreator {
   public:
     CreateMedics();
     ~CreateMedics();
-    Medics * createMedicsEntity();
+    Medics * createEntity() override;
 };
 
 #endif

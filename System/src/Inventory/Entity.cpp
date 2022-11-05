@@ -75,20 +75,20 @@ void Entity::setPrice(double price)
  *
  * @return Iteror<Entity*> - A pointer to the beginning of the list
  */
-Iterator<Entity> Entity::begin()
-{
-  return Iterator<Entity>(this->_head);
-}
+// Iterator<Entity> Entity::begin()
+// {
+//   return Iterator<Entity>(this->_head);
+// }
 
 /**
  * @brief Entity::end - Returns an iterator to the end of the list
  *
  * @return Iteror<Entity*> - A pointer to the end of the list
  */
-Iterator<Entity> Entity::end()
-{
-  return Iterator<Entity>(this->_head);
-}
+// Iterator<Entity> Entity::end()
+// {
+//   return Iterator<Entity>(this->_head);
+// }
 
 /**
  * @brief Add Entity Decorator:: Add decorator to Entity
@@ -106,11 +106,11 @@ void Entity::addEntity(Entity *e)
   else
   {
     Entity *current = this->_head;
-   while (current->next != NULL)
+   while (current->_next != NULL)
     {
-      current = current->next;
+      current = current->_next;
     }
-    current->next = e;
+    current->_next = e;
   }
 }
 

@@ -1,7 +1,7 @@
 #ifndef ITERATOR_H
 #define ITERATOR_H
 
-#include <Inventory/Entity.h>
+#include "Entity.h"
 
 template <typename T>
 class Iterator
@@ -11,11 +11,11 @@ class Iterator
 private:
   T *_current;
   T *_head;
-  Iterator(const Iterator<T> &i, Entity *current);
+  Iterator(const Iterator<T> &i, T *current);
 
 public:
   Iterator();
-  Iterator(Entity *head);
+  Iterator(T *head);
   T &operator*();
   Iterator<T> operator++();
   bool operator==(const Iterator<T> &rhs) const;

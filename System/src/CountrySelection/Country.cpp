@@ -2,6 +2,10 @@
 
 using namespace std;
 
+/**
+ * @brief Construct a new Country:: Country object
+ * 
+ */
 Country::Country() {
   _name = "";
   _allies = new vector<Country*>();

@@ -2,7 +2,7 @@
 #define ENTITY_H
 
 #include <iostream>
-#include <Inventory/Iterator.h>
+#include "Iterator.h"
 
 enum EntityType {
   WEAPON,
@@ -14,12 +14,10 @@ enum EntityType {
 };
 
 class Entity {
-  friend class Iterator;
 
   private:
     EntityType _type;
     double _price;
-    Entity* _head;
 
   protected:
     Entity* _head, *_next;
@@ -29,13 +27,10 @@ class Entity {
     Entity(const Entity &e);
     virtual ~Entity() = 0;
     virtual Entity* clone() = 0;
-    void addEntity(Entity* e);
     EntityType getType() const;
     double getPrice() const;
     void setPrice(double price);
-    virtual void addEntity(Entity *e) = 0;
-    Iterator<Entity> begin();
-    Iterator<Entity> end();
+    void addEntity(Entity *e);
     bool isEmpty();
 };
 

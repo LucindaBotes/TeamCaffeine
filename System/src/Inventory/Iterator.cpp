@@ -1,4 +1,5 @@
 #include "Iterator.h"
+#include "Entity.h"
 
 using namespace std;
 
@@ -20,7 +21,7 @@ using namespace std;
  * @param current - The current Entity object
  */
 template <typename T>
-Iterator<T>::Iterator(const Iterator<T> &i, Entity *current)
+Iterator<T>::Iterator(const Iterator<T> &i, T *current)
 {
   this->_current = current;
   this->_head = i._head;
@@ -43,7 +44,7 @@ Iterator<T>::Iterator()
  * @param head - The head of the list
  */
 template <typename T>
-Iterator<T>::Iterator(Entity *head)
+Iterator<T>::Iterator(T *head)
 {
 }
 
