@@ -4,17 +4,18 @@
 #include <random>
 
 class Randomizer {
+  public:
+    static Randomizer* getInstance();
+    double getUniformRandomNumber(double min, double max);
+  
   protected:
     Randomizer();
-    static Randomizer* _instance;
-
-  public:
-    Randomizer(Randomizer &r) = delete;
+    Randomizer(const Randomizer &r);
     ~Randomizer();
+    Randomizer& operator=(const Randomizer&);
 
-    static Randomizer* getInstance();
-
-    double getUniformRandomNumber(double min, double max);
+  private:
+    static Randomizer* onlyInstanece_;
 };
 
 #endif
