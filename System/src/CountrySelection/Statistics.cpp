@@ -18,6 +18,7 @@ Statistics::~Statistics() {
   delete _gdp;
 }
 
+/*Added by Erik*/
 void Statistics::copy(double health, double damage, double defence, GDP* gdp) {
   double newGDP = gdp->getValue();
   copy(health, damage, defence, newGDP);
@@ -27,6 +28,7 @@ Statistics Statistics::copy(double health, double damage, double defence, double
   Statistics newStats = Statistics(health, damage, defence, new GDP(gdp));
   return newStats;
 }
+/*Added by Erik*/
 
 double Statistics::getHealth() const {
   return _health;

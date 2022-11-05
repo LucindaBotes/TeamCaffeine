@@ -20,8 +20,11 @@ class Statistics {
     Statistics(double, double, double, GDP*);
     ~Statistics();
 
+    /*Added by Erik*/
     void copy(double, double, double, GDP*);
     Statistics copy(double, double, double, double);
+    /*Added by Erik*/
+
     double getHealth() const;
     double getDamage() const;
     double getDefence() const;
