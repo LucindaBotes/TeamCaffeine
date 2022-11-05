@@ -34,7 +34,7 @@ Entity::~Entity() {
 
 /**
  * @brief Create Entity:: Create Entity object
- * @details Create Entity object with passed in @code Entity object
+ * @details Create Entity object with passed in @code Entity @endcode 
  * @return EntityType
  */
 Entity::Entity(const Entity &e) {
@@ -43,7 +43,7 @@ Entity::Entity(const Entity &e) {
 
 /**
  * @brief Get Entity Type:: Get Entity Type
- * @details Gets the Entity's @code _type member value.
+ * @details Gets the Entity's @code _type @endcode member value.
  * @return EntityType
  */
 EntityType Entity::getType() const{
@@ -52,7 +52,7 @@ EntityType Entity::getType() const{
 
 /**
  * @brief Get Enity Price:: Get Entity Price
- * @details Gets the Entity's @code _price member value.
+ * @details Gets the Entity's @code _price @endcode member value.
  * @return double 
  */
 double Entity::getPrice() const
@@ -62,7 +62,7 @@ double Entity::getPrice() const
 
 /**
  * @brief Set Entity:: Set Entity price value
- * @details Sets the Entity's @code _price member value to passed in @code price parameter.
+ * @details Sets the Entity's @code _price @endcode member value to passed in @code price @endcode parameter.
  * @param price double
  */
 void Entity::setPrice(double price)
@@ -72,7 +72,7 @@ void Entity::setPrice(double price)
 
 /**
  * @brief Add Entity Decorator:: Add decorator to Entity
- * @details Adds an entity as a decorator to the current entity by making the passed in @code Entity parameter the head and the previous head becomes the passed in parameters next value.
+ * @details Adds an entity as a decorator to the current entity by making the passed in @code Entity @endcode parameter the head and the previous head becomes the passed in parameters next value.
  */
 void Entity::addEntity(Entity* e)
 {
