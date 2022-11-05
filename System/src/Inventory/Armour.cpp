@@ -2,7 +2,7 @@
 
 /** 
 *  @file Armour.h
-*  @brief EntityDecorator class implementation,
+*  @brief Armour class implementation,
 *  Design Patterns:
 *  @li Decorator: Concrete Decorator Participant
 *  @li Prototype: Concrete Prototype participant
@@ -10,9 +10,9 @@
 *
 *  @details Armour implements the EntityDecorator class, and is it's concrete class
 *  
-*  @author Marthinus Ettienne van Zyl ; u19012366
+*  @author Marthinus Ettienne van Zyl ; u19012366.
+*  @author Lucinda Botes ; u19048263
 */
-
 
 /**
 *  @brief Create Armour:: Create Armour Decorator object and initialize @code _armour @endcode to a uniform random number between 15 and 30

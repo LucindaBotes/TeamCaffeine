@@ -8,7 +8,7 @@ class EntityCreator {
     EntityCreator();
     virtual ~EntityCreator();
     virtual Entity * createEntity();
-    // virtual Iterator * createIterator();
+    virtual Iterator * createIterator();
 };
 
 #endif

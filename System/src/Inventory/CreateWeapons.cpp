@@ -2,24 +2,35 @@
 
 using namespace std;
 
-/**
- * @brief Create Weapons:: Create Weapons object
+/** @file CreateWeapons.h
+ *  @brief CreateWeapons class implementation,
+ *  Design Patterns:
+ *  @li Design Pattern: Abstract Factory
+ *  @li Participant: ConcreteFactory
+ *
+ *  @details CreateWeapons is responsible for creating the weapons entities and the iterator for the Weapons class.
+ *  @authors: Lucinda Botes, u19048263
  */
-CreateWeapons::CreateWeapons() {
+
+/**
+ * @brief CreateWeapons:: Constructor for Weapons object
+ */
+CreateWeapons::CreateWeapons()
+{
 }
 
 /**
- * @brief Destroy Weapons:: Destroy Weapons object
+ * @brief ~CreateWeapons:: Destructor for Weapons object
  */
-CreateWeapons::~CreateWeapons() {
+CreateWeapons::~CreateWeapons()
+{
 }
 
 /**
- * @brief Create Weapons:: Create Weapons Entity
+ * @brief CreateWeaponsEntity:: Create Weapons Entity
  * @return Weapons*
  */
-Weapons * CreateWeapons::createWeaponsEntity() {
+Weapons *CreateWeapons::createWeaponsEntity()
+{
   return new Weapons();
 }
-
-

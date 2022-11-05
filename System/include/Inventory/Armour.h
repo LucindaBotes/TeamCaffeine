@@ -8,17 +8,15 @@ class Armour : public EntityDecorator{
   private:
     double _armour;
 
-  public:
-    Armour();
-    Armour(double);
-    Armour(const Armour &a);
-    ~Armour();
+public:
+  Armour();
+  Armour(double);
+  Armour(const Armour &a);
+  ~Armour();
 
-    Entity* clone() override;
-
-    double getArmour() const;
-    void setArmour(double armour);
-
+  Entity *clone() override;
+  double getArmour() const;
+  void setArmour(double armour);
 };
 
 #endif
