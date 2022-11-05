@@ -3,7 +3,7 @@
 
 #include <gtest/gtest.h> // ! Google Test Framework which cmake gets... ignore error
 
-static bool _runTests = false; // Change this to true to run tests
+static bool _runTests = true; // Change this to true to run tests
 
 int runTests(int argc, char** argv)
 {

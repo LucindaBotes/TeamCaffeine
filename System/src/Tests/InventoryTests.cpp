@@ -4,7 +4,7 @@ namespace {
 
     TEST(ArmourTest, CreationTest) {
         Entity* armour = new Armour();
-        EXPECT_EQ(armour == nullptr, true);
+        EXPECT_EQ(armour == nullptr, false);
 
         delete armour;
     }

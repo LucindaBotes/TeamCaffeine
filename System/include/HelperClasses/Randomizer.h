@@ -1,6 +1,8 @@
 #ifndef RANDOMIZER_H
 #define RANDOMIZER_H
 
+#include <random>
+
 class Randomizer {
   private:
     int member;
@@ -8,8 +10,7 @@ class Randomizer {
   public:
     Randomizer();
     ~Randomizer();
-    int getMember();
-    void setMember(int);
+    double getUniformRandomNumber(double min, double max);
 };
 
 #endif

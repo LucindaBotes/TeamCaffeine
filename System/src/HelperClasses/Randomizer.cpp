@@ -8,10 +8,9 @@ Randomizer::Randomizer() {
 Randomizer::~Randomizer() {
 }
 
-int Randomizer::getMember() {
-  return this->member;
-}
-
-void Randomizer::setMember(int member) {
-  this->member = member;
+double Randomizer::getUniformRandomNumber(double min, double max) {
+  srand(time(NULL));
+  std::default_random_engine seedGenerator(rand());
+  std::normal_distribution<double> toReturnDistrib (min, max);
+  return toReturnDistrib(seedGenerator);
 }
