@@ -5,6 +5,7 @@
 *  @brief EntityDecorator class implementation,
 *  Design Patterns:
 *  @li Decorator: Concrete Decorator Participant
+*  @li Factory: Concrete Product participant
 *
 *  @details Armour implements the EntityDecorator class, and is it's concrete class
 *  
