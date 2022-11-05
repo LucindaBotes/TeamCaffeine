@@ -6,7 +6,7 @@
  * @li Design Pattern: State
  * @li Participant: Context
  * 
- * @details WarPhaseContext class 
+ * @details WarPhaseContext class will be responsible for changing the states of the war phase. 
  * @author Netshifhefhe Unarine Leo: u20505656 
 */
 
