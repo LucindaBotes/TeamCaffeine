@@ -1,15 +1,20 @@
 #ifndef INVENTORYDATABASE_H
 #define INVENTORYDATABASE_H
+#include <MementoDatabase/Databases.h>
+#include <../src/MementoDatabase/Databases.cpp>
+#include <vector>
 
-class InventoryDatabase {
+
+template <class T>
+class InventoryDatabase: public Databases {
   private:
-    int member;
+    T memento;
 
   public:
     InventoryDatabase();
     ~InventoryDatabase();
-    int getMember();
-    void setMember(int);
+    T getMemento();
+    void setMemento(T);
 };
 
 #endif

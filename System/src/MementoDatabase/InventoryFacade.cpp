@@ -2,16 +2,20 @@
 
 using namespace std;
 
-InventoryFacade::InventoryFacade() {
+template <class T>
+InventoryFacade<T>::InventoryFacade() {
 }
 
-InventoryFacade::~InventoryFacade() {
+template <class T>
+InventoryFacade<T>::~InventoryFacade() {
 }
 
-int InventoryFacade::getMember() {
-  return this->member;
+template <class T>
+T InventoryFacade<T>::getMemento() {
+  return this->memento;
 }
 
-void InventoryFacade::setMember(int member) {
-  this->member = member;
+template <class T>
+void InventoryFacade<T>::setMemento(T memento) {
+  this->memento = memento;
 }

@@ -2,16 +2,17 @@
 
 using namespace std;
 
-BattleMemento::BattleMemento() {
+template <class T>
+BattleMemento<T>::BattleMemento() {
+  //create and return new 
 }
 
-BattleMemento::~BattleMemento() {
+/*template <class T>
+Battle BattleMemento<T>::getMemento() {
+  return this->memento.push_back();
 }
 
-int BattleMemento::getMember() {
-  return this->member;
-}
-
-void BattleMemento::setMember(int member) {
-  this->member = member;
-}
+template <class T>
+void BattleMemento<T>::setMemento(Battle* m) {
+  this->memento.pop_back(m);
+}*/

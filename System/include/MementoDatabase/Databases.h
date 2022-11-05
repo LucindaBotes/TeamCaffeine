@@ -1,15 +1,16 @@
 #ifndef DATABASES_H
 #define DATABASES_H
 
+template <class T>
 class Databases {
   private:
-    int member;
+    T memento;
 
   public:
     Databases();
     ~Databases();
-    int getMember();
-    void setMember(int);
+    T getMemento();
+    void setMemento(T);
 };
 
 #endif

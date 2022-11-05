@@ -2,16 +2,17 @@
 
 using namespace std;
 
-BattleDatabase::BattleDatabase() {
+template <class T>
+BattleDatabase<T>::BattleDatabase() {
+  //wat gebeur hier? lol
 }
 
-BattleDatabase::~BattleDatabase() {
+template <class T>
+Battle BattleDatabase<T>::getMemento() {
+  return this->battle_memento.pop_back();
 }
 
-int BattleDatabase::getMember() {
-  return this->member;
-}
-
-void BattleDatabase::setMember(int member) {
-  this->member = member;
+template <class T>
+void BattleDatabase<T>::setMemento(Battle* b) {
+  this->battle_memento.push_back(b);
 }
