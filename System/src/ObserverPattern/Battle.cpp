@@ -79,7 +79,7 @@ void Battle::setPlayerAllies(Country * player1, Country * player2)
  * Alliance.
  * 
  * @param player1 Invoker*
- * @param player2 INvoker*
+ * @param player2 Invoker*
  */
 void Battle::start(Invoker * player1, Invoker * player2){//start should have IF in main to check if a player will surrender. If so call start then BREAK loop.
   if (player1->getNextAction() == 0)//If player1 Defends
@@ -217,6 +217,7 @@ void Battle::start(Invoker * player1, Invoker * player2){//start should have IF 
   this->checkifAllyDied(1);
   this->checkifAllyDied(2);
   cout<<"Battle #"<<this->getMember()<<" has ended."<<endl;
+  this->notifyListeners();
 }
 
 /**
@@ -498,5 +499,9 @@ void Battle::removeListener(ActionListener * listener)
 
 void Battle::notifyListeners()
 {
-
+  for (int i = 0; i < this->listeners.size(); i++)
+  {
+    this->listeners[i]->update();
+  }
 }
+

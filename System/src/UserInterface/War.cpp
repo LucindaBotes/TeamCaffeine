@@ -216,3 +216,117 @@ vector<Battle*> War::getBattle()
 {
   return this->battles;
 }
+
+void War::update()
+{
+  if (Player_1->getNextAction() == 0)//If player1 Defends
+  {
+    if (Player_2->getNextAction() == 0){//Defends
+      this->warPhaseC->setState(new HostileState());
+    }
+    else if (Player_2->getNextAction() == 1)//Holds
+    {
+      this->warPhaseC->setState(new HostileState());
+    }
+    else if (Player_2->getNextAction() == 2)//surrenders
+    {
+      this->warPhaseC->setState(new PeacefulState());
+    }
+    else if (Player_2->getNextAction() == 3)//requestAlly
+    {
+      this->warPhaseC->setState(new HostileState());
+    }
+    else if (Player_2->getNextAction() == 4)//attacks
+    {
+      this->warPhaseC->setState(new HostileState());
+    }
+  }
+  else if (Player_1->getNextAction() == 1)//If player 1 Holds
+  {
+    if (Player_2->getNextAction() == 0){
+      this->warPhaseC->setState(new HostileState());
+    }
+    else if (Player_2->getNextAction() == 1)
+    {
+      this->warPhaseC->setState(new ColdState());
+    }
+    else if (Player_2->getNextAction() == 2)
+    {
+      this->warPhaseC->setState(new PeacefulState());
+    }
+    else if (Player_2->getNextAction() == 3)
+    {
+      this->warPhaseC->setState(new ColdState());
+    }
+    else if (Player_2->getNextAction() == 4)
+    {
+      this->warPhaseC->setState(new HostileState());
+    }
+  }
+  else if (Player_1->getNextAction() == 2)//If player 1 surrenders
+  {
+    if (Player_2->getNextAction() == 0){
+      this->warPhaseC->setState(new PeacefulState());
+}
+    else if (Player_2->getNextAction() == 1)
+    {
+      this->warPhaseC->setState(new PeacefulState());
+    }
+    else if (Player_2->getNextAction() == 2)
+    {
+      this->warPhaseC->setState(new PeacefulState());
+    }
+    else if (Player_2->getNextAction() == 3)
+    {
+      this->warPhaseC->setState(new PeacefulState());
+    }
+    else if (Player_2->getNextAction() == 4)
+    {
+      this->warPhaseC->setState(new PeacefulState());
+    }
+  }
+  else if (Player_1->getNextAction() == 3)//If player 1 requestsAlly
+  {
+    if (Player_2->getNextAction() == 0){
+      this->warPhaseC->setState(new HostileState());
+    }
+    else if (Player_2->getNextAction() == 1)
+    {
+      this->warPhaseC->setState(new ColdState());
+    }
+    else if (Player_2->getNextAction() == 2)
+    {
+      this->warPhaseC->setState(new PeacefulState());
+    }
+    else if (Player_2->getNextAction() == 3)
+    {
+      this->warPhaseC->setState(new ColdState());
+    }
+    else if (Player_2->getNextAction() == 4)
+    {
+      this->warPhaseC->setState(new HostileState());
+    }
+  }
+  else if (Player_1->getNextAction() == 4)//If player 1 attacks
+  {
+    if (Player_2->getNextAction() == 0){
+      this->warPhaseC->setState(new HostileState());
+    }
+    else if (Player_2->getNextAction() == 1)
+    {
+      this->warPhaseC->setState(new HostileState());
+    }
+    else if (Player_2->getNextAction() == 2)
+    {
+      this->warPhaseC->setState(new PeacefulState());
+    }
+    else if (Player_2->getNextAction() == 3)
+    {
+      this->warPhaseC->setState(new HostileState());
+    }
+    else if (Player_2->getNextAction() == 4)
+    {
+      this->warPhaseC->setState(new HostileState());
+    }
+  }
+}

@@ -4,6 +4,7 @@
 #include <TakeActions/Invoker.h>
 #include <ObserverPattern/Battle.h>
 #include <CountrySelection/Country.h>
+#include <ObserverPattern/ActionListener.h>
 #include <vector>
 #include <string>
 #include <iostream>
@@ -12,7 +13,7 @@
 #include <ObserverPattern/Battle.h>
 #include <ModeSelection/Strategy.h>
 
-class War {
+class War : public ActionListener {
   private:
     string _warName;
     bool _active;
@@ -46,6 +47,7 @@ class War {
     string getName();
     vector<Country> getCountriesAtWar();
     vector<Battle*> getBattle();
+    void update();
     
 };
 #endif
