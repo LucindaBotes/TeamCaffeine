@@ -32,7 +32,7 @@ void ModeContext::start()
 }
 
 /// @brief Undo the recent action done by the player and re-initiatialize the values of the variables before the action
-Battle ModeContext::Undo()
+Battle * ModeContext::Undo()
 {
     return _strategy->undo();
 }
