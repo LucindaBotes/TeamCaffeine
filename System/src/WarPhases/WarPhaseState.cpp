@@ -1,4 +1,5 @@
-#include <WarPhases/WarPhaseState.h>
+#include "WarPhaseState.h"
+
 using namespace std;
 
 /**

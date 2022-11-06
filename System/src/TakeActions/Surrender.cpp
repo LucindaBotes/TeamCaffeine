@@ -1,4 +1,4 @@
-#include <TakeActions/Surrender.h>
+#include "Surrender.h"
 
 using namespace std;
 

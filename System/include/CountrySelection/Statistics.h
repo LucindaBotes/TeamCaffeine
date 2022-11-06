@@ -1,7 +1,7 @@
 #ifndef STATISTICS_H
 #define STATISTICS_H
 
-#include<CountrySelection/GDP.h>
+#include "GDP.h"
 #include <ObserverPattern/Randomizer.h>
 
 

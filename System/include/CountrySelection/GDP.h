@@ -1,6 +1,8 @@
 #ifndef GDP_H
 #define GDP_H
 
+#include "Randomizer.h"
+
 class GDP {
   private:
     double _value;

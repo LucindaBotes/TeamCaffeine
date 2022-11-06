@@ -1,7 +1,8 @@
 #ifndef SOLDIERS_H
 #define SOLDIERS_H
 
-#include <Inventory/Entity.h>
+#include "Entity.h"
+#include "Randomizer.h"
 
 class Soldiers : public Entity {
   private:

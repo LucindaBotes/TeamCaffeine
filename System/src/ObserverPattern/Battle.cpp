@@ -1,4 +1,4 @@
-#include <ObserverPattern/Battle.h>
+#include "Battle.h"
 #include <ObserverPattern/Randomizer.h>
 #include <iostream>
 #include <string>

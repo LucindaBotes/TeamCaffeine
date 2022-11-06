@@ -1,6 +1,9 @@
 #ifndef ENTITY_H
 #define ENTITY_H
 
+#include <iostream>
+#include "Iterator.h"
+
 enum EntityType {
   WEAPON,
   SUPPLIES,
@@ -11,6 +14,7 @@ enum EntityType {
 };
 
 class Entity {
+
   private:
     EntityType _type;
     double _price;
@@ -22,13 +26,12 @@ class Entity {
     Entity(EntityType);
     Entity(const Entity &e);
     virtual ~Entity() = 0;
-
     virtual Entity* clone() = 0;
-
-    void addEntity(Entity* e);
     EntityType getType() const;
     double getPrice() const;
     void setPrice(double price);
+    void addEntity(Entity *e);
+    bool isEmpty();
 };
 
 #endif

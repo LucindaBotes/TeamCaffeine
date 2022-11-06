@@ -1,4 +1,4 @@
-#include <MementoDatabase/WarMemento.h>
+#include "WarMemento.h"
 #include <MementoDatabase/Memento.h>
 #include <../src/MementoDatabase/Memento.cpp>
 
