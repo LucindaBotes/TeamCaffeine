@@ -182,13 +182,6 @@ bool War::isActive()
     }
 }
 
-/// @brief sets the phase of the war
-/// @param p 
-void War::setPhase(WarPhaseState* p)
-{
-  //warPhaseC->setState(new p);
-}
-
 /// @brief sets the name of the war
 /// @param name 
 void War::setName(string name)
@@ -328,5 +321,13 @@ void War::update()
     {
       this->warPhaseC->setState(new HostileState());
     }
+  }
+}
+
+void War::printCountries()
+{
+  for (int i = 0; i < this->Countries_Eligible_for_War.size(); i++)
+  {
+    cout<<"Country "<<i+1<< this->Countries_Eligible_for_War[i]->getName() << endl;
   }
 }
