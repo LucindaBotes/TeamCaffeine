@@ -480,3 +480,23 @@ void Battle::checkifAllyDied(int playerNumber)
   }
 }
 
+void Battle::addListener(ActionListener * listener)
+{
+  this->listeners.push_back(listener);
+}
+
+void Battle::removeListener(ActionListener * listener)
+{
+  for (int i = 0; i < this->listeners.size(); i++)
+  {
+    if (this->listeners[i] == listener)
+    {
+      this->listeners.erase(this->listeners.begin() + i);
+    }
+  }
+}
+
+void Battle::notifyListeners()
+{
+
+}

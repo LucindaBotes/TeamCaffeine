@@ -7,7 +7,6 @@
 class Observable {
     private:
         int member;
-
     public:
         Observable();
         ~Observable();

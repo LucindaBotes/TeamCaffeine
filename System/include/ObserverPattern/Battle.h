@@ -4,16 +4,18 @@
 #include <CountrySelection/Country.h>
 #include <UserInterface/War.h>
 #include <TakeActions/Invoker.h>
+#include <ObserverPattern/Observable.h>
 #include <vector>
 #include <string>
 
-class Battle {
+class Battle : public Observable{
   private:
     War * war;
     int member;
     std::string name;
     std::vector<Country*> Alliance_A;
     std::vector<Country*> Alliance_B;
+    std::vector<ActionListener*> listeners;
 
   public:
     //copy constructor for Battle
@@ -32,6 +34,10 @@ class Battle {
     void displayEligibleCountries();
     double calculateHealth(int);
     void checkifAllyDied(int playerNumber);
+
+    void addListener(ActionListener * listener);
+    void removeListener(ActionListener * listener);
+    void notifyListeners();
 };
 
 #endif
