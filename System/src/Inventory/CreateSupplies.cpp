@@ -1,25 +1,36 @@
-#include <Inventory/CreateSupplies.h>
+#include "CreateSupplies.h"
 
 using namespace std;
 
-/**
- * @brief Create Supplies:: Create Supplies object
+/** @file CreateSupplies.h
+ *  @brief CreateSupplies class implementation,
+ *  Design Patterns:
+ *  @li Design Pattern: Abstract Factory
+ *  @li Participant: ConcreteFactory
+ *
+ *  @details CreateSupplies is responsible for creating the supplies entities and the iterator for the Supplies class.
+ *  @authors: Lucinda Botes, u19048263
  */
-CreateSupplies::CreateSupplies() {
+
+/**
+ * @brief CreateSupplies:: Constructor for Supplies object
+ */
+CreateSupplies::CreateSupplies()
+{
 }
 
 /**
- * @brief Destroy Supplies:: Destroy Supplies object
+ * @brief ~CreateSupplies:: Destructor for Supplies object
  */
-CreateSupplies::~CreateSupplies() {
+CreateSupplies::~CreateSupplies()
+{
 }
 
 /**
- * @brief Create Supplies:: Create Supplies Entity
+ * @brief CreateSuppliesEntity:: Create Supplies Entity
  * @return Supplies*
  */
-Supplies * CreateSupplies::createSuppliesEntity() {
+Supplies *CreateSupplies::createSuppliesEntity()
+{
   return new Supplies();
 }
-
-

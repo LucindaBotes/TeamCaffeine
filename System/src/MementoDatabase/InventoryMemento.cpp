@@ -1,6 +1,4 @@
-#include <MementoDatabase/InventoryMemento.h>
-#include <MementoDatabase/Memento.h>
-#include <../src/MementoDatabase/Memento.cpp>
+#include "InventoryMemento.h"
 
 using namespace std;
 

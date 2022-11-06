@@ -1,8 +1,8 @@
 #ifndef SURRENDER_H
 #define SURRENDER_H
 
-#include <TakeActions/Action.h>
-#include <ObserverPattern/Battle.h>
+#include "Action.h"
+#include "Battle.h"
 class Surrender : public Action{
   private:
     int member;

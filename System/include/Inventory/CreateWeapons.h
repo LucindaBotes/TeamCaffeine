@@ -1,8 +1,8 @@
 #ifndef CREATEWEAPONS_H
 #define CREATEWEAPONS_H
 
-#include <Inventory/Weapons.h>
-#include <Inventory/EntityCreator.h>
+#include "Weapons.h"
+#include "EntityCreator.h"
 
 class CreateWeapons : public EntityCreator {
   private:

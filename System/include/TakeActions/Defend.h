@@ -1,8 +1,8 @@
 #ifndef DEFEND_H
 #define DEFEND_H
 
-#include <TakeActions/Action.h>
-#include <ObserverPattern/Battle.h>
+#include "Action.h"
+#include "Battle.h"
 
 class Defend : public Action{
   private:

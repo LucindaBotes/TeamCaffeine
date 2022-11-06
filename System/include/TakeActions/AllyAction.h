@@ -1,8 +1,8 @@
 #ifndef ALLYACTION_H
 #define ALLYACTION_H
 
-#include <TakeActions/Action.h>
-#include <ObserverPattern/Battle.h>
+#include "Action.h"
+#include "Battle.h"
 class AllyAction : public Action{
   private:
     int member;

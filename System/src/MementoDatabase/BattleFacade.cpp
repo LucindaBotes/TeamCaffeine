@@ -1,7 +1,5 @@
-#include <MementoDatabase/BattleFacade.h>
-//Battle class is Originator
-//This is the Proxy
-//Die vraag is: wat is die doel van die klas noudat ons net een Memento het? lol
+#include "BattleFacade.h"
+
 using namespace std;
 
 template <class T>

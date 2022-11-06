@@ -1,4 +1,4 @@
-#include <WarTheatre/Theatre.h>
+#include "Theatre.h"
 
 using namespace std;
 

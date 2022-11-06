@@ -1,13 +1,25 @@
 #ifndef ITERATOR_H
 #define ITERATOR_H
 
-template<typename T> class Iterator {
-  public:
-    Iterator();
-    virtual T& operator*() = 0;
-    virtual Iterator<T> operator++() = 0;
-    virtual bool operator==(const Iterator<T> &rhs) = 0;
-    virtual ~Iterator() = 0;
+#include "Entity.h"
+
+template <typename T>
+class Iterator
+{
+  friend class Entity;
+
+private:
+  T *_current;
+  T *_head;
+  Iterator(const Iterator<T> &i, T *current);
+
+public:
+  Iterator();
+  Iterator(T *head);
+  T &operator*();
+  Iterator<T> operator++();
+  bool operator==(const Iterator<T> &rhs) const;
+  ~Iterator();
 };
 
 #endif

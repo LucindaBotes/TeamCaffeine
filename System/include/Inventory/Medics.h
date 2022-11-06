@@ -1,7 +1,8 @@
 #ifndef MEDICS_H
 #define MEDICS_H
 
-#include <Inventory/EntityDecorator.h>
+#include "EntityDecorator.h"
+#include "Randomizer.h"
 
 class Medics : public EntityDecorator {
   private:

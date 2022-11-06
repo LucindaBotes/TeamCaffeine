@@ -1,10 +1,10 @@
 #ifndef WEAPONS_H
 #define WEAPONS_H
 
-#include <Inventory/EntityDecorator.h>
+#include "EntityDecorator.h"
+#include "Randomizer.h"
 
 class Weapons : public EntityDecorator{
-
   private:
     double _damage;
 

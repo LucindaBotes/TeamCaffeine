@@ -1,9 +1,9 @@
-#include <TakeActions/Invoker.h>
-#include <TakeActions/Defend.h>
-#include <TakeActions/Hold.h>
-#include <TakeActions/Surrender.h>
-#include <TakeActions/AllyAction.h>
-#include <TakeActions/Attack.h>
+#include "Invoker.h"
+#include "Defend.h"
+#include "Hold.h"
+#include "Surrender.h"
+#include "AllyAction.h"
+#include "Attack.h"
 
 using namespace std;
 

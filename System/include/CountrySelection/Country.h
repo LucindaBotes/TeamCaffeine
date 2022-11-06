@@ -1,26 +1,25 @@
 #ifndef COUNTRY_H
 #define COUNTRY_H
-#include <CountrySelection/Statistics.h>
+#include "Statistics.h"
 
 #include <string>
 #include <vector>
 
-#include <ObserverPattern/ActionListener.h>
-#include <CountrySelection/Statistics.h>
-#include <Inventory/InventoryShop.h>
+#include "ActionListener.h"
+#include "Statistics.h"
+#include "InventoryShop.h"
 
 class Country {
   private:
-    int member;    
     std::string _name;
-    std::vector<Country*> _allies;
-    Statistics* _stats;
-    InventoryShop* _inventoryShop;
+    std::vector<Country*>* _allies;
+    Statistics *_stats;
+    InventoryShop *_inventoryShop;
 
   public:
     Country();
     Country(std::string);
-    Country(std::string, std::vector<Country*>, Statistics*, InventoryShop*);
+    Country(std::string, std::vector<Country>*,* Statistics*, InventoryShop*);
     ~Country();
     int getMember();
     void setMember(int);

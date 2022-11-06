@@ -1,4 +1,4 @@
-#include <ModeSelection/Design.h>
+#include "Design.h"
 
 using namespace std;
 

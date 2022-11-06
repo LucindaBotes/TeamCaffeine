@@ -30,3 +30,12 @@
 *.exe
 *.out
 *.app
+*.sh
+
+# Other files
+*.bak
+main.cpp
+
+System/CMakeFiles
+System/_deps
+System/*.cmake

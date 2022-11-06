@@ -1,4 +1,4 @@
-#include <WarPhases/WarPhaseContext.h>
+#include "WarPhaseContext.h"
 
 /**
  * @brief WarPhaseContext class implementation,

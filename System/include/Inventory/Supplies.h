@@ -1,7 +1,8 @@
 #ifndef SUPPLIES_H
 #define SUPPLIES_H
 
-#include <Inventory/EntityDecorator.h>
+#include "EntityDecorator.h"
+#include "Randomizer.h"
 
 class Supplies : public EntityDecorator{
   private:

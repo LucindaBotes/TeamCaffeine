@@ -1,4 +1,4 @@
-#include <UserInterface/War.h>
+#include "War.h"
 // #include "War.h"
 
 /**
@@ -41,6 +41,10 @@ War::~War() {
  * 
  * @return Player* 
  */
+
+void War::setMember(int member) {
+  this->member = member;
+}
 
 void War::setPlayer1()
 {

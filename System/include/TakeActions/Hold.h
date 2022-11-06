@@ -1,8 +1,8 @@
 #ifndef HOLD_H
 #define HOLD_H
 
-#include <TakeActions/Action.h>
-#include <ObserverPattern/Battle.h>
+#include "Action.h"
+#include "Battle.h"
 class Hold : public Action{
   private:
     int member;
