@@ -6,7 +6,7 @@
 template <class T>
 class BattleMemento {
   private:
-    vector<Battle> battle_memento;
+    vector<T> battle_memento;
 
   public:
     BattleMemento(/*all the stuff needed for the memento (stats, battles, gdp, etc.)*/);

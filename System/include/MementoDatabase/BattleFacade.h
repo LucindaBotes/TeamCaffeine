@@ -8,7 +8,7 @@
 template <class T>
 class BattleFacade {
   private:
-    vector<BattleMemento> battle_state;
+    vector<T> battle_state;
 
   public:
     BattleFacade();

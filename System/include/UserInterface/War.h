@@ -1,16 +1,17 @@
 #ifndef WAR_H
 #define WAR_H
 
-#include "Invoker.h"
-#include "Battle.h"
-#include "Country.h"
 #include <vector>
 #include <string>
 #include <iostream>
+
+#include "Invoker.h"
+#include "Battle.h"
 #include "Country.h"
 #include "WarPhaseContext.h"
-#include "Battle.h"
 #include "Strategy.h"
+
+class Battle;
 
 class War : public ActionListener {
   private:

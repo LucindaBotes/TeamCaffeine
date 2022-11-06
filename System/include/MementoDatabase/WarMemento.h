@@ -5,9 +5,9 @@
 #include <vector>
 
 template <class T>
-class WarMemento: public Memento {
+class WarMemento: public Memento<T> {
   private:
-    vector<> war_memento;
+    vector<T> war_memento;
 
   public:
     WarMemento();

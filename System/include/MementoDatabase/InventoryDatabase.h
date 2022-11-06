@@ -5,7 +5,7 @@
 
 
 template <class T>
-class InventoryDatabase: public Databases {
+class InventoryDatabase: public Databases<T> {
   private:
     T memento;
 

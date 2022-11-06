@@ -3,7 +3,7 @@
 #include "MementoFacade.h"
 
 template <class T>
-class GenericFacade: public MementoFacade {
+class GenericFacade: public MementoFacade<T> {
   private:
     T memento;
 
