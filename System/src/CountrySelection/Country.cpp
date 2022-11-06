@@ -1,5 +1,6 @@
 #include <CountrySelection/Country.h>
 #include <vector>
+#include <iostream>
 
 using namespace std;
 
@@ -64,4 +65,12 @@ void Country::removeAlly(Country* ally) {
 void Country::setName(std::string name)
 {
   this->_name = name;
+}
+
+void Country::printStats()
+{
+  cout << "Country: " << this->_name << endl;
+  cout << "Health: " << this->_stats->getHealth() << endl;
+  cout << "Attack: " << this->_stats->getDamage() << endl;
+  cout << "Defense: " << this->_stats->getDefence() << endl;
 }
