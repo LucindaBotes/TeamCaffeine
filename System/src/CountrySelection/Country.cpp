@@ -25,6 +25,40 @@ Country::~Country() {
   delete _inventoryShop;
 }
 
+/*Added by Erik*/
+Country* Country::copy(Country* country) {
+  int memberCopy = country->getMember();
+  string nameCopy = country->getName();
+  vector<Country*> alliesCopy = country->getAllies();
+  Statistics* statsCopy = &country->getStats();
+  InventoryShop* inventoryShopCopy = &country->getInventoryShop();
+  return copy(memberCopy, nameCopy, alliesCopy, statsCopy, inventoryShopCopy);
+}
+
+Country* Country::copy(int m, string n, vector<Country*> a, Statistics* s, InventoryShop* i) {
+  Country* newCountry = this;
+  newCountry->setMember(m);
+  newCountry->setName(n);
+  newCountry->setAllies(a);
+  newCountry->setStats(s);
+  newCountry->setInventoryShop(i);
+  return newCountry;
+}
+
+void Country::setAllies(vector<Country*> allies) {
+  for (int i=0; i<allies.size(); i++) 
+        _allies.push_back(allies[i]);
+}
+
+void Country::setStats(Statistics* stats) {
+  _stats = &stats->copy(stats);
+}
+
+void Country::setInventoryShop(InventoryShop* inventoryShop) {
+  _inventoryShop = &inventoryShop->copy(inventoryShop);
+}
+/*Added by Erik*/
+
 int Country::getMember() {
   return this->member;
 }

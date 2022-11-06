@@ -24,6 +24,15 @@ void Statistics::copy(double health, double damage, double defence, GDP* gdp) {
   copy(health, damage, defence, newGDP);
 }
 
+Statistics Statistics::copy(Statistics* stats) {
+  double health = stats->getHealth();
+  double damage = stats->getDamage();
+  double defence = stats->getDefence();
+  double gdp = stats->getGDP().getValue();
+  Statistics newStats = Statistics(health, damage, defence, new GDP(gdp));
+  return newStats;
+}
+
 Statistics Statistics::copy(double health, double damage, double defence, double gdp) {
   Statistics newStats = Statistics(health, damage, defence, new GDP(gdp));
   return newStats;

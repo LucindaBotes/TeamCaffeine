@@ -22,6 +22,7 @@ class Statistics {
 
     /*Added by Erik*/
     void copy(double, double, double, GDP*);
+    Statistics copy(Statistics*);
     Statistics copy(double, double, double, double);
     /*Added by Erik*/
 

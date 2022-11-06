@@ -27,6 +27,7 @@ class InventoryShop {
     std::vector<Entity*> getPurchasable() const;
 
     /*Added by Erik*/
+    InventoryShop copy(InventoryShop*);
     InventoryShop copy(std::vector<Entity*>,std::vector<Entity*>,std::vector<Entity*>,std::vector<Entity*>,std::vector<Entity*>,std::vector<Entity*>);
     void setVectors(std::vector<Entity*>,std::vector<Entity*>,std::vector<Entity*>,std::vector<Entity*>,std::vector<Entity*>,std::vector<Entity*>);
     /*Added by Erik*/

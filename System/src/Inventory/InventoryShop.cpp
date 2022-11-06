@@ -33,6 +33,16 @@ vector<Entity*> InventoryShop::getPurchasable() const {
 }
 
 /*Added by Erik*/
+InventoryShop InventoryShop::copy(InventoryShop* i) {
+  vector<Entity*> weaponsCopy = i->getWeapons();
+  vector<Entity*> medicineCopy = i->getMedicine();
+  vector<Entity*> soldiersCopy = i->getSoldiers();
+  vector<Entity*> suppliesCopy = i->getSupplies();
+  vector<Entity*> armourCopy = i->getArmour();
+  vector<Entity*> purchasableCopy = i->getPurchasable();
+  return copy(weaponsCopy, medicineCopy, soldiersCopy, suppliesCopy, armourCopy, purchasableCopy);
+}
+
 InventoryShop InventoryShop::copy(vector<Entity*> weapons, vector<Entity*> medicine, vector<Entity*> soldiers, vector<Entity*> supplies, vector<Entity*> armour, vector<Entity*> purchasable) {
   InventoryShop* shop = new InventoryShop();
   vector<Entity*> weaponsCopy;

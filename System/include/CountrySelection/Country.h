@@ -22,6 +22,15 @@ class Country : ActionListener{
     Country(std::string);
     Country(std::string, std::vector<Country*>, Statistics*, InventoryShop*);
     ~Country();
+
+    /*Added by Erik*/
+    Country* copy(Country*);
+    Country* copy(int, std::string, std::vector<Country*>, Statistics*, InventoryShop*);
+    void setAllies(std::vector<Country*>);
+    void setStats(Statistics*);
+    void setInventoryShop(InventoryShop*);
+    /*Added by Erik*/
+
     int getMember();
     void setMember(int);
     void setName(std::string name);

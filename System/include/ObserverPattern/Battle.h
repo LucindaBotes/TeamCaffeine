@@ -16,9 +16,12 @@ class Battle {
     std::vector<Country*> Alliance_B;
 
   public:
-    //copy constructor for Battle
     Battle();
     ~Battle();  
+    /*Added by Erik*/
+    Battle* copy(Battle*);
+    std::vector<Country*> allianceDeepCopy(std::vector<Country*>);
+    /*Added by Erik*/
     void start(Invoker * player1, Invoker * player2);
     int getMember();
     void setMember(int);
@@ -32,10 +35,6 @@ class Battle {
     void displayEligibleCountries();
     double calculateHealth(int);
     void checkifAllyDied(int playerNumber);
-
-    //Added by Erik
-    //Required for memento: member, name, Alliance_A, Alliance_B
-    Battle mementoData(int m, std::string n, std::vector<Country*> A_A, std::vector<Country*> A_B);
 };
 
 #endif
