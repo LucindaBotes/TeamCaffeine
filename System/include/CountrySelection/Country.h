@@ -9,7 +9,7 @@
 #include <CountrySelection/Statistics.h>
 #include <Inventory/InventoryShop.h>
 
-class Country : ActionListener{
+class Country {
   private:
     int member;    
     std::string _name;

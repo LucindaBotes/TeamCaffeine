@@ -49,7 +49,7 @@ void War::setPlayer1()
 }
 
 /**
- * @brief <ethod to create player 2's Invoker to serve as controller to invoke command actions.
+ * @brief Method to create player 2's Invoker to serve as controller to invoke command actions.
  * Then sets the player's battle private member which the commands will be invoked on.
  * 
  * @return Player* 
@@ -198,9 +198,9 @@ void War::setName(string name)
 
 /// @brief sets the activeness of the war
 /// @param activeness 
-void setActive(bool activeness)
+void War::setActive(bool activeness)
 {
-  _active = activeness;
+  this->_active = activeness;
 }
 
 /// @brief returns name of war
@@ -212,7 +212,7 @@ string War::getName()
 
 /// @brief gets the battles at war
 /// @return vector which contains the battles at war
-vector<Battle> War::getBattle()
+vector<Battle*> War::getBattle()
 {
-  return battles;
+  return this->battles;
 }

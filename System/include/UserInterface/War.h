@@ -7,10 +7,10 @@
 #include <vector>
 #include <string>
 #include <iostream>
-#include <Country.h>
-#include <WarPhaseContext.h>
-#include <Battle.h>
-#include <Strategy.h>
+#include <CountrySelection/Country.h>
+#include <WarPhases/WarPhaseContext.h>
+#include <ObserverPattern/Battle.h>
+#include <ModeSelection/Strategy.h>
 
 class War {
   private:
@@ -45,7 +45,7 @@ class War {
     void setActive(bool activeness);
     string getName();
     vector<Country> getCountriesAtWar();
-    vector<Battle> getBattle();
+    vector<Battle*> getBattle();
     
 };
 #endif
