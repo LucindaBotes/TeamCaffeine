@@ -19,8 +19,6 @@ using namespace std;
  */
 
 Battle::Battle() {
-  this->name = "Battle #" + to_string(this->member);
-  cout<<this->name<<" has begun!"<<endl;
 }
 
 /**
@@ -49,6 +47,8 @@ int Battle::getMember() {
 
 void Battle::setMember(int member) {
   this->member = member;
+  this->name = "Battle #" + to_string(this->member);
+  cout<<"Get ready for "<<this->name<<endl;
 }
 
 /**
@@ -207,8 +207,8 @@ void Battle::start(Invoker * player1, Invoker * player2){//start should have IF 
     }
     else if (player2->getNextAction() == 3)
     {
-      player2->requestAlly();
       player1->attackEnemyAlliance();
+      player2->requestAlly();
     }
     else if (player2->getNextAction() == 4)
     {
@@ -241,7 +241,7 @@ void Battle::defend(int playerNumber){//Uses Defense statistic
         this->Alliance_A[i]->getStats().setHealth(this->Alliance_A[i]->getStats().getHealth() + 20);
       }
     }
-    cout<<"Player 1 defends..."<<endl;
+    cout<<"Player 1 defended."<<endl;
   }
   else if (playerNumber == 2)
   {
@@ -252,7 +252,7 @@ void Battle::defend(int playerNumber){//Uses Defense statistic
         this->Alliance_B[i]->getStats().setHealth(this->Alliance_B[i]->getStats().getHealth() + 20);
       }
     }
-    cout<<"Player 2 defends..."<<endl;
+    cout<<"Player 2 defended."<<endl;
   }
 }
 
@@ -286,14 +286,14 @@ void Battle::surrender(int playerNumber){//Terminate war give up WILL BE HANDLE 
     cout<<"Player 1 has Surrendered!"<<endl;
     cout<<this->Alliance_B[0]->getName()<<" has won the war!"<<endl;
     cout<<"*****************************************"<<endl;
-    cout<<"Player 2 WINS."<<endl;
+    cout<<"Congratulations! Player 2 WINS."<<endl;
   }
   else if (playerNumber == 2)
   {
     cout<<"Player 2 has Surrendered!"<<endl;
     cout<<this->Alliance_A[0]->getName()<<" has won the war!"<<endl;
     cout<<"*****************************************"<<endl;
-    cout<<"Player 1 WINS."<<endl;
+    cout<<"Congratulations! Player 1 WINS."<<endl;
   }
 }
 
@@ -312,12 +312,13 @@ void Battle::allyAction(int playerNumber){//request ally
     cout<<"Sorry, no allies available."<<endl;
     return;
   }
-  cout<<"Select the number for the country you wish to be your Ally!"<<endl;
-  cout<<"**********************************************"<<endl;
-  this->displayEligibleCountries();
+  
   int countryNUmber = 0;
   if (playerNumber == 1)
   {
+    cout<<"Player 1, Select the number for the country you wish to be your Ally!"<<endl;
+    cout<<"**********************************************"<<endl;
+    this->displayEligibleCountries();
     cin>>countryNUmber;
     countryNUmber = countryNUmber-1;
     Randomizer random = Randomizer();
@@ -337,6 +338,9 @@ void Battle::allyAction(int playerNumber){//request ally
   }
   else if (playerNumber == 2)
   {
+    cout<<"Player 2, Select the number for the country you wish to be your Ally!"<<endl;
+    cout<<"**********************************************"<<endl;
+    this->displayEligibleCountries();
     cin>>countryNUmber;
     countryNUmber = countryNUmber-1;
     Randomizer random = Randomizer();
@@ -373,7 +377,7 @@ void Battle::attack(int playerNumber){//Normal attack
     {
       this->Alliance_B[i]->getStats().setHealth(this->Alliance_B[i]->getStats().getHealth() - dividentDamage);
     }
-    cout<<"Player 1 attacked Player 2"<<endl;
+    cout<<"Player 1 attacks Player 2."<<endl;
   }
   else if (playerNumber == 2)
   {
@@ -384,7 +388,7 @@ void Battle::attack(int playerNumber){//Normal attack
     {
       this->Alliance_A[i]->getStats().setHealth(this->Alliance_A[i]->getStats().getHealth() - dividentDamage);
     }
-    cout<<"Player 2 attacked Player 1"<<endl;
+    cout<<"Player 2 attacks Player 1."<<endl;
   }
 }
 
@@ -509,3 +513,7 @@ void Battle::notifyListeners()
   }
 }
 
+std::string Battle::getName()
+{
+  return this->name;
+}
