@@ -19,7 +19,7 @@ class Country {
   public:
     Country();
     Country(std::string);
-    Country(std::string, std::vector<Country>*,* Statistics*, InventoryShop*);
+    Country(std::string, std::vector<Country*>*, Statistics*, InventoryShop*);
     ~Country();
     int getMember();
     void setMember(int);
