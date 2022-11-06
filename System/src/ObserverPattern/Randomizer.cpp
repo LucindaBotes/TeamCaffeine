@@ -1,4 +1,4 @@
-#include <ObserverPattern/Randomizer.h>
+#include "Randomizer.h"
 #include <cmath>
 #include <cstdlib>
 

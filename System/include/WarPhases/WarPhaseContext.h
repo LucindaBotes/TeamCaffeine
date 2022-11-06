@@ -1,8 +1,8 @@
 #ifndef WARPHASECONTEXT_H
 #define WARPHASECONTEXT_H
 
-#include <WarPhaseState.h>
-#include <PeacefulState.h>
+#include "WarPhaseState.h"
+#include "PeacefulState.h"
 
 class WarPhaseContext 
 {

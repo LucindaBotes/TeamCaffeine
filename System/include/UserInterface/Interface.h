@@ -2,7 +2,7 @@
 #define INTERFACE_H
 
 //Going to help with the implementation of the war
-#include <War.h>
+#include "War.h"
 
 class Interface {
   private:

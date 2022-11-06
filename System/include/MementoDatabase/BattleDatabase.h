@@ -1,8 +1,7 @@
 #ifndef BATTLEDATABASE_H
 #define BATTLEDATABASE_H
-#include <ObserverPattern/Battle.h>
-#include <../src/ObserverPattern/Battle.cpp>
-#include <BattleMemento.h>
+#include "Battle.h"
+#include "BattleMemento.h"
 #include <vector>
 //Caretaker class
 template <class T>

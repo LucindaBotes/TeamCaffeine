@@ -1,9 +1,9 @@
 #ifndef DESIGN_H
 #define DESIGN_H
 
-#include <Strategy.h>
-#include <UserInterface/War.h>
-#include <ModeContext.h>
+#include "Strategy.h"
+#include "War.h"
+#include "ModeContext.h"
 
 class Design : public Strategy
 {
