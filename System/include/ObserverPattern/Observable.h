@@ -7,6 +7,10 @@
 class Observable {
     private:
         int member;
+    
+    protected:
+        std::vector<ActionListener*> listeners;
+    
     public:
         Observable();
         ~Observable();
