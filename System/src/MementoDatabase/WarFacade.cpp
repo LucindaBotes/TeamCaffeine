@@ -2,16 +2,20 @@
 
 using namespace std;
 
-WarFacade::WarFacade() {
+template <class T>
+WarFacade<T>::WarFacade() {
 }
 
-WarFacade::~WarFacade() {
+template <class T>
+WarFacade<T>::~WarFacade() {
 }
 
-int WarFacade::getMember() {
-  return this->member;
+template <class T>
+T WarFacade<T>::getMemento() {
+  return this->memento;
 }
 
-void WarFacade::setMember(int member) {
-  this->member = member;
+template <class T>
+void WarFacade<T>::setMemento(T memento) {
+  this->memento = memento;
 }

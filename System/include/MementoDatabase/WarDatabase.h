@@ -1,15 +1,18 @@
 #ifndef WARDATABASE_H
 #define WARDATABASE_H
+#include <MementoDatabase/Databases.h>
+#include <../src/MementoDatabase/Databases.cpp>
 
-class WarDatabase {
+template <class T>
+class WarDatabase: public Databases {
   private:
-    int member;
+    T memento;
 
   public:
     WarDatabase();
     ~WarDatabase();
-    int getMember();
-    void setMember(int);
+    T getMemento();
+    void setMemento(T);
 };
 
 #endif

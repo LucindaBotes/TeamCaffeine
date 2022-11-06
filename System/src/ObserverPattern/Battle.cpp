@@ -477,3 +477,4 @@ void Battle::checkifAllyDied(int playerNumber)
     }
   }
 }
+

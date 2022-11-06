@@ -2,16 +2,20 @@
 
 using namespace std;
 
-InventoryDatabase::InventoryDatabase() {
+template <class T>
+InventoryDatabase<T>::InventoryDatabase() {
 }
 
-InventoryDatabase::~InventoryDatabase() {
+template <class T>
+InventoryDatabase<T>::~InventoryDatabase() {
 }
 
-int InventoryDatabase::getMember() {
-  return this->member;
+template <class T>
+T InventoryDatabase<T>::getMemento() {
+  return this->memento;
 }
 
-void InventoryDatabase::setMember(int member) {
-  this->member = member;
+template <class T>
+void InventoryDatabase<T>::setMemento(T memento) {
+  this->memento = memento;
 }

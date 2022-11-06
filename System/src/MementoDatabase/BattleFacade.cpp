@@ -1,17 +1,23 @@
 #include <MementoDatabase/BattleFacade.h>
-
+//Battle class is Originator
+//This is the Proxy
+//Die vraag is: wat is die doel van die klas noudat ons net een Memento het? lol
 using namespace std;
 
-BattleFacade::BattleFacade() {
+template <class T>
+BattleFacade<T>::BattleFacade() {
 }
 
-BattleFacade::~BattleFacade() {
+template <class T>
+BattleFacade<T>::~BattleFacade() {
 }
 
-int BattleFacade::getMember() {
-  return this->member;
+/*template <class T>
+Battle BattleFacade<T>::getMemento() {
+  
 }
 
-void BattleFacade::setMember(int member) {
-  this->member = member;
-}
+template <class T>
+void BattleFacade<T>::setMemento(Battle* m) {
+
+}*/

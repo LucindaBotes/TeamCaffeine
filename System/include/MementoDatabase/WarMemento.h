@@ -1,15 +1,21 @@
 #ifndef WARMEMENTO_H
 #define WARMEMENTO_H
+#include <MementoDatabase/Memento.h>
+#include <../src/MementoDatabase/Memento.cpp>
+#include <ObserverPattern/Battle.h>
+#include <../src/ObserverPattern/Battle.cpp>
+#include <vector>
 
-class WarMemento {
+template <class T>
+class WarMemento: public Memento {
   private:
-    int member;
+    vector<> war_memento;
 
   public:
     WarMemento();
     ~WarMemento();
-    int getMember();
-    void setMember(int);
+    T getMemento();
+    void setMemento(T);
 };
 
 #endif
