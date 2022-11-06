@@ -9,11 +9,11 @@
 
 class Invoker {
   private:
-    // int member;
-    // int playerNumber;
-    // int nextaction;
-    // std::vector<Action*> actions;
-    // std::vector<Action*> actionTracker;
+    int member;
+    int playerNumber;
+    int nextaction;
+    std::vector<Action*> actions;
+    std::vector<Action*> actionTracker;
 
   public:
     // Invoker(int playerNumber);

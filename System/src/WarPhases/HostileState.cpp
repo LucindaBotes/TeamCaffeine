@@ -2,16 +2,31 @@
 
 using namespace std;
 
+/**
+ * @brief HostileState class implementation,
+ * @li Design Pattern: State
+ * @li Participant: ConcreteState
+ * 
+ * @details HostileState class implements a state which is for when a country invades another country
+ * @author UnarineLeo
+*/
+
 HostileState::HostileState() {
 }
 
 HostileState::~HostileState() {
 }
 
-int HostileState::getMember() {
-  return this->member;
+/// @brief returns the current state name, HostileState
+/// @return name of state, which is Hostile
+string HostileState::getState()
+{
+    return "Hostile";
 }
 
-void HostileState::setMember(int member) {
-  this->member = member;
+/// @brief Changes the state from HostileState to PeacefulState using the context
+/// @param s 
+void HostileState::setState(WarPhaseContext* s)
+{
+    s->setState(new PeacefulState());
 }

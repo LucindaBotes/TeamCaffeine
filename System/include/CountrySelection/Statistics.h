@@ -2,6 +2,8 @@
 #define STATISTICS_H
 
 #include "GDP.h"
+#include <ObserverPattern/Randomizer.h>
+
 
 class Statistics {
   private:
@@ -9,6 +11,7 @@ class Statistics {
     double _damage;
     double _defence;
     GDP* _gdp;
+    Randomizer random;
 
   public:
     Statistics();
@@ -19,11 +22,11 @@ class Statistics {
     double getDamage() const;
     double getDefence() const;
     GDP getGDP() const;
-
+    void generateStats();
     void setHealth(double);
     void setDamage(double);
     void setDefence(double);
-    
+    void setGDP(double);
 };
 
 #endif

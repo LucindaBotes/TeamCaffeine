@@ -2,16 +2,20 @@
 
 using namespace std;
 
-InventoryMemento::InventoryMemento() {
+template <class T>
+InventoryMemento<T>::InventoryMemento() {
 }
 
-InventoryMemento::~InventoryMemento() {
+template <class T>
+InventoryMemento<T>::~InventoryMemento() {
 }
 
-int InventoryMemento::getMember() {
-  return this->member;
+template <class T>
+InventoryShop InventoryMemento<T>::getMemento() {
+  return this->inventory_memento.pop_back();
 }
 
-void InventoryMemento::setMember(int member) {
-  this->member = member;
+template <class T>
+void InventoryMemento<T>::setMemento(InventoryShop* m) {
+  this->inventory_memento.push_back(m);
 }

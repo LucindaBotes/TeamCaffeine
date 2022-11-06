@@ -9,7 +9,7 @@
 #include "Statistics.h"
 #include "InventoryShop.h"
 
-class Country : ActionListener{
+class Country {
   private:
     std::string _name;
     std::vector<Country*>* _allies;
@@ -18,21 +18,19 @@ class Country : ActionListener{
 
   public:
     Country();
-    Country(std::string, std::vector<Country*>*, Statistics*, InventoryShop*);
+    Country(std::string);
+    Country(std::string, std::vector<Country>*,* Statistics*, InventoryShop*);
     ~Country();
     int getMember();
     void setMember(int);
-    std::string getName() const;
-    std::vector<Country*>* getAllies() const;
+    void setName(std::string name);
     std::vector<Country*> getAllies();
+    std::string getName() const;
     Statistics getStats() const;
     InventoryShop getInventoryShop() const;
-
-    void addAllies(std::vector<Country>);
-    void addAlly(Country);
-
-    void removeAlly(Country);
-    void removeAllies(std::vector<Country>);
+    void addAlly(Country*);
+    void removeAlly(Country*);
+    void printStats();
 };
 
 #endif

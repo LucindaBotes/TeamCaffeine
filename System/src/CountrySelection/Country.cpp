@@ -1,4 +1,6 @@
 #include "Country.h"
+#include <iostream>
+#include <vector>
 
 using namespace std;
 
@@ -24,7 +26,13 @@ Country::Country() {
 }
 
 /**
- * @brief Create Country:: Create Country object.
+ * @brief Create Country::Country(std::string name)
+{
+  this->_name = name;
+  this->_stats->generateStats();
+}
+
+Country:: Create Country object.
  * @details Create Country object and initializes @code _name, _allies, _stats, _inventoryShop @endcode members to passed in parameters @code name, allies, stats, inventoryShop @endcode respectively.
  * @param name string
  * @param allies vector<Country*>*
@@ -32,7 +40,7 @@ Country::Country() {
  * @param inventoryShop InventoryShop*
  * @return Country
  */
-Country::Country(string name, vector<Country*>* allies, Statistics* stats, InventoryShop* inventoryShop) {
+Country::Country(string name, vector<Country**> allies, Statistics* stats, InventoryShop* inventoryShop) {
   _name = name;
   _allies = allies;
   _stats = stats;
@@ -43,7 +51,7 @@ Country::Country(string name, vector<Country*>* allies, Statistics* stats, Inven
  * @brief Destroy the Country:: Country object
  */
 Country::~Country() {
-  delete _allies;
+  this->_allies.clear();
   delete _stats;
   delete _inventoryShop;
 }
@@ -137,7 +145,10 @@ void Country::removeAllies(vector<Country> toRemove) {
  * @details Gets the @code _allies @endcode member of the Country object.
  * @return std::vector<Country*>
  */
-std::vector<Country*> Country::getAllies()
+void Country::printStats()
 {
-  return *this->_allies;
+  cout << "Country: " << this->_name << endl;
+  cout << "Health: " << *this->_stats->getHealth() << endl;
+  cout << "Attack: " << this->_stats->getDamage() << endl;
+  cout << "Defense: " << this->_stats->getDefence() << endl;
 }

@@ -5,23 +5,33 @@
 #include "Battle.h"
 #include "Country.h"
 #include <vector>
+#include <string>
+#include <iostream>
+#include <CountrySelection/Country.h>
+#include <WarPhases/WarPhaseContext.h>
+#include <ObserverPattern/Battle.h>
+#include <ModeSelection/Strategy.h>
 
-class War {
+class War : public ActionListener {
   private:
-    int member;
+    string _warName;
+    bool _active;
     Country * country_1;
     Country * country_2;
     Invoker * Player_1;
     Invoker * Player_2;
-    std::vector<Battle*> battles;
+    WarPhaseContext* warPhaseC;
+  
+  protected:
+    std::vector<Battle*> battles;//MEMENTO SHOULD MAKE US OF THIS LIST!!
   
   public:
+    std::vector<Country*> Countries_Eligible_for_War;
     War();
+    War(string wName,bool Active);
     ~War();
-    int getMember();
-    void setMember(int);
-    void setPlayer1_Country(Country * player1Country);
-    void setPlayer2_Country(Country * player2Country);
+    void setPlayer1_Country(std::string);
+    void setPlayer2_Country(std::string);
     Country * getPlayer1_Country();
     Country * getPlayer2_Country();
     void setPlayer1();
@@ -29,7 +39,14 @@ class War {
     Invoker * getPlayer1();
     Invoker * getPlayer2();
     void addBattle (Battle * battle);
-
+    void initializeCountries();
+    bool isActive();
+    void setName(string name);
+    void setActive(bool activeness);
+    string getName();
+    vector<Battle*> getBattle();
+    void printCountries();
+    void update();
+    
 };
-
 #endif

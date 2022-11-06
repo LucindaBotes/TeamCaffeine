@@ -1,15 +1,19 @@
 #ifndef DESIGN_H
 #define DESIGN_H
 
-class Design {
-  private:
-    int member;
+#include <Strategy.h>
+#include <UserInterface/War.h>
+#include <ModeContext.h>
 
+class Design : public Strategy
+{
+  private:
+    War * war;
+    
   public:
     Design();
     ~Design();
-    int getMember();
-    void setMember(int);
+    virtual void startSimulation();
+    virtual Battle * undo();
 };
-
 #endif
