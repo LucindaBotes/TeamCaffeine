@@ -25,7 +25,7 @@ void Design::startSimulation()
 }
 
 /// @brief This function will undo the recent action done and retrieve the Battle values before the action
-Battle Design::undo()
+Battle * Design::undo()
 {
-    return getBattle().back();
+    return nullptr;
 }

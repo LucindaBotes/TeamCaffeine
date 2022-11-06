@@ -27,7 +27,7 @@ void RealTime::startSimulation()
 
 /// @brief Real-Time Mode doesn't undo an activity so it's not implemented
 /// @return null
-Battle RealTime::undo()
+Battle * RealTime::undo()
 {
-    return NULL;
+    return nullptr;
 }

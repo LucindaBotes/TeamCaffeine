@@ -12,6 +12,6 @@ class Design : public Strategy
     Design();
     ~Design();
     virtual void startSimulation();
-    virtual vector<Battle> undo();
+    virtual Battle * undo();
 };
 #endif
