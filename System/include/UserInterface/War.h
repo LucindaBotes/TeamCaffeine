@@ -21,12 +21,13 @@ class War : public ActionListener {
     Country * country_2;
     Invoker * Player_1;
     Invoker * Player_2;
-    std::vector<Battle*> battles;
     WarPhaseContext* warPhaseC;
-    
+  
+  protected:
+    std::vector<Battle*> battles;//MEMENTO SHOULD MAKE US OF THIS LIST!!
+  
   public:
     std::vector<Country*> Countries_Eligible_for_War;
-    //std::vector<Country*> Countries_at_War;
     War();
     War(string wName,bool Active);
     ~War();

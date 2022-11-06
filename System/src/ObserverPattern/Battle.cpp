@@ -73,6 +73,10 @@ void Battle::setPlayerAllies(Country * player1, Country * player2)
   }
 }
 
+void Battle::setWar(War * war) {
+  this->war = war;
+}
+
 /**
  * @brief Commences the war by executing the actions that both player's chose upon each other's alliances. 
  * Checks are the performed to determine if one of the alliances have lost an ally. If so, the ally is removed from the

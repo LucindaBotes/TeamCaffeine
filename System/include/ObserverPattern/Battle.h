@@ -33,7 +33,7 @@ class Battle : public Observable{
     void displayEligibleCountries();
     double calculateHealth(int);
     void checkifAllyDied(int playerNumber);
-
+    void setWar(War * war);
     void addListener(ActionListener * listener);
     void removeListener(ActionListener * listener);
     void notifyListeners();
