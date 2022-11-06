@@ -31,6 +31,7 @@ class Country {
     InventoryShop getInventoryShop() const;
     void addAlly(Country*);
     void removeAlly(Country*);
+    void printStats();
 };
 
 #endif

@@ -42,12 +42,11 @@ class War : public ActionListener {
     void addBattle (Battle * battle);
     void initializeCountries();
     bool isActive();
-    void setPhase(WarPhaseState* p);
     void setName(string name);
     void setActive(bool activeness);
     string getName();
-    vector<Country> getCountriesAtWar();
     vector<Battle*> getBattle();
+    void printCountries();
     void update();
     
 };

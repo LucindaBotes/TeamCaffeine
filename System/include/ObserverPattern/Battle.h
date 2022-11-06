@@ -37,6 +37,7 @@ class Battle : public Observable{
     void addListener(ActionListener * listener);
     void removeListener(ActionListener * listener);
     void notifyListeners();
+    std::string getName();
 };
 
 #endif
