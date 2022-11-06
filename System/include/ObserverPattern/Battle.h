@@ -15,6 +15,7 @@ class Battle : public Observable{
     std::string name;
     std::vector<Country*> Alliance_A;
     std::vector<Country*> Alliance_B;
+    std::vector<ActionListener*> listeners;
 
   public:
     //copy constructor for Battle
