@@ -53,8 +53,8 @@ void Statistics::setGDP(double gdp)
 
 void Statistics::generateStats()
 {
-  this->_damage = random.getRandomInt(10);
-  this->_gdp->setValue(random.getRandomInt(100));
+  this->_damage = random.getRandomInt(20);
+  this->_gdp->setValue(random.getRandomInt(1000));
   this->_health = random.getRandomInt(100);
   this->_defence = random.getRandomInt(20);
 }
