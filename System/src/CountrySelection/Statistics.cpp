@@ -116,8 +116,7 @@ void Statistics::setGDP(double gdp)
 
 void Statistics::generateStats()
 {
-  this->_damage = Randomizer::getInstance()->getRandomInt(20);
-  this->_gdp->setValue(Randomizer::getInstance()->getRandomInt(1000));
-  this->_health = Randomizer::getInstance()->getRandomInt(100);
+  this->_gdp->setValue(Randomizer::getInstance()->getUniformRandomNumber(1000, 1500));
+  this->_health = Randomizer::getInstance()->getUniformRandomNumber(150, 250);
   this->_defence = Randomizer::getInstance()->getRandomInt(20);
 }

@@ -152,7 +152,7 @@ Country * War::getPlayer2_Country()
  */
 void War::initializeCountries()
 {
-  std::string country_names[10] = {"France", "USA", "Turkey", "Canada", "England", "Russia", "Poland", "South Africa", "Egypt", "Germany"};
+  std::string country_names[] = {"France", "USA", "Turkey", "Canada", "England", "Russia", "Poland", "South Africa", "Egypt", "Germany"};
   for (int i =0; i < 10; i ++)
   {
     this->Countries_Eligible_for_War.push_back(new Country(country_names[i]));

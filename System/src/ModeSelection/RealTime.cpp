@@ -4,6 +4,7 @@
 #include "Medics.h"
 #include "Supplies.h"
 #include "Armour.h"
+#include <limits>
 
 using namespace std;
 
@@ -30,6 +31,20 @@ RealTime::RealTime() {
 RealTime::~RealTime() {
 }
 
+static std::string bombArt = R"(                             ____
+                     __,-~~/~    `---.
+                   _/_,---(      ,    )
+               __ /        <    /   )  \___
+- ------===;;;'====------------------===;;;===----- -  -
+                  \/  ~"~"~"~"~"~\~"~)~"/
+                  (_ (   \  (     >    \)
+                   \_( _ <         >_>'
+                      ~ `-i' ::>|--"
+                          I;|.|.|
+                         <|i::|i|`.
+                        (` ^'"`-' ")    
+)";
+
 /// @brief Shows the user that they selected the Real time mode
 void RealTime::startSimulation()
 {
@@ -40,7 +55,8 @@ void RealTime::startSimulation()
 
   cout<<"What would you like to name your war?"<<endl;
   string warName;
-  getline(std::cin, warName);
+  std::cin.ignore();
+  getline(cin, warName);
   this->war->setName(warName);
   cout<<"You have named your war: "<<this->war->getName()<<"."<<endl;
   
@@ -80,7 +96,58 @@ void RealTime::startSimulation()
   bool WarTrue = true;
   int battleint = 1;
 
+    Armour* a_1 = new Armour(3); //Basic Armour
+    a_1->setName("Bulletproof Vest.");
+    Armour* a_2 = new Armour(4); //Intermediate Armour
+    a_2->setName("Kevlar vest");
+    Armour* a_3 = new Armour(5); //Advanced Armour
+    a_3->setName("Armour Plates.");
 
+    Weapons* w_1 = new Weapons(1); //Basic Weapon
+    w_1->setName("Pistol"); 
+    Weapons* w_2 = new Weapons(2); //Intermediate Weapon
+    w_2->setName("Rifle");
+    Weapons* w_3 = new Weapons(3); //Advanced Weapon
+    w_3->setName("Machine Gun.");
+
+    Soldiers* s_1 = new Soldiers();
+    s_1->setCount(25);
+    s_1->setDamage(1);
+    s_1->setArmour(3);
+    s_1->setPrice(250);
+    s_1->setName("Platoon of Marines.");
+
+    Soldiers* s_2 = new Soldiers();
+    s_2->setCount(25);
+    s_2->setDamage(2);
+    s_2->setArmour(4);
+    s_2->setPrice(500);
+    s_2->setName("Platoon of Rangers.");
+
+    Soldiers* s_3 = new Soldiers();
+    s_3->setCount(25);
+    s_3->setDamage(3);
+    s_3->setArmour(5);
+    s_3->setPrice(750);
+    s_3->setName("Platoon of NAVY Seals.");
+
+    Weapons* nuke_1 = new Weapons();
+    nuke_1->setDamage(250);
+    nuke_1->setPrice(2000);
+    nuke_1->setName("'Little boy' nuke package.");
+
+    Weapons* nuke_2 = new Weapons();
+    nuke_2->setDamage(500);
+    nuke_2->setPrice(4000);
+    nuke_2->setName("'Fat man' nuke package.");
+
+    Weapons* hydro = new Weapons();
+    hydro->setDamage(std::numeric_limits<double>::infinity());
+    hydro->setPrice(10000);
+    hydro->setName("Hydrogen Bomb.");
+
+    Medics* m_1 = new Medics();
+    m_1->setHeal(5);
 
   while (WarTrue == true)
   {
@@ -150,24 +217,36 @@ void RealTime::startSimulation()
     if (this->war->getPlayer1()->getNextAction() == 2 || this->war->getPlayer2()->getNextAction() == 2)
     {
       WarTrue = false;
+      break;
     }
 
     if (this->war->getPlayer1_Country()->getStats().getHealth() <= 0)
     {
       WarTrue = false;
+      if (this->war->getPlayer2_Country()->getInventoryShop().hasHydrogen())
+      {
+        std::cout << bombArt << std::endl;
+      }
       cout<<this->war->getPlayer1_Country()->getName()<<" has been defeated!!"<<endl;
       cout<<this->war->getPlayer2_Country()->getName()<<" has won the war!"<<endl;
       cout<<"*****************************************"<<endl;
       cout<<"Congratulations! Player 2 WINS."<<endl;
+      break;
     }
 
     if (this->war->getPlayer2_Country()->getStats().getHealth() <= 0)
     {
       WarTrue = false;
+        if (this->war->getPlayer1_Country()->getInventoryShop().hasHydrogen())
+        {
+            std::cout << bombArt << std::endl;
+        }
+
       cout<<this->war->getPlayer2_Country()->getName()<<" has been defeated!!"<<endl;
       cout<<this->war->getPlayer1_Country()->getName()<<" has won the war!"<<endl;
       cout<<"*****************************************"<<endl;
       cout<<"Congratulations! Player 1 WINS."<<endl;
+      break;
     }
     battleint++;
   }

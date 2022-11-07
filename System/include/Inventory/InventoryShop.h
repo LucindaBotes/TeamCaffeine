@@ -44,6 +44,7 @@ class InventoryShop {
 
     void printShop();
     void printInventory();
+    bool hasHydrogen();
 };
 
 #endif

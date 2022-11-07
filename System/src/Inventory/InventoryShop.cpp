@@ -5,6 +5,7 @@
 #include "Supplies.h"
 #include "Armour.h"
 #include "Randomizer.h"
+#include <limits>
 
 using namespace std;
 
@@ -155,6 +156,7 @@ void InventoryShop::printShop() {
     cout << "Option: #" << i + 1 << endl;
     switch(_purchasable[i]->getType()) {
       case EntityType::WEAPON:
+      {
         Weapons* curr = dynamic_cast<Weapons*>(_purchasable[i]);
         cout << "Type: Weapon" << endl;
         cout << "Name: " << _purchasable[i]->getName() << endl;
@@ -162,7 +164,9 @@ void InventoryShop::printShop() {
         cout << "GDP:" << curr->getPrice() * soldierCount << endl;
         cout<<"--------------------------------------------------"<<endl;
         break;
+      }
       case EntityType::MEDIC:
+      {
         Medics* currMedic = dynamic_cast<Medics*>(_purchasable[i]);
 
         cout << "Type: Medicine" << endl;
@@ -171,7 +175,9 @@ void InventoryShop::printShop() {
         cout << "GDP:" << currMedic->getPrice() * soldierCount << endl;
         cout<<"--------------------------------------------------"<<endl;
         break;
+      }
       case EntityType::SOLDIER:
+      {
         Soldiers* currSoldier = dynamic_cast<Soldiers*>(_purchasable[i]);
 
         cout << "Type: Soldier" << endl;
@@ -182,7 +188,9 @@ void InventoryShop::printShop() {
         cout << "GDP:" << currSoldier->getPrice() << endl;
         cout<<"--------------------------------------------------"<<endl;
         break;
+      }
       case EntityType::ARMOUR:
+      {
         Armour* currArmour = dynamic_cast<Armour*>(_purchasable[i]);
 
         cout << "Type: Armour" << endl;
@@ -190,6 +198,9 @@ void InventoryShop::printShop() {
         cout << "Armour: " << currArmour->getArmour() << endl;
         cout << "GDP:" << currArmour->getPrice() * soldierCount << endl;
         cout<<"--------------------------------------------------"<<endl;
+        break;
+      }
+      default:
         break;
     }
   }
@@ -218,4 +229,15 @@ void InventoryShop::printInventory() {
   for (int i = 0; i < _armour.size(); i++) {
     cout << _armour[i]->getName() << endl;
   }
+}
+
+bool InventoryShop::hasHydrogen()
+{
+  for (int i = 0; i < _weapons.size(); i++) {
+    Weapons* curr = dynamic_cast<Weapons*>(_weapons[i]);
+    if (curr->getDamage() == std::numeric_limits<double>::infinity()) {
+      return true;
+    }
+  }
+  return false;
 }
