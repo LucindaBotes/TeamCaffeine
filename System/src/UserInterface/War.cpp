@@ -36,7 +36,7 @@ War::~War() {
 void War::setPlayer1()
 {
   this->Player_1 = new Invoker(1);
-  this->Player_1->setBattleActions(this->battles[this->battles.size()]);
+  this->Player_1->setBattleActions(this->battles[this->battles.size()-1]);
 }
 
 /**
@@ -49,7 +49,7 @@ void War::setPlayer1()
 void War::setPlayer2()
 {
   this->Player_2 = new Invoker(2);
-  this->Player_2->setBattleActions(this->battles[this->battles.size()]);
+  this->Player_2->setBattleActions(this->battles[this->battles.size()-1]);
 }
 
 /**
