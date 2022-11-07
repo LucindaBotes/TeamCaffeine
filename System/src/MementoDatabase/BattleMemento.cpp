@@ -1,4 +1,14 @@
 #include "MementoDatabase/BattleMemento.h"
+/** 
+*  @file BattleMemento.h
+*  @brief BattleMemento class implementation (Memento)
+*  Design Patterns:
+*  @li Memento: Memento participant
+*
+*  @details The Memento class in the Memento design pattern that stores the state of the Originator object.
+*  
+*  @author Erik Koekemoer; u19011866
+*/
 
 using namespace std;
 

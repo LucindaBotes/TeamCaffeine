@@ -1,7 +1,14 @@
 #include "MementoDatabase/BattleFacade.h"
-//Battle class is Originator
-//This is the Proxy
-//Die vraag is: wat is die doel van die klas noudat ons net een Memento het? lol
+/** 
+*  @file BattleFacade.h
+*  @brief Proxy class implementation (Protection Proxy)
+*  Design Patterns:
+*  @li Proxy: Proxy participant
+*
+*  @details Provides another class to go throug before the Memento class can be accessed.
+*  
+*  @author Erik Koekemoer; u19011866
+*/
 using namespace std;
 
 template <class T>
