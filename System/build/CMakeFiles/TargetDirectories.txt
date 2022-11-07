@@ -1,2 +1,0 @@
-/mnt/d/OneDrive - University of Pretoria/University/Year 2/Semester 2/COS 214/Project/TeamCaffeine/System/build/CMakeFiles/rebuild_cache.dir
-/mnt/d/OneDrive - University of Pretoria/University/Year 2/Semester 2/COS 214/Project/TeamCaffeine/System/build/CMakeFiles/edit_cache.dir

@@ -1,5 +1,0 @@
-if(EXISTS "/mnt/c/Users/vanzy/OneDrive/Desktop/Dev/TeamCaffeine/System/TeamCaffeine_Project_binary[1]_tests.cmake")
-  include("/mnt/c/Users/vanzy/OneDrive/Desktop/Dev/TeamCaffeine/System/TeamCaffeine_Project_binary[1]_tests.cmake")
-else()
-  add_test(TeamCaffeine_Project_binary_NOT_BUILT TeamCaffeine_Project_binary_NOT_BUILT)
-endif()
