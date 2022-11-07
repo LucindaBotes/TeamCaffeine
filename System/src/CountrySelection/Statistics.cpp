@@ -78,8 +78,8 @@ double Statistics::getDefence() const {
  * @details Gets the @code _gdp @endcode member of the Statistics object.
  * @return GDP const
  */
-GDP Statistics::getGDP() const {
-  return *_gdp;
+GDP* Statistics::getGDP() {
+  return _gdp;
 }
 
 /**

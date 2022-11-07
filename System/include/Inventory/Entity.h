@@ -35,6 +35,7 @@ class Entity {
     bool isEmpty();
     std::string getName() const;
     void setName(std::string name);
+    Entity* getHead();
 };
 
 #endif

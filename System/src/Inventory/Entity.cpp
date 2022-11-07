@@ -133,3 +133,8 @@ void Entity::setName(std::string name)
 {
   _name = name;
 }
+
+Entity* Entity::getHead()
+{
+  return this->_head;
+}

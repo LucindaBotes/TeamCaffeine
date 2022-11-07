@@ -161,7 +161,7 @@ void InventoryShop::printShop() {
         cout << "Type: Weapon" << endl;
         cout << "Name: " << _purchasable[i]->getName() << endl;
         cout << "Damage: " << curr->getDamage() << endl;
-        cout << "GDP:" << curr->getPrice() * soldierCount << endl;
+        cout << "GDP cost:" << curr->getPrice() * soldierCount << endl;
         cout<<"--------------------------------------------------"<<endl;
         break;
       }
@@ -172,7 +172,7 @@ void InventoryShop::printShop() {
         cout << "Type: Medicine" << endl;
         cout << "Name: " << _purchasable[i]->getName() << endl;
         cout << "Healing: " << currMedic->getHeal() << endl;
-        cout << "GDP:" << currMedic->getPrice() * soldierCount << endl;
+        cout << "GDP cost:" << currMedic->getPrice() * soldierCount << endl;
         cout<<"--------------------------------------------------"<<endl;
         break;
       }
@@ -185,7 +185,7 @@ void InventoryShop::printShop() {
         cout << "Armour: " << currSoldier->getArmour() << endl;
         cout << "Damage: " << currSoldier->getDamage() << endl;
         cout << "Soldier: " << currSoldier->getCount() << endl;
-        cout << "GDP:" << currSoldier->getPrice() << endl;
+        cout << "GDP cost:" << currSoldier->getPrice() << endl;
         cout<<"--------------------------------------------------"<<endl;
         break;
       }
@@ -196,7 +196,7 @@ void InventoryShop::printShop() {
         cout << "Type: Armour" << endl;
         cout << "Name: " << currArmour->getName() << endl;
         cout << "Armour: " << currArmour->getArmour() << endl;
-        cout << "GDP:" << currArmour->getPrice() * soldierCount << endl;
+        cout << "GDP cost:" << currArmour->getPrice() * soldierCount << endl;
         cout<<"--------------------------------------------------"<<endl;
         break;
       }

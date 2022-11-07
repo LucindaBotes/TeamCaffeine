@@ -236,9 +236,9 @@ void Battle::defend(int playerNumber){//Uses Defense statistic
   {
     for (int i =0; i < this->Alliance_A.size(); i++)
     {
-      if (this->Alliance_A[i]->getStats().getDefence() >= 20)
+      if (this->Alliance_A[i]->getStats()->getDefence() >= 20)
       {
-        this->Alliance_A[i]->getStats().setHealth(this->Alliance_A[i]->getStats().getHealth() + 20);
+        this->Alliance_A[i]->getStats()->setHealth(this->Alliance_A[i]->getStats()->getHealth() + 20);
       }
     }
     cout<<"Player 1 defended."<<endl;
@@ -247,9 +247,9 @@ void Battle::defend(int playerNumber){//Uses Defense statistic
   {
     for (int i =0; i < this->Alliance_B.size(); i++)
     {
-      if (this->Alliance_B[i]->getStats().getDefence() >= 20)
+      if (this->Alliance_B[i]->getStats()->getDefence() >= 20)
       {
-        this->Alliance_B[i]->getStats().setHealth(this->Alliance_B[i]->getStats().getHealth() + 20);
+        this->Alliance_B[i]->getStats()->setHealth(this->Alliance_B[i]->getStats()->getHealth() + 20);
       }
     }
     cout<<"Player 2 defended."<<endl;
@@ -325,9 +325,9 @@ void Battle::allyAction(int playerNumber){//request ally
     if (accept == true)
     {
       cout<<this->war->Countries_Eligible_for_War[countryNUmber]->getName()<<" has ACCEPTED your request and is now your Ally!"<<endl;
-      int donation = Randomizer::getInstance()->getRandomInt(this->war->Countries_Eligible_for_War[countryNUmber]->getStats().getGDP().getValue());
+      int donation = Randomizer::getInstance()->getRandomInt(this->war->Countries_Eligible_for_War[countryNUmber]->getStats()->getGDP()->getValue());
       this->war->getPlayer1_Country()->addAlly(this->war->Countries_Eligible_for_War[countryNUmber]);
-      this->Alliance_A[0]->getStats().setGDP(this->Alliance_A[0]->getStats().getGDP().getValue() + donation);
+      this->Alliance_A[0]->getStats()->setGDP(this->Alliance_A[0]->getStats()->getGDP()->getValue() + donation);
       this->war->Countries_Eligible_for_War.erase(this->war->Countries_Eligible_for_War.begin() + countryNUmber);
     }
     else
@@ -346,9 +346,9 @@ void Battle::allyAction(int playerNumber){//request ally
     if (accept == true)
     {
       cout<<this->war->Countries_Eligible_for_War[countryNUmber]->getName()<<" has ACCEPTED your request and is now your Ally!"<<endl;
-      int donation = Randomizer::getInstance()->getRandomInt(this->war->Countries_Eligible_for_War[countryNUmber]->getStats().getGDP().getValue());
+      int donation = Randomizer::getInstance()->getRandomInt(this->war->Countries_Eligible_for_War[countryNUmber]->getStats()->getGDP()->getValue());
       this->war->getPlayer2_Country()->addAlly(this->war->Countries_Eligible_for_War[countryNUmber]);
-      this->Alliance_B[0]->getStats().setGDP(this->Alliance_B[0]->getStats().getGDP().getValue() + donation);
+      this->Alliance_B[0]->getStats()->setGDP(this->Alliance_B[0]->getStats()->getGDP()->getValue() + donation);
       this->war->Countries_Eligible_for_War.erase(this->war->Countries_Eligible_for_War.begin() + countryNUmber);
     }
     else
@@ -373,7 +373,7 @@ void Battle::attack(int playerNumber){//Normal attack
     
     for (int i =0; i < this->Alliance_B.size(); i++)
     {
-      this->Alliance_B[i]->getStats().setHealth(this->Alliance_B[i]->getStats().getHealth() - dividentDamage);
+      this->Alliance_B[i]->getStats()->setHealth(this->Alliance_B[i]->getStats()->getHealth() - dividentDamage);
     }
     cout<<"Player 1 attacks Player 2."<<endl;
   }
@@ -384,7 +384,7 @@ void Battle::attack(int playerNumber){//Normal attack
     
     for (int i =0; i < this->Alliance_A.size(); i++)
     {
-      this->Alliance_A[i]->getStats().setHealth(this->Alliance_A[i]->getStats().getHealth() - dividentDamage);
+      this->Alliance_A[i]->getStats()->setHealth(this->Alliance_A[i]->getStats()->getHealth() - dividentDamage);
     }
     cout<<"Player 2 attacks Player 1."<<endl;
   }
@@ -403,14 +403,14 @@ double Battle::calculateDamage(int playerNumber)
   {
     for (int i=0; i < this->Alliance_A.size(); i++)
     {
-      totalDamage += this->Alliance_A[i]->getStats().getDamage();
+      totalDamage += this->Alliance_A[i]->getStats()->getDamage();
     }
   }
   else if (playerNumber == 2)
   {
     for (int i=0; i < this->Alliance_B.size(); i++)
     {
-      totalDamage += this->Alliance_B[i]->getStats().getDamage();
+      totalDamage += this->Alliance_B[i]->getStats()->getDamage();
     }
   }
   return totalDamage;
@@ -429,14 +429,14 @@ double Battle::calculateHealth(int playerNumber)
   {
     for (int i=0; i < this->Alliance_A.size(); i++)
     {
-      totalHealth += this->Alliance_A[i]->getStats().getHealth();
+      totalHealth += this->Alliance_A[i]->getStats()->getHealth();
     }
   }
   else
   {
     for (int i=0; i < this->Alliance_B.size(); i++)
     {
-      totalHealth += this->Alliance_B[i]->getStats().getHealth();
+      totalHealth += this->Alliance_B[i]->getStats()->getHealth();
     }
   }
   return totalHealth;
@@ -465,7 +465,7 @@ void Battle::checkifAllyDied(int playerNumber)
   {
     for (int i=1; i < this->Alliance_A.size(); i++)
     {
-      if (this->Alliance_A[i]->getStats().getHealth() <= 0)
+      if (this->Alliance_A[i]->getStats()->getHealth() <= 0)
       {
         cout<<"Player 1's ally "<<this->Alliance_A[i]->getName()<<" has died!"<<endl;
         delete this->Alliance_A[i];
@@ -477,7 +477,7 @@ void Battle::checkifAllyDied(int playerNumber)
   {
     for (int i=1; i < this->Alliance_B.size(); i++)
     {
-      if (this->Alliance_B[i]->getStats().getHealth() <= 0)
+      if (this->Alliance_B[i]->getStats()->getHealth() <= 0)
       {
         cout<<"Player 2's ally "<<this->Alliance_B[i]->getName()<<" has died!"<<endl;
         delete this->Alliance_B[i];

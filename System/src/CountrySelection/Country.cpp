@@ -29,6 +29,7 @@ Country::Country(std::string name)
 {
   this->_name = name;
   this->_allies = new vector<Country*>();
+  this->_stats = new Statistics();
   this->_stats->generateStats();
   this->_inventoryShop = new InventoryShop();
 }
@@ -80,8 +81,8 @@ vector<Country*> Country::getAllies() {
  * @details Get Country:: Gets the @code _stats @endcode member of the Country object.
  * @return Statistics
  */
-Statistics Country::getStats() {
-  return *(_stats);
+Statistics* Country::getStats() {
+  return _stats;
 }
 
 /**
@@ -89,8 +90,8 @@ Statistics Country::getStats() {
  * @details Get Country:: Gets the @code _inventoryShop @endcode member of the Country object.
  * @return InventoryShop
  */
-InventoryShop Country::getInventoryShop() const {
-  return *_inventoryShop;
+InventoryShop* Country::getInventoryShop() {
+  return _inventoryShop;
 }
 
 /**

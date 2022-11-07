@@ -319,6 +319,6 @@ void War::printCountries()
 {
   for (int i = 0; i < this->Countries_Eligible_for_War.size(); i++)
   {
-    cout<<"Country "<<i+1<< this->Countries_Eligible_for_War[i]->getName() << endl;
+    cout<<"Country "<< i+1 << ". " << this->Countries_Eligible_for_War[i]->getName() << endl;
   }
 }
