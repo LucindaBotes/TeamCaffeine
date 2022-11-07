@@ -9,7 +9,7 @@ using namespace std;
  * @li Participant: ConcreteState
  * 
  * @details PeacefulState class implements a state which is for when a war is over, and there's a truce or one country is defeated
- * @author Netshifhefhe Unarine Leo : u20505656
+ * @author Netshifhefhe Unarine Leo ; u20505656
 */
 
 PeacefulState::PeacefulState() {

@@ -2,7 +2,7 @@
 using namespace std;
 
 /**
- * @file ColdState.cpp
+ * @file WarPhaseState.cpp
  * @brief WarPhaseState class implementation,
  * @li Design Pattern: State
  * @li Participant: State
