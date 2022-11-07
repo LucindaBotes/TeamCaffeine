@@ -19,14 +19,14 @@ class Country {
   public:
     Country();
     Country(std::string);
-    Country(std::string, std::vector<Country>*,* Statistics*, InventoryShop*);
+    Country(std::string, std::vector<Country*>*, Statistics*, InventoryShop*);
     ~Country();
     int getMember();
     void setMember(int);
     void setName(std::string name);
     std::vector<Country*> getAllies();
     std::string getName() const;
-    Statistics getStats() const;
+    Statistics getStats();
     InventoryShop getInventoryShop() const;
     void addAlly(Country*);
     void removeAlly(Country*);

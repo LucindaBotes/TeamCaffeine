@@ -1,14 +1,12 @@
 #ifndef INVENTORYMEMENTO_H
 #define INVENTORYMEMENTO_H
-#include <MementoDatabase/Memento.h>
-#include <../src/MementoDatabase/Memento.cpp>
-#include <Inventory/InventoryShop.h>
-#include <../src/Inventory/InventoryShop.cpp>
+#include "Memento.h"
+#include "InventoryShop.h"
 #include <vector>
 
 
 template <class T>
-class InventoryMemento: public Memento {
+class InventoryMemento: public Memento<T> {
   private:
     vector<InventoryShop> inventory_memento;
 

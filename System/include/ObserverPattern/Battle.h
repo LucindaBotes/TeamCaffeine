@@ -2,11 +2,14 @@
 #define BATTLE_H
 
 #include "Country.h"
-#include <UserInterface/War.h>
+#include "War.h"
 #include "Invoker.h"
-#include <ObserverPattern/Observable.h>
+#include "Observable.h"
 #include <vector>
 #include <string>
+
+class Invoker;
+class War;
 
 class Battle : public Observable{
   private:

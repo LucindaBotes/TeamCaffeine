@@ -2,9 +2,9 @@
 #ifndef REALTIME_H
 #define REALTIME_H
 
-#include <Strategy.h>
-#include <UserInterface/War.h>
-#include <ModeContext.h>
+#include "Strategy.h"
+#include "War.h"
+#include "ModeContext.h"
 
 class RealTime : public Strategy
 {

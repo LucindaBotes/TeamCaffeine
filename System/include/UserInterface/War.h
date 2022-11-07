@@ -4,13 +4,15 @@
 #include "Invoker.h"
 #include "Battle.h"
 #include "Country.h"
+#include "WarPhaseContext.h"
+#include "Strategy.h"
+
 #include <vector>
 #include <string>
 #include <iostream>
-#include <CountrySelection/Country.h>
-#include <WarPhases/WarPhaseContext.h>
-#include <ObserverPattern/Battle.h>
-#include <ModeSelection/Strategy.h>
+
+class Battle;
+class Invoker;
 
 class War : public ActionListener {
   private:

@@ -5,7 +5,11 @@ class ModeContext;
 #include <iostream>
 #include <string>
 
+#include "Battle.h"
+
 using namespace std;
+
+class Battle;
 
 class Strategy 
 {

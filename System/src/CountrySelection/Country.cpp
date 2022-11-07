@@ -25,14 +25,14 @@ Country::Country() {
   _inventoryShop = new InventoryShop();
 }
 
-/**
- * @brief Create Country::Country(std::string name)
+Country::Country(std::string name)
 {
   this->_name = name;
   this->_stats->generateStats();
 }
 
-Country:: Create Country object.
+/**
+ * @brief Create Country:: Create Country object.
  * @details Create Country object and initializes @code _name, _allies, _stats, _inventoryShop @endcode members to passed in parameters @code name, allies, stats, inventoryShop @endcode respectively.
  * @param name string
  * @param allies vector<Country*>*
@@ -40,7 +40,7 @@ Country:: Create Country object.
  * @param inventoryShop InventoryShop*
  * @return Country
  */
-Country::Country(string name, vector<Country**> allies, Statistics* stats, InventoryShop* inventoryShop) {
+Country::Country(string name, vector<Country*>* allies, Statistics* stats, InventoryShop* inventoryShop) {
   _name = name;
   _allies = allies;
   _stats = stats;
@@ -51,7 +51,6 @@ Country::Country(string name, vector<Country**> allies, Statistics* stats, Inven
  * @brief Destroy the Country:: Country object
  */
 Country::~Country() {
-  this->_allies.clear();
   delete _stats;
   delete _inventoryShop;
 }
@@ -70,8 +69,8 @@ string Country::getName() const {
  * @details Get Country:: Gets the @code _allies @endcode member of the Country object.
  * @return vector<Country*>*
  */
-vector<Country*>* Country::getAllies() const {
-  return _allies;
+vector<Country*> Country::getAllies() {
+  return *_allies;
 }
 
 /**
@@ -79,8 +78,8 @@ vector<Country*>* Country::getAllies() const {
  * @details Get Country:: Gets the @code _stats @endcode member of the Country object.
  * @return Statistics
  */
-Statistics Country::getStats() const {
-  return *_stats;
+Statistics Country::getStats() {
+  return *(_stats);
 }
 
 /**
@@ -93,49 +92,23 @@ InventoryShop Country::getInventoryShop() const {
 }
 
 /**
- * @brief Add Country:: Add a vector of countries to the allies of the Country object
- * @details Add Country:: Adds the passed in vector of Country objects to the @code _allies @endcode member of the Country object.
- * @param allies vector<Country>
- */
-void Country::addAllies(vector<Country> allies) {
-  for (int i = 0; i < allies.size(); i++) {
-    _allies->push_back(&allies[i]);
-  }
-}
-
-/**
  * @brief Add Country:: Add a country to the allies of the Country object
  * @details Add Country:: Adds the passed in Country object to the @code _allies @endcode member of the Country object.
- * @param ally Country
+ * @param ally Country*
  */
-void Country::addAlly(Country ally) {
-  _allies->push_back(&ally);
+void Country::addAlly(Country* ally) {
+  _allies->push_back(ally);
 }
 
 /**
  * @brief Remove Country:: Remove a country from the allies of the Country object
  * @details Remove Country:: Removes the passed in Country object from the @code _allies @endcode member of the Country object.
- * @param ally Country
+ * @param ally Country*
  */
-void Country::removeAlly(Country ally) {
+void Country::removeAlly(Country* ally) {
   for (int i = 0; i < _allies->size(); i++) {
-    if (_allies->at(i) == &ally) {
+    if (_allies->at(i) == ally) {
       _allies->erase(_allies->begin() + i);
-    }
-  }
-}
-
-/**
- * @brief Remove Country:: Remove a vector of countries from the allies of the Country object
- * @details Remove Country:: Removes all the countries passed in by the @code toRemove @endcode parameter from the @code _allies @endcode member of the Country object.
- * @param allies vector<Country>
- */
-void Country::removeAllies(vector<Country> toRemove) {
-  for (int i = 0; i < toRemove.size(); i++) {
-    for (int j = 0; j < _allies->size(); j++) {
-      if (_allies->at(j) == &toRemove[i]) {
-        _allies->erase(_allies->begin() + j);
-      }
     }
   }
 }
@@ -148,7 +121,7 @@ void Country::removeAllies(vector<Country> toRemove) {
 void Country::printStats()
 {
   cout << "Country: " << this->_name << endl;
-  cout << "Health: " << *this->_stats->getHealth() << endl;
+  cout << "Health: " << this->_stats->getHealth() << endl;
   cout << "Attack: " << this->_stats->getDamage() << endl;
   cout << "Defense: " << this->_stats->getDefence() << endl;
 }

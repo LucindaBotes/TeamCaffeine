@@ -1,12 +1,11 @@
 #ifndef INVENTORYFACADE_H
 #define INVENTORYFACADE_H
-#include <MementoDatabase/MementoFacade.h>
-#include <../src/MementoDatabase/MementoFacade.cpp>
+#include "MementoFacade.h"
 #include <vector>
 
 
 template <class T>
-class InventoryFacade: public MementoFacade {
+class InventoryFacade: public MementoFacade<T> {
   private:
     T memento;
 

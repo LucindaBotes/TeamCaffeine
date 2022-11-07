@@ -8,6 +8,8 @@ class Randomizer {
     static Randomizer* getInstance();
     double getUniformRandomNumber(double min, double max);
     int getUniformRandomNumber(int min, int max);
+    bool getRandomBoolean();
+    int getRandomInt(int);
   
   protected:
     Randomizer();

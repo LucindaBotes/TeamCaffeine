@@ -1,7 +1,7 @@
 #ifndef OBSERVABLE_H
 #define OBSERVABLE_H
 
-#include <ObserverPattern/ActionListener.h>
+#include "ActionListener.h"
 #include <vector>
 
 class Observable {

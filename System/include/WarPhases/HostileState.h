@@ -1,9 +1,9 @@
 #ifndef HOSTILESTATE_H
 #define HOSTILESTATE_H
 
-#include <WarPhaseState.h>
-#include <ColdState.h>
-#include <WarPhaseContext.h>
+#include "WarPhaseState.h"
+#include "ColdState.h"
+#include "WarPhaseContext.h"
 
 class HostileState : public WarPhaseState
 {
