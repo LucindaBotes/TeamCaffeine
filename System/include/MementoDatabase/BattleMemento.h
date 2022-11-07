@@ -1,8 +1,7 @@
 #ifndef BATTLEMEMENTO_H
 #define BATTLEMEMENTO_H
-#include <ObserverPattern/Battle.h>
-#include <../src/ObserverPattern/Battle.cpp>
-#include <BattleDatabase.h>
+#include "ObserverPattern/Battle.h"
+#include "BattleDatabase.h"
 #include <vector>
 //Memento
 template <class T>

@@ -1,13 +1,13 @@
 #ifndef COUNTRY_H
 #define COUNTRY_H
-#include <CountrySelection/Statistics.h>
+#include "CountrySelection/Statistics.h"
 
 #include <string>
 #include <vector>
 
-#include <ObserverPattern/ActionListener.h>
-#include <CountrySelection/Statistics.h>
-#include <Inventory/InventoryShop.h>
+#include "ObserverPattern/ActionListener.h"
+#include "CountrySelection/Statistics.h"
+#include "Inventory/InventoryShop.h"
 
 class Country : ActionListener{
   private:

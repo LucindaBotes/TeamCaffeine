@@ -1,9 +1,9 @@
 #ifndef BATTLE_H
 #define BATTLE_H
 
-#include <CountrySelection/Country.h>
-#include <UserInterface/War.h>
-#include <TakeActions/Invoker.h>
+#include "CountrySelection/Country.h"
+#include "UserInterface/War.h"
+#include "TakeActions/Invoker.h"
 #include <vector>
 #include <string>
 

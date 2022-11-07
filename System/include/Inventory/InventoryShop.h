@@ -3,7 +3,7 @@
 
 #include <vector>
 
-#include <Inventory/Entity.h>
+#include "Inventory/Entity.h"
 
 class InventoryShop {
   private:
