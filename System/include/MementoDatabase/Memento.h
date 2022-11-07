@@ -1,7 +1,6 @@
 #ifndef MEMENTO_H
 #define MEMENTO_H
-#include <ObserverPattern/Battle.h>
-#include <../src/ObserverPattern/Battle.cpp>
+#include "Battle.h"
 #include <vector>
 
 template <class T>

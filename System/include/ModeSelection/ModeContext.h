@@ -1,8 +1,8 @@
 #ifndef MODECONTEXT_H
 #define MODECONTEXT_H
 
-#include <Strategy.h>
-#include <War.h>
+#include "Strategy.h"
+#include "War.h"
 
 class ModeContext 
 {

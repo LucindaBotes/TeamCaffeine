@@ -1,9 +1,7 @@
 #ifndef WARMEMENTO_H
 #define WARMEMENTO_H
-#include <MementoDatabase/Memento.h>
-#include <../src/MementoDatabase/Memento.cpp>
-#include <ObserverPattern/Battle.h>
-#include <../src/ObserverPattern/Battle.cpp>
+#include "Memento.h"
+#include "Battle.h"
 #include <vector>
 
 template <class T>

@@ -1,7 +1,6 @@
 #ifndef WARDATABASE_H
 #define WARDATABASE_H
-#include <MementoDatabase/Databases.h>
-#include <../src/MementoDatabase/Databases.cpp>
+#include "Databases.h"
 
 template <class T>
 class WarDatabase: public Databases {

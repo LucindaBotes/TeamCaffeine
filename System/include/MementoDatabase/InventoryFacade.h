@@ -1,7 +1,6 @@
 #ifndef INVENTORYFACADE_H
 #define INVENTORYFACADE_H
-#include <MementoDatabase/MementoFacade.h>
-#include <../src/MementoDatabase/MementoFacade.cpp>
+#include "MementoFacade.h"
 #include <vector>
 
 

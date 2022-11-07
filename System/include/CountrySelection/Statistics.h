@@ -2,7 +2,7 @@
 #define STATISTICS_H
 
 #include "GDP.h"
-#include <ObserverPattern/Randomizer.h>
+#include "Randomizer.h"
 
 
 class Statistics {

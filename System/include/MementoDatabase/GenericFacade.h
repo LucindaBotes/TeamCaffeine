@@ -1,7 +1,6 @@
 #ifndef GENERICFACADE_H
 #define GENERICFACADE_H
-#include <MementoDatabase/MementoFacade.h>
-#include <../src/MementoDatabase/MementoFacade.cpp>
+#include "MementoDatabase/MementoFacade.h"
 
 template <class T>
 class GenericFacade: public MementoFacade {

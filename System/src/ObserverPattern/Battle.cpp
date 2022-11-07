@@ -1,5 +1,5 @@
 #include "Battle.h"
-#include <ObserverPattern/Randomizer.h>
+#include "Randomizer.h"
 #include <iostream>
 #include <string>
 

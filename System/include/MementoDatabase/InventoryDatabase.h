@@ -1,7 +1,6 @@
 #ifndef INVENTORYDATABASE_H
 #define INVENTORYDATABASE_H
-#include <MementoDatabase/Databases.h>
-#include <../src/MementoDatabase/Databases.cpp>
+#include "Databases.h"
 #include <vector>
 
 
