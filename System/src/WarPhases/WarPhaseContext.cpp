@@ -23,14 +23,17 @@ WarPhaseContext::WarPhaseContext()
 /// @brief deallocates a pointer
 WarPhaseContext::~WarPhaseContext() 
 {
-    delete _state;
+    if(_state)
+        delete _state;
 }
 
 /// @brief deallocates current state and set a new state
 /// @param s 
 void WarPhaseContext::setState(WarPhaseState* s)
 {
-    delete _state;
+    if(this->_state)
+        delete _state;
+
     _state = s;
 
     cout << "The War state has changed to a ";

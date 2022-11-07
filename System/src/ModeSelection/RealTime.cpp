@@ -201,7 +201,7 @@ void RealTime::startSimulation()
     this->war->setPlayer1();
     this->war->setPlayer2();
 
-    battle->setPlayerAllies(this->war->getPlayer1_Country(), this->war->getPlayer1_Country());
+    battle->setPlayerAllies(this->war->getPlayer1_Country(), this->war->getPlayer2_Country());
 
     /*
       SHOP NEEDS TO OPEN HERE!!
@@ -454,6 +454,9 @@ void RealTime::startSimulation()
     cout<<"**************************************************"<<endl;
 
     battle->start(this->war->getPlayer1(), this->war->getPlayer2());
+
+    this->war->getPlayer1_Country()->getStats()->getGDP()->setValue(this->war->getPlayer1_Country()->getStats()->getGDP()->getValue() + 100);
+    this->war->getPlayer2_Country()->getStats()->getGDP()->setValue(this->war->getPlayer2_Country()->getStats()->getGDP()->getValue() + 100);
 
     cout<<"**************************************************"<<endl;
     cout<<this->war->getPlayer1_Country()->getName()<<" stats after "<<battle->getName()<<": "<<endl;

@@ -13,7 +13,7 @@ class WarPhaseState
 
   public:
     WarPhaseState();
-    ~WarPhaseState();
+    virtual ~WarPhaseState();
     virtual string getState() = 0;
     virtual void setState(WarPhaseContext* s) = 0;
 };

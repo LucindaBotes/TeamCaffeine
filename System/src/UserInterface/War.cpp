@@ -17,6 +17,9 @@ using namespace std;
  * 
  */
 War::War() {
+  _warName = "";
+  _active = false;
+  warPhaseC = new WarPhaseContext();
 }
 
 /**
