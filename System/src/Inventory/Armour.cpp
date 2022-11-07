@@ -1,17 +1,27 @@
 #include <Inventory/Armour.h>
 
-using namespace std;
+Armour::Armour() : EntityDecorator(EntityType::ARMOUR){
+}
 
-Armour::Armour() {
+Armour::Armour(double armour) : EntityDecorator(EntityType::ARMOUR) {
+  this->_armour = armour;
+}
+
+Armour::Armour(const Armour &a) : EntityDecorator(EntityType::ARMOUR) {
+  this->_armour = a._armour;
 }
 
 Armour::~Armour() {
 }
 
-int Armour::getMember() {
-  return this->member;
+Entity* Armour::clone() {
+  return new Armour(*this);
 }
 
-void Armour::setMember(int member) {
-  this->member = member;
+double Armour::getArmour() const {
+  return _armour;
+}
+
+void Armour::setArmour(double armour) {
+  _armour = armour;
 }

@@ -1,15 +1,22 @@
 #ifndef HOLD_H
 #define HOLD_H
 
-class Hold {
+#include <TakeActions/Action.h>
+#include <ObserverPattern/Battle.h>
+class Hold : public Action{
   private:
     int member;
+    int playerNumber;
+    Battle *battle;
 
   public:
-    Hold();
+    Hold(Battle * battle, int playerNumber);
     ~Hold();
     int getMember();
     void setMember(int);
+
+    virtual void executeAction();
 };
 
 #endif
+

@@ -2,16 +2,10 @@
 
 using namespace std;
 
-EntityDecorator::EntityDecorator() {
+// TODO: Add doxygen comments here
+
+EntityDecorator::EntityDecorator(EntityType t) : Entity(t){
 }
 
 EntityDecorator::~EntityDecorator() {
-}
-
-int EntityDecorator::getMember() {
-  return this->member;
-}
-
-void EntityDecorator::setMember(int member) {
-  this->member = member;
 }

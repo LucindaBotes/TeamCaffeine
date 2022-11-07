@@ -1,15 +1,18 @@
+
 #ifndef CREATESOLDIERS_H
 #define CREATESOLDIERS_H
 
-class CreateSoldiers {
+#include <Inventory/Soldiers.h>
+#include <Inventory/EntityCreator.h>
+
+class CreateSoldiers : public EntityCreator {
   private:
     int member;
 
   public:
     CreateSoldiers();
     ~CreateSoldiers();
-    int getMember();
-    void setMember(int);
+    Soldiers * createSoldiersEntity();
 };
 
 #endif

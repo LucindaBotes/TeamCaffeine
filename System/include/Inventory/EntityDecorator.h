@@ -1,15 +1,17 @@
 #ifndef ENTITYDECORATOR_H
 #define ENTITYDECORATOR_H
 
-class EntityDecorator {
-  private:
-    int member;
+#include <Inventory/Entity.h>
+
+class EntityDecorator : public Entity{
+  protected:
+    Entity* _wrappedEntity;
 
   public:
-    EntityDecorator();
+    EntityDecorator(EntityType);
     ~EntityDecorator();
-    int getMember();
-    void setMember(int);
+    virtual Entity* clone()=0;
 };
 
 #endif
+
