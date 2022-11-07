@@ -3,12 +3,13 @@
 using namespace std;
 
 /**
+ * @file RealTime.cpp
  * @brief RealTime class implementation,
  * @li Design Pattern: Strategy
  * @li Participant: ConcreteStrategy
  * 
  * @details RealTime is responsible for not allowing the user to interrupt the war
- * @author UnarineLeo
+ * @author Netshifhefhe Unarine Leo : u20505656
  * 
 */
 
