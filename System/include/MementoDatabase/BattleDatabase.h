@@ -11,6 +11,7 @@ class BattleDatabase {
 
   public:
     BattleDatabase();
+    ~BattleDatabase();
     void getMemento();
     Battle* setMemento();
 };
