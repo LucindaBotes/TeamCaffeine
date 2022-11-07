@@ -44,7 +44,7 @@ GDP::~GDP()
  * @details Get GDP:: Gets the @code _value @endcode member of the GDP object.
  * @return double const
  */
-double GDP::getValue() const
+double GDP::getValue()
 {
   return _value;
 }

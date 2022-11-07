@@ -16,7 +16,7 @@ class Medics : public EntityDecorator {
 
     Entity* clone() override;
 
-    double getHeal() const;
+    double getHeal() ;
     void setHeal(double heal);
 };
 

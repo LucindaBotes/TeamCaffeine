@@ -67,7 +67,7 @@ Entity* Medics::clone() {
  * @details Returns the @code _heal @endcode member of the Medics object.
  * @return double const
  */
-double Medics::getHeal() const {
+double Medics::getHeal() {
     return this->_heal;
 }
 

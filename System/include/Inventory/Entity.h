@@ -28,12 +28,12 @@ class Entity {
     Entity(const Entity &e);
     virtual ~Entity() = 0;
     virtual Entity* clone() = 0;
-    EntityType getType() const;
+    EntityType getType();
     double getPrice();
     void setPrice(double price);
     void addEntity(Entity *e);
     bool isEmpty();
-    std::string getName() const;
+    std::string getName();
     void setName(std::string name);
     Entity* getHead();
 };

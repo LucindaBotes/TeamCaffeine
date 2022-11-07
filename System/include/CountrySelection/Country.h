@@ -25,7 +25,7 @@ class Country {
     void setMember(int);
     void setName(std::string name);
     std::vector<Country*> getAllies();
-    std::string getName() const;
+    std::string getName();
     Statistics* getStats();
     InventoryShop* getInventoryShop();
     void addAlly(Country*);

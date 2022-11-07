@@ -72,7 +72,7 @@ Entity* Soldiers::clone() {
  * @details Gets the Soldiers object's @code _damage @endcode member value.
  * @return double const
  */
-double Soldiers::getDamage() const {
+double Soldiers::getDamage() {
   return this->_damage;
 }
 
@@ -81,7 +81,7 @@ double Soldiers::getDamage() const {
  * @details Gets the Soldiers object's @code _armour @endcode member value.
  * @return double const
  */
-double Soldiers::getArmour() const {
+double Soldiers::getArmour() {
   return this->_armour;
 }
 
@@ -90,7 +90,7 @@ double Soldiers::getArmour() const {
  * @details Gets the Soldiers object's @code _count @endcode member value.
  * @return int const
  */
-int Soldiers::getCount() const {
+int Soldiers::getCount() {
   return this->_count;
 }
 

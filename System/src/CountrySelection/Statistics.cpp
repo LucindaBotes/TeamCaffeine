@@ -51,7 +51,7 @@ Statistics::~Statistics() {
  * @details Gets the @code _health @endcode member of the Statistics object.
  * @return double const
  */
-double Statistics::getHealth() const {
+double Statistics::getHealth() {
   return _health;
 }
 
@@ -60,7 +60,7 @@ double Statistics::getHealth() const {
  * @details Gets the @code _damage @endcode member of the Statistics object.
  * @return double const
  */
-double Statistics::getDamage() const {
+double Statistics::getDamage() {
   return _damage;
 }
 
@@ -69,7 +69,7 @@ double Statistics::getDamage() const {
  * @details Gets the @code _defence @endcode member of the Statistics object.
  * @return double const
  */
-double Statistics::getDefence() const {
+double Statistics::getDefence() {
   return _defence;
 }
 

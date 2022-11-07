@@ -63,7 +63,7 @@ Entity* Armour::clone() {
  * @details Gets the Armour object's @code _armour @endcode member value.
  * @return double const
  */
-double Armour::getArmour() const {
+double Armour::getArmour() {
   return _armour;
 }
 

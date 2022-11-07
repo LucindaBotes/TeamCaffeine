@@ -16,7 +16,7 @@ class Weapons : public EntityDecorator{
 
     Entity* clone() override;
 
-    double getDamage() const;
+    double getDamage();
     void setDamage(double damage);
 };
 

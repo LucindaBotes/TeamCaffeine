@@ -12,7 +12,7 @@ class GDP {
     GDP(double);
     ~GDP();
 
-    double getValue() const;
+    double getValue();
     void setValue(double);
 };
 

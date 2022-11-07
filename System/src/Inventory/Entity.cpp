@@ -46,7 +46,7 @@ Entity::Entity(const Entity &e) {
  * @details Gets the Entity's @code _type @endcode member value.
  * @return EntityType
  */
-EntityType Entity::getType() const{
+EntityType Entity::getType(){
   return _type;
 }
 
@@ -125,7 +125,7 @@ bool Entity::isEmpty()
   return this->_head == NULL;
 }
 
-std::string Entity::getName() const {
+std::string Entity::getName() {
   return _name;
 }
 

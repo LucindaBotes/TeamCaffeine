@@ -16,7 +16,7 @@ class Supplies : public EntityDecorator{
 
     Entity* clone() override;
 
-    double getHealth() const;
+    double getHealth() ;
     void setHealth(double health);
 };
 

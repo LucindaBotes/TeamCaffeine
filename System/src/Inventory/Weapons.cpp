@@ -66,7 +66,7 @@ Entity* Weapons::clone() {
  * @details Gets the @code _damage @endcode member value of the Weapons object
  * @return double
 */
-double Weapons::getDamage() const {
+double Weapons::getDamage() {
   return this->_damage;
 }
 

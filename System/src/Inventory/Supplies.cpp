@@ -63,7 +63,7 @@ Entity* Supplies::clone(){
  * @details Returns the @code _health @endcode member value of the Supplies object
  * @return double const
  */
-double Supplies::getHealth() const
+double Supplies::getHealth()
 {
   return this->_health;
 }

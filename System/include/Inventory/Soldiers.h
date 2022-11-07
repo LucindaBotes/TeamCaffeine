@@ -18,9 +18,9 @@ class Soldiers : public Entity {
     
     Entity* clone() override;
     
-    double getDamage() const;
-    double getArmour() const;
-    int getCount() const;
+    double getDamage();
+    double getArmour();
+    int getCount();
     void setDamage(double damage);
     void setArmour(double armour);
     void setCount(int count);

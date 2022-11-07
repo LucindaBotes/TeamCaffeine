@@ -17,9 +17,9 @@ class Statistics {
     Statistics(double, double, double, GDP*);
     ~Statistics();
 
-    double getHealth() const;
-    double getDamage() const;
-    double getDefence() const;
+    double getHealth();
+    double getDamage();
+    double getDefence();
     GDP* getGDP();
     void generateStats();
     void setHealth(double);

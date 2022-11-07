@@ -46,27 +46,27 @@ InventoryShop::InventoryShop() {
 InventoryShop::~InventoryShop() {
 }
 
-vector<Entity*> InventoryShop::getWeapons() const {
+vector<Entity*> InventoryShop::getWeapons() {
   return _weapons;
 }
 
-vector<Entity*> InventoryShop::getMedicine() const {
+vector<Entity*> InventoryShop::getMedicine() {
   return _medicine;
 }
 
-vector<Entity*> InventoryShop::getSoldiers() const {
+vector<Entity*> InventoryShop::getSoldiers() {
   return _soldiers;
 }
 
-vector<Entity*> InventoryShop::getSupplies() const {
+vector<Entity*> InventoryShop::getSupplies() {
   return _supplies;
 }
 
-vector<Entity*> InventoryShop::getArmour() const {
+vector<Entity*> InventoryShop::getArmour() {
   return _armour;
 }
 
-vector<Entity*> InventoryShop::getPurchasable() const {
+vector<Entity*> InventoryShop::getPurchasable() {
   return _purchasable;
 }
 

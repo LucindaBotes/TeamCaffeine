@@ -18,13 +18,13 @@ class InventoryShop {
   public:
     InventoryShop();
     ~InventoryShop();
-    std::vector<Entity*> getWeapons() const;
-    std::vector<Entity*> getMedicine() const;
-    std::vector<Entity*> getSoldiers() const;
-    std::vector<Entity*> getSupplies() const;
-    std::vector<Entity*> getArmour() const;
+    std::vector<Entity*> getWeapons();
+    std::vector<Entity*> getMedicine();
+    std::vector<Entity*> getSoldiers();
+    std::vector<Entity*> getSupplies();
+    std::vector<Entity*> getArmour();
 
-    std::vector<Entity*> getPurchasable() const;
+    std::vector<Entity*> getPurchasable();
 
     void addWeapon(Entity* e);
     void addMedicine(Entity* e);

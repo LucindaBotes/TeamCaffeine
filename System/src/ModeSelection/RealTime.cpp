@@ -242,7 +242,7 @@ void RealTime::startSimulation()
             ) 
             &&
             (
-              this->war->getPlayer2_Country()->getStats()->getGDP()->getValue() >= purchasable->getPrice() 
+              this->war->getPlayer1_Country()->getStats()->getGDP()->getValue() >= purchasable->getPrice() 
             )
             ||
             (
@@ -251,7 +251,7 @@ void RealTime::startSimulation()
             )
             &&
             (
-              this->war->getPlayer2_Country()->getStats()->getGDP()->getValue() >= (purchasable->getPrice() * soldierCount)
+              this->war->getPlayer1_Country()->getStats()->getGDP()->getValue() >= (purchasable->getPrice() * soldierCount)
             )
           )
         {
@@ -286,7 +286,7 @@ void RealTime::startSimulation()
             {
               e->addEntity(purchasable);
 
-              this->war->getPlayer1_Country()->getStats()->getGDP()->setValue(tempGDP - (purchasable->getPrice() * soldierCount));
+              this->war->getPlayer1_Country()->getStats()->getGDP()->setValue(this->war->getPlayer1_Country()->getStats()->getGDP()->getValue() - (purchasable->getPrice() * soldierCount));
 
               if(purchasable->getType() == EntityType::WEAPON)
               {
@@ -299,7 +299,7 @@ void RealTime::startSimulation()
               }
               else
               {
-                this->war->getPlayer1_Country()->getStats()->getGDP()->setValue(tempGDP - (e->getPrice() * soldierCount));
+                this->war->getPlayer1_Country()->getStats()->getGDP()->setValue(this->war->getPlayer1_Country()->getStats()->getGDP()->getValue() - (e->getPrice() * soldierCount));
 
                 Armour* a = (Armour*)purchasable;
                 double currDefence = this->war->getPlayer1_Country()->getStats()->getDefence();

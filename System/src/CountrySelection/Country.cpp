@@ -63,7 +63,7 @@ Country::~Country() {
  * @details Get Country:: Gets the @code _name @endcode member of the Country object.
  * @return string const
  */
-string Country::getName() const {
+string Country::getName() {
   return _name;
 }
 

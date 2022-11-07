@@ -15,7 +15,7 @@ public:
   ~Armour();
 
   Entity *clone() override;
-  double getArmour() const;
+  double getArmour();
   void setArmour(double armour);
 };
 
