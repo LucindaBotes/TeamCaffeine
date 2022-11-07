@@ -1,12 +1,14 @@
 #include "WarPhaseContext.h"
 
 /**
+ * @file WarPhaseContext.cpp
  * @brief WarPhaseContext class implementation,
  * @li Design Pattern: State
  * @li Participant: Context
  * 
- * @details WarPhaseContext class 
- * @author UnarineLeo  
+ * @details WarPhaseContext class will be responsible for changing the states of the war phase.
+ * @author Netshifhefhe Unarine Leo; u20505656
+
 */
 
 using namespace std;

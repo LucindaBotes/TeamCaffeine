@@ -3,12 +3,13 @@
 using namespace std;
 
 /**
+ * @file Design.cpp
  * @brief Design class implementation,
  * @li Design Pattern: Strategy
  * @li Participant: ConcreteStrategy
  * 
  * @details Design is responsible for allowing the user to interrupt, tweak and continue the war
- * @author UnarineLeo
+ * @author Netshifhefhe Unarine Leo ; u20505656
 */
 
 Design::Design() {
