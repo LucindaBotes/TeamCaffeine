@@ -21,8 +21,15 @@ class Country {
     Country(std::string);
     Country(std::string, std::vector<Country*>*, Statistics*, InventoryShop*);
     ~Country();
-    int getMember();
-    void setMember(int);
+
+    /*Added by Erik*/
+    Country* copy(Country*);
+    Country* copy( std::string, std::vector<Country*>, Statistics*, InventoryShop*);
+    void setAllies(std::vector<Country*>);
+    void setStats(Statistics*);
+    void setInventoryShop(InventoryShop*);
+    /*Added by Erik*/
+
     void setName(std::string name);
     std::vector<Country*> getAllies();
     std::string getName();

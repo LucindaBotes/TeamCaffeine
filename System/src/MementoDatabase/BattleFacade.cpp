@@ -1,21 +1,27 @@
 #include "BattleFacade.h"
-
+/** 
+*  @file BattleFacade.h
+*  @brief Proxy class implementation (Protection Proxy)
+*  Design Patterns:
+*  @li Proxy: Proxy participant
+*
+*  @details Provides another class to go throug before the Memento class can be accessed.
+*  
+*  @author Erik Koekemoer; u19011866
+*/
 using namespace std;
 
-template <class T>
-BattleFacade<T>::BattleFacade() {
+BattleFacade::BattleFacade() {
 }
 
-template <class T>
-BattleFacade<T>::~BattleFacade() {
+BattleFacade::~BattleFacade() {
 }
 
-/*template <class T>
-Battle BattleFacade<T>::getMemento() {
-  
+void BattleFacade::getMementoData() {
+  Battle* b = new Battle();
+  this->battle_Proxy = b->copy(b);
 }
 
-template <class T>
-void BattleFacade<T>::setMemento(Battle* m) {
-
-}*/
+Battle* BattleFacade::sendMementoData() {
+  return this->battle_Proxy;
+}

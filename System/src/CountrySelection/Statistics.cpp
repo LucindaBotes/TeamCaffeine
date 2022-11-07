@@ -46,11 +46,25 @@ Statistics::~Statistics() {
   delete _gdp;
 }
 
-/**
- * @brief Get Statistics:: Get the value of the Health object
- * @details Gets the @code _health @endcode member of the Statistics object.
- * @return double const
- */
+/*Added by Erik*/
+void Statistics::copy(double health, double damage, double defence, GDP* gdp) {
+  double newGDP = gdp->getValue();
+  copy(health, damage, defence, newGDP);
+}
+
+Statistics* Statistics::copy(Statistics* stats) {
+  double health = stats->getHealth();
+  double damage = stats->getDamage();
+  double defence = stats->getDefence();
+  double gdp = stats->getGDP()->getValue();
+  return new Statistics(health, damage, defence, new GDP(gdp));
+}
+
+Statistics* Statistics::copy(double health, double damage, double defence, double gdp) {
+  return new Statistics(health, damage, defence, new GDP(gdp));
+}
+/*Added by Erik*/
+
 double Statistics::getHealth() {
   return _health;
 }

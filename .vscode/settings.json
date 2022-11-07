@@ -77,5 +77,25 @@
     "xtr1common": "cpp",
     "xtree": "cpp",
     "xutility": "cpp"
+    "fstream": "cpp",
+    "initializer_list": "cpp",
+    "iosfwd": "cpp",
+    "istream": "cpp",
+    "limits": "cpp",
+    "new": "cpp",
+    "ostream": "cpp",
+    "sstream": "cpp",
+    "stdexcept": "cpp",
+    "streambuf": "cpp",
+    "typeinfo": "cpp",
+    "bit": "cpp",
+    "compare": "cpp",
+    "concepts": "cpp",
+    "map": "cpp",
+    "set": "cpp",
+    "string_view": "cpp",
+    "iomanip": "cpp",
+    "numbers": "cpp",
+    "cinttypes": "cpp"
   }
 }

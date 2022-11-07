@@ -29,6 +29,33 @@ Battle::~Battle() {
   this->Alliance_B.clear();
 }
 
+/*Added by Erik*/
+/**
+ * @brief Copy constructor to create a new Battle object and initialize the name Battle
+ * @param b Battle object to be copied
+ */
+Battle* Battle::copy(Battle* b) {
+  Battle* battle = new Battle();
+  battle->name = b->name;
+  battle->member = b->member;
+  battle->Alliance_A = allianceDeepCopy(b->Alliance_A);
+  battle->Alliance_B = allianceDeepCopy(b->Alliance_B);
+  return battle;
+}
+
+/**
+ * @brief Copy constructor to create a new Alliance vector and copy all the elements from the original vector
+ * @param alliance Vector to be copied
+ */
+std::vector<Country*> Battle::allianceDeepCopy(std::vector<Country*> alliance) {
+  std::vector<Country*> newAlliance;
+  for (int i=0; i<alliance.size(); i++) {
+    newAlliance.push_back(alliance[i]->copy(alliance[i]));
+  }
+  return newAlliance;
+}
+/*Added by Erik*/
+
 /**
  * @brief method to get the name private member of the Battle object
  * 

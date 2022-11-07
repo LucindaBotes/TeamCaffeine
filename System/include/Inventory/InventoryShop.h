@@ -26,6 +26,12 @@ class InventoryShop {
 
     std::vector<Entity*> getPurchasable();
 
+    /*Added by Erik*/
+    InventoryShop* copy(InventoryShop*);
+    InventoryShop* copy(std::vector<Entity*>,std::vector<Entity*>,std::vector<Entity*>,std::vector<Entity*>,std::vector<Entity*>,std::vector<Entity*>);
+    void setVectors(std::vector<Entity*>,std::vector<Entity*>,std::vector<Entity*>,std::vector<Entity*>,std::vector<Entity*>,std::vector<Entity*>);
+    /*Added by Erik*/
+
     void addWeapon(Entity* e);
     void addMedicine(Entity* e);
     void addSoldier(Entity* e);

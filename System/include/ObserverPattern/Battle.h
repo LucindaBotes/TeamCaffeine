@@ -21,9 +21,12 @@ class Battle : public Observable{
     std::vector<ActionListener*> listeners;
 
   public:
-    //copy constructor for Battle
     Battle();
     ~Battle();  
+    /*Added by Erik*/
+    Battle* copy(Battle*);
+    std::vector<Country*> allianceDeepCopy(std::vector<Country*>);
+    /*Added by Erik*/
     void start(Invoker * player1, Invoker * player2);
     int getMember();
     void setMember(int);

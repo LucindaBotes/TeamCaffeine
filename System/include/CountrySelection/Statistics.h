@@ -12,10 +12,18 @@ class Statistics {
     double _defence;
     GDP* _gdp;
 
+    double _gdp_int;
+
   public:
     Statistics();
     Statistics(double, double, double, GDP*);
     ~Statistics();
+
+    /*Added by Erik*/
+    void copy(double, double, double, GDP*);
+    Statistics* copy(Statistics*);
+    Statistics* copy(double, double, double, double);
+    /*Added by Erik*/
 
     double getHealth();
     double getDamage();

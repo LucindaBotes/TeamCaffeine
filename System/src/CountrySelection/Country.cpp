@@ -58,11 +58,38 @@ Country::~Country() {
   delete _inventoryShop;
 }
 
-/**
- * @brief Get Country:: Get the name of the Country object
- * @details Get Country:: Gets the @code _name @endcode member of the Country object.
- * @return string const
- */
+/*Added by Erik*/
+Country* Country::copy(Country* country) {
+  string nameCopy = country->getName();
+  vector<Country*> alliesCopy = country->getAllies();
+  Statistics* statsCopy = country->getStats();
+  InventoryShop* inventoryShopCopy = country->getInventoryShop();
+  return copy(nameCopy, alliesCopy, statsCopy, inventoryShopCopy);
+}
+
+Country* Country::copy(string n, vector<Country*> a, Statistics* s, InventoryShop* i) {
+  Country* newCountry = this;
+  newCountry->setName(n);
+  newCountry->setAllies(a);
+  newCountry->setStats(s);
+  newCountry->setInventoryShop(i);
+  return newCountry;
+}
+
+void Country::setAllies(vector<Country*> allies) {
+  for (int i=0; i<allies.size(); i++) 
+        _allies->push_back(allies[i]);
+}
+
+void Country::setStats(Statistics* stats) {
+  _stats = stats->copy(stats);
+}
+
+void Country::setInventoryShop(InventoryShop* inventoryShop) {
+  _inventoryShop = inventoryShop->copy(inventoryShop);
+}
+/*Added by Erik*/
+
 string Country::getName() {
   return _name;
 }
@@ -128,4 +155,9 @@ void Country::printStats()
   cout << "Attack: " << this->_stats->getDamage() << endl;
   cout << "Defense: " << this->_stats->getDefence() << endl;
   cout << "GDP: " << this->_stats->getGDP()->getValue() << endl;
+}
+
+void Country::setName(std::string name)
+{
+  this->_name = name;
 }

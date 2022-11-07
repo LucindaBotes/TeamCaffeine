@@ -70,6 +70,64 @@ vector<Entity*> InventoryShop::getPurchasable() {
   return _purchasable;
 }
 
+/*Added by Erik*/
+InventoryShop* InventoryShop::copy(InventoryShop* i) {
+  vector<Entity*> weaponsCopy = i->getWeapons();
+  vector<Entity*> medicineCopy = i->getMedicine();
+  vector<Entity*> soldiersCopy = i->getSoldiers();
+  vector<Entity*> suppliesCopy = i->getSupplies();
+  vector<Entity*> armourCopy = i->getArmour();
+  vector<Entity*> purchasableCopy = i->getPurchasable();
+  return copy(weaponsCopy, medicineCopy, soldiersCopy, suppliesCopy, armourCopy, purchasableCopy);
+}
+
+InventoryShop* InventoryShop::copy(vector<Entity*> weapons, vector<Entity*> medicine, vector<Entity*> soldiers, vector<Entity*> supplies, vector<Entity*> armour, vector<Entity*> purchasable) {
+  InventoryShop* shop = new InventoryShop();
+  vector<Entity*> weaponsCopy;
+  vector<Entity*> medicineCopy;
+  vector<Entity*> soldiersCopy;
+  vector<Entity*> suppliesCopy;
+  vector<Entity*> armourCopy;
+  vector<Entity*> purchasableCopy;
+
+  for (int i=0; i<weapons.size(); i++) 
+        weaponsCopy.push_back(weapons[i]);
+
+  for (int i=0; i<medicine.size(); i++) 
+        medicineCopy.push_back(medicine[i]);
+
+  for (int i=0; i<soldiers.size(); i++) 
+        soldiersCopy.push_back(soldiers[i]);
+
+  for (int i=0; i<supplies.size(); i++) 
+        suppliesCopy.push_back(supplies[i]);
+
+  for (int i=0; i<armour.size(); i++) 
+        armourCopy.push_back(armour[i]);
+
+  for (int i=0; i<purchasable.size(); i++) 
+        purchasableCopy.push_back(purchasable[i]);
+
+  shop->_weapons = weaponsCopy;
+  shop->_medicine = medicineCopy;
+  shop->_soldiers = soldiersCopy;
+  shop->_supplies = suppliesCopy;
+  shop->_armour = armourCopy;
+  shop->_purchasable = purchasableCopy;
+
+  return shop;
+}
+
+void InventoryShop::setVectors(vector<Entity*> weapons, vector<Entity*> medicine, vector<Entity*> soldiers, vector<Entity*> supplies, vector<Entity*> armour, vector<Entity*> purchasable) {
+  _weapons = weapons;
+  _medicine = medicine;
+  _soldiers = soldiers;
+  _supplies = supplies;
+  _armour = armour;
+  _purchasable = purchasable;
+}
+/*Added by Erik*/
+
 void InventoryShop::addWeapon(Entity* e) {
   _weapons.push_back(e);
 }
