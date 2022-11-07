@@ -3,17 +3,18 @@
 #include <ObserverPattern/Battle.h>
 #include <../src/ObserverPattern/Battle.cpp>
 #include <BattleMemento.h>
+#include <BattleFacade.h>
 #include <vector>
 //Caretaker class
 template <class T>
 class BattleDatabase {
   private:
-    vector<Battle> battle_memento;
+    Battle * battle_Caretaker;
 
   public:
     BattleDatabase();
-    Battle getMemento();
-    void setMemento(Battle* b);
+    void getMemento();
+    Battle* setMemento();
 };
 
 #endif

@@ -9,14 +9,13 @@
 template <class T>
 class BattleFacade {
   private:
-    vector<BattleMemento> battle_state;
     Battle * battle_Proxy;
 
   public:
     BattleFacade();
     ~BattleFacade();
-    void receiveMementoData();
-    Battle sendMementoData();
+    void getMementoData();
+    Battle* sendMementoData();
 };
 
 #endif

@@ -13,11 +13,12 @@ BattleFacade<T>::~BattleFacade() {
 }
 
 template <class T>
-void BattleFacade<T>::receiveMementoData() {
-  
+void BattleFacade<T>::getMementoData() {
+  Battle* b = new Battle();
+  this->battle_Proxy = b->copy(b);
 }
 
 template <class T>
-Battle BattleFacade<T>::sendMementoData() {
-  return b;
+Battle* BattleFacade<T>::sendMementoData() {
+  return this->battle_Proxy;
 }

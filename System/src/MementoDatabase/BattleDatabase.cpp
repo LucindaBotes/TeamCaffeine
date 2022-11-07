@@ -8,11 +8,12 @@ BattleDatabase<T>::BattleDatabase() {
 }
 
 template <class T>
-Battle BattleDatabase<T>::getMemento() {
-  return this->battle_memento.pop_back();
+void BattleDatabase<T>::getMemento() {
+  BattleFacade * bf = new BattleFacade();
+  this->battle_Caretaker = bf->sendMementoData();
 }
 
 template <class T>
-void BattleDatabase<T>::setMemento(Battle* b) {
-  this->battle_memento.push_back(b);
+Battle* BattleDatabase<T>::setMemento() {
+  return this->battle_Caretaker;
 }
