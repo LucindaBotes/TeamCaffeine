@@ -9,7 +9,7 @@ using namespace std;
  * @li Participant: ConcreteState
  * 
  * @details HostileState class implements a state which is for when a country invades another country
- * @author Netshifhefhe Unarine Leo : u20505656
+ * @author Netshifhefhe Unarine Leo ; u20505656
 */
 
 HostileState::HostileState() {
