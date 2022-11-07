@@ -7,7 +7,7 @@
  * @li Participant: ConcreteState
  * 
  * @details ColdState class implements a state which is for when countries haven't declared war unto the another
- * @author Netshifhefhe Unarine Leo : u20505656
+ * @author Netshifhefhe Unarine Leo ; u20505656
 
 */
 
