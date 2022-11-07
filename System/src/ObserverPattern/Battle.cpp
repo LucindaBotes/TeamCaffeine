@@ -321,12 +321,11 @@ void Battle::allyAction(int playerNumber){//request ally
     this->displayEligibleCountries();
     cin>>countryNUmber;
     countryNUmber = countryNUmber-1;
-    Randomizer random = Randomizer();
-    bool accept = random.getRandomBoolean();
+    bool accept = Randomizer::getInstance()->getRandomBoolean();
     if (accept == true)
     {
       cout<<this->war->Countries_Eligible_for_War[countryNUmber]->getName()<<" has ACCEPTED your request and is now your Ally!"<<endl;
-      int donation = random.getRandomInt(this->war->Countries_Eligible_for_War[countryNUmber]->getStats().getGDP().getValue());
+      int donation = Randomizer::getInstance()->getRandomInt(this->war->Countries_Eligible_for_War[countryNUmber]->getStats().getGDP().getValue());
       this->war->getPlayer1_Country()->addAlly(this->war->Countries_Eligible_for_War[countryNUmber]);
       this->Alliance_A[0]->getStats().setGDP(this->Alliance_A[0]->getStats().getGDP().getValue() + donation);
       this->war->Countries_Eligible_for_War.erase(this->war->Countries_Eligible_for_War.begin() + countryNUmber);
@@ -343,12 +342,11 @@ void Battle::allyAction(int playerNumber){//request ally
     this->displayEligibleCountries();
     cin>>countryNUmber;
     countryNUmber = countryNUmber-1;
-    Randomizer random = Randomizer();
-    bool accept = random.getRandomBoolean();
+    bool accept = Randomizer::getInstance()->getRandomBoolean();
     if (accept == true)
     {
       cout<<this->war->Countries_Eligible_for_War[countryNUmber]->getName()<<" has ACCEPTED your request and is now your Ally!"<<endl;
-      int donation = random.getRandomInt(this->war->Countries_Eligible_for_War[countryNUmber]->getStats().getGDP().getValue());
+      int donation = Randomizer::getInstance()->getRandomInt(this->war->Countries_Eligible_for_War[countryNUmber]->getStats().getGDP().getValue());
       this->war->getPlayer2_Country()->addAlly(this->war->Countries_Eligible_for_War[countryNUmber]);
       this->Alliance_B[0]->getStats().setGDP(this->Alliance_B[0]->getStats().getGDP().getValue() + donation);
       this->war->Countries_Eligible_for_War.erase(this->war->Countries_Eligible_for_War.begin() + countryNUmber);

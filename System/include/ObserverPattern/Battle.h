@@ -8,6 +8,9 @@
 #include <vector>
 #include <string>
 
+class Invoker;
+class War;
+
 class Battle : public Observable{
   private:
     War * war;

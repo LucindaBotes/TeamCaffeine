@@ -11,7 +11,6 @@ class Statistics {
     double _damage;
     double _defence;
     GDP* _gdp;
-    Randomizer random;
 
   public:
     Statistics();

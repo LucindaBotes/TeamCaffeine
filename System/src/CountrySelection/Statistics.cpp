@@ -37,7 +37,6 @@ Statistics::Statistics(double health, double damage, double defence, GDP* gdp) {
   this->_damage = damage;
   this->_defence = defence;
   this->_gdp = gdp;
-  this->random = Randomizer();
 }
 
 /**
@@ -117,8 +116,8 @@ void Statistics::setGDP(double gdp)
 
 void Statistics::generateStats()
 {
-  this->_damage = random.getRandomInt(20);
-  this->_gdp->setValue(random.getRandomInt(1000));
-  this->_health = random.getRandomInt(100);
-  this->_defence = random.getRandomInt(20);
+  this->_damage = Randomizer::getInstance()->getRandomInt(20);
+  this->_gdp->setValue(Randomizer::getInstance()->getRandomInt(1000));
+  this->_health = Randomizer::getInstance()->getRandomInt(100);
+  this->_defence = Randomizer::getInstance()->getRandomInt(20);
 }

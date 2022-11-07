@@ -11,6 +11,8 @@
 #include <string>
 #include <iostream>
 
+class Battle;
+class Invoker;
 
 class War : public ActionListener {
   private:

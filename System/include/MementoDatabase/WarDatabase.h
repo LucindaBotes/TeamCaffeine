@@ -3,7 +3,7 @@
 #include "Databases.h"
 
 template <class T>
-class WarDatabase: public Databases {
+class WarDatabase: public Databases<T> {
   private:
     T memento;
 

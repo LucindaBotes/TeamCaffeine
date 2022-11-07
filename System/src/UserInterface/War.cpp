@@ -35,17 +35,6 @@ War::~War() {
   this->battles.clear();
 }
 
-/**
- * @brief Method to create player 1's Invoker to serve as controller to invoke command actions.
- * Then sets the player's battle private member which the commands will be invoked on.
- * 
- * @return Player* 
- */
-
-void War::setMember(int member) {
-  this->member = member;
-}
-
 void War::setPlayer1()
 {
   this->Player_1 = new Invoker(1);
@@ -81,7 +70,7 @@ Invoker * War::getPlayer1()
  * @return Invoker* 
  */
 
-Invoker * War::getPlayer1()
+Invoker * War::getPlayer2()
 {
   return this->Player_2;
 }

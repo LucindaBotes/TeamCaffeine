@@ -6,7 +6,7 @@
 
 
 template <class T>
-class InventoryMemento: public Memento {
+class InventoryMemento: public Memento<T> {
   private:
     vector<InventoryShop> inventory_memento;
 

@@ -5,7 +5,7 @@
 
 
 template <class T>
-class InventoryFacade: public MementoFacade {
+class InventoryFacade: public MementoFacade<T> {
   private:
     T memento;
 
