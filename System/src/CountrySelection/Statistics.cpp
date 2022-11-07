@@ -118,5 +118,5 @@ void Statistics::generateStats()
 {
   this->_gdp->setValue(Randomizer::getInstance()->getUniformRandomNumber(1000, 1500));
   this->_health = Randomizer::getInstance()->getUniformRandomNumber(150, 250);
-  this->_defence = Randomizer::getInstance()->getRandomInt(20);
+  this->_defence = Randomizer::getInstance()->getUniformRandomNumber(20, 30);
 }

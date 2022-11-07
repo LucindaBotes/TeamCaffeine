@@ -5,6 +5,7 @@
 #include "Supplies.h"
 #include "Armour.h"
 #include <limits>
+#include <iostream>
 
 using namespace std;
 
@@ -48,7 +49,7 @@ static std::string bombArt = R"(                             ____
 /// @brief Shows the user that they selected the Real time mode
 void RealTime::startSimulation()
 {
-  cout << "\tYou've choosen the Real-Time Mode." << endl;
+  std::cout << "\tYou've choosen the Real-Time Mode." << endl;
   cout << "-You will not have the ability to undo in Real-Time mode.-" << endl;
 
   cout<<"**************************************************\n"<<endl;
@@ -162,7 +163,8 @@ void RealTime::startSimulation()
     hydro->setName("Hydrogen Bomb.");
 
     Medics* m_1 = new Medics();
-    m_1->setHeal(5);
+    m_1->setHeal(100);
+    m_1->setPrice(750);
 
     vector<Entity*> shop = vector<Entity*>();
     shop.push_back(s_1);
@@ -204,6 +206,11 @@ void RealTime::startSimulation()
     /*
       SHOP NEEDS TO OPEN HERE!!
     */
+   cout<<"**************************************************"<<endl;
+   cout << "Player 1, here are your statistics:" << endl;
+   cout<<"**************************************************"<<endl;
+   this->war->getPlayer1_Country()->printStats();
+    cout<<"**************************************************"<<endl;
 
     std::cout << "Player 1, would you like to access the Shop?(Y/N)";
     char r1;
@@ -218,27 +225,57 @@ void RealTime::startSimulation()
         while(choice < 1 && choice > 13)
           std::cout << "Invalid choice, please try again." << std::endl;
 
-        Entity* e = this->war->getPlayer1_Country()->getInventoryShop()->getPurchasable().at(choice - 1);
-        if(this->war->getPlayer1_Country()->getStats()->getGDP()->getValue() >= e->getPrice())
+        int soldierCount = 0;
+        for(Entity* e : this->war->getPlayer2_Country()->getInventoryShop()->getSoldiers())
         {
-          double tempGDP = this->war->getPlayer1_Country()->getStats()->getGDP()->getValue();
-          this->war->getPlayer1_Country()->getStats()->getGDP()->setValue(tempGDP - e->getPrice());
           if(e->getType() == EntityType::SOLDIER)
           {
-            this->war->getPlayer1_Country()->getInventoryShop()->addSoldier(e);
+            soldierCount += ((Soldiers*)e)->getCount();
+          }
+        }
 
-            Soldiers* s = (Soldiers*)e;
+        Entity* purchasable = this->war->getPlayer1_Country()->getInventoryShop()->getPurchasable().at(choice - 1);
+        if(
+          (
+              purchasable->getType() == EntityType::SOLDIER || 
+              purchasable->getType() == EntityType::MEDIC
+            ) 
+            &&
+            (
+              this->war->getPlayer2_Country()->getStats()->getGDP()->getValue() >= purchasable->getPrice() 
+            )
+            ||
+            (
+              purchasable->getType() == EntityType::WEAPON || 
+              purchasable->getType() == EntityType::ARMOUR
+            )
+            &&
+            (
+              this->war->getPlayer2_Country()->getStats()->getGDP()->getValue() >= (purchasable->getPrice() * soldierCount)
+            )
+          )
+        {
+          double tempGDP = this->war->getPlayer1_Country()->getStats()->getGDP()->getValue();
+          if(purchasable->getType() == EntityType::SOLDIER)
+          {
+            this->war->getPlayer1_Country()->getStats()->getGDP()->setValue(tempGDP - purchasable->getPrice());
+            this->war->getPlayer1_Country()->getInventoryShop()->addSoldier(purchasable);
+            cout << "Soldiers added to your inventory." << endl;
+
+            Soldiers* s = (Soldiers*)purchasable;
             double currDamage = this->war->getPlayer1_Country()->getStats()->getDamage();
             double currDefence = this->war->getPlayer1_Country()->getStats()->getDefence();
 
             this->war->getPlayer1_Country()->getStats()->setDamage(currDamage + s->getDamage());
             this->war->getPlayer1_Country()->getStats()->setDefence(currDefence + s->getArmour());
           }
-          else if(e->getType() == EntityType::MEDIC)
+          else if(purchasable->getType() == EntityType::MEDIC)
           {
-            this->war->getPlayer1_Country()->getInventoryShop()->addMedicine(e);
+            this->war->getPlayer1_Country()->getStats()->getGDP()->setValue(tempGDP - purchasable->getPrice());
+            this->war->getPlayer1_Country()->getInventoryShop()->addMedicine(purchasable);
+            cout << "Health added to your inventory." << endl;
 
-            Medics* m = (Medics*)e;
+            Medics* m = (Medics*)purchasable;
             double currHealth = this->war->getPlayer1_Country()->getStats()->getHealth();
 
             this->war->getPlayer1_Country()->getStats()->setHealth(currHealth + m->getHeal());
@@ -247,37 +284,53 @@ void RealTime::startSimulation()
           {
             for(Entity* e : this->war->getPlayer1_Country()->getInventoryShop()->getSoldiers())
             {
-              e->addEntity(e);
-              int soldierCount = 0;
-              for(Entity* e : this->war->getPlayer1_Country()->getInventoryShop()->getSoldiers())
+              e->addEntity(purchasable);
+
+              this->war->getPlayer1_Country()->getStats()->getGDP()->setValue(tempGDP - (purchasable->getPrice() * soldierCount));
+
+              if(purchasable->getType() == EntityType::WEAPON)
               {
-                if(e->getType() == EntityType::SOLDIER)
-                {
-                  soldierCount += ((Soldiers*)e)->getCount();
-                }
-              }
-              if(e->getType() == EntityType::WEAPON)
-              {
-                Weapons* w = (Weapons*)e;
+
+                Weapons* w = (Weapons*)purchasable;
                 double currDamage = this->war->getPlayer1_Country()->getStats()->getDamage();
                 this->war->getPlayer1_Country()->getStats()->setDamage(currDamage + (w->getDamage() * soldierCount));
+
+                cout << "Weapons upgraded!!" << endl;
               }
               else
               {
-                Armour* a = (Armour*)e;
+                this->war->getPlayer1_Country()->getStats()->getGDP()->setValue(tempGDP - (e->getPrice() * soldierCount));
+
+                Armour* a = (Armour*)purchasable;
                 double currDefence = this->war->getPlayer1_Country()->getStats()->getDefence();
                 this->war->getPlayer1_Country()->getStats()->setDefence(currDefence + (a->getArmour() * soldierCount));
+              
+                cout << "Armour upgraded!!" << endl;
               }
             }
           }
         }
         else
-          std::cout << "You do not have enough money to purchase this item." << std::endl;
+          std::cout << "You do not have enough GDP to purchase this item." << std::endl;
+
+           cout<<"**************************************************"<<endl;
+          cout << "Player 1, here are your statistics before battle:" << endl;
+          cout<<"**************************************************"<<endl;
+          this->war->getPlayer1_Country()->printStats();
+            cout<<"**************************************************"<<endl;
 
         std::cout << "Player 1, would you like to access the Shop?(Y/N)";
         std::cin.ignore();
         cin >> r1;
     }
+
+
+    cout<<"**************************************************"<<endl;
+    cout << "Player 2, here are your statistics:" << endl;
+    cout<<"**************************************************"<<endl;
+    this->war->getPlayer2_Country()->printStats();
+    cout<<"**************************************************"<<endl;
+
     std::cout << "Player 2, would you like to access the Shop?(Y/N)";
     char r2;
     std::cin.ignore();
@@ -291,26 +344,54 @@ void RealTime::startSimulation()
         while(choice < 1 && choice > 13)
           std::cout << "Invalid choice, please try again." << std::endl;
 
-        Entity* e = this->war->getPlayer2_Country()->getInventoryShop()->getPurchasable().at(choice - 1);
-        if(this->war->getPlayer2_Country()->getStats()->getGDP()->getValue() >= e->getPrice())
+        int soldierCount = 0;
+        for(Entity* e : this->war->getPlayer2_Country()->getInventoryShop()->getSoldiers())
         {
-          this->war->getPlayer2_Country()->getStats()->getGDP()->setValue(this->war->getPlayer2_Country()->getStats()->getGDP()->getValue() - e->getPrice());
           if(e->getType() == EntityType::SOLDIER)
           {
-            this->war->getPlayer2_Country()->getInventoryShop()->addSoldier(e);
+            soldierCount += ((Soldiers*)e)->getCount();
+          }
+        }
 
-            Soldiers* s = (Soldiers*)e;
+        Entity* purchasable = this->war->getPlayer2_Country()->getInventoryShop()->getPurchasable().at(choice - 1);
+        if(
+            (
+              purchasable->getType() == EntityType::SOLDIER || 
+              purchasable->getType() == EntityType::MEDIC
+            ) 
+            &&
+            (
+              this->war->getPlayer2_Country()->getStats()->getGDP()->getValue() >= purchasable->getPrice() 
+            )
+            ||
+            (
+              purchasable->getType() == EntityType::WEAPON || 
+              purchasable->getType() == EntityType::ARMOUR
+            )
+            &&
+            (
+              this->war->getPlayer2_Country()->getStats()->getGDP()->getValue() >= (purchasable->getPrice() * soldierCount)
+            )
+          )
+        {
+          if(purchasable->getType() == EntityType::SOLDIER)
+          {
+            this->war->getPlayer2_Country()->getStats()->getGDP()->setValue(this->war->getPlayer2_Country()->getStats()->getGDP()->getValue() - purchasable->getPrice());
+            this->war->getPlayer2_Country()->getInventoryShop()->addSoldier(purchasable);
+
+            Soldiers* s = (Soldiers*)purchasable;
             double currDamage = this->war->getPlayer2_Country()->getStats()->getDamage();
             double currDefence = this->war->getPlayer2_Country()->getStats()->getDefence();
 
             this->war->getPlayer2_Country()->getStats()->setDamage(currDamage + s->getDamage());
             this->war->getPlayer2_Country()->getStats()->setDefence(currDefence + s->getArmour());
           }
-          else if(e->getType() == EntityType::MEDIC)
+          else if(purchasable->getType() == EntityType::MEDIC)
           {
-            this->war->getPlayer2_Country()->getInventoryShop()->addMedicine(e);
+            this->war->getPlayer2_Country()->getStats()->getGDP()->setValue(this->war->getPlayer2_Country()->getStats()->getGDP()->getValue() - purchasable->getPrice());
+            this->war->getPlayer2_Country()->getInventoryShop()->addMedicine(purchasable);
 
-            Medics* m = (Medics*)e;
+            Medics* m = (Medics*)purchasable;
             double currHealth = this->war->getPlayer2_Country()->getStats()->getHealth();
 
             this->war->getPlayer2_Country()->getStats()->setHealth(currHealth + m->getHeal());
@@ -319,24 +400,19 @@ void RealTime::startSimulation()
           {
             for(Entity* e : this->war->getPlayer2_Country()->getInventoryShop()->getSoldiers())
             {
-              e->addEntity(e);
-              int soldierCount = 0;
-              for(Entity* e : this->war->getPlayer2_Country()->getInventoryShop()->getSoldiers())
+              e->addEntity(purchasable);
+
+              this->war->getPlayer2_Country()->getStats()->getGDP()->setValue(this->war->getPlayer2_Country()->getStats()->getGDP()->getValue() - (purchasable->getPrice() * soldierCount));
+
+              if(purchasable->getType() == EntityType::WEAPON)
               {
-                if(e->getType() == EntityType::SOLDIER)
-                {
-                  soldierCount += ((Soldiers*)e)->getCount();
-                }
-              }
-              if(e->getType() == EntityType::WEAPON)
-              {
-                Weapons* w = (Weapons*)e;
+                Weapons* w = (Weapons*)purchasable;
                 double currDamage = this->war->getPlayer2_Country()->getStats()->getDamage();
                 this->war->getPlayer2_Country()->getStats()->setDamage(currDamage + (w->getDamage() * soldierCount));
               }
               else
               {
-                Armour* a = (Armour*)e;
+                Armour* a = (Armour*)purchasable;
                 double currDefence = this->war->getPlayer2_Country()->getStats()->getDefence();
                 this->war->getPlayer2_Country()->getStats()->setDefence(currDefence + (a->getArmour() * soldierCount));
               }
@@ -344,7 +420,13 @@ void RealTime::startSimulation()
           }
         }
         else
-          std::cout << "You do not have enough money to purchase this item." << std::endl;
+          std::cout << "You do not have enough GDP to purchase this item." << std::endl;
+
+        cout<<"**************************************************"<<endl;
+        cout << "Player 2, here are your statistics before battle:" << endl;
+        cout<<"**************************************************"<<endl;
+        this->war->getPlayer2_Country()->printStats();
+        cout<<"**************************************************"<<endl;
 
         std::cout << "Player 2, would you like to access the Shop?(Y/N)";
         std::cin.ignore();

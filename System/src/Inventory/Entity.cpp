@@ -55,7 +55,7 @@ EntityType Entity::getType() const{
  * @details Gets the Entity's @code _price @endcode member value.
  * @return double 
  */
-double Entity::getPrice() const
+double Entity::getPrice()
 {
   return _price;
 }

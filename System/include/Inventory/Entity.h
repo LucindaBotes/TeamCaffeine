@@ -29,7 +29,7 @@ class Entity {
     virtual ~Entity() = 0;
     virtual Entity* clone() = 0;
     EntityType getType() const;
-    double getPrice() const;
+    double getPrice();
     void setPrice(double price);
     void addEntity(Entity *e);
     bool isEmpty();

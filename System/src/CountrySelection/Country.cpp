@@ -127,4 +127,5 @@ void Country::printStats()
   cout << "Health: " << this->_stats->getHealth() << endl;
   cout << "Attack: " << this->_stats->getDamage() << endl;
   cout << "Defense: " << this->_stats->getDefence() << endl;
+  cout << "GDP: " << this->_stats->getGDP()->getValue() << endl;
 }
