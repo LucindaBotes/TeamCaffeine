@@ -28,7 +28,9 @@ Country::Country() {
 Country::Country(std::string name)
 {
   this->_name = name;
+  this->_allies = new vector<Country*>();
   this->_stats->generateStats();
+  this->_inventoryShop = new InventoryShop();
 }
 
 /**

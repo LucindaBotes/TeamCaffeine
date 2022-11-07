@@ -41,6 +41,9 @@ class InventoryShop {
     void removeArmour(Entity* e);
 
     void removePurchasable(Entity* e);
+
+    void printShop();
+    void printInventory();
 };
 
 #endif

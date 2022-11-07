@@ -125,3 +125,11 @@ bool Entity::isEmpty()
   return this->_head == NULL;
 }
 
+std::string Entity::getName() const {
+  return _name;
+}
+
+void Entity::setName(std::string name)
+{
+  _name = name;
+}

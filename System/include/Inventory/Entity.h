@@ -18,6 +18,7 @@ class Entity {
   private:
     EntityType _type;
     double _price;
+    std::string _name;
 
   protected:
     Entity* _head, *_next;
@@ -32,6 +33,8 @@ class Entity {
     void setPrice(double price);
     void addEntity(Entity *e);
     bool isEmpty();
+    std::string getName() const;
+    void setName(std::string name);
 };
 
 #endif

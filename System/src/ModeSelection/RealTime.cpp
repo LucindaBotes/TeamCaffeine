@@ -1,4 +1,9 @@
 #include "RealTime.h"
+#include "Weapons.h"
+#include "Soldiers.h"
+#include "Medics.h"
+#include "Supplies.h"
+#include "Armour.h"
 
 using namespace std;
 
@@ -12,6 +17,11 @@ using namespace std;
  * @author Netshifhefhe Unarine Leo : u20505656
  * 
 */
+
+struct EntityWrapper {
+    Entity* entity;
+    std::string name;
+};
 
 RealTime::RealTime() {
   this->war = new War();
@@ -69,6 +79,9 @@ void RealTime::startSimulation()
 
   bool WarTrue = true;
   int battleint = 1;
+
+
+
   while (WarTrue == true)
   {
     Battle * battle = new Battle();
@@ -88,6 +101,21 @@ void RealTime::startSimulation()
     /*
       SHOP NEEDS TO OPEN HERE!!
     */
+
+    std::cout << "Player 1, would you like to access the Shop?(Y/N)";
+    std::string r1;
+    cin >> r1;
+    if (r1 == "Y" || r1 == "y")
+    {
+        this->war->getPlayer1_Country()->getInventoryShop().printShop();
+    }
+    std::cout << "Player 2, would you like to access the Shop?(Y/N)";
+    std::string r2;
+    cin >> r2;
+    if (r2 == "Y" || r2 == "y")
+    {
+        this->war->getPlayer2_Country()->getInventoryShop().printShop();
+    }
 
     cout<<"Choose your action for the battle from the list below(Select the action number): "<<endl;
 

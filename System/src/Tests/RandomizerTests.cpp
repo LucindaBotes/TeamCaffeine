@@ -16,4 +16,13 @@ namespace {
         EXPECT_EQ(randomNum > 0, true);
     }
 
+    TEST(RandomizerTest, Get_Random_Boolean){
+        EXPECT_EQ(Randomizer::getInstance()->getRandomBoolean(), true || false);
+    }
+
+    TEST(RandomizerTest, Get_Random_Int){
+        int val = Randomizer::getInstance()->getRandomInt(10);
+        EXPECT_EQ(val > 0, true);
+    }
+
 }
