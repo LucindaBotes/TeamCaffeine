@@ -4,7 +4,7 @@
 namespace {
 
     TEST(BattleTest, CreationTest) {
-        Battle* battle = new Armour();
+        Battle* battle = new Battle();
         EXPECT_EQ(battle == nullptr, false);
 
         delete battle;
