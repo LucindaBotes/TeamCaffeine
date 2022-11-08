@@ -17,8 +17,8 @@ BattleDatabase::BattleDatabase() {
 }
 
 void BattleDatabase::getMemento() {
-  BattleFacade * bf = new BattleFacade();
-  this->battle_Caretaker = bf->sendMementoData();
+  Battle* b = new Battle();
+  this->battle_Caretaker = b->copy(b);
 }
 
 Battle* BattleDatabase::setMemento() {

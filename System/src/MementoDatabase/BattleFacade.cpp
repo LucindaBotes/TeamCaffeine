@@ -18,10 +18,9 @@ BattleFacade::~BattleFacade() {
 }
 
 void BattleFacade::getMementoData() {
-  Battle* b = new Battle();
-  this->battle_Proxy = b->copy(b);
+  
 }
 
 Battle* BattleFacade::sendMementoData() {
-  return this->battle_Proxy;
+  
 }
