@@ -1,15 +1,23 @@
 #ifndef MEDICS_H
 #define MEDICS_H
 
-class Medics {
+#include "EntityDecorator.h"
+#include "Randomizer.h"
+
+class Medics : public EntityDecorator {
   private:
-    int member;
+    double _heal;
 
   public:
     Medics();
-    ~Medics();
-    int getMember();
-    void setMember(int);
+    Medics(double);
+    Medics(const Medics &m);
+    virtual ~Medics() override;
+
+    Entity* clone() override;
+
+    double getHeal() ;
+    void setHeal(double heal);
 };
 
 #endif

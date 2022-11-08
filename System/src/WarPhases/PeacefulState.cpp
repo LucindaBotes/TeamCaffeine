@@ -1,6 +1,16 @@
-#include <WarPhases/PeacefulState.h>
+#include "PeacefulState.h"
 
 using namespace std;
+
+/**
+ * @file PeacefulState.cpp
+ * @brief PeacefulState class implementation,
+ * @li Design Pattern: State
+ * @li Participant: ConcreteState
+ * 
+ * @details PeacefulState class implements a state which is for when a war is over, and there's a truce or one country is defeated
+ * @author Netshifhefhe Unarine Leo ; u20505656
+*/
 
 PeacefulState::PeacefulState() {
 }
@@ -8,10 +18,17 @@ PeacefulState::PeacefulState() {
 PeacefulState::~PeacefulState() {
 }
 
-int PeacefulState::getMember() {
-  return this->member;
+
+/// @brief returns the current state name, PeacefulState
+/// @return name of state, which is Peaceful 
+string PeacefulState::getState()
+{
+    return "Peaceful";
 }
 
-void PeacefulState::setMember(int member) {
-  this->member = member;
+/// @brief Changes the state from PeacefulState to ColdState using the context Participant
+/// @param s 
+void PeacefulState::setState(WarPhaseContext* s)
+{
+    s->setState(new ColdState());
 }

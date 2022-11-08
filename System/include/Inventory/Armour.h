@@ -1,15 +1,22 @@
 #ifndef ARMOUR_H
 #define ARMOUR_H
 
-class Armour {
-  private:
-    int member;
+#include "EntityDecorator.h"
+#include "Randomizer.h"
 
-  public:
-    Armour();
-    ~Armour();
-    int getMember();
-    void setMember(int);
+class Armour : public EntityDecorator{
+  private:
+    double _armour;
+
+public:
+  Armour();
+  Armour(double);
+  Armour(const Armour &a);
+  ~Armour();
+
+  Entity *clone() override;
+  double getArmour();
+  void setArmour(double armour);
 };
 
 #endif

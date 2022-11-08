@@ -1,15 +1,19 @@
 #ifndef INVENTORYDATABASE_H
 #define INVENTORYDATABASE_H
+#include "Databases.h"
+#include <vector>
 
-class InventoryDatabase {
+
+template <class T>
+class InventoryDatabase: public Databases<T> {
   private:
-    int member;
+    T memento;
 
   public:
     InventoryDatabase();
     ~InventoryDatabase();
-    int getMember();
-    void setMember(int);
+    T getMemento();
+    void setMemento(T);
 };
 
 #endif

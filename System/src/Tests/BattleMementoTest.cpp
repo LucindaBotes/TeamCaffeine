@@ -19,5 +19,11 @@ namespace
         delete b;
     }
 
-    
+    TEST(BattleMementoTest, BattleMemento_Setters)
+    {
+        BattleMemento* b = new BattleMemento();
+        EXPECT_EQ(b->setMemento(nullptr) == nullptr, true);
+
+        delete b;
+    }
 }

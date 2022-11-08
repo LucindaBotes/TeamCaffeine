@@ -1,15 +1,17 @@
 #ifndef CREATEWEAPONS_H
 #define CREATEWEAPONS_H
 
-class CreateWeapons {
+#include "Weapons.h"
+#include "EntityCreator.h"
+
+class CreateWeapons : public EntityCreator {
   private:
     int member;
 
   public:
     CreateWeapons();
     ~CreateWeapons();
-    int getMember();
-    void setMember(int);
+    Weapons * createWeaponsEntity();
 };
 
 #endif

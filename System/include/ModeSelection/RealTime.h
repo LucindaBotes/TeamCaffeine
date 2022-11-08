@@ -1,15 +1,20 @@
+
 #ifndef REALTIME_H
 #define REALTIME_H
 
-class RealTime {
+#include "Strategy.h"
+#include "War.h"
+#include "ModeContext.h"
+
+class RealTime : public Strategy
+{
   private:
-    int member;
+    War * war;
 
   public:
     RealTime();
     ~RealTime();
-    int getMember();
-    void setMember(int);
+    virtual void startSimulation();
+    virtual Battle * undo();
 };
-
 #endif

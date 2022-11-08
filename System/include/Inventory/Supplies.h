@@ -1,15 +1,23 @@
 #ifndef SUPPLIES_H
 #define SUPPLIES_H
 
-class Supplies {
+#include "EntityDecorator.h"
+#include "Randomizer.h"
+
+class Supplies : public EntityDecorator{
   private:
-    int member;
+    double _health;
 
   public:
     Supplies();
-    ~Supplies();
-    int getMember();
-    void setMember(int);
+    Supplies(double);
+    Supplies(const Supplies &s);
+    virtual ~Supplies() override;
+
+    Entity* clone() override;
+
+    double getHealth() ;
+    void setHealth(double health);
 };
 
 #endif

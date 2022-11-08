@@ -1,15 +1,19 @@
 #ifndef INVENTORYFACADE_H
 #define INVENTORYFACADE_H
+#include "MementoFacade.h"
+#include <vector>
 
-class InventoryFacade {
+
+template <class T>
+class InventoryFacade: public MementoFacade<T> {
   private:
-    int member;
+    T memento;
 
   public:
     InventoryFacade();
     ~InventoryFacade();
-    int getMember();
-    void setMember(int);
+    T getMemento();
+    void setMemento(T);
 };
 
 #endif

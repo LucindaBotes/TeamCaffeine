@@ -1,15 +1,17 @@
 #ifndef WARFACADE_H
 #define WARFACADE_H
+#include "MementoFacade.h"
 
-class WarFacade {
+template <class T>
+class WarFacade: public MementoFacade<T> {
   private:
-    int member;
+    T memento;
 
   public:
     WarFacade();
     ~WarFacade();
-    int getMember();
-    void setMember(int);
+    T getMemento();
+    void setMemento(T);
 };
 
 #endif

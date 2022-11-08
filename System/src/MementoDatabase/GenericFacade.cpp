@@ -1,17 +1,21 @@
-#include <MementoDatabase/GenericFacade.h>
+#include "GenericFacade.h"
 
 using namespace std;
 
-GenericFacade::GenericFacade() {
+template <class T>
+GenericFacade<T>::GenericFacade() {
 }
 
-GenericFacade::~GenericFacade() {
+template <class T>
+GenericFacade<T>::~GenericFacade() {
 }
 
-int GenericFacade::getMember() {
-  return this->member;
+template <class T>
+T GenericFacade<T>::getMemento() {
+  return this->memento;
 }
 
-void GenericFacade::setMember(int member) {
-  this->member = member;
+template <class T>
+void GenericFacade<T>::setMemento(T memento) {
+  this->memento = memento;
 }

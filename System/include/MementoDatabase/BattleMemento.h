@@ -1,15 +1,18 @@
 #ifndef BATTLEMEMENTO_H
 #define BATTLEMEMENTO_H
-
+#include "Battle.h"
+#include "BattleDatabase.h"
+#include <vector>
+//Memento
 class BattleMemento {
   private:
-    int member;
+    vector<Battle*> battle_memento;
 
   public:
     BattleMemento();
     ~BattleMemento();
-    int getMember();
-    void setMember(int);
+    Battle* getMemento();
+    void setMemento(Battle* b);
 };
 
 #endif

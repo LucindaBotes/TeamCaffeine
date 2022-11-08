@@ -1,17 +1,19 @@
-#include <WarPhases/WarPhaseState.h>
+#include "WarPhaseState.h"
 
 using namespace std;
 
-WarPhaseState::WarPhaseState() {
-}
+/**
+ * @file WarPhaseState.cpp
+ * @brief WarPhaseState class implementation,
+ * @li Design Pattern: State
+ * @li Participant: State
+ * 
+ * @details WarPhaseState class implements an interface which has pure virtual functions setState(), changeState() and getState() 
+ * @author Netshifhefhe Unarine Leo : u20505656
+*/
 
-WarPhaseState::~WarPhaseState() {
-}
+WarPhaseState::WarPhaseState() 
+{}
 
-int WarPhaseState::getMember() {
-  return this->member;
-}
-
-void WarPhaseState::setMember(int member) {
-  this->member = member;
-}
+WarPhaseState::~WarPhaseState() 
+{}

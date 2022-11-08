@@ -1,15 +1,20 @@
 #ifndef INVENTORYMEMENTO_H
 #define INVENTORYMEMENTO_H
+#include "Memento.h"
+#include "InventoryShop.h"
+#include <vector>
 
-class InventoryMemento {
+
+template <class T>
+class InventoryMemento: public Memento<T> {
   private:
-    int member;
+    vector<InventoryShop> inventory_memento;
 
   public:
     InventoryMemento();
     ~InventoryMemento();
-    int getMember();
-    void setMember(int);
+    InventoryShop getMemento();
+    void setMemento(InventoryShop* m);
 };
 
 #endif

@@ -1,15 +1,19 @@
 #ifndef GDP_H
 #define GDP_H
 
+#include "Randomizer.h"
+
 class GDP {
   private:
-    int member;
+    double _value;
 
   public:
     GDP();
+    GDP(double);
     ~GDP();
-    int getMember();
-    void setMember(int);
+
+    double getValue();
+    void setValue(double);
 };
 
 #endif

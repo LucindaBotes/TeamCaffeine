@@ -1,17 +1,20 @@
-#include <ModeSelection/Strategy.h>
+#include "Strategy.h"
 
 using namespace std;
 
-Strategy::Strategy() {
-}
+/**
+ * @file Strategy.cpp
+ * @brief Strategy class implementation,
+ * @li Design Pattern: Strategy
+ * @li Participant: Strategy
+ * 
+ * @details This is an abstract class which implements an interface containing pure virtual startSimulation() and virtual undo()
+ * @author Netshifhefhe Unarine Leo : u20505656
+ * 
+*/
 
-Strategy::~Strategy() {
-}
+Strategy::Strategy() 
+{}
 
-int Strategy::getMember() {
-  return this->member;
-}
-
-void Strategy::setMember(int member) {
-  this->member = member;
-}
+Strategy::~Strategy() 
+{}
