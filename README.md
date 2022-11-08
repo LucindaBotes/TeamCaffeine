@@ -1,6 +1,6 @@
 # TeamCaffeine
 [Documentation]( "Documentation")
-[I'm an inline-style link with title]( "Video")
-[I'm an inline-style link with title]( "Final Class Diagram")
-[I'm an inline-style link with title]( "How to run the code")
-[I'm an inline-style link with title]( "The code")
+[Video]( "Video")
+[Final Class Diagram]( "Final Class Diagram")
+[How to run the code]( "How to run the code")
+[The code]( "The code")
