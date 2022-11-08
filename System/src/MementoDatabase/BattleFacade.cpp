@@ -8,6 +8,7 @@ BattleFacade::BattleFacade() {
 BattleFacade::~BattleFacade() {
 }
 
+<<<<<<< Updated upstream
 int BattleFacade::getMember() {
   return this->member;
 }
@@ -15,3 +16,12 @@ int BattleFacade::getMember() {
 void BattleFacade::setMember(int member) {
   this->member = member;
 }
+=======
+void BattleFacade::getMementoData() {
+  
+}
+
+Battle* BattleFacade::sendMementoData() {
+  
+}
+>>>>>>> Stashed changes

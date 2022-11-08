@@ -1,0 +1,29 @@
+#include <gtest/gtest.h>
+#include "BattleDatabase.h"
+
+namespace
+{
+    TEST(BattleDatabaseTest, BattleDatabase_Creation)
+    {
+        BattleDatabase* b = new BattleDatabase();
+        EXPECT_EQ(b == nullptr, false);
+
+        delete b;
+    }
+
+    TEST(BattleDatabaseTest, BattleDatabase_Getters)
+    {
+        BattleDatabase* b = new BattleDatabase();
+        EXPECT_EQ(b->getMemento() == nullptr, true);
+
+        delete b;
+    }
+
+    TEST(BattleDatabaseTest, BattleDatabase_Setters)
+    {
+        BattleDatabase* b = new BattleDatabase();
+        EXPECT_EQ(b->setMemento() == nullptr, true);
+
+        delete b;
+    }
+}

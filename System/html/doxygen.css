@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 /* The standard CSS for doxygen 1.8.17 */
 
 body, table, div, p, dl {
@@ -6,24 +7,394 @@ body, table, div, p, dl {
 
 p.reference, p.definition {
 	font: 400 14px/22px Roboto,sans-serif;
+=======
+/* The standard CSS for doxygen 1.9.5*/
+
+html {
+/* page base colors */
+--page-background-color: white;
+--page-foreground-color: black;
+--page-link-color: #3D578C;
+--page-visited-link-color: #4665A2;
+
+/* index */
+--index-odd-item-bg-color: #F8F9FC;
+--index-even-item-bg-color: white;
+--index-header-color: black;
+--index-separator-color: #A0A0A0;
+
+/* header */
+--header-background-color: #F9FAFC;
+--header-separator-color: #C4CFE5;
+--header-gradient-image: url('nav_h.png');
+--group-header-separator-color: #879ECB;
+--group-header-color: #354C7B;
+--inherit-header-color: gray;
+
+--footer-foreground-color: #2A3D61;
+--footer-logo-width: 104px;
+--citation-label-color: #334975;
+--glow-color: cyan;
+
+--title-background-color: white;
+--title-separator-color: #5373B4;
+--directory-separator-color: #9CAFD4;
+--separator-color: #4A6AAA;
+
+--blockquote-background-color: #F7F8FB;
+--blockquote-border-color: #9CAFD4;
+
+--scrollbar-thumb-color: #9CAFD4;
+--scrollbar-background-color: #F9FAFC;
+
+--icon-background-color: #728DC1;
+--icon-foreground-color: white;
+--icon-doc-image: url('doc.png');
+
+/* brief member declaration list */
+--memdecl-background-color: #F9FAFC;
+--memdecl-separator-color: #DEE4F0;
+--memdecl-foreground-color: #555;
+--memdecl-template-color: #4665A2;
+
+/* detailed member list */
+--memdef-border-color: #A8B8D9;
+--memdef-title-background-color: #E2E8F2;
+--memdef-title-gradient-image: url('nav_f.png');
+--memdef-proto-background-color: #DFE5F1;
+--memdef-proto-text-color: #253555;
+--memdef-proto-text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.9);
+--memdef-doc-background-color: white;
+--memdef-param-name-color: #602020;
+--memdef-template-color: #4665A2;
+
+/* tables */
+--table-cell-border-color: #2D4068;
+--table-header-background-color: #374F7F;
+--table-header-foreground-color: #FFFFFF;
+
+/* labels */
+--label-background-color: #728DC1;
+--label-left-top-border-color: #5373B4;
+--label-right-bottom-border-color: #C4CFE5;
+--label-foreground-color: white;
+
+/** navigation bar/tree/menu */
+--nav-background-color: #F9FAFC;
+--nav-foreground-color: #364D7C;
+--nav-gradient-image: url('tab_b.png');
+--nav-gradient-hover-image: url('tab_h.png');
+--nav-gradient-active-image: url('tab_a.png');
+--nav-gradient-active-image-parent: url("../tab_a.png");
+--nav-separator-image: url('tab_s.png');
+--nav-breadcrumb-image: url('bc_s.png');
+--nav-breadcrumb-border-color: #C2CDE4;
+--nav-splitbar-image: url('splitbar.png');
+--nav-font-size-level1: 13px;
+--nav-font-size-level2: 10px;
+--nav-font-size-level3: 9px;
+--nav-text-normal-color: #283A5D;
+--nav-text-hover-color: white;
+--nav-text-active-color: white;
+--nav-text-normal-shadow: 0px 1px 1px rgba(255, 255, 255, 0.9);
+--nav-text-hover-shadow: 0px 1px 1px rgba(0, 0, 0, 1.0);
+--nav-text-active-shadow: 0px 1px 1px rgba(0, 0, 0, 1.0);
+--nav-menu-button-color: #364D7C;
+--nav-menu-background-color: white;
+--nav-menu-foreground-color: #555555;
+--nav-menu-toggle-color: rgba(255, 255, 255, 0.5);
+--nav-arrow-color: #9CAFD4;
+--nav-arrow-selected-color: #9CAFD4;
+
+/* table of contents */
+--toc-background-color: #F4F6FA;
+--toc-border-color: #D8DFEE;
+--toc-header-color: #4665A2;
+
+/** search field */
+--search-background-color: white;
+--search-foreground-color: #909090;
+--search-magnification-image: url('mag.svg');
+--search-magnification-select-image: url('mag_sel.svg');
+--search-active-color: black;
+--search-filter-background-color: #F9FAFC;
+--search-filter-foreground-color: black;
+--search-filter-border-color: #90A5CE;
+--search-filter-highlight-text-color: white;
+--search-filter-highlight-bg-color: #3D578C;
+--search-results-foreground-color: #425E97;
+--search-results-background-color: #EEF1F7;
+--search-results-border-color: black;
+--search-box-shadow: inset 0.5px 0.5px 3px 0px #555;
+
+/** code fragments */
+--code-keyword-color: #008000;
+--code-type-keyword-color: #604020;
+--code-flow-keyword-color: #E08000;
+--code-comment-color: #800000;
+--code-preprocessor-color: #806020;
+--code-string-literal-color: #002080;
+--code-char-literal-color: #008080;
+--code-vhdl-digit-color: #FF00FF;
+--code-vhdl-char-color: #000000;
+--code-vhdl-keyword-color: #700070;
+--code-vhdl-logic-color: #FF0000;
+--code-link-color: #4665A2;
+--code-external-link-color: #4665A2;
+--fragment-foreground-color: black;
+--fragment-background-color: #FBFCFD;
+--fragment-border-color: #C4CFE5;
+--fragment-lineno-border-color: #00FF00;
+--fragment-lineno-background-color: #E8E8E8;
+--fragment-lineno-foreground-color: black;
+--fragment-lineno-link-fg-color: #4665A2;
+--fragment-lineno-link-bg-color: #D8D8D8;
+--fragment-lineno-link-hover-fg-color: #4665A2;
+--fragment-lineno-link-hover-bg-color: #C8C8C8;
+--tooltip-foreground-color: black;
+--tooltip-background-color: white;
+--tooltip-border-color: gray;
+--tooltip-doc-color: grey;
+--tooltip-declaration-color: #006318;
+--tooltip-link-color: #4665A2;
+--tooltip-shadow: 1px 1px 7px gray;
+
+/** font-family */
+--font-family-normal: Roboto,sans-serif;
+--font-family-monospace: monospace,fixed;
+--font-family-nav: 'Lucida Grande',Geneva,Helvetica,Arial,sans-serif;
+--font-family-title: Tahoma,Arial,sans-serif;
+--font-family-toc: Verdana,'DejaVu Sans',Geneva,sans-serif;
+--font-family-search: Arial,Verdana,sans-serif;
+--font-family-icon: Arial,Helvetica;
+--font-family-tooltip: Roboto,sans-serif;
+
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not(.dark-mode) {
+    color-scheme: dark;
+
+/* page base colors */
+--page-background-color: black;
+--page-foreground-color: #C9D1D9;
+--page-link-color: #90A5CE;
+--page-visited-link-color: #A3B4D7;
+
+/* index */
+--index-odd-item-bg-color: #0B101A;
+--index-even-item-bg-color: black;
+--index-header-color: #C4CFE5;
+--index-separator-color: #334975;
+
+/* header */
+--header-background-color: #070B11;
+--header-separator-color: #141C2E;
+--header-gradient-image: url('nav_hd.png');
+--group-header-separator-color: #283A5D;
+--group-header-color: #90A5CE;
+--inherit-header-color: #A0A0A0;
+
+--footer-foreground-color: #5B7AB7;
+--footer-logo-width: 60px;
+--citation-label-color: #90A5CE;
+--glow-color: cyan;
+
+--title-background-color: #090D16;
+--title-separator-color: #354C79;
+--directory-separator-color: #283A5D;
+--separator-color: #283A5D;
+
+--blockquote-background-color: #101826;
+--blockquote-border-color: #283A5D;
+
+--scrollbar-thumb-color: #283A5D;
+--scrollbar-background-color: #070B11;
+
+--icon-background-color: #334975;
+--icon-foreground-color: #C4CFE5;
+--icon-doc-image: url('docd.png');
+
+/* brief member declaration list */
+--memdecl-background-color: #0B101A;
+--memdecl-separator-color: #2C3F65;
+--memdecl-foreground-color: #BBB;
+--memdecl-template-color: #7C95C6;
+
+/* detailed member list */
+--memdef-border-color: #233250;
+--memdef-title-background-color: #1B2840;
+--memdef-title-gradient-image: url('nav_fd.png');
+--memdef-proto-background-color: #19243A;
+--memdef-proto-text-color: #9DB0D4;
+--memdef-proto-text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.9);
+--memdef-doc-background-color: black;
+--memdef-param-name-color: #D28757;
+--memdef-template-color: #7C95C6;
+
+/* tables */
+--table-cell-border-color: #283A5D;
+--table-header-background-color: #283A5D;
+--table-header-foreground-color: #C4CFE5;
+
+/* labels */
+--label-background-color: #354C7B;
+--label-left-top-border-color: #4665A2;
+--label-right-bottom-border-color: #283A5D;
+--label-foreground-color: #CCCCCC;
+
+/** navigation bar/tree/menu */
+--nav-background-color: #101826;
+--nav-foreground-color: #364D7C;
+--nav-gradient-image: url('tab_bd.png');
+--nav-gradient-hover-image: url('tab_hd.png');
+--nav-gradient-active-image: url('tab_ad.png');
+--nav-gradient-active-image-parent: url("../tab_ad.png");
+--nav-separator-image: url('tab_sd.png');
+--nav-breadcrumb-image: url('bc_sd.png');
+--nav-breadcrumb-border-color: #2A3D61;
+--nav-splitbar-image: url('splitbard.png');
+--nav-font-size-level1: 13px;
+--nav-font-size-level2: 10px;
+--nav-font-size-level3: 9px;
+--nav-text-normal-color: #B6C4DF;
+--nav-text-hover-color: #DCE2EF;
+--nav-text-active-color: #DCE2EF;
+--nav-text-normal-shadow: 0px 1px 1px black;
+--nav-text-hover-shadow: 0px 1px 1px rgba(0, 0, 0, 1.0);
+--nav-text-active-shadow: 0px 1px 1px rgba(0, 0, 0, 1.0);
+--nav-menu-button-color: #B6C4DF;
+--nav-menu-background-color: #05070C;
+--nav-menu-foreground-color: #BBBBBB;
+--nav-menu-toggle-color: rgba(255, 255, 255, 0.2);
+--nav-arrow-color: #334975;
+--nav-arrow-selected-color: #90A5CE;
+
+/* table of contents */
+--toc-background-color: #151E30;
+--toc-border-color: #202E4A;
+--toc-header-color: #A3B4D7;
+
+/** search field */
+--search-background-color: black;
+--search-foreground-color: #C5C5C5;
+--search-magnification-image: url('mag_d.svg');
+--search-magnification-select-image: url('mag_seld.svg');
+--search-active-color: #C5C5C5;
+--search-filter-background-color: #101826;
+--search-filter-foreground-color: #90A5CE;
+--search-filter-border-color: #7C95C6;
+--search-filter-highlight-text-color: #BCC9E2;
+--search-filter-highlight-bg-color: #283A5D;
+--search-results-background-color: #101826;
+--search-results-foreground-color: #90A5CE;
+--search-results-border-color: #7C95C6;
+--search-box-shadow: inset 0.5px 0.5px 3px 0px #2F436C;
+
+/** code fragments */
+--code-keyword-color: #CC99CD;
+--code-type-keyword-color: #AB99CD;
+--code-flow-keyword-color: #E08000;
+--code-comment-color: #717790;
+--code-preprocessor-color: #65CABE;
+--code-string-literal-color: #7EC699;
+--code-char-literal-color: #00E0F0;
+--code-vhdl-digit-color: #FF00FF;
+--code-vhdl-char-color: #000000;
+--code-vhdl-keyword-color: #700070;
+--code-vhdl-logic-color: #FF0000;
+--code-link-color: #79C0FF;
+--code-external-link-color: #79C0FF;
+--fragment-foreground-color: #C9D1D9;
+--fragment-background-color: black;
+--fragment-border-color: #30363D;
+--fragment-lineno-border-color: #30363D;
+--fragment-lineno-background-color: black;
+--fragment-lineno-foreground-color: #6E7681;
+--fragment-lineno-link-fg-color: #6E7681;
+--fragment-lineno-link-bg-color: #303030;
+--fragment-lineno-link-hover-fg-color: #8E96A1;
+--fragment-lineno-link-hover-bg-color: #505050;
+--tooltip-foreground-color: #C9D1D9;
+--tooltip-background-color: #202020;
+--tooltip-border-color: #C9D1D9;
+--tooltip-doc-color: #D9E1E9;
+--tooltip-declaration-color: #20C348;
+--tooltip-link-color: #79C0FF;
+--tooltip-shadow: none;
+
+/** font-family */
+--font-family-normal: Roboto,sans-serif;
+--font-family-monospace: monospace,fixed;
+--font-family-nav: 'Lucida Grande',Geneva,Helvetica,Arial,sans-serif;
+--font-family-title: Tahoma,Arial,sans-serif;
+--font-family-toc: Verdana,'DejaVu Sans',Geneva,sans-serif;
+--font-family-search: Arial,Verdana,sans-serif;
+--font-family-icon: Arial,Helvetica;
+--font-family-tooltip: Roboto,sans-serif;
+
+}}
+body {
+    background-color: var(--page-background-color);
+    color: var(--page-foreground-color);
+    scrollbar-color: var(--scrollbar-thumb-color) var(--scrollbar-background-color);
+}
+
+::-webkit-scrollbar {
+        background-color: var(--scrollbar-background-color);
+	height: 10px;
+        width: 10px;
+}
+::-webkit-scrollbar-thumb {
+        background-color: var(--scrollbar-thumb-color);
+        border-radius: 8px;
+}
+::-webkit-scrollbar-corner {
+        background-color: var(--scrollbar-background-color);
+}
+
+body, table, div, p, dl {
+	font-weight: 400;
+	font-size: 14px;
+	font-family: var(--font-family-normal);
+	line-height: 22px;
+>>>>>>> Stashed changes
 }
 
 /* @group Heading Levels */
 
+<<<<<<< Updated upstream
 h1.groupheader {
 	font-size: 150%;
 }
 
 .title {
 	font: 400 14px/28px Roboto,sans-serif;
+=======
+.title {
+	font-weight: 400;
+	font-size: 14px;
+	font-family: var(--font-family-normal);
+	line-height: 28px;
+>>>>>>> Stashed changes
 	font-size: 150%;
 	font-weight: bold;
 	margin: 10px 2px;
 }
 
+<<<<<<< Updated upstream
 h2.groupheader {
 	border-bottom: 1px solid #879ECB;
 	color: #354C7B;
+=======
+h1.groupheader {
+	font-size: 150%;
+}
+
+h2.groupheader {
+	border-bottom: 1px solid var(--group-header-separator-color);
+	color: var(--group-header-color);
+>>>>>>> Stashed changes
 	font-size: 150%;
 	font-weight: normal;
 	margin-top: 1.75em;
@@ -46,13 +417,18 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1.glow, h2.glow, h3.glow, h4.glow, h5.glow, h6.glow {
+<<<<<<< Updated upstream
 	text-shadow: 0 0 15px cyan;
+=======
+	text-shadow: 0 0 15px var(--glow-color);
+>>>>>>> Stashed changes
 }
 
 dt {
 	font-weight: bold;
 }
 
+<<<<<<< Updated upstream
 ul.multicol {
 	-moz-column-gap: 1em;
 	-webkit-column-gap: 1em;
@@ -62,11 +438,17 @@ ul.multicol {
 	column-count: 3;
 }
 
+=======
+>>>>>>> Stashed changes
 p.startli, p.startdd {
 	margin-top: 2px;
 }
 
+<<<<<<< Updated upstream
 th p.starttd, p.intertd, p.endtd {
+=======
+th p.starttd, th p.intertd, th p.endtd {
+>>>>>>> Stashed changes
         font-size: 100%;
         font-weight: 700;
 }
@@ -103,6 +485,7 @@ caption {
 }
 
 span.legend {
+<<<<<<< Updated upstream
         font-size: 70%;
         text-align: center;
 }
@@ -131,18 +514,123 @@ div.navtab {
 
 a {
 	color: #3D578C;
+=======
+	font-size: 70%;
+	text-align: center;
+}
+
+h3.version {
+	font-size: 90%;
+	text-align: center;
+}
+
+div.navtab {
+	padding-right: 15px;
+	text-align: right;
+	line-height: 110%;
+}
+
+div.navtab table {
+	border-spacing: 0;
+}
+
+td.navtab {
+	padding-right: 6px;
+	padding-left: 6px;
+}
+
+td.navtabHL {
+	background-image: var(--nav-gradient-active-image);
+	background-repeat:repeat-x;
+	padding-right: 6px;
+	padding-left: 6px;
+}
+
+td.navtabHL a, td.navtabHL a:visited {
+	color: var(--nav-text-hover-color);
+	text-shadow: var(--nav-text-hover-shadow);
+}
+
+a.navtab {
+	font-weight: bold;
+}
+
+div.qindex{
+	text-align: center;
+	width: 100%;
+	line-height: 140%;
+	font-size: 130%;
+	color: var(--index-separator-color);
+}
+
+dt.alphachar{
+	font-size: 180%;
+	font-weight: bold;
+}
+
+.alphachar a{
+	color: var(--index-header-color);
+}
+
+.alphachar a:hover, .alphachar a:visited{
+	text-decoration: none;
+}
+
+.classindex dl {
+	padding: 25px;
+	column-count:1
+}
+
+.classindex dd {
+	display:inline-block;
+	margin-left: 50px;
+	width: 90%;
+	line-height: 1.15em;
+}
+
+.classindex dl.even {
+	background-color: var(--index-even-item-bg-color);
+}
+
+.classindex dl.odd {
+	background-color: var(--index-odd-item-bg-color);
+}
+
+@media(min-width: 1120px) {
+	.classindex dl {
+		column-count:2
+	}
+}
+
+@media(min-width: 1320px) {
+	.classindex dl {
+		column-count:3
+	}
+}
+
+
+/* @group Link Styling */
+
+a {
+	color: var(--page-link-color);
+>>>>>>> Stashed changes
 	font-weight: normal;
 	text-decoration: none;
 }
 
 .contents a:visited {
+<<<<<<< Updated upstream
 	color: #4665A2;
+=======
+	color: var(--page-visited-link-color);
+>>>>>>> Stashed changes
 }
 
 a:hover {
 	text-decoration: underline;
 }
 
+<<<<<<< Updated upstream
 a.qindex {
 	font-weight: bold;
 }
@@ -158,6 +646,8 @@ a.qindexHL {
         color: #FFFFFF;
 }
 
+=======
+>>>>>>> Stashed changes
 a.el {
 	font-weight: bold;
 }
@@ -166,6 +656,7 @@ a.elRef {
 }
 
 a.code, a.code:visited, a.line, a.line:visited {
+<<<<<<< Updated upstream
 	color: #4665A2; 
 }
 
@@ -173,6 +664,42 @@ a.codeRef, a.codeRef:visited, a.lineRef, a.lineRef:visited {
 	color: #4665A2; 
 }
 
+=======
+	color: var(--code-link-color);
+}
+
+a.codeRef, a.codeRef:visited, a.lineRef, a.lineRef:visited {
+	color: var(--code-external-link-color);
+}
+
+a.code.hl_class { /* style for links to class names in code snippets */ }
+a.code.hl_struct { /* style for links to struct names in code snippets */ }
+a.code.hl_union { /* style for links to union names in code snippets */ }
+a.code.hl_interface { /* style for links to interface names in code snippets */ }
+a.code.hl_protocol { /* style for links to protocol names in code snippets */ }
+a.code.hl_category { /* style for links to category names in code snippets */ }
+a.code.hl_exception { /* style for links to exception names in code snippets */ }
+a.code.hl_service { /* style for links to service names in code snippets */ }
+a.code.hl_singleton { /* style for links to singleton names in code snippets */ }
+a.code.hl_concept { /* style for links to concept names in code snippets */ }
+a.code.hl_namespace { /* style for links to namespace names in code snippets */ }
+a.code.hl_package { /* style for links to package names in code snippets */ }
+a.code.hl_define { /* style for links to macro names in code snippets */ }
+a.code.hl_function { /* style for links to function names in code snippets */ }
+a.code.hl_variable { /* style for links to variable names in code snippets */ }
+a.code.hl_typedef { /* style for links to typedef names in code snippets */ }
+a.code.hl_enumvalue { /* style for links to enum value names in code snippets */ }
+a.code.hl_enumeration { /* style for links to enumeration names in code snippets */ }
+a.code.hl_signal { /* style for links to Qt signal names in code snippets */ }
+a.code.hl_slot { /* style for links to Qt slot names in code snippets */ }
+a.code.hl_friend { /* style for links to friend names in code snippets */ }
+a.code.hl_dcop { /* style for links to KDE3 DCOP names in code snippets */ }
+a.code.hl_property { /* style for links to property names in code snippets */ }
+a.code.hl_event { /* style for links to event names in code snippets */ }
+a.code.hl_sequence { /* style for links to sequence names in code snippets */ }
+a.code.hl_dictionary { /* style for links to dictionary names in code snippets */ }
+
+>>>>>>> Stashed changes
 /* @end */
 
 dl.el {
@@ -180,7 +707,11 @@ dl.el {
 }
 
 ul {
+<<<<<<< Updated upstream
   overflow: hidden; /*Fixed: list item bullets overlap floating elements*/
+=======
+  overflow: visible;
+>>>>>>> Stashed changes
 }
 
 #side-nav ul {
@@ -199,19 +730,30 @@ ul {
 }
 
 pre.fragment {
+<<<<<<< Updated upstream
         border: 1px solid #C4CFE5;
         background-color: #FBFCFD;
+=======
+        border: 1px solid var(--fragment-border-color);
+        background-color: var(--fragment-background-color);
+	color: var(--fragment-foreground-color);
+>>>>>>> Stashed changes
         padding: 4px 6px;
         margin: 4px 8px 4px 2px;
         overflow: auto;
         word-wrap: break-word;
         font-size:  9pt;
         line-height: 125%;
+<<<<<<< Updated upstream
         font-family: monospace, fixed;
+=======
+        font-family: var(--font-family-monospace);
+>>>>>>> Stashed changes
         font-size: 105%;
 }
 
 div.fragment {
+<<<<<<< Updated upstream
   padding: 0 0 1px 0; /*Fixed: last line underline overlap border*/
   margin: 4px 8px 4px 2px;
 	background-color: #FBFCFD;
@@ -220,6 +762,17 @@ div.fragment {
 
 div.line {
 	font-family: monospace, fixed;
+=======
+	padding: 0 0 1px 0; /*Fixed: last line underline overlap border*/
+	margin: 4px 8px 4px 2px;
+	color: var(--fragment-foreground-color);
+	background-color: var(--fragment-background-color);
+	border: 1px solid var(--fragment-border-color);
+}
+
+div.line {
+	font-family: var(--font-family-monospace);
+>>>>>>> Stashed changes
         font-size: 13px;
 	min-height: 13px;
 	line-height: 1.0;
@@ -251,13 +804,19 @@ div.line:after {
 }
 
 div.line.glow {
+<<<<<<< Updated upstream
 	background-color: cyan;
 	box-shadow: 0 0 10px cyan;
+=======
+	background-color: var(--glow-color);
+	box-shadow: 0 0 10px var(--glow-color);
+>>>>>>> Stashed changes
 }
 
 
 span.lineno {
 	padding-right: 4px;
+<<<<<<< Updated upstream
 	text-align: right;
 	border-right: 2px solid #0F0;
 	background-color: #E8E8E8;
@@ -269,6 +828,23 @@ span.lineno a {
 
 span.lineno a:hover {
 	background-color: #C8C8C8;
+=======
+        margin-right: 9px;
+	text-align: right;
+	border-right: 2px solid var(--fragment-lineno-border-color);
+	color: var(--fragment-lineno-foreground-color);
+	background-color: var(--fragment-lineno-background-color);
+        white-space: pre;
+}
+span.lineno a, span.lineno a:visited {
+	color: var(--fragment-lineno-link-fg-color);
+	background-color: var(--fragment-lineno-link-bg-color);
+}
+
+span.lineno a:hover {
+	color: var(--fragment-lineno-link-hover-fg-color);
+	background-color: var(--fragment-lineno-link-hover-bg-color);
+>>>>>>> Stashed changes
 }
 
 .lineno {
@@ -280,6 +856,7 @@ span.lineno a:hover {
 	user-select: none;
 }
 
+<<<<<<< Updated upstream
 div.ah, span.ah {
 	background-color: black;
 	font-weight: bold;
@@ -298,6 +875,8 @@ div.ah, span.ah {
 	background-image: -moz-linear-gradient(center top, #eee 0%, #444 40%, #000 110%);
 }
 
+=======
+>>>>>>> Stashed changes
 div.classindex ul {
         list-style: none;
         padding-left: 0;
@@ -319,8 +898,12 @@ div.groupText {
 }
 
 body {
+<<<<<<< Updated upstream
 	background-color: white;
 	color: black;
+=======
+	color: var(--page-foreground-color);
+>>>>>>> Stashed changes
         margin: 0;
 }
 
@@ -330,6 +913,7 @@ div.contents {
 	margin-right: 8px;
 }
 
+<<<<<<< Updated upstream
 td.indexkey {
 	background-color: #EBEFF6;
 	font-weight: bold;
@@ -351,10 +935,22 @@ tr.memlist {
 	background-color: #EEF1F7;
 }
 
+=======
+>>>>>>> Stashed changes
 p.formulaDsp {
 	text-align: center;
 }
 
+<<<<<<< Updated upstream
+=======
+img.dark-mode-visible {
+	display: none;
+}
+img.light-mode-visible {
+	display: none;
+}
+
+>>>>>>> Stashed changes
 img.formulaDsp {
 	
 }
@@ -382,11 +978,22 @@ address.footer {
 img.footer {
 	border: 0px;
 	vertical-align: middle;
+<<<<<<< Updated upstream
+=======
+	width: var(--footer-logo-width);
+}
+
+.compoundTemplParams {
+	color: var(--memdecl-template-color);
+	font-size: 80%;
+	line-height: 120%;
+>>>>>>> Stashed changes
 }
 
 /* @group Code Colorization */
 
 span.keyword {
+<<<<<<< Updated upstream
 	color: #008000
 }
 
@@ -433,10 +1040,59 @@ span.vhdllogic {
 blockquote {
         background-color: #F7F8FB;
         border-left: 2px solid #9CAFD4;
+=======
+	color: var(--code-keyword-color);
+}
+
+span.keywordtype {
+	color: var(--code-type-keyword-color);
+}
+
+span.keywordflow {
+	color: var(--code-flow-keyword-color);
+}
+
+span.comment {
+	color: var(--code-comment-color);
+}
+
+span.preprocessor {
+	color: var(--code-preprocessor-color);
+}
+
+span.stringliteral {
+	color: var(--code-string-literal-color);
+}
+
+span.charliteral {
+	color: var(--code-char-literal-color);
+}
+
+span.vhdldigit { 
+	color: var(--code-vhdl-digit-color);
+}
+
+span.vhdlchar { 
+	color: var(--code-vhdl-char-color);
+}
+
+span.vhdlkeyword { 
+	color: var(--code-vhdl-keyword-color);
+}
+
+span.vhdllogic { 
+	color: var(--code-vhdl-logic-color);
+}
+
+blockquote {
+        background-color: var(--blockquote-background-color);
+        border-left: 2px solid var(--blockquote-border-color);
+>>>>>>> Stashed changes
         margin: 0 24px 0 4px;
         padding: 0 12px 0 16px;
 }
 
+<<<<<<< Updated upstream
 blockquote.DocNodeRTL {
    border-left: 0;
    border-right: 2px solid #9CAFD4;
@@ -465,6 +1121,10 @@ input.search {
 }
 */
 
+=======
+/* @end */
+
+>>>>>>> Stashed changes
 td.tiny {
 	font-size: 75%;
 }
@@ -472,18 +1132,31 @@ td.tiny {
 .dirtab {
 	padding: 4px;
 	border-collapse: collapse;
+<<<<<<< Updated upstream
 	border: 1px solid #A3B4D7;
 }
 
 th.dirtab {
 	background: #EBEFF6;
+=======
+	border: 1px solid var(--table-cell-border-color);
+}
+
+th.dirtab {
+	background-color: var(--table-header-background-color);
+	color: var(--table-header-foreground-color);
+>>>>>>> Stashed changes
 	font-weight: bold;
 }
 
 hr {
 	height: 0px;
 	border: none;
+<<<<<<< Updated upstream
 	border-top: 1px solid #4A6AAA;
+=======
+	border-top: 1px solid var(--separator-color);
+>>>>>>> Stashed changes
 }
 
 hr.footer {
@@ -511,14 +1184,23 @@ table.memberdecls {
 }
 
 .memberdecls td.glow, .fieldtable tr.glow {
+<<<<<<< Updated upstream
 	background-color: cyan;
 	box-shadow: 0 0 15px cyan;
+=======
+	background-color: var(--glow-color);
+	box-shadow: 0 0 15px var(--glow-color);
+>>>>>>> Stashed changes
 }
 
 .mdescLeft, .mdescRight,
 .memItemLeft, .memItemRight,
 .memTemplItemLeft, .memTemplItemRight, .memTemplParams {
+<<<<<<< Updated upstream
 	background-color: #F9FAFC;
+=======
+	background-color: var(--memdecl-background-color);
+>>>>>>> Stashed changes
 	border: none;
 	margin: 4px;
 	padding: 1px 0 0 8px;
@@ -526,11 +1208,19 @@ table.memberdecls {
 
 .mdescLeft, .mdescRight {
 	padding: 0px 8px 4px 8px;
+<<<<<<< Updated upstream
 	color: #555;
 }
 
 .memSeparator {
         border-bottom: 1px solid #DEE4F0;
+=======
+	color: var(--memdecl-foreground-color);
+}
+
+.memSeparator {
+        border-bottom: 1px solid var(--memdecl-separator-color);
+>>>>>>> Stashed changes
         line-height: 1px;
         margin: 0px;
         padding: 0px;
@@ -545,7 +1235,11 @@ table.memberdecls {
 }
 
 .memTemplParams {
+<<<<<<< Updated upstream
 	color: #4665A2;
+=======
+	color: var(--memdecl-template-color);
+>>>>>>> Stashed changes
         white-space: nowrap;
 	font-size: 80%;
 }
@@ -558,6 +1252,7 @@ table.memberdecls {
 
 .memtitle {
 	padding: 8px;
+<<<<<<< Updated upstream
 	border-top: 1px solid #A8B8D9;
 	border-left: 1px solid #A8B8D9;
 	border-right: 1px solid #A8B8D9;
@@ -567,6 +1262,17 @@ table.memberdecls {
 	background-image: url('nav_f.png');
 	background-repeat: repeat-x;
 	background-color: #E2E8F2;
+=======
+	border-top: 1px solid var(--memdef-border-color);
+	border-left: 1px solid var(--memdef-border-color);
+	border-right: 1px solid var(--memdef-border-color);
+	border-top-right-radius: 4px;
+	border-top-left-radius: 4px;
+	margin-bottom: -1px;
+	background-image: var(--memdef-title-gradient-image);
+	background-repeat: repeat-x;
+	background-color: var(--memdef-title-background-color);
+>>>>>>> Stashed changes
 	line-height: 1.25;
 	font-weight: 300;
 	float:left;
@@ -581,11 +1287,16 @@ table.memberdecls {
 
 .memtemplate {
 	font-size: 80%;
+<<<<<<< Updated upstream
 	color: #4665A2;
+=======
+	color: var(--memdef-template-color);
+>>>>>>> Stashed changes
 	font-weight: normal;
 	margin-left: 9px;
 }
 
+<<<<<<< Updated upstream
 .memnav {
 	background-color: #EBEFF6;
 	border: 1px solid #A3B4D7;
@@ -595,6 +1306,8 @@ table.memberdecls {
 	padding: 2px;
 }
 
+=======
+>>>>>>> Stashed changes
 .mempage {
 	width: 100%;
 }
@@ -613,7 +1326,11 @@ table.memberdecls {
 }
 
 .memitem.glow {
+<<<<<<< Updated upstream
          box-shadow: 0 0 15px cyan;
+=======
+         box-shadow: 0 0 15px var(--glow-color);
+>>>>>>> Stashed changes
 }
 
 .memname {
@@ -626,6 +1343,7 @@ table.memberdecls {
 }
 
 .memproto, dl.reflist dt {
+<<<<<<< Updated upstream
         border-top: 1px solid #A8B8D9;
         border-left: 1px solid #A8B8D9;
         border-right: 1px solid #A8B8D9;
@@ -648,10 +1366,27 @@ table.memberdecls {
 
 .overload {
         font-family: "courier new",courier,monospace;
+=======
+        border-top: 1px solid var(--memdef-border-color);
+        border-left: 1px solid var(--memdef-border-color);
+        border-right: 1px solid var(--memdef-border-color);
+        padding: 6px 0px 6px 0px;
+        color: var(--memdef-proto-text-color);
+        font-weight: bold;
+        text-shadow: var(--memdef-proto-text-shadow);
+        background-color: var(--memdef-proto-background-color);
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.15);
+        border-top-right-radius: 4px;
+}
+
+.overload {
+        font-family: var(--font-family-monospace);
+>>>>>>> Stashed changes
 	font-size: 65%;
 }
 
 .memdoc, dl.reflist dd {
+<<<<<<< Updated upstream
         border-bottom: 1px solid #A8B8D9;      
         border-left: 1px solid #A8B8D9;      
         border-right: 1px solid #A8B8D9; 
@@ -661,6 +1396,16 @@ table.memberdecls {
         background-image:url('nav_g.png');
         background-repeat:repeat-x;
         background-color: #FFFFFF;
+=======
+        border-bottom: 1px solid var(--memdef-border-color);
+        border-left: 1px solid var(--memdef-border-color);
+        border-right: 1px solid var(--memdef-border-color);
+        padding: 6px 10px 2px 10px;
+        border-top-width: 0;
+        background-image:url('nav_g.png');
+        background-repeat:repeat-x;
+        background-color: var(--memdef-doc-background-color);
+>>>>>>> Stashed changes
         /* opera specific markup */
         border-bottom-left-radius: 4px;
         border-bottom-right-radius: 4px;
@@ -693,7 +1438,11 @@ dl.reflist dd {
 }
 
 .paramname {
+<<<<<<< Updated upstream
 	color: #602020;
+=======
+	color: var(--memdef-param-name-color);
+>>>>>>> Stashed changes
 	white-space: nowrap;
 }
 .paramname em {
@@ -706,12 +1455,17 @@ dl.reflist dd {
 .params, .retval, .exception, .tparams {
         margin-left: 0px;
         padding-left: 0px;
+<<<<<<< Updated upstream
 }       
+=======
+}
+>>>>>>> Stashed changes
 
 .params .paramname, .retval .paramname, .tparams .paramname, .exception .paramname {
         font-weight: bold;
         vertical-align: top;
 }
+<<<<<<< Updated upstream
         
 .params .paramtype, .tparams .paramtype {
         font-style: italic;
@@ -720,6 +1474,16 @@ dl.reflist dd {
         
 .params .paramdir, .tparams .paramdir {
         font-family: "courier new",courier,monospace;
+=======
+
+.params .paramtype, .tparams .paramtype {
+        font-style: italic;
+        vertical-align: top;
+}
+
+.params .paramdir, .tparams .paramdir {
+        font-family: var(--font-family-monospace);
+>>>>>>> Stashed changes
         vertical-align: top;
 }
 
@@ -743,6 +1507,7 @@ span.mlabels {
 }
 
 span.mlabel {
+<<<<<<< Updated upstream
         background-color: #728DC1;
         border-top:1px solid #5373B4;
         border-left:1px solid #5373B4;
@@ -750,6 +1515,15 @@ span.mlabel {
         border-bottom:1px solid #C4CFE5;
 	text-shadow: none;
 	color: white;
+=======
+        background-color: var(--label-background-color);
+        border-top:1px solid var(--label-left-top-border-color);
+        border-left:1px solid var(--label-left-top-border-color);
+        border-right:1px solid var(--label-right-bottom-border-color);
+        border-bottom:1px solid var(--label-right-bottom-border-color);
+	text-shadow: none;
+	color: var(--label-foreground-color);
+>>>>>>> Stashed changes
 	margin-right: 4px;
 	padding: 2px 3px;
 	border-radius: 3px;
@@ -766,8 +1540,13 @@ span.mlabel {
 
 div.directory {
         margin: 10px 0px;
+<<<<<<< Updated upstream
         border-top: 1px solid #9CAFD4;
         border-bottom: 1px solid #9CAFD4;
+=======
+        border-top: 1px solid var(--directory-separator-color);
+        border-bottom: 1px solid var(--directory-separator-color);
+>>>>>>> Stashed changes
         width: 100%;
 }
 
@@ -803,9 +1582,20 @@ div.directory {
 	border-left: 1px solid rgba(0,0,0,0.05);
 }
 
+<<<<<<< Updated upstream
 .directory tr.even {
 	padding-left: 6px;
 	background-color: #F7F8FB;
+=======
+.directory tr.odd {
+	padding-left: 6px;
+	background-color: var(--index-odd-item-bg-color);
+}
+
+.directory tr.even {
+	padding-left: 6px;
+	background-color: var(--index-even-item-bg-color);
+>>>>>>> Stashed changes
 }
 
 .directory img {
@@ -823,11 +1613,19 @@ div.directory {
         cursor: pointer;
         padding-left: 2px;
         padding-right: 2px;
+<<<<<<< Updated upstream
 	color: #3D578C;
 }
 
 .arrow {
     color: #9CAFD4;
+=======
+	color: var(--page-link-color);
+}
+
+.arrow {
+    color: var(--nav-arrow-color);
+>>>>>>> Stashed changes
     -webkit-user-select: none;
     -khtml-user-select: none;
     -moz-user-select: none;
@@ -841,14 +1639,24 @@ div.directory {
 }
 
 .icon {
+<<<<<<< Updated upstream
     font-family: Arial, Helvetica;
+=======
+    font-family: var(--font-family-icon);
+    line-height: normal;
+>>>>>>> Stashed changes
     font-weight: bold;
     font-size: 12px;
     height: 14px;
     width: 16px;
     display: inline-block;
+<<<<<<< Updated upstream
     background-color: #728DC1;
     color: white;
+=======
+    background-color: var(--icon-background-color);
+    color: var(--icon-foreground-color);
+>>>>>>> Stashed changes
     text-align: center;
     border-radius: 4px;
     margin-left: 2px;
@@ -887,17 +1695,24 @@ div.directory {
     width: 24px;
     height: 18px;
     margin-bottom: 4px;
+<<<<<<< Updated upstream
     background-image:url('doc.png');
+=======
+    background-image:var(--icon-doc-image);
+>>>>>>> Stashed changes
     background-position: 0px -4px;
     background-repeat: repeat-y;
     vertical-align:top;
     display: inline-block;
 }
 
+<<<<<<< Updated upstream
 table.directory {
     font: 400 14px Roboto,sans-serif;
 }
 
+=======
+>>>>>>> Stashed changes
 /* @end */
 
 div.dynheader {
@@ -912,7 +1727,11 @@ div.dynheader {
 
 address {
 	font-style: normal;
+<<<<<<< Updated upstream
 	color: #2A3D61;
+=======
+	color: var(--footer-foreground-color);
+>>>>>>> Stashed changes
 }
 
 table.doxtable caption {
@@ -926,19 +1745,29 @@ table.doxtable {
 }
 
 table.doxtable td, table.doxtable th {
+<<<<<<< Updated upstream
 	border: 1px solid #2D4068;
+=======
+	border: 1px solid var(--table-cell-border-color);
+>>>>>>> Stashed changes
 	padding: 3px 7px 2px;
 }
 
 table.doxtable th {
+<<<<<<< Updated upstream
 	background-color: #374F7F;
 	color: #FFFFFF;
+=======
+	background-color: var(--table-header-background-color);
+	color: var(--table-header-foreground-color);
+>>>>>>> Stashed changes
 	font-size: 110%;
 	padding-bottom: 4px;
 	padding-top: 5px;
 }
 
 table.fieldtable {
+<<<<<<< Updated upstream
         /*width: 100%;*/
         margin-bottom: 10px;
         border: 1px solid #A8B8D9;
@@ -948,6 +1777,12 @@ table.fieldtable {
         border-radius: 4px;
         -moz-box-shadow: rgba(0, 0, 0, 0.15) 2px 2px 2px;
         -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.15);
+=======
+        margin-bottom: 10px;
+        border: 1px solid var(--memdef-border-color);
+        border-spacing: 0px;
+        border-radius: 4px;
+>>>>>>> Stashed changes
         box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.15);
 }
 
@@ -957,8 +1792,13 @@ table.fieldtable {
 
 .fieldtable td.fieldtype, .fieldtable td.fieldname {
         white-space: nowrap;
+<<<<<<< Updated upstream
         border-right: 1px solid #A8B8D9;
         border-bottom: 1px solid #A8B8D9;
+=======
+        border-right: 1px solid var(--memdef-border-color);
+        border-bottom: 1px solid var(--memdef-border-color);
+>>>>>>> Stashed changes
         vertical-align: top;
 }
 
@@ -967,14 +1807,23 @@ table.fieldtable {
 }
 
 .fieldtable td.fielddoc {
+<<<<<<< Updated upstream
         border-bottom: 1px solid #A8B8D9;
         /*width: 100%;*/
+=======
+        border-bottom: 1px solid var(--memdef-border-color);
+>>>>>>> Stashed changes
 }
 
 .fieldtable td.fielddoc p:first-child {
         margin-top: 0px;
+<<<<<<< Updated upstream
 }       
         
+=======
+}
+
+>>>>>>> Stashed changes
 .fieldtable td.fielddoc p:last-child {
         margin-bottom: 2px;
 }
@@ -984,15 +1833,24 @@ table.fieldtable {
 }
 
 .fieldtable th {
+<<<<<<< Updated upstream
         background-image:url('nav_f.png');
         background-repeat:repeat-x;
         background-color: #E2E8F2;
         font-size: 90%;
         color: #253555;
+=======
+        background-image: var(--memdef-title-gradient-image);
+        background-repeat:repeat-x;
+        background-color: var(--memdef-title-background-color);
+        font-size: 90%;
+        color: var(--memdef-proto-text-color);
+>>>>>>> Stashed changes
         padding-bottom: 4px;
         padding-top: 5px;
         text-align:left;
         font-weight: 400;
+<<<<<<< Updated upstream
         -moz-border-radius-topleft: 4px;
         -moz-border-radius-topright: 4px;
         -webkit-border-top-left-radius: 4px;
@@ -1000,6 +1858,11 @@ table.fieldtable {
         border-top-left-radius: 4px;
         border-top-right-radius: 4px;
         border-bottom: 1px solid #A8B8D9;
+=======
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+        border-bottom: 1px solid var(--memdef-border-color);
+>>>>>>> Stashed changes
 }
 
 
@@ -1007,7 +1870,11 @@ table.fieldtable {
 	top: 0px;
 	left: 10px;
 	height: 36px;
+<<<<<<< Updated upstream
 	background-image: url('tab_b.png');
+=======
+	background-image: var(--nav-gradient-image);
+>>>>>>> Stashed changes
 	z-index: 101;
 	overflow: hidden;
 	font-size: 13px;
@@ -1016,13 +1883,22 @@ table.fieldtable {
 .navpath ul
 {
 	font-size: 11px;
+<<<<<<< Updated upstream
 	background-image:url('tab_b.png');
+=======
+	background-image: var(--nav-gradient-image);
+>>>>>>> Stashed changes
 	background-repeat:repeat-x;
 	background-position: 0 -5px;
 	height:30px;
 	line-height:30px;
+<<<<<<< Updated upstream
 	color:#8AA0CC;
 	border:solid 1px #C2CDE4;
+=======
+	color:var(--nav-text-normal-color);
+	border:solid 1px var(--nav-breadcrumb-border-color);
+>>>>>>> Stashed changes
 	overflow:hidden;
 	margin:0px;
 	padding:0px;
@@ -1034,10 +1910,17 @@ table.fieldtable {
 	float:left;
 	padding-left:10px;
 	padding-right:15px;
+<<<<<<< Updated upstream
 	background-image:url('bc_s.png');
 	background-repeat:no-repeat;
 	background-position:right;
 	color:#364D7C;
+=======
+	background-image:var(--nav-breadcrumb-image);
+	background-repeat:no-repeat;
+	background-position:right;
+	color: var(--nav-foreground-color);
+>>>>>>> Stashed changes
 }
 
 .navpath li.navelem a
@@ -1046,15 +1929,27 @@ table.fieldtable {
 	display:block;
 	text-decoration: none;
 	outline: none;
+<<<<<<< Updated upstream
 	color: #283A5D;
 	font-family: 'Lucida Grande',Geneva,Helvetica,Arial,sans-serif;
 	text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.9);
 	text-decoration: none;        
+=======
+	color: var(--nav-text-normal-color);
+	font-family: var(--font-family-nav);
+	text-shadow: var(--nav-text-normal-shadow);
+	text-decoration: none;
+>>>>>>> Stashed changes
 }
 
 .navpath li.navelem a:hover
 {
+<<<<<<< Updated upstream
 	color:#6884BD;
+=======
+	color: var(--nav-text-hover-color);
+	text-shadow: var(--nav-text-hover-shadow);
+>>>>>>> Stashed changes
 }
 
 .navpath li.footer
@@ -1066,7 +1961,11 @@ table.fieldtable {
         background-image:none;
         background-repeat:no-repeat;
         background-position:right;
+<<<<<<< Updated upstream
         color:#364D7C;
+=======
+        color: var(--footer-foreground-color);
+>>>>>>> Stashed changes
         font-size: 8pt;
 }
 
@@ -1078,7 +1977,11 @@ div.summary
 	padding-right: 5px;
 	width: 50%;
 	text-align: right;
+<<<<<<< Updated upstream
 }       
+=======
+}
+>>>>>>> Stashed changes
 
 div.summary a
 {
@@ -1093,7 +1996,11 @@ table.classindex
         margin-right: 3%;
         width: 94%;
         border: 0;
+<<<<<<< Updated upstream
         border-spacing: 0; 
+=======
+        border-spacing: 0;
+>>>>>>> Stashed changes
         padding: 0;
 }
 
@@ -1111,11 +2018,19 @@ div.ingroups a
 
 div.header
 {
+<<<<<<< Updated upstream
         background-image:url('nav_h.png');
         background-repeat:repeat-x;
 	background-color: #F9FAFC;
 	margin:  0px;
 	border-bottom: 1px solid #C4CFE5;
+=======
+        background-image: var(--header-gradient-image);
+        background-repeat:repeat-x;
+	background-color: var(--header-background-color);
+	margin:  0px;
+	border-bottom: 1px solid var(--header-separator-color);
+>>>>>>> Stashed changes
 }
 
 div.headertitle
@@ -1138,11 +2053,14 @@ dl.section {
 	padding-left: 0px;
 }
 
+<<<<<<< Updated upstream
 dl.section.DocNodeRTL {
   margin-right: 0px;
   padding-right: 0px;
 }
 
+=======
+>>>>>>> Stashed changes
 dl.note {
   margin-left: -7px;
   padding-left: 3px;
@@ -1150,6 +2068,7 @@ dl.note {
   border-color: #D0C000;
 }
 
+<<<<<<< Updated upstream
 dl.note.DocNodeRTL {
   margin-left: 0;
   padding-left: 0;
@@ -1160,6 +2079,8 @@ dl.note.DocNodeRTL {
   border-color: #D0C000;
 }
 
+=======
+>>>>>>> Stashed changes
 dl.warning, dl.attention {
   margin-left: -7px;
   padding-left: 3px;
@@ -1167,6 +2088,7 @@ dl.warning, dl.attention {
   border-color: #FF0000;
 }
 
+<<<<<<< Updated upstream
 dl.warning.DocNodeRTL, dl.attention.DocNodeRTL {
   margin-left: 0;
   padding-left: 0;
@@ -1177,6 +2099,8 @@ dl.warning.DocNodeRTL, dl.attention.DocNodeRTL {
   border-color: #FF0000;
 }
 
+=======
+>>>>>>> Stashed changes
 dl.pre, dl.post, dl.invariant {
   margin-left: -7px;
   padding-left: 3px;
@@ -1184,6 +2108,7 @@ dl.pre, dl.post, dl.invariant {
   border-color: #00D000;
 }
 
+<<<<<<< Updated upstream
 dl.pre.DocNodeRTL, dl.post.DocNodeRTL, dl.invariant.DocNodeRTL {
   margin-left: 0;
   padding-left: 0;
@@ -1194,6 +2119,8 @@ dl.pre.DocNodeRTL, dl.post.DocNodeRTL, dl.invariant.DocNodeRTL {
   border-color: #00D000;
 }
 
+=======
+>>>>>>> Stashed changes
 dl.deprecated {
   margin-left: -7px;
   padding-left: 3px;
@@ -1201,6 +2128,7 @@ dl.deprecated {
   border-color: #505050;
 }
 
+<<<<<<< Updated upstream
 dl.deprecated.DocNodeRTL {
   margin-left: 0;
   padding-left: 0;
@@ -1211,6 +2139,8 @@ dl.deprecated.DocNodeRTL {
   border-color: #505050;
 }
 
+=======
+>>>>>>> Stashed changes
 dl.todo {
   margin-left: -7px;
   padding-left: 3px;
@@ -1218,6 +2148,7 @@ dl.todo {
   border-color: #00C0E0;
 }
 
+<<<<<<< Updated upstream
 dl.todo.DocNodeRTL {
   margin-left: 0;
   padding-left: 0;
@@ -1228,6 +2159,8 @@ dl.todo.DocNodeRTL {
   border-color: #00C0E0;
 }
 
+=======
+>>>>>>> Stashed changes
 dl.test {
   margin-left: -7px;
   padding-left: 3px;
@@ -1235,6 +2168,7 @@ dl.test {
   border-color: #3030E0;
 }
 
+<<<<<<< Updated upstream
 dl.test.DocNodeRTL {
   margin-left: 0;
   padding-left: 0;
@@ -1245,6 +2179,8 @@ dl.test.DocNodeRTL {
   border-color: #3030E0;
 }
 
+=======
+>>>>>>> Stashed changes
 dl.bug {
   margin-left: -7px;
   padding-left: 3px;
@@ -1252,6 +2188,7 @@ dl.bug {
   border-color: #C08050;
 }
 
+<<<<<<< Updated upstream
 dl.bug.DocNodeRTL {
   margin-left: 0;
   padding-left: 0;
@@ -1262,11 +2199,21 @@ dl.bug.DocNodeRTL {
   border-color: #C08050;
 }
 
+=======
+>>>>>>> Stashed changes
 dl.section dd {
 	margin-bottom: 6px;
 }
 
 
+<<<<<<< Updated upstream
+=======
+#projectrow
+{
+	height: 56px;
+}
+
+>>>>>>> Stashed changes
 #projectlogo
 {
 	text-align: center;
@@ -1282,10 +2229,15 @@ dl.section dd {
 #projectalign
 {
         vertical-align: middle;
+<<<<<<< Updated upstream
+=======
+        padding-left: 0.5em;
+>>>>>>> Stashed changes
 }
 
 #projectname
 {
+<<<<<<< Updated upstream
 	font: 300% Tahoma, Arial,sans-serif;
 	margin: 0px;
 	padding: 2px 0px;
@@ -1294,13 +2246,30 @@ dl.section dd {
 #projectbrief
 {
 	font: 120% Tahoma, Arial,sans-serif;
+=======
+	font-size: 200%;
+	font-family: var(--font-family-title);
+	margin: 0px;
+	padding: 2px 0px;
+}
+
+#projectbrief
+{
+	font-size: 90%;
+        font-family: var(--font-family-title);
+>>>>>>> Stashed changes
 	margin: 0px;
 	padding: 0px;
 }
 
 #projectnumber
 {
+<<<<<<< Updated upstream
 	font: 50% Tahoma, Arial,sans-serif;
+=======
+	font-size: 50%;
+	font-family: 50% var(--font-family-title);
+>>>>>>> Stashed changes
 	margin: 0px;
 	padding: 0px;
 }
@@ -1310,7 +2279,12 @@ dl.section dd {
 	padding: 0px;
 	margin: 0px;
 	width: 100%;
+<<<<<<< Updated upstream
 	border-bottom: 1px solid #5373B4;
+=======
+	border-bottom: 1px solid var(--title-separator-color);
+	background-color: var(--title-background-color);
+>>>>>>> Stashed changes
 }
 
 .image
@@ -1343,32 +2317,53 @@ dl.section dd {
 	font-weight: bold;
 }
 
+<<<<<<< Updated upstream
 div.zoom
 {
 	border: 1px solid #90A5CE;
 }
 
+=======
+>>>>>>> Stashed changes
 dl.citelist {
         margin-bottom:50px;
 }
 
 dl.citelist dt {
+<<<<<<< Updated upstream
         color:#334975;
+=======
+        color:var(--citation-label-color);
+>>>>>>> Stashed changes
         float:left;
         font-weight:bold;
         margin-right:10px;
         padding:5px;
+<<<<<<< Updated upstream
 }
 
 dl.citelist dd {
         margin:2px 0;
+=======
+        text-align:right;
+        width:52px;
+}
+
+dl.citelist dd {
+        margin:2px 0 2px 72px;
+>>>>>>> Stashed changes
         padding:5px 0;
 }
 
 div.toc {
         padding: 14px 25px;
+<<<<<<< Updated upstream
         background-color: #F4F6FA;
         border: 1px solid #D8DFEE;
+=======
+        background-color: var(--toc-background-color);
+        border: 1px solid var(--toc-border-color);
+>>>>>>> Stashed changes
         border-radius: 7px 7px 7px 7px;
         float: right;
         height: auto;
@@ -1376,6 +2371,7 @@ div.toc {
         width: 200px;
 }
 
+<<<<<<< Updated upstream
 .PageDocRTL-title div.toc {
   float: left !important;
   text-align: right;
@@ -1384,11 +2380,17 @@ div.toc {
 div.toc li {
         background: url("bdwn.png") no-repeat scroll 0 5px transparent;
         font: 10px/1.2 Verdana,DejaVu Sans,Geneva,sans-serif;
+=======
+div.toc li {
+        background: url("bdwn.png") no-repeat scroll 0 5px transparent;
+        font: 10px/1.2 var(--font-family-toc);
+>>>>>>> Stashed changes
         margin-top: 5px;
         padding-left: 10px;
         padding-top: 2px;
 }
 
+<<<<<<< Updated upstream
 .PageDocRTL-title div.toc li {
   background-position-x: right !important;
   padding-left: 0 !important;
@@ -1398,6 +2400,11 @@ div.toc li {
 div.toc h3 {
         font: bold 12px/1.2 Arial,FreeSans,sans-serif;
 	color: #4665A2;
+=======
+div.toc h3 {
+        font: bold 12px/1.2 var(--font-family-toc);
+	color: var(--toc-header-color);
+>>>>>>> Stashed changes
         border-bottom: 0 none;
         margin: 0;
 }
@@ -1406,7 +2413,11 @@ div.toc ul {
         list-style: none outside none;
         border: medium none;
         padding: 0px;
+<<<<<<< Updated upstream
 }       
+=======
+}
+>>>>>>> Stashed changes
 
 div.toc li.level1 {
         margin-left: 0px;
@@ -1424,6 +2435,7 @@ div.toc li.level4 {
         margin-left: 45px;
 }
 
+<<<<<<< Updated upstream
 .PageDocRTL-title div.toc li.level1 {
   margin-left: 0 !important;
   margin-right: 0;
@@ -1442,11 +2454,25 @@ div.toc li.level4 {
 .PageDocRTL-title div.toc li.level4 {
   margin-left: 0 !important;
   margin-right: 45px;
+=======
+span.emoji {
+        /* font family used at the site: https://unicode.org/emoji/charts/full-emoji-list.html
+         * font-family: "Noto Color Emoji", "Apple Color Emoji", "Segoe UI Emoji", Times, Symbola, Aegyptus, Code2000, Code2001, Code2002, Musica, serif, LastResort;
+         */
+}
+
+span.obfuscator {
+  display: none;
+>>>>>>> Stashed changes
 }
 
 .inherit_header {
         font-weight: bold;
+<<<<<<< Updated upstream
         color: gray;
+=======
+        color: var(--inherit-header-color);
+>>>>>>> Stashed changes
         cursor: pointer;
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
@@ -1478,11 +2504,20 @@ tr.heading h2 {
 
 #powerTip {
 	cursor: default;
+<<<<<<< Updated upstream
 	white-space: nowrap;
 	background-color: white;
 	border: 1px solid gray;
 	border-radius: 4px 4px 4px 4px;
 	box-shadow: 1px 1px 7px gray;
+=======
+	/*white-space: nowrap;*/
+        color: var(--tooltip-foreground-color);
+	background-color: var(--tooltip-background-color);
+	border: 1px solid var(--tooltip-border-color);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: var(--tooltip-shadow);
+>>>>>>> Stashed changes
 	display: none;
 	font-size: smaller;
 	max-width: 80%;
@@ -1493,7 +2528,11 @@ tr.heading h2 {
 }
 
 #powerTip div.ttdoc {
+<<<<<<< Updated upstream
         color: grey;
+=======
+        color: var(--tooltip-doc-color);
+>>>>>>> Stashed changes
 	font-style: italic;
 }
 
@@ -1501,18 +2540,35 @@ tr.heading h2 {
         font-weight: bold;
 }
 
+<<<<<<< Updated upstream
+=======
+#powerTip a {
+	color: var(--tooltip-link-color);
+}
+
+>>>>>>> Stashed changes
 #powerTip div.ttname {
         font-weight: bold;
 }
 
 #powerTip div.ttdeci {
+<<<<<<< Updated upstream
         color: #006318;
+=======
+        color: var(--tooltip-declaration-color);
+>>>>>>> Stashed changes
 }
 
 #powerTip div {
         margin: 0px;
         padding: 0px;
+<<<<<<< Updated upstream
         font: 12px/16px Roboto,sans-serif;
+=======
+        font-size: 12px;
+       	font-family: var(--font-family-tooltip);
+	line-height: 16px;
+>>>>>>> Stashed changes
 }
 
 #powerTip:before, #powerTip:after {
@@ -1557,12 +2613,21 @@ tr.heading h2 {
 }
 
 #powerTip.n:after, #powerTip.ne:after, #powerTip.nw:after {
+<<<<<<< Updated upstream
 	border-top-color: #FFFFFF;
 	border-width: 10px;
 	margin: 0px -10px;
 }
 #powerTip.n:before {
 	border-top-color: #808080;
+=======
+	border-top-color: var(--tooltip-background-color);
+	border-width: 10px;
+	margin: 0px -10px;
+}
+#powerTip.n:before, #powerTip.ne:before, #powerTip.nw:before {
+	border-top-color: var(--tooltip-border-color);
+>>>>>>> Stashed changes
 	border-width: 11px;
 	margin: 0px -11px;
 }
@@ -1585,13 +2650,21 @@ tr.heading h2 {
 }
 
 #powerTip.s:after, #powerTip.se:after, #powerTip.sw:after {
+<<<<<<< Updated upstream
 	border-bottom-color: #FFFFFF;
+=======
+	border-bottom-color: var(--tooltip-background-color);
+>>>>>>> Stashed changes
 	border-width: 10px;
 	margin: 0px -10px;
 }
 
 #powerTip.s:before, #powerTip.se:before, #powerTip.sw:before {
+<<<<<<< Updated upstream
 	border-bottom-color: #808080;
+=======
+	border-bottom-color: var(--tooltip-border-color);
+>>>>>>> Stashed changes
 	border-width: 11px;
 	margin: 0px -11px;
 }
@@ -1612,13 +2685,21 @@ tr.heading h2 {
 	left: 100%;
 }
 #powerTip.e:after {
+<<<<<<< Updated upstream
 	border-left-color: #FFFFFF;
+=======
+	border-left-color: var(--tooltip-border-color);
+>>>>>>> Stashed changes
 	border-width: 10px;
 	top: 50%;
 	margin-top: -10px;
 }
 #powerTip.e:before {
+<<<<<<< Updated upstream
 	border-left-color: #808080;
+=======
+	border-left-color: var(--tooltip-border-color);
+>>>>>>> Stashed changes
 	border-width: 11px;
 	top: 50%;
 	margin-top: -11px;
@@ -1628,13 +2709,21 @@ tr.heading h2 {
 	right: 100%;
 }
 #powerTip.w:after {
+<<<<<<< Updated upstream
 	border-right-color: #FFFFFF;
+=======
+	border-right-color: var(--tooltip-border-color);
+>>>>>>> Stashed changes
 	border-width: 10px;
 	top: 50%;
 	margin-top: -10px;
 }
 #powerTip.w:before {
+<<<<<<< Updated upstream
 	border-right-color: #808080;
+=======
+	border-right-color: var(--tooltip-border-color);
+>>>>>>> Stashed changes
 	border-width: 11px;
 	top: 50%;
 	margin-top: -11px;
@@ -1661,7 +2750,10 @@ tr.heading h2 {
 
 /* @group Markdown */
 
+<<<<<<< Updated upstream
 /*
+=======
+>>>>>>> Stashed changes
 table.markdownTable {
 	border-collapse:collapse;
         margin-top: 4px;
@@ -1669,6 +2761,7 @@ table.markdownTable {
 }
 
 table.markdownTable td, table.markdownTable th {
+<<<<<<< Updated upstream
 	border: 1px solid #2D4068;
 	padding: 3px 7px 2px;
 }
@@ -1710,6 +2803,9 @@ table.markdownTable {
 
 table.markdownTable td, table.markdownTable th {
 	border: 1px solid #2D4068;
+=======
+	border: 1px solid var(--table-cell-border-color);
+>>>>>>> Stashed changes
 	padding: 3px 7px 2px;
 }
 
@@ -1717,8 +2813,13 @@ table.markdownTable tr {
 }
 
 th.markdownTableHeadLeft, th.markdownTableHeadRight, th.markdownTableHeadCenter, th.markdownTableHeadNone {
+<<<<<<< Updated upstream
 	background-color: #374F7F;
 	color: #FFFFFF;
+=======
+	background-color: var(--table-header-background-color);
+	color: var(--table-header-foreground-color);
+>>>>>>> Stashed changes
 	font-size: 110%;
 	padding-bottom: 4px;
 	padding-top: 5px;
@@ -1736,6 +2837,7 @@ th.markdownTableHeadCenter, td.markdownTableBodyCenter {
 	text-align: center
 }
 
+<<<<<<< Updated upstream
 .DocNodeRTL {
   text-align: right;
   direction: rtl;
@@ -1762,6 +2864,11 @@ tt, code, kbd, samp
 {
   display: inline-block;
   direction:ltr; 
+=======
+tt, code, kbd, samp
+{
+  display: inline-block;
+>>>>>>> Stashed changes
 }
 /* @end */
 

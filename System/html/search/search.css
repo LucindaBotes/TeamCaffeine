@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 /*---------------- Search Box */
 
 #FSearchBox {
@@ -68,10 +69,102 @@
     height:19px;
     background:url('search_r.png') no-repeat;
     background-position:left;
+=======
+/*---------------- Search Box positioning */
+
+#main-menu > li:last-child {
+    /* This <li> object is the parent of the search bar */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 36px;
+    margin-right: 1em;
+}
+
+/*---------------- Search box styling */
+
+.SRPage * {
+    font-weight: normal;
+    line-height: normal;
+}
+
+dark-mode-toggle {
+    margin-left: 5px;
+    display: flex;
+    float: right;
+}
+
+#MSearchBox {
+    display: inline-block;
+    white-space : nowrap;
+    background: var(--search-background-color);
+    border-radius: 0.65em;
+    box-shadow: var(--search-box-shadow);
+    z-index: 102;
+}
+
+#MSearchBox .left {
+    display: inline-block;
+    vertical-align: middle;
+    height: 1.4em;
+}
+
+#MSearchSelect {
+    display: inline-block;
+    vertical-align: middle;
+    width: 20px;
+    height: 19px;
+    background-image: var(--search-magnification-select-image);
+    margin: 0 0 0 0.3em;
+    padding: 0;
+}
+
+#MSearchSelectExt {
+    display: inline-block;
+    vertical-align: middle;
+    width: 10px;
+    height: 19px;
+    background-image: var(--search-magnification-image);
+    margin: 0 0 0 0.5em;
+    padding: 0;
+}
+
+
+#MSearchField {
+    display: inline-block;
+    vertical-align: middle;
+    width: 7.5em;
+    height: 19px;
+    margin: 0 0.15em;
+    padding: 0;
+    line-height: 1em;
+    border:none;
+    color: var(--search-foreground-color);
+    outline: none;
+    font-family: var(--font-family-search);
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+    background: none;
+}
+
+@media(hover: none) {
+    /* to avoid zooming on iOS */
+    #MSearchField {
+        font-size: 16px;
+    }
+}
+
+#MSearchBox .right {
+    display: inline-block;
+    vertical-align: middle;
+    width: 1.4em;
+    height: 1.4em;
+>>>>>>> Stashed changes
 }
 
 #MSearchClose {
     display: none;
+<<<<<<< Updated upstream
     position: absolute;
     top: 4px;
     background : none;
@@ -93,14 +186,41 @@
     color: #000000;
 }
 
+=======
+    font-size: inherit;
+    background : none;
+    border: none;
+    margin: 0;
+    padding: 0;
+    outline: none;
+
+}
+
+#MSearchCloseImg {
+    padding: 0.3em;
+    margin: 0;
+}
+
+.MSearchBoxActive #MSearchField {
+    color: var(--search-active-color);
+}
+
+
+
+>>>>>>> Stashed changes
 /*---------------- Search filter selection */
 
 #MSearchSelectWindow {
     display: none;
     position: absolute;
     left: 0; top: 0;
+<<<<<<< Updated upstream
     border: 1px solid #90A5CE;
     background-color: #F9FAFC;
+=======
+    border: 1px solid var(--search-filter-border-color);
+    background-color: var(--search-filter-background-color);
+>>>>>>> Stashed changes
     z-index: 10001;
     padding-top: 4px;
     padding-bottom: 4px;
@@ -113,7 +233,11 @@
 }
 
 .SelectItem {
+<<<<<<< Updated upstream
     font: 8pt Arial, Verdana, sans-serif;
+=======
+    font: 8pt var(--font-family-search);
+>>>>>>> Stashed changes
     padding-left:  2px;
     padding-right: 12px;
     border: 0px;
@@ -121,7 +245,11 @@
 
 span.SelectionMark {
     margin-right: 4px;
+<<<<<<< Updated upstream
     font-family: monospace;
+=======
+    font-family: var(--font-family-monospace);
+>>>>>>> Stashed changes
     outline-style: none;
     text-decoration: none;
 }
@@ -129,7 +257,11 @@ span.SelectionMark {
 a.SelectItem {
     display: block;
     outline-style: none;
+<<<<<<< Updated upstream
     color: #000000; 
+=======
+    color: var(--search-filter-foreground-color);
+>>>>>>> Stashed changes
     text-decoration: none;
     padding-left:   6px;
     padding-right: 12px;
@@ -137,14 +269,23 @@ a.SelectItem {
 
 a.SelectItem:focus,
 a.SelectItem:active {
+<<<<<<< Updated upstream
     color: #000000; 
+=======
+    color: var(--search-filter-foreground-color);
+>>>>>>> Stashed changes
     outline-style: none;
     text-decoration: none;
 }
 
 a.SelectItem:hover {
+<<<<<<< Updated upstream
     color: #FFFFFF;
     background-color: #3D578C;
+=======
+    color: var(--search-filter-highlight-text-color);
+    background-color: var(--search-filter-highlight-bg-color);
+>>>>>>> Stashed changes
     outline-style: none;
     text-decoration: none;
     cursor: pointer;
@@ -154,7 +295,11 @@ a.SelectItem:hover {
 /*---------------- Search results window */
 
 iframe#MSearchResults {
+<<<<<<< Updated upstream
     width: 60ex;
+=======
+    /*width: 60ex;*/
+>>>>>>> Stashed changes
     height: 15em;
 }
 
@@ -162,9 +307,18 @@ iframe#MSearchResults {
     display: none;
     position: absolute;
     left: 0; top: 0;
+<<<<<<< Updated upstream
     border: 1px solid #000;
     background-color: #EEF1F7;
     z-index:10000;
+=======
+    border: 1px solid var(--search-results-border-color);
+    background-color: var(--search-results-background-color);
+    z-index:10000;
+    width: 300px;
+    height: 400px;
+    overflow: auto;
+>>>>>>> Stashed changes
 }
 
 /* ----------------------------------- */
@@ -172,7 +326,10 @@ iframe#MSearchResults {
 
 #SRIndex {
     clear:both; 
+<<<<<<< Updated upstream
     padding-bottom: 15px;
+=======
+>>>>>>> Stashed changes
 }
 
 .SREntry {
@@ -185,8 +342,14 @@ iframe#MSearchResults {
     padding: 1px 5px;
 }
 
+<<<<<<< Updated upstream
 body.SRPage {
     margin: 5px 2px;
+=======
+div.SRPage {
+    margin: 5px 2px;
+    background-color: var(--search-results-background-color);
+>>>>>>> Stashed changes
 }
 
 .SRChildren {
@@ -198,17 +361,29 @@ body.SRPage {
 }
 
 .SRSymbol {
+<<<<<<< Updated upstream
     font-weight: bold; 
     color: #425E97;
     font-family: Arial, Verdana, sans-serif;
+=======
+    font-weight: bold;
+    color: var(--search-results-foreground-color);
+    font-family: var(--font-family-search);
+>>>>>>> Stashed changes
     text-decoration: none;
     outline: none;
 }
 
 a.SRScope {
     display: block;
+<<<<<<< Updated upstream
     color: #425E97; 
     font-family: Arial, Verdana, sans-serif;
+=======
+    color: var(--search-results-foreground-color);
+    font-family: var(--font-family-search);
+    font-size: 8pt;
+>>>>>>> Stashed changes
     text-decoration: none;
     outline: none;
 }
@@ -220,25 +395,38 @@ a.SRScope:focus, a.SRScope:active {
 
 span.SRScope {
     padding-left: 4px;
+<<<<<<< Updated upstream
+=======
+    font-family: var(--font-family-search);
+>>>>>>> Stashed changes
 }
 
 .SRPage .SRStatus {
     padding: 2px 5px;
     font-size: 8pt;
     font-style: italic;
+<<<<<<< Updated upstream
+=======
+    font-family: var(--font-family-search);
+>>>>>>> Stashed changes
 }
 
 .SRResult {
     display: none;
 }
 
+<<<<<<< Updated upstream
 DIV.searchresults {
+=======
+div.searchresults {
+>>>>>>> Stashed changes
     margin-left: 10px;
     margin-right: 10px;
 }
 
 /*---------------- External search page results */
 
+<<<<<<< Updated upstream
 .searchresult {
     background-color: #F0F3F8;
 }
@@ -247,6 +435,12 @@ DIV.searchresults {
    color: white;
    padding: 5px 5px 3px 5px;
    background-image: url("../tab_a.png");
+=======
+.pages b {
+   color: white;
+   padding: 5px 5px 3px 5px;
+   background-image: var(--nav-gradient-active-image-parent);
+>>>>>>> Stashed changes
    background-repeat: repeat-x;
    text-shadow: 0 1px 1px #000000;
 }

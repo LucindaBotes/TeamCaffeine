@@ -1,0 +1,656 @@
+\hypertarget{unit__test__framework_8h_source}{}\doxysection{unit\+\_\+test\+\_\+framework.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef UNIT\_TEST\_FRAMEWORK\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define UNIT\_TEST\_FRAMEWORK\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <map>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <utility>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <sstream>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <cmath>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <typeinfo>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <type\_traits>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <cstdlib>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <iterator>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include <algorithm>}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include <exception>}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include <stdexcept>}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{comment}{// For compatibility with Visual Studio}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include <ciso646>}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{comment}{// Place the following line of code in your test file to generate a}}
+\DoxyCodeLine{24 \textcolor{comment}{// main() function:}}
+\DoxyCodeLine{25 \textcolor{comment}{// TEST\_MAIN()}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{keyword}{using }Test\_func\_t = void (*)();}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#define TEST(name)                                                            \(\backslash\)}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{    static void name();                                                       \(\backslash\)}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{    static TestRegisterer register\_\#\#name((\#name), name);                     \(\backslash\)}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{    static void name()}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#define TEST\_MAIN()                                                           \(\backslash\)}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{    int main(int argc, char** argv) \{                                         \(\backslash\)}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{        return TestSuite::get().run\_tests(argc, argv);                        \(\backslash\)}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{    \}                                                                         \(\backslash\)}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{    TEST\_SUITE\_INSTANCE();}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{keyword}{struct }\mbox{\hyperlink{struct_test_case}{TestCase}} \{}
+\DoxyCodeLine{43     \mbox{\hyperlink{struct_test_case}{TestCase}}(\textcolor{keyword}{const} std::string\& name\_, Test\_func\_t test\_func\_)}
+\DoxyCodeLine{44         : name(name\_), test\_func(test\_func\_) \{\}}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46     \textcolor{keywordtype}{void} run(\textcolor{keywordtype}{bool} quiet\_mode);}
+\DoxyCodeLine{47     \textcolor{keywordtype}{void} print(\textcolor{keywordtype}{bool} quiet\_mode);}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49     std::string name;}
+\DoxyCodeLine{50     Test\_func\_t test\_func;}
+\DoxyCodeLine{51     std::string failure\_msg\{\};}
+\DoxyCodeLine{52     std::string exception\_msg\{\};}
+\DoxyCodeLine{53 \};}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 \textcolor{keyword}{class }\mbox{\hyperlink{class_test_suite}{TestSuite}} \{}
+\DoxyCodeLine{57 \textcolor{keyword}{public}:}
+\DoxyCodeLine{58     \textcolor{keyword}{static} \mbox{\hyperlink{class_test_suite}{TestSuite}}\& get() \{}
+\DoxyCodeLine{59         \textcolor{keywordflow}{if} (not instance) \{}
+\DoxyCodeLine{60             instance = \textcolor{keyword}{new} \mbox{\hyperlink{class_test_suite}{TestSuite}};}
+\DoxyCodeLine{61         \}}
+\DoxyCodeLine{62         \textcolor{keywordflow}{return} *instance;}
+\DoxyCodeLine{63     \}}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65     \textcolor{keywordtype}{void} add\_test(\textcolor{keyword}{const} std::string\& test\_name, Test\_func\_t test) \{}
+\DoxyCodeLine{66         tests\_.insert(\{test\_name, \mbox{\hyperlink{struct_test_case}{TestCase}}\{test\_name, test\}\});}
+\DoxyCodeLine{67     \}}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69     \textcolor{keywordtype}{int} run\_tests(\textcolor{keywordtype}{int} argc, \textcolor{keywordtype}{char}** argv);}
+\DoxyCodeLine{70     \textcolor{keywordtype}{void} print\_results();}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72     \textcolor{keywordtype}{void} enable\_quiet\_mode() \{}
+\DoxyCodeLine{73         quiet\_mode = \textcolor{keyword}{true};}
+\DoxyCodeLine{74     \}}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76     std::ostream\& print\_test\_names(std::ostream\& os) \{}
+\DoxyCodeLine{77         \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& test\_pair : tests\_) \{}
+\DoxyCodeLine{78             os << test\_pair.first << \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{79         \}}
+\DoxyCodeLine{80         \textcolor{keywordflow}{return} os;}
+\DoxyCodeLine{81     \}}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83     \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{class_test_suite_destroyer}{TestSuiteDestroyer}};}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85 \textcolor{keyword}{private}:}
+\DoxyCodeLine{86     \mbox{\hyperlink{class_test_suite}{TestSuite}}() \{}
+\DoxyCodeLine{87         \textcolor{keyword}{auto} func = []() \{}
+\DoxyCodeLine{88             \textcolor{keywordflow}{if} (TestSuite::incomplete) \{}
+\DoxyCodeLine{89                 std::cout << \textcolor{stringliteral}{"{}ERROR: premature call to exit()"{}} << std::endl;}
+\DoxyCodeLine{90                 std::abort();}
+\DoxyCodeLine{91             \}}
+\DoxyCodeLine{92         \};}
+\DoxyCodeLine{93         std::atexit(func);}
+\DoxyCodeLine{94 \textcolor{preprocessor}{\#ifdef \_GLIBCXX\_HAVE\_AT\_QUICK\_EXIT}}
+\DoxyCodeLine{95         std::at\_quick\_exit(func);}
+\DoxyCodeLine{96 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{97     \}}
+\DoxyCodeLine{98     \mbox{\hyperlink{class_test_suite}{TestSuite}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_test_suite}{TestSuite}}\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{99     \textcolor{keywordtype}{bool} operator=(\textcolor{keyword}{const} \mbox{\hyperlink{class_test_suite}{TestSuite}}\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{100     \mbox{\hyperlink{class_test_suite}{\string~TestSuite}}() \{\}}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102     std::vector<std::string> get\_test\_names\_to\_run(\textcolor{keywordtype}{int} argc, \textcolor{keywordtype}{char}** argv);}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104     \textcolor{keyword}{static} \mbox{\hyperlink{class_test_suite}{TestSuite}}* instance;}
+\DoxyCodeLine{105     std::map<std::string, TestCase> tests\_;}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107     \textcolor{keywordtype}{bool} quiet\_mode = \textcolor{keyword}{false};}
+\DoxyCodeLine{108     \textcolor{keyword}{static} \textcolor{keywordtype}{bool} incomplete;}
+\DoxyCodeLine{109 \};}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111 \textcolor{keyword}{class }\mbox{\hyperlink{class_test_suite_destroyer}{TestSuiteDestroyer}} \{}
+\DoxyCodeLine{112 \textcolor{keyword}{public}:}
+\DoxyCodeLine{113     \mbox{\hyperlink{class_test_suite_destroyer}{\string~TestSuiteDestroyer}}() \{}
+\DoxyCodeLine{114         \textcolor{keyword}{delete} TestSuite::instance;}
+\DoxyCodeLine{115     \}}
+\DoxyCodeLine{116 \};}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{118 \textcolor{keyword}{class }\mbox{\hyperlink{class_test_registerer}{TestRegisterer}} \{}
+\DoxyCodeLine{119 \textcolor{keyword}{public}:}
+\DoxyCodeLine{120     \mbox{\hyperlink{class_test_registerer}{TestRegisterer}}(\textcolor{keyword}{const} std::string\& test\_name, Test\_func\_t test) \{}
+\DoxyCodeLine{121         TestSuite::get().add\_test(test\_name, test);}
+\DoxyCodeLine{122     \}}
+\DoxyCodeLine{123 \};}
+\DoxyCodeLine{124 }
+\DoxyCodeLine{125 \textcolor{keyword}{class }\mbox{\hyperlink{class_test_failure}{TestFailure}} \{}
+\DoxyCodeLine{126 \textcolor{keyword}{public}:}
+\DoxyCodeLine{127     \mbox{\hyperlink{class_test_failure}{TestFailure}}(std::string reason, \textcolor{keywordtype}{int} line\_number, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* assertion\_text)}
+\DoxyCodeLine{128         : reason\_m(std::move(reason)), line\_number\_m(line\_number),}
+\DoxyCodeLine{129           assertion\_text\_m(assertion\_text) \{\}}
+\DoxyCodeLine{130 }
+\DoxyCodeLine{131     std::ostream\& print(std::ostream\& os)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{132         os << \textcolor{stringliteral}{"{}In "{}} << assertion\_text\_m << \textcolor{stringliteral}{"{}, line "{}} << line\_number\_m << \textcolor{stringliteral}{"{}:\(\backslash\)n"{}}}
+\DoxyCodeLine{133            << reason\_m << \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{134         \textcolor{keywordflow}{return} os;}
+\DoxyCodeLine{135     \}}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{137     std::string to\_string()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{138         std::ostringstream oss;}
+\DoxyCodeLine{139         print(oss);}
+\DoxyCodeLine{140         \textcolor{keywordflow}{return} oss.str();}
+\DoxyCodeLine{141     \}}
+\DoxyCodeLine{142 }
+\DoxyCodeLine{143 \textcolor{keyword}{private}:}
+\DoxyCodeLine{144     std::string reason\_m;}
+\DoxyCodeLine{145     \textcolor{keywordtype}{int} line\_number\_m;}
+\DoxyCodeLine{146     \textcolor{keyword}{const} \textcolor{keywordtype}{char}* assertion\_text\_m;}
+\DoxyCodeLine{147 \};}
+\DoxyCodeLine{148 std::ostream\& operator<<(std::ostream\& os, \textcolor{keyword}{const} \mbox{\hyperlink{class_test_failure}{TestFailure}}\& test\_failure);}
+\DoxyCodeLine{149 }
+\DoxyCodeLine{150 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{151 }
+\DoxyCodeLine{152 \textcolor{comment}{// demangle, print\_helper, and print contributed by Amir Kamil <akamil@umich.edu>}}
+\DoxyCodeLine{153 }
+\DoxyCodeLine{154 \textcolor{comment}{// Demangles a string produced by std::type\_info::name.}}
+\DoxyCodeLine{155 std::string demangle(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* typeinfo\_name);}
+\DoxyCodeLine{156 }
+\DoxyCodeLine{157 \textcolor{comment}{// forward declaration of print}}
+\DoxyCodeLine{158 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{159 std::ostream\& print(std::ostream\& os, \textcolor{keyword}{const} T\& t);}
+\DoxyCodeLine{160 }
+\DoxyCodeLine{161 \textcolor{comment}{// This version of print\_helper will be called when T has an available}}
+\DoxyCodeLine{162 \textcolor{comment}{// stream insertion operator overload.}}
+\DoxyCodeLine{163 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{164 \textcolor{keyword}{auto} print\_helper(std::ostream\& os, \textcolor{keyword}{const} T\& t, \textcolor{keywordtype}{int}, \textcolor{keywordtype}{int})}
+\DoxyCodeLine{165     -\/> \textcolor{keyword}{decltype}(os << t)\& \{}
+\DoxyCodeLine{166     \textcolor{keywordflow}{return} os << t;}
+\DoxyCodeLine{167 \}}
+\DoxyCodeLine{168 }
+\DoxyCodeLine{169 \textcolor{comment}{// This version of print\_helper will be called when T is a pair.}}
+\DoxyCodeLine{170 \textcolor{keyword}{template} <\textcolor{keyword}{class} First, \textcolor{keyword}{class} Second>}
+\DoxyCodeLine{171 \textcolor{keyword}{auto} print\_helper(std::ostream\& os, \textcolor{keyword}{const} std::pair<First, Second>\& t, \textcolor{keywordtype}{int},}
+\DoxyCodeLine{172                   \textcolor{keywordtype}{int}) -\/> \textcolor{keyword}{decltype}(print(os, t.first), print(os, t.second))\& \{}
+\DoxyCodeLine{173     os << \textcolor{charliteral}{'('};}
+\DoxyCodeLine{174     print(os, t.first);}
+\DoxyCodeLine{175     os << \textcolor{charliteral}{','};}
+\DoxyCodeLine{176     print(os, t.second);}
+\DoxyCodeLine{177     \textcolor{keywordflow}{return} os << \textcolor{charliteral}{')'};}
+\DoxyCodeLine{178 \}}
+\DoxyCodeLine{179 }
+\DoxyCodeLine{180 \textcolor{comment}{// Helper function to print a sequence.}}
+\DoxyCodeLine{181 \textcolor{keyword}{template} <\textcolor{keyword}{class} Sequence>}
+\DoxyCodeLine{182 \textcolor{keyword}{auto} print\_sequence\_helper(std::ostream \&os, \textcolor{keyword}{const} Sequence\& seq)}
+\DoxyCodeLine{183     -\/> \textcolor{keyword}{decltype}(print(os, (*std::begin(seq), *std::end(seq))))\& \{}
+\DoxyCodeLine{184     \textcolor{keywordflow}{if} (std::begin(seq) == std::end(seq)) \{}
+\DoxyCodeLine{185         \textcolor{keywordflow}{return} os << \textcolor{stringliteral}{"{}\{\}"{}};}
+\DoxyCodeLine{186     \}}
+\DoxyCodeLine{187 }
+\DoxyCodeLine{188     \textcolor{keyword}{auto} it = std::begin(seq);}
+\DoxyCodeLine{189     os << \textcolor{stringliteral}{"{}\{ "{}};}
+\DoxyCodeLine{190     print(os, *it);}
+\DoxyCodeLine{191     \textcolor{keywordflow}{for} (++it; it != std::end(seq); ++it) \{}
+\DoxyCodeLine{192         os << \textcolor{stringliteral}{"{}, "{}};}
+\DoxyCodeLine{193         print(os, *it);}
+\DoxyCodeLine{194     \}}
+\DoxyCodeLine{195     \textcolor{keywordflow}{return} os << \textcolor{stringliteral}{"{} \}"{}};}
+\DoxyCodeLine{196 \}}
+\DoxyCodeLine{197 }
+\DoxyCodeLine{198 \textcolor{comment}{// This version of print\_helper will be called when T is a sequence.}}
+\DoxyCodeLine{199 \textcolor{keyword}{template} <\textcolor{keyword}{class} Sequence>}
+\DoxyCodeLine{200 \textcolor{keyword}{auto} print\_helper(std::ostream\& os, \textcolor{keyword}{const} Sequence\& seq, \textcolor{keywordtype}{int}, ...)}
+\DoxyCodeLine{201     -\/> \textcolor{keyword}{decltype}(print(os, *seq.begin()), print(os, *seq.end()))\& \{}
+\DoxyCodeLine{202    \textcolor{keywordflow}{return} print\_sequence\_helper(os, seq);}
+\DoxyCodeLine{203 \}}
+\DoxyCodeLine{204 }
+\DoxyCodeLine{205 \textcolor{comment}{// This version of print\_helper will be called when T is a non-\/char array.}}
+\DoxyCodeLine{206 \textcolor{comment}{// This is separate from the sequence overload so that printing an}}
+\DoxyCodeLine{207 \textcolor{comment}{// array as a sequence is preferred over printing it as a pointer}}
+\DoxyCodeLine{208 \textcolor{comment}{// (using the first overload).}}
+\DoxyCodeLine{209 \textcolor{keyword}{template} <\textcolor{keyword}{class} Elem, std::\textcolor{keywordtype}{size\_t} N>}
+\DoxyCodeLine{210 std::ostream\& print\_helper(std::ostream\& os, \textcolor{keyword}{const} Elem (\&arr)[N], \textcolor{keywordtype}{int}, \textcolor{keywordtype}{int}) \{}
+\DoxyCodeLine{211     \textcolor{keywordflow}{return} print\_sequence\_helper(os, arr);}
+\DoxyCodeLine{212 \}}
+\DoxyCodeLine{213 }
+\DoxyCodeLine{214 \textcolor{comment}{// This version of print\_helper will be called when T is a char array.}}
+\DoxyCodeLine{215 \textcolor{comment}{// If the array contains a null terminator, it is printed as a string.}}
+\DoxyCodeLine{216 \textcolor{comment}{// Otherwise, it is printed as a sequence.}}
+\DoxyCodeLine{217 \textcolor{keyword}{template} <std::\textcolor{keywordtype}{size\_t} N>}
+\DoxyCodeLine{218 std::ostream\& print\_helper(std::ostream\& os, \textcolor{keyword}{const} \textcolor{keywordtype}{char} (\&arr)[N], \textcolor{keywordtype}{int}, \textcolor{keywordtype}{int}) \{}
+\DoxyCodeLine{219     \textcolor{keywordflow}{for} (std::size\_t i = 0; i < N; ++i) \{}
+\DoxyCodeLine{220         \textcolor{keywordflow}{if} (!arr[i]) \{}
+\DoxyCodeLine{221             \textcolor{keywordflow}{return} os << arr;}
+\DoxyCodeLine{222         \}}
+\DoxyCodeLine{223     \}}
+\DoxyCodeLine{224     \textcolor{keywordflow}{return} print\_sequence\_helper(os, arr);}
+\DoxyCodeLine{225 \}}
+\DoxyCodeLine{226 }
+\DoxyCodeLine{227 \textcolor{comment}{// This version of print\_helper will be called when T does not have an}}
+\DoxyCodeLine{228 \textcolor{comment}{// available stream insertion operator overload.}}
+\DoxyCodeLine{229 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{230 std::ostream\& print\_helper(std::ostream\& os, \textcolor{keyword}{const} T\&, ...) \{}
+\DoxyCodeLine{231     \textcolor{keywordflow}{return} os << \textcolor{stringliteral}{"{}<"{}} << demangle(\textcolor{keyword}{typeid}(T).name()) << \textcolor{stringliteral}{"{} object>"{}};}
+\DoxyCodeLine{232 \}}
+\DoxyCodeLine{233 }
+\DoxyCodeLine{234 \textcolor{comment}{// Attempts to print the given object to the given stream.}}
+\DoxyCodeLine{235 \textcolor{comment}{// If T has an available stream insertion operator overload, that}}
+\DoxyCodeLine{236 \textcolor{comment}{// operator is used. Otherwise, a generic representation of the object}}
+\DoxyCodeLine{237 \textcolor{comment}{// is printed to os.}}
+\DoxyCodeLine{238 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{239 std::ostream\& print(std::ostream\& os, \textcolor{keyword}{const} T\& t) \{}
+\DoxyCodeLine{240     \textcolor{comment}{// The extra parameters are needed so that the first overload of}}
+\DoxyCodeLine{241     \textcolor{comment}{// print\_helper is preferred, followed by the third one.}}
+\DoxyCodeLine{242     \textcolor{keywordflow}{return} print\_helper(os, t, 0, 0);}
+\DoxyCodeLine{243 \}}
+\DoxyCodeLine{244 }
+\DoxyCodeLine{245 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{246 }
+\DoxyCodeLine{247 \textcolor{preprocessor}{\#define ASSERT\_EQUAL(first, second)                                           \(\backslash\)}}
+\DoxyCodeLine{248 \textcolor{preprocessor}{    assert\_equal((first), (second), \_\_LINE\_\_,                                 \(\backslash\)}}
+\DoxyCodeLine{249 \textcolor{preprocessor}{                 "{}ASSERT\_EQUAL("{}} \#first "{}, "{} \#second "{})"{});}
+\DoxyCodeLine{250 }
+\DoxyCodeLine{251 \textcolor{preprocessor}{\#define ASSERT\_NOT\_EQUAL(first, second)                                       \(\backslash\)}}
+\DoxyCodeLine{252 \textcolor{preprocessor}{    assert\_not\_equal((first), (second), \_\_LINE\_\_,                             \(\backslash\)}}
+\DoxyCodeLine{253 \textcolor{preprocessor}{                     "{}ASSERT\_NOT\_EQUAL("{}} \#first "{}, "{} \#second "{})"{});}
+\DoxyCodeLine{254 }
+\DoxyCodeLine{255 \textcolor{preprocessor}{\#define ASSERT\_SEQUENCE\_EQUAL(first, second)                                  \(\backslash\)}}
+\DoxyCodeLine{256 \textcolor{preprocessor}{    assert\_sequence\_equal((first), (second), \_\_LINE\_\_,                        \(\backslash\)}}
+\DoxyCodeLine{257 \textcolor{preprocessor}{                          "{}ASSERT\_SEQUENCE\_EQUAL("{}} \#first "{}, "{} \#second "{})"{});}
+\DoxyCodeLine{258 }
+\DoxyCodeLine{259 \textcolor{preprocessor}{\#define ASSERT\_TRUE(value)                                                    \(\backslash\)}}
+\DoxyCodeLine{260 \textcolor{preprocessor}{    assert\_true((value), \_\_LINE\_\_, "{}ASSERT\_TRUE("{}} \#value "{})"{});}
+\DoxyCodeLine{261 }
+\DoxyCodeLine{262 \textcolor{preprocessor}{\#define ASSERT\_FALSE(value)                                                   \(\backslash\)}}
+\DoxyCodeLine{263 \textcolor{preprocessor}{    assert\_false((value), \_\_LINE\_\_, "{}ASSERT\_FALSE("{}} \#value "{})"{});}
+\DoxyCodeLine{264 }
+\DoxyCodeLine{265 \textcolor{preprocessor}{\#define ASSERT\_ALMOST\_EQUAL(first, second, precision)                         \(\backslash\)}}
+\DoxyCodeLine{266 \textcolor{preprocessor}{    assert\_almost\_equal((first), (second), (precision), \_\_LINE\_\_,             \(\backslash\)}}
+\DoxyCodeLine{267 \textcolor{preprocessor}{                        "{}ASSERT\_ALMOST\_EQUAL("{}} \#first "{}, "{} \#second "{}, "{}       \(\backslash\)}
+\DoxyCodeLine{268                         \#precision "{})"{});}
+\DoxyCodeLine{269 }
+\DoxyCodeLine{270 \textcolor{comment}{// Template logic to produce a static assertion failure when comparing}}
+\DoxyCodeLine{271 \textcolor{comment}{// incomparable types.}}
+\DoxyCodeLine{272 \textcolor{keyword}{template} <\textcolor{keyword}{typename} First, \textcolor{keyword}{typename} Second, \textcolor{keyword}{typename} = \textcolor{keywordtype}{void}>}
+\DoxyCodeLine{273 \textcolor{keyword}{struct }\mbox{\hyperlink{structis__equality__comparable}{is\_equality\_comparable}} : std::false\_type \{\};}
+\DoxyCodeLine{274 }
+\DoxyCodeLine{275 \textcolor{keyword}{template} <\textcolor{keyword}{typename} First, \textcolor{keyword}{typename} Second>}
+\DoxyCodeLine{276 \textcolor{keyword}{using }enable\_if\_equality\_comparable = \textcolor{keyword}{typename} std::enable\_if<}
+\DoxyCodeLine{277     std::is\_same<bool, decltype(std::declval<First>() ==}
+\DoxyCodeLine{278                                 std::declval<Second>())>::value and}
+\DoxyCodeLine{279         std::is\_same<\textcolor{keywordtype}{bool}, \textcolor{keyword}{decltype}(std::declval<First>() !=}
+\DoxyCodeLine{280                                     std::declval<Second>())>::value and}
+\DoxyCodeLine{281         (!std::is\_array<\textcolor{keyword}{typename} std::remove\_reference<First>::type>::value or}
+\DoxyCodeLine{282          !std::is\_array<\textcolor{keyword}{typename} std::remove\_reference<Second>::type>::value),}
+\DoxyCodeLine{283     \textcolor{keywordtype}{void}>::type;}
+\DoxyCodeLine{284 }
+\DoxyCodeLine{285 \textcolor{keyword}{template} <\textcolor{keyword}{typename} First, \textcolor{keyword}{typename} Second>}
+\DoxyCodeLine{286 \textcolor{keyword}{struct }\mbox{\hyperlink{structis__equality__comparable}{is\_equality\_comparable}}<First, Second,}
+\DoxyCodeLine{287                               enable\_if\_equality\_comparable<First, Second>>}
+\DoxyCodeLine{288     : std::true\_type \{\};}
+\DoxyCodeLine{289 }
+\DoxyCodeLine{290 \textcolor{comment}{// Overloads for equality comparisons.}}
+\DoxyCodeLine{291 \textcolor{keyword}{template} <\textcolor{keyword}{typename} First, \textcolor{keyword}{typename} Second>}
+\DoxyCodeLine{292 \textcolor{keywordtype}{bool} safe\_equals\_helper(\textcolor{keyword}{const} First\& first, \textcolor{keyword}{const} Second\& second) \{}
+\DoxyCodeLine{293   \textcolor{keywordflow}{return} first == second;}
+\DoxyCodeLine{294 \}}
+\DoxyCodeLine{295 }
+\DoxyCodeLine{296 \textcolor{keyword}{template} <\textcolor{keyword}{typename} First, \textcolor{keyword}{typename} Second>}
+\DoxyCodeLine{297 \textcolor{keywordtype}{bool} safe\_not\_equals\_helper(\textcolor{keyword}{const} First\& first, \textcolor{keyword}{const} Second\& second) \{}
+\DoxyCodeLine{298   \textcolor{keywordflow}{return} first != second;}
+\DoxyCodeLine{299 \}}
+\DoxyCodeLine{300 }
+\DoxyCodeLine{301 \textcolor{comment}{// Allow size\_t to correctly be compared to int.}}
+\DoxyCodeLine{302 \textcolor{keywordtype}{bool} safe\_equals\_helper(std::size\_t first, \textcolor{keywordtype}{int} second) \{}
+\DoxyCodeLine{303   \textcolor{keywordflow}{return} second >= 0 \&\& \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{long} \textcolor{keywordtype}{long}\textcolor{keyword}{>}(first) == second;}
+\DoxyCodeLine{304 \}}
+\DoxyCodeLine{305 }
+\DoxyCodeLine{306 \textcolor{keywordtype}{bool} safe\_equals\_helper(\textcolor{keywordtype}{int} first, std::size\_t second) \{}
+\DoxyCodeLine{307   \textcolor{keywordflow}{return} first >= 0 \&\& first == \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{long} \textcolor{keywordtype}{long}\textcolor{keyword}{>}(second);}
+\DoxyCodeLine{308 \}}
+\DoxyCodeLine{309 }
+\DoxyCodeLine{310 \textcolor{keywordtype}{bool} safe\_not\_equals\_helper(std::size\_t first, \textcolor{keywordtype}{int} second) \{}
+\DoxyCodeLine{311   \textcolor{keywordflow}{return} second < 0 || static\_cast<long long>(first) != second;}
+\DoxyCodeLine{312 \}}
+\DoxyCodeLine{313 }
+\DoxyCodeLine{314 \textcolor{keywordtype}{bool} safe\_not\_equals\_helper(\textcolor{keywordtype}{int} first, std::size\_t second) \{}
+\DoxyCodeLine{315   \textcolor{keywordflow}{return} first < 0 || first != static\_cast<long long>(second);}
+\DoxyCodeLine{316 \}}
+\DoxyCodeLine{317 }
+\DoxyCodeLine{318 \textcolor{keyword}{template} <\textcolor{keyword}{typename} First, \textcolor{keyword}{typename} Second, \textcolor{keyword}{typename} = \textcolor{keywordtype}{void}>}
+\DoxyCodeLine{319 \textcolor{keyword}{struct }\mbox{\hyperlink{structsafe__equals}{safe\_equals}} \{}
+\DoxyCodeLine{320     \textcolor{keyword}{static\_assert}(\mbox{\hyperlink{structis__equality__comparable}{is\_equality\_comparable<First, Second>::value}},}
+\DoxyCodeLine{321                   \textcolor{stringliteral}{"{}types cannot be compared with == and !="{}});}
+\DoxyCodeLine{322     \textcolor{keyword}{static} \textcolor{keywordtype}{bool} equals(\textcolor{keyword}{const} First\& first, \textcolor{keyword}{const} Second\& second) \{}
+\DoxyCodeLine{323         \textcolor{keywordflow}{return} safe\_equals\_helper(first, second);}
+\DoxyCodeLine{324     \}}
+\DoxyCodeLine{325     \textcolor{keyword}{static} \textcolor{keywordtype}{bool} not\_equals(\textcolor{keyword}{const} First\& first, \textcolor{keyword}{const} Second\& second) \{}
+\DoxyCodeLine{326         \textcolor{keywordflow}{return} safe\_not\_equals\_helper(first, second);}
+\DoxyCodeLine{327     \}}
+\DoxyCodeLine{328 \};}
+\DoxyCodeLine{329 }
+\DoxyCodeLine{330 \textcolor{keyword}{template} <\textcolor{keyword}{typename} First, \textcolor{keyword}{typename} Second>}
+\DoxyCodeLine{331 \textcolor{keywordtype}{void} assert\_equal(First\&\& first, Second\&\& second, \textcolor{keywordtype}{int} line\_number,}
+\DoxyCodeLine{332                   \textcolor{keyword}{const} \textcolor{keywordtype}{char}* assertion\_text) \{}
+\DoxyCodeLine{333     \textcolor{keywordflow}{if} (\mbox{\hyperlink{structsafe__equals}{safe\_equals<First, Second>::equals}}(first, second)) \{}
+\DoxyCodeLine{334         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{335     \}}
+\DoxyCodeLine{336     std::ostringstream reason;}
+\DoxyCodeLine{337     print(reason, first);}
+\DoxyCodeLine{338     reason << \textcolor{stringliteral}{"{} != "{}};}
+\DoxyCodeLine{339     print(reason, second);}
+\DoxyCodeLine{340     \textcolor{keywordflow}{throw} \mbox{\hyperlink{class_test_failure}{TestFailure}}(reason.str(), line\_number, assertion\_text);}
+\DoxyCodeLine{341 \}}
+\DoxyCodeLine{342 }
+\DoxyCodeLine{343 \textcolor{keyword}{template} <\textcolor{keyword}{typename} First, \textcolor{keyword}{typename} Second>}
+\DoxyCodeLine{344 \textcolor{keywordtype}{void} assert\_not\_equal(First\&\& first, Second\&\& second, \textcolor{keywordtype}{int} line\_number,}
+\DoxyCodeLine{345                       \textcolor{keyword}{const} \textcolor{keywordtype}{char}* assertion\_text) \{}
+\DoxyCodeLine{346     \textcolor{keywordflow}{if} (\mbox{\hyperlink{structsafe__equals}{safe\_equals<First, Second>::not\_equals}}(first, second)) \{}
+\DoxyCodeLine{347         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{348     \}}
+\DoxyCodeLine{349     std::ostringstream reason;}
+\DoxyCodeLine{350 }
+\DoxyCodeLine{351     reason << \textcolor{stringliteral}{"{}Values unexpectedly equal: "{}};}
+\DoxyCodeLine{352     print(reason, first);}
+\DoxyCodeLine{353     reason << \textcolor{stringliteral}{"{} == "{}};}
+\DoxyCodeLine{354     print(reason, second);}
+\DoxyCodeLine{355     \textcolor{keywordflow}{throw} \mbox{\hyperlink{class_test_failure}{TestFailure}}(reason.str(), line\_number, assertion\_text);}
+\DoxyCodeLine{356 \}}
+\DoxyCodeLine{357 }
+\DoxyCodeLine{358 \textcolor{keyword}{template} <\textcolor{keyword}{typename} First, \textcolor{keyword}{typename} Second>}
+\DoxyCodeLine{359 \textcolor{keywordtype}{void} assert\_sequence\_equal(First\&\& first, Second\&\& second, \textcolor{keywordtype}{int} line\_number,}
+\DoxyCodeLine{360                            \textcolor{keyword}{const} \textcolor{keywordtype}{char}* assertion\_text) \{}
+\DoxyCodeLine{361     \textcolor{keyword}{using }std::begin;}
+\DoxyCodeLine{362     \textcolor{keyword}{using }std::end;}
+\DoxyCodeLine{363     \textcolor{keyword}{auto} it1 = begin(first);}
+\DoxyCodeLine{364     \textcolor{keyword}{auto} it2 = begin(second);}
+\DoxyCodeLine{365     \textcolor{keyword}{auto} end1 = end(first);}
+\DoxyCodeLine{366     \textcolor{keyword}{auto} end2 = end(second);}
+\DoxyCodeLine{367     \textcolor{keyword}{auto} len1 = std::distance(it1, end1);}
+\DoxyCodeLine{368     \textcolor{keyword}{auto} len2 = std::distance(it2, end2);}
+\DoxyCodeLine{369     \textcolor{keywordflow}{if} (len1 != len2) \{  \textcolor{comment}{// different number of elements}}
+\DoxyCodeLine{370         std::ostringstream reason;}
+\DoxyCodeLine{371         print(reason, first);}
+\DoxyCodeLine{372         reason << \textcolor{stringliteral}{"{} != "{}};}
+\DoxyCodeLine{373         print(reason, second);}
+\DoxyCodeLine{374         reason << \textcolor{stringliteral}{"{} (sizes differ: "{}} << len1 << \textcolor{stringliteral}{"{} != "{}} << len2 << \textcolor{stringliteral}{"{})"{}};}
+\DoxyCodeLine{375         \textcolor{keywordflow}{throw} \mbox{\hyperlink{class_test_failure}{TestFailure}}(reason.str(), line\_number, assertion\_text);}
+\DoxyCodeLine{376     \}}
+\DoxyCodeLine{377 }
+\DoxyCodeLine{378     \textcolor{keywordtype}{bool} equal = \textcolor{keyword}{true};}
+\DoxyCodeLine{379     std::size\_t position = 0;}
+\DoxyCodeLine{380     \textcolor{keywordflow}{for} (; it1 != end1 and it2 != end2; ++it1, ++it2, ++position) \{}
+\DoxyCodeLine{381         \textcolor{keywordflow}{if} (not \mbox{\hyperlink{structsafe__equals}{safe\_equals}}<\textcolor{keyword}{decltype}(*it1), \textcolor{keyword}{decltype}(*it2)>::equals(}
+\DoxyCodeLine{382                 *it1, *it2)) \{}
+\DoxyCodeLine{383             equal = \textcolor{keyword}{false};}
+\DoxyCodeLine{384             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{385         \}}
+\DoxyCodeLine{386     \}}
+\DoxyCodeLine{387 }
+\DoxyCodeLine{388     \textcolor{keywordflow}{if} (not equal) \{}
+\DoxyCodeLine{389         std::ostringstream reason;}
+\DoxyCodeLine{390         print(reason, first);}
+\DoxyCodeLine{391         reason << \textcolor{stringliteral}{"{} != "{}};}
+\DoxyCodeLine{392         print(reason, second);}
+\DoxyCodeLine{393         reason << \textcolor{stringliteral}{"{} (elements at position "{}} << position << \textcolor{stringliteral}{"{} differ: "{}};}
+\DoxyCodeLine{394         print(reason, *it1);}
+\DoxyCodeLine{395         reason << \textcolor{stringliteral}{"{} != "{}};}
+\DoxyCodeLine{396         print(reason, *it2);}
+\DoxyCodeLine{397         reason << \textcolor{stringliteral}{"{})"{}};}
+\DoxyCodeLine{398         \textcolor{keywordflow}{throw} \mbox{\hyperlink{class_test_failure}{TestFailure}}(reason.str(), line\_number, assertion\_text);}
+\DoxyCodeLine{399     \}}
+\DoxyCodeLine{400 \}}
+\DoxyCodeLine{401 }
+\DoxyCodeLine{402 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{403 }
+\DoxyCodeLine{404 \textcolor{comment}{// THIS IS PART OF A WORKAROUND TO DEAL WITH STATIC}}
+\DoxyCodeLine{405 \textcolor{comment}{// INITIALIZATION SHENANIGANS.}}
+\DoxyCodeLine{406 \textcolor{comment}{// DO NOT CHANGE THIS UNLESS YOU REEEEALLY KNOW WHAT}}
+\DoxyCodeLine{407 \textcolor{comment}{// YOU'RE DOING. CONTACT akamil@umich.edu or jameslp@umich.edu IF}}
+\DoxyCodeLine{408 \textcolor{comment}{// YOU HAVE QUESTIONS ABOUT THIS.}}
+\DoxyCodeLine{409 \textcolor{preprocessor}{\#define TEST\_SUITE\_INSTANCE()                                                 \(\backslash\)}}
+\DoxyCodeLine{410 \textcolor{preprocessor}{    static TestSuiteDestroyer destroyer;                                      \(\backslash\)}}
+\DoxyCodeLine{411 \textcolor{preprocessor}{    bool TestSuite::incomplete = false;                                       \(\backslash\)}}
+\DoxyCodeLine{412 \textcolor{preprocessor}{    TestSuite* TestSuite::instance = \&TestSuite::get()}}
+\DoxyCodeLine{413 }
+\DoxyCodeLine{414 \textcolor{keywordtype}{void} TestCase::run(\textcolor{keywordtype}{bool} quiet\_mode) \{}
+\DoxyCodeLine{415     \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{416         \textcolor{keywordflow}{if} (not quiet\_mode) \{}
+\DoxyCodeLine{417             std::cout << \textcolor{stringliteral}{"{}Running test: "{}} << name << std::endl;}
+\DoxyCodeLine{418         \}}
+\DoxyCodeLine{419 }
+\DoxyCodeLine{420         test\_func();}
+\DoxyCodeLine{421 }
+\DoxyCodeLine{422         \textcolor{keywordflow}{if} (not quiet\_mode) \{}
+\DoxyCodeLine{423             std::cout << \textcolor{stringliteral}{"{}PASS"{}} << std::endl;}
+\DoxyCodeLine{424         \}}
+\DoxyCodeLine{425     \}}
+\DoxyCodeLine{426     \textcolor{keywordflow}{catch} (\mbox{\hyperlink{class_test_failure}{TestFailure}}\& failure) \{}
+\DoxyCodeLine{427         failure\_msg = failure.to\_string();}
+\DoxyCodeLine{428 }
+\DoxyCodeLine{429         \textcolor{keywordflow}{if} (not quiet\_mode) \{}
+\DoxyCodeLine{430             std::cout << \textcolor{stringliteral}{"{}FAIL"{}} << std::endl;}
+\DoxyCodeLine{431         \}}
+\DoxyCodeLine{432     \}}
+\DoxyCodeLine{433     \textcolor{keywordflow}{catch} (std::exception\& e) \{}
+\DoxyCodeLine{434         std::ostringstream oss;}
+\DoxyCodeLine{435         oss << \textcolor{stringliteral}{"{}Uncaught "{}} << demangle(\textcolor{keyword}{typeid}(e).name()) << \textcolor{stringliteral}{"{} in test \(\backslash\)"{}"{}}}
+\DoxyCodeLine{436             << name << \textcolor{stringliteral}{"{}\(\backslash\)"{}: \(\backslash\)n"{}};}
+\DoxyCodeLine{437         oss << e.what() << \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{438         exception\_msg = oss.str();}
+\DoxyCodeLine{439 }
+\DoxyCodeLine{440         \textcolor{keywordflow}{if} (not quiet\_mode) \{}
+\DoxyCodeLine{441             std::cout << \textcolor{stringliteral}{"{}ERROR"{}} << std::endl;}
+\DoxyCodeLine{442         \}}
+\DoxyCodeLine{443     \}}
+\DoxyCodeLine{444 \}}
+\DoxyCodeLine{445 }
+\DoxyCodeLine{446 \textcolor{keywordtype}{void} TestCase::print(\textcolor{keywordtype}{bool} quiet\_mode) \{}
+\DoxyCodeLine{447     \textcolor{keywordflow}{if} (quiet\_mode) \{}
+\DoxyCodeLine{448         std::cout << name << \textcolor{stringliteral}{"{}: "{}};}
+\DoxyCodeLine{449     \}}
+\DoxyCodeLine{450     \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{451         std::cout << \textcolor{stringliteral}{"{}** Test case \(\backslash\)"{}"{}} << name << \textcolor{stringliteral}{"{}\(\backslash\)"{}: "{}};}
+\DoxyCodeLine{452     \}}
+\DoxyCodeLine{453 }
+\DoxyCodeLine{454     \textcolor{keywordflow}{if} (not failure\_msg.empty()) \{}
+\DoxyCodeLine{455         std::cout << \textcolor{stringliteral}{"{}FAIL"{}} << std::endl;}
+\DoxyCodeLine{456         \textcolor{keywordflow}{if} (not quiet\_mode) \{}
+\DoxyCodeLine{457             std::cout << failure\_msg << std::endl;}
+\DoxyCodeLine{458         \}}
+\DoxyCodeLine{459     \}}
+\DoxyCodeLine{460     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (not exception\_msg.empty()) \{}
+\DoxyCodeLine{461         std::cout << \textcolor{stringliteral}{"{}ERROR"{}} << std::endl;}
+\DoxyCodeLine{462         \textcolor{keywordflow}{if} (not quiet\_mode) \{}
+\DoxyCodeLine{463             std::cout << exception\_msg << std::endl;}
+\DoxyCodeLine{464         \}}
+\DoxyCodeLine{465     \}}
+\DoxyCodeLine{466     \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{467         std::cout << \textcolor{stringliteral}{"{}PASS"{}} << std::endl;}
+\DoxyCodeLine{468     \}}
+\DoxyCodeLine{469 \}}
+\DoxyCodeLine{470 }
+\DoxyCodeLine{471 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{472 }
+\DoxyCodeLine{473 \textcolor{keyword}{class }\mbox{\hyperlink{class_exit_suite}{ExitSuite}} : \textcolor{keyword}{public} std::exception \{}
+\DoxyCodeLine{474 \textcolor{keyword}{public}:}
+\DoxyCodeLine{475     \mbox{\hyperlink{class_exit_suite}{ExitSuite}}(\textcolor{keywordtype}{int} status\_ = 0) : status(status\_) \{\}}
+\DoxyCodeLine{476     \textcolor{keywordtype}{int} status;}
+\DoxyCodeLine{477 \};}
+\DoxyCodeLine{478 }
+\DoxyCodeLine{479 \textcolor{keyword}{class }\mbox{\hyperlink{class_set_complete}{SetComplete}} \{}
+\DoxyCodeLine{480 \textcolor{keyword}{public}:}
+\DoxyCodeLine{481     \mbox{\hyperlink{class_set_complete}{SetComplete}}(\textcolor{keywordtype}{bool}\& incomplete\_) : incomplete(incomplete\_) \{}
+\DoxyCodeLine{482         incomplete = \textcolor{keyword}{true};}
+\DoxyCodeLine{483     \}}
+\DoxyCodeLine{484     \mbox{\hyperlink{class_set_complete}{\string~SetComplete}}() \{}
+\DoxyCodeLine{485         incomplete = \textcolor{keyword}{false};}
+\DoxyCodeLine{486     \}}
+\DoxyCodeLine{487 }
+\DoxyCodeLine{488 \textcolor{keyword}{private}:}
+\DoxyCodeLine{489     \textcolor{keywordtype}{bool}\& incomplete;}
+\DoxyCodeLine{490 \};}
+\DoxyCodeLine{491 }
+\DoxyCodeLine{492 \textcolor{keywordtype}{int} TestSuite::run\_tests(\textcolor{keywordtype}{int} argc, \textcolor{keywordtype}{char}** argv) \{}
+\DoxyCodeLine{493     \mbox{\hyperlink{class_set_complete}{SetComplete}} completer(TestSuite::incomplete);}
+\DoxyCodeLine{494     std::vector<std::string> test\_names\_to\_run;}
+\DoxyCodeLine{495     \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{496         test\_names\_to\_run = get\_test\_names\_to\_run(argc, argv);}
+\DoxyCodeLine{497     \}}
+\DoxyCodeLine{498     \textcolor{keywordflow}{catch} (\mbox{\hyperlink{class_exit_suite}{ExitSuite}}\& e) \{}
+\DoxyCodeLine{499         \textcolor{keywordflow}{return} e.status;}
+\DoxyCodeLine{500     \}}
+\DoxyCodeLine{501 }
+\DoxyCodeLine{502     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} test\_name : test\_names\_to\_run) \{}
+\DoxyCodeLine{503         \textcolor{keywordflow}{if} (tests\_.find(test\_name) == end(tests\_)) \{}
+\DoxyCodeLine{504             \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}Test "{}} + test\_name + \textcolor{stringliteral}{"{} not found"{}});}
+\DoxyCodeLine{505         \}}
+\DoxyCodeLine{506     \}}
+\DoxyCodeLine{507 }
+\DoxyCodeLine{508     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} test\_name : test\_names\_to\_run) \{}
+\DoxyCodeLine{509         tests\_.at(test\_name).run(quiet\_mode);}
+\DoxyCodeLine{510     \}}
+\DoxyCodeLine{511 }
+\DoxyCodeLine{512     std::cout << \textcolor{stringliteral}{"{}\(\backslash\)n*** Results ***"{}} << std::endl;}
+\DoxyCodeLine{513     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} test\_name : test\_names\_to\_run) \{}
+\DoxyCodeLine{514         tests\_.at(test\_name).print(quiet\_mode);}
+\DoxyCodeLine{515     \}}
+\DoxyCodeLine{516 }
+\DoxyCodeLine{517     \textcolor{keyword}{auto} num\_failures =}
+\DoxyCodeLine{518         std::count\_if(tests\_.begin(), tests\_.end(),}
+\DoxyCodeLine{519                       [](std::pair<std::string, TestCase> test\_pair) \{}
+\DoxyCodeLine{520                           return not test\_pair.second.failure\_msg.empty();}
+\DoxyCodeLine{521                       \});}
+\DoxyCodeLine{522     \textcolor{keyword}{auto} num\_errors =}
+\DoxyCodeLine{523         std::count\_if(tests\_.begin(), tests\_.end(),}
+\DoxyCodeLine{524                       [](std::pair<std::string, TestCase> test\_pair) \{}
+\DoxyCodeLine{525                           return not test\_pair.second.exception\_msg.empty();}
+\DoxyCodeLine{526                       \});}
+\DoxyCodeLine{527 }
+\DoxyCodeLine{528     \textcolor{keywordflow}{if} (not quiet\_mode) \{}
+\DoxyCodeLine{529         std::cout << \textcolor{stringliteral}{"{}*** Summary ***"{}} << std::endl;}
+\DoxyCodeLine{530         std::cout << \textcolor{stringliteral}{"{}Out of "{}} << test\_names\_to\_run.size()}
+\DoxyCodeLine{531                   << \textcolor{stringliteral}{"{} tests run:"{}} << std::endl;}
+\DoxyCodeLine{532         std::cout << num\_failures << \textcolor{stringliteral}{"{} failure(s), "{}} << num\_errors}
+\DoxyCodeLine{533                   << \textcolor{stringliteral}{"{} error(s)"{}} << std::endl;}
+\DoxyCodeLine{534     \}}
+\DoxyCodeLine{535 }
+\DoxyCodeLine{536     \textcolor{keywordflow}{if} (num\_failures == 0 and num\_errors == 0) \{}
+\DoxyCodeLine{537         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{538     \}}
+\DoxyCodeLine{539     \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{540 \}}
+\DoxyCodeLine{541 }
+\DoxyCodeLine{542 std::vector<std::string> TestSuite::get\_test\_names\_to\_run(\textcolor{keywordtype}{int} argc,}
+\DoxyCodeLine{543                                                           \textcolor{keywordtype}{char}** argv) \{}
+\DoxyCodeLine{544     std::vector<std::string> test\_names\_to\_run;}
+\DoxyCodeLine{545     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} i = 1; i < argc; ++i) \{}
+\DoxyCodeLine{546         \textcolor{keywordflow}{if} (argv[i] == std::string(\textcolor{stringliteral}{"{}-\/-\/show\_test\_names"{}}) or}
+\DoxyCodeLine{547             argv[i] == std::string(\textcolor{stringliteral}{"{}-\/n"{}})) \{}
+\DoxyCodeLine{548 }
+\DoxyCodeLine{549             TestSuite::get().print\_test\_names(std::cout);}
+\DoxyCodeLine{550             std::cout << std::flush;}
+\DoxyCodeLine{551             \textcolor{keywordflow}{throw} \mbox{\hyperlink{class_exit_suite}{ExitSuite}}();}
+\DoxyCodeLine{552         \}}
+\DoxyCodeLine{553         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (argv[i] == std::string(\textcolor{stringliteral}{"{}-\/-\/quiet"{}}) or}
+\DoxyCodeLine{554                  argv[i] == std::string(\textcolor{stringliteral}{"{}-\/q"{}})) \{}
+\DoxyCodeLine{555             TestSuite::get().enable\_quiet\_mode();}
+\DoxyCodeLine{556         \}}
+\DoxyCodeLine{557         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (argv[i] == std::string(\textcolor{stringliteral}{"{}-\/-\/help"{}}) or}
+\DoxyCodeLine{558                  argv[i] == std::string(\textcolor{stringliteral}{"{}-\/h"{}})) \{}
+\DoxyCodeLine{559             std::cout << \textcolor{stringliteral}{"{}usage: "{}} << argv[0]}
+\DoxyCodeLine{560                       << \textcolor{stringliteral}{"{} [-\/h] [-\/n] [-\/q] [[TEST\_NAME] ...]\(\backslash\)n"{}};}
+\DoxyCodeLine{561             std::cout}
+\DoxyCodeLine{562                 << \textcolor{stringliteral}{"{}optional arguments:\(\backslash\)n"{}}}
+\DoxyCodeLine{563                 << \textcolor{stringliteral}{"{} -\/h, -\/-\/help\(\backslash\)t\(\backslash\)t show this help message and exit\(\backslash\)n"{}}}
+\DoxyCodeLine{564                 << \textcolor{stringliteral}{"{} -\/n, -\/-\/show\_test\_names\(\backslash\)t print the names of all "{}}}
+\DoxyCodeLine{565                    \textcolor{stringliteral}{"{}discovered test cases and exit\(\backslash\)n"{}}}
+\DoxyCodeLine{566                 << \textcolor{stringliteral}{"{} -\/q, -\/-\/quiet\(\backslash\)t\(\backslash\)t print a reduced summary of test results\(\backslash\)n"{}}}
+\DoxyCodeLine{567                 << \textcolor{stringliteral}{"{} TEST\_NAME ...\(\backslash\)t\(\backslash\)t run only the test cases whose names "{}}}
+\DoxyCodeLine{568                    \textcolor{stringliteral}{"{}are "{}}}
+\DoxyCodeLine{569                    \textcolor{stringliteral}{"{}listed here. Note: If no test names are specified, all "{}}}
+\DoxyCodeLine{570                    \textcolor{stringliteral}{"{}discovered tests are run by default."{}}}
+\DoxyCodeLine{571                 << std::endl;}
+\DoxyCodeLine{572 }
+\DoxyCodeLine{573             \textcolor{keywordflow}{throw} \mbox{\hyperlink{class_exit_suite}{ExitSuite}}();}
+\DoxyCodeLine{574         \}}
+\DoxyCodeLine{575         \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{576             test\_names\_to\_run.push\_back(argv[i]);}
+\DoxyCodeLine{577         \}}
+\DoxyCodeLine{578     \}}
+\DoxyCodeLine{579 }
+\DoxyCodeLine{580     \textcolor{keywordflow}{if} (test\_names\_to\_run.empty()) \{}
+\DoxyCodeLine{581         std::transform(}
+\DoxyCodeLine{582             std::begin(tests\_), std::end(tests\_),}
+\DoxyCodeLine{583             std::back\_inserter(test\_names\_to\_run),}
+\DoxyCodeLine{584             [](\textcolor{keyword}{const} std::pair<std::string, TestCase>\& p) \{ \textcolor{keywordflow}{return} p.first; \});}
+\DoxyCodeLine{585     \}}
+\DoxyCodeLine{586     \textcolor{keywordflow}{return} test\_names\_to\_run;}
+\DoxyCodeLine{587 \}}
+\DoxyCodeLine{588 }
+\DoxyCodeLine{589 std::ostream\& operator<<(std::ostream\& os, \textcolor{keyword}{const} \mbox{\hyperlink{class_test_failure}{TestFailure}}\& test\_failure) \{}
+\DoxyCodeLine{590     \textcolor{keywordflow}{return} test\_failure.print(os);}
+\DoxyCodeLine{591 \}}
+\DoxyCodeLine{592 }
+\DoxyCodeLine{593 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{594 }
+\DoxyCodeLine{595 \textcolor{preprocessor}{\#if defined(\_\_clang\_\_) || defined(\_\_GLIBCXX\_\_) || defined(\_\_GLIBCPP\_\_)}}
+\DoxyCodeLine{596 \textcolor{preprocessor}{\#include <cxxabi.h>}}
+\DoxyCodeLine{597 \textcolor{preprocessor}{\#include <cstdlib>}}
+\DoxyCodeLine{598 std::string demangle(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* typeinfo\_name) \{}
+\DoxyCodeLine{599     \textcolor{keywordtype}{int} status = 0;}
+\DoxyCodeLine{600     \textcolor{keywordtype}{char}* demangled =}
+\DoxyCodeLine{601         abi::\_\_cxa\_demangle(typeinfo\_name, \textcolor{keyword}{nullptr}, \textcolor{keyword}{nullptr}, \&status);}
+\DoxyCodeLine{602     \textcolor{keywordflow}{if} (status == 0) \{}
+\DoxyCodeLine{603         std::string result = demangled;}
+\DoxyCodeLine{604         std::free(demangled);}
+\DoxyCodeLine{605         \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{606     \}}
+\DoxyCodeLine{607     \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{608         \textcolor{keywordflow}{return} typeinfo\_name;}
+\DoxyCodeLine{609     \}}
+\DoxyCodeLine{610 \}}
+\DoxyCodeLine{611 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{612 std::string demangle(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* typeinfo\_name) \{}
+\DoxyCodeLine{613     \textcolor{keywordflow}{return} typeinfo\_name;}
+\DoxyCodeLine{614 \}}
+\DoxyCodeLine{615 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// defined(\_\_clang\_\_) || defined(\_\_GLIBCXX\_\_) || defined(\_\_GLIBCPP\_\_)}}
+\DoxyCodeLine{616 }
+\DoxyCodeLine{617 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{618 }
+\DoxyCodeLine{619 \textcolor{keywordtype}{void} assert\_true(\textcolor{keywordtype}{bool} value, \textcolor{keywordtype}{int} line\_number, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* assertion\_text) \{}
+\DoxyCodeLine{620     \textcolor{keywordflow}{if} (value) \{}
+\DoxyCodeLine{621         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{622     \}}
+\DoxyCodeLine{623     std::ostringstream reason;}
+\DoxyCodeLine{624     reason << \textcolor{stringliteral}{"{}Expected true, but was false"{}};}
+\DoxyCodeLine{625     \textcolor{keywordflow}{throw} \mbox{\hyperlink{class_test_failure}{TestFailure}}(reason.str(), line\_number, assertion\_text);}
+\DoxyCodeLine{626 \}}
+\DoxyCodeLine{627 }
+\DoxyCodeLine{628 \textcolor{keywordtype}{void} assert\_false(\textcolor{keywordtype}{bool} value, \textcolor{keywordtype}{int} line\_number, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* assertion\_text) \{}
+\DoxyCodeLine{629     \textcolor{keywordflow}{if} (not value) \{}
+\DoxyCodeLine{630         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{631     \}}
+\DoxyCodeLine{632     std::ostringstream reason;}
+\DoxyCodeLine{633     reason << \textcolor{stringliteral}{"{}Expected false, but was true"{}};}
+\DoxyCodeLine{634     \textcolor{keywordflow}{throw} \mbox{\hyperlink{class_test_failure}{TestFailure}}(reason.str(), line\_number, assertion\_text);}
+\DoxyCodeLine{635 \}}
+\DoxyCodeLine{636 }
+\DoxyCodeLine{637 \textcolor{keywordtype}{void} assert\_almost\_equal(\textcolor{keywordtype}{double} first, \textcolor{keywordtype}{double} second, \textcolor{keywordtype}{double} precision,}
+\DoxyCodeLine{638                          \textcolor{keywordtype}{int} line\_number, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* assertion\_text) \{}
+\DoxyCodeLine{639     \textcolor{keywordflow}{if} (std::abs(first -\/ second) <= precision) \{}
+\DoxyCodeLine{640         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{641     \}}
+\DoxyCodeLine{642     std::ostringstream reason;}
+\DoxyCodeLine{643     \textcolor{comment}{// For now, we'll just set the precision arbitrarily high.}}
+\DoxyCodeLine{644     \textcolor{comment}{// In the future, we may decide to add an option to configure}}
+\DoxyCodeLine{645     \textcolor{comment}{// the output precision.}}
+\DoxyCodeLine{646     reason.precision(20);}
+\DoxyCodeLine{647     reason << \textcolor{stringliteral}{"{}Values too far apart: "{}} << first << \textcolor{stringliteral}{"{} and "{}} << second;}
+\DoxyCodeLine{648     \textcolor{keywordflow}{throw} \mbox{\hyperlink{class_test_failure}{TestFailure}}(reason.str(), line\_number, assertion\_text);}
+\DoxyCodeLine{649 \}}
+\DoxyCodeLine{650 }
+\DoxyCodeLine{651 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// UNIT\_TEST\_FRAMEWORK\_H}}
+
+\end{DoxyCode}
