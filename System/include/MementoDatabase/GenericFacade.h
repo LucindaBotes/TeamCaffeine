@@ -1,15 +1,17 @@
 #ifndef GENERICFACADE_H
 #define GENERICFACADE_H
+#include "MementoFacade.h"
 
-class GenericFacade {
+template <class T>
+class GenericFacade: public MementoFacade<T> {
   private:
-    int member;
+    T memento;
 
   public:
     GenericFacade();
     ~GenericFacade();
-    int getMember();
-    void setMember(int);
+    T getMemento();
+    void setMemento(T);
 };
 
 #endif

@@ -1,17 +1,35 @@
-#include <Inventory/CreateArmour.h>
-
+#include "CreateArmour.h"
 using namespace std;
 
-CreateArmour::CreateArmour() {
+/** @file CreateArmour.h
+ *  @brief CreateArmour class implementation,
+ *  Design Patterns:
+ *  @li Design Pattern: Abstract Factory
+ *  @li Participant: ConcreteFactory
+ *
+ *  @details CreateArmour is responsible for creating the armour entities and the iterator for the armour class.
+ *  @authors: Lucinda Botes, u19048263
+ */
+
+/**
+ * @brief CreateArmour:: Constructor for CreateArmour object
+ */
+CreateArmour::CreateArmour()
+{
 }
 
-CreateArmour::~CreateArmour() {
+/**
+ * @brief ~CreateArmour:: Destructor for CreateArmour object
+ */
+CreateArmour::~CreateArmour()
+{
 }
 
-int CreateArmour::getMember() {
-  return this->member;
-}
-
-void CreateArmour::setMember(int member) {
-  this->member = member;
+/**
+ * @brief reateArmourEntity:: Create Armour Entity
+ * @return Armour*
+ */
+Armour *CreateArmour::createArmourEntity()
+{
+  return new Armour();
 }

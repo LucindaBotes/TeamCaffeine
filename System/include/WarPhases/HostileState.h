@@ -1,15 +1,18 @@
 #ifndef HOSTILESTATE_H
 #define HOSTILESTATE_H
 
-class HostileState {
+#include "WarPhaseState.h"
+#include "ColdState.h"
+#include "WarPhaseContext.h"
+
+class HostileState : public WarPhaseState
+{
   private:
-    int member;
 
   public:
     HostileState();
     ~HostileState();
-    int getMember();
-    void setMember(int);
+    virtual string getState();
+    virtual void setState(WarPhaseContext* s);
 };
-
 #endif

@@ -1,5 +1,14 @@
-#include <MementoDatabase/BattleFacade.h>
-
+#include "BattleFacade.h"
+/** 
+*  @file BattleFacade.h
+*  @brief Proxy class implementation (Protection Proxy)
+*  Design Patterns:
+*  @li Proxy: Proxy participant
+*
+*  @details Provides another class to go throug before the Memento class can be accessed.
+*  
+*  @author Erik Koekemoer; u19011866
+*/
 using namespace std;
 
 BattleFacade::BattleFacade() {
@@ -8,10 +17,10 @@ BattleFacade::BattleFacade() {
 BattleFacade::~BattleFacade() {
 }
 
-int BattleFacade::getMember() {
-  return this->member;
+void BattleFacade::getMementoData() {
+  
 }
 
-void BattleFacade::setMember(int member) {
-  this->member = member;
+Battle* BattleFacade::sendMementoData() {
+  
 }

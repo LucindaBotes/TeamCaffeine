@@ -1,15 +1,19 @@
 #ifndef WARPHASECONTEXT_H
 #define WARPHASECONTEXT_H
 
-class WarPhaseContext {
+#include "WarPhaseState.h"
+#include "PeacefulState.h"
+
+class WarPhaseContext 
+{
   private:
-    int member;
+    WarPhaseState* _state;
 
   public:
     WarPhaseContext();
     ~WarPhaseContext();
-    int getMember();
-    void setMember(int);
-};
+    void setState(WarPhaseState* s);
+    void changeState();
 
+};
 #endif

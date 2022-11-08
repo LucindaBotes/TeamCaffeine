@@ -1,17 +1,39 @@
-#include <Inventory/CreateMedics.h>
+#include "CreateMedics.h"
 
 using namespace std;
 
-CreateMedics::CreateMedics() {
+/** @file CreateMedics.h
+ *  @brief CreateMedics class implementation,
+ *  Design Patterns:
+ *  @li Design Pattern: Abstract Factory
+ *  @li Participant: ConcreteFactory
+ *
+ *  @details CreateMedics is responsible for creating the medics entities and the iterator for the Medics class.
+ *  @authors: Lucinda Botes, u19048263
+ */
+
+/**
+ * @brief CreateMedics:: Constructor for Medics object
+ *
+ */
+CreateMedics::CreateMedics()
+{
 }
 
-CreateMedics::~CreateMedics() {
+/**
+ * @brief ~CreateMedics:: Destructor for Medics object
+ *
+ */
+CreateMedics::~CreateMedics()
+{
 }
 
-int CreateMedics::getMember() {
-  return this->member;
-}
-
-void CreateMedics::setMember(int member) {
-  this->member = member;
+/**
+ * @brief CreateMedicsEntity:: Create a Medics Entity
+ *
+ * @return Medics*
+ */
+Medics *CreateMedics::createEntity()
+{
+  return new Medics();
 }

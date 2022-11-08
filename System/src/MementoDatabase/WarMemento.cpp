@@ -1,17 +1,22 @@
-#include <MementoDatabase/WarMemento.h>
+#include "WarMemento.h"
+#include "Memento.h"
 
 using namespace std;
 
-WarMemento::WarMemento() {
+template <class T>
+WarMemento<T>::WarMemento() {
 }
 
-WarMemento::~WarMemento() {
+template <class T>
+WarMemento<T>::~WarMemento() {
 }
 
-int WarMemento::getMember() {
-  return this->member;
+template <class T>
+T WarMemento<T>::getMemento() {
+  return this->memento;
 }
 
-void WarMemento::setMember(int member) {
-  this->member = member;
+template <class T>
+void WarMemento<T>::setMemento(T memento) {
+  this->memento = memento;
 }

@@ -1,15 +1,41 @@
 #ifndef ENTITY_H
 #define ENTITY_H
 
+#include <iostream>
+#include "Iterator.h"
+
+enum EntityType {
+  WEAPON,
+  SUPPLIES,
+  MEDIC,
+  SOLDIER,
+  DECORATOR,
+  ARMOUR
+};
+
 class Entity {
+
   private:
-    int member;
+    EntityType _type;
+    double _price;
+    std::string _name;
+
+  protected:
+    Entity* _head, *_next;
 
   public:
-    Entity();
-    ~Entity();
-    int getMember();
-    void setMember(int);
+    Entity(EntityType);
+    Entity(const Entity &e);
+    virtual ~Entity() = 0;
+    virtual Entity* clone() = 0;
+    EntityType getType();
+    double getPrice();
+    void setPrice(double price);
+    void addEntity(Entity *e);
+    bool isEmpty();
+    std::string getName();
+    void setName(std::string name);
+    Entity* getHead();
 };
 
 #endif

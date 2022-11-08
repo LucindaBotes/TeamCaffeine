@@ -1,15 +1,19 @@
 #ifndef WARMEMENTO_H
 #define WARMEMENTO_H
+#include "Memento.h"
+#include "Battle.h"
+#include <vector>
 
-class WarMemento {
+template <class T>
+class WarMemento: public Memento<T> {
   private:
-    int member;
+    vector<T> war_memento;
 
   public:
     WarMemento();
     ~WarMemento();
-    int getMember();
-    void setMember(int);
+    T getMemento();
+    void setMemento(T);
 };
 
 #endif

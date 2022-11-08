@@ -1,15 +1,29 @@
 #ifndef SOLDIERS_H
 #define SOLDIERS_H
 
-class Soldiers {
+#include "Entity.h"
+#include "Randomizer.h"
+
+class Soldiers : public Entity {
   private:
-    int member;
+    double _damage;
+    double _armour;
+    int _count;
 
   public:
     Soldiers();
-    ~Soldiers();
-    int getMember();
-    void setMember(int);
+    Soldiers(double, double, int);
+    Soldiers(const Soldiers& soldiers);
+    ~Soldiers() override;
+    
+    Entity* clone() override;
+    
+    double getDamage();
+    double getArmour();
+    int getCount();
+    void setDamage(double damage);
+    void setArmour(double armour);
+    void setCount(int count);
 };
 
 #endif
