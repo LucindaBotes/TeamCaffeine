@@ -1,4 +1,6 @@
 #include <iostream>
+#include <gtest/gtest.h>
+
 #include "Soldiers.h"
 #include "ModeContext.h"
 #include "Design.h"
@@ -29,15 +31,13 @@ static std::string footer = R"(
 :......:::....::..:::::..:::.......:::........::..:::::..:::::..:::::....:::.......:::..::::..:::::::::......::::.......:::..:::::..::..:::::::::........::........:::::..:::::........::
 )";
 
-static bool _runTests = false; // Change this to true to run tests
+// int main(int argc, char **argv)
+// {
+// 	testing::InitGoogleTest(&argc, argv);
+// 	return RUN_ALL_TESTS();
+// }
 
-int runTests()
-{
-	// testing::InitGoogleTest(&argc, argv);
-	// return RUN_ALL_TESTS();
-}
-
-int runApplication()
+int main()
 {
 	int modeSelection; 
 
@@ -64,10 +64,4 @@ int runApplication()
 		std::cout << "Invalid mode selection." << std::endl;
 	}
 	return 0;
-}
-
-int main()
-{
-	if(_runTests) return runTests();
-	else return runApplication();
 }
